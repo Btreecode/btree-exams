@@ -109,6 +109,48 @@ Which of the following input data is needed by the upgraded system but was NOT n
 0. A list of popular items frequently added to orders  
 0. Time to prepare order  
 
+A restaurant uses phones to take reservations and to place to-go orders. The restaurant is planning to update its system to provide more options to customers while decreasing the ordering time. Customers will now interact with a website instead of an actual person.
+
+The **upgraded system** (but not the original system) stores all information from the web interactions for future references. This includes food items ordered, address, telephone number, and credit card info.
+
+The original system and the upgraded system are described in the following flowcharts. Each flowchart uses the following blocks:
+
+| Block         | Explanation                                                                 |
+|---------------|------------------------------------------------------------------------------|
+| Oval          | The start of the algorithm                                                   |
+| Parallelogram | An input or output step                                                      |
+| Diamond       | A conditional or decision step, where execution proceeds to "Yes" or "No"   |
+| Rectangle     | The result of the algorithm                                                  |
+
+Original System
+```mermaid
+flowchart TD
+    A[Start] --> B[Customer's call is answered by employee]
+    B --> C{Dining}
+    C -- Yes --> D{Reservation}
+    C -- No --> E[Customer's to-go order is recorded]
+    D -- Yes --> F[Customer's reservation is recorded]
+    D -- No --> E
+```
+
+Upgraded System
+```mermaid
+flowchart TD
+    A[Start] --> B[Customer visits website]
+    B --> C[Answer questions via email]
+    C --> D{Dining}
+    D -- Yes --> E{Reservation}
+    D -- No --> F{Pickup}
+    E -- Yes --> G[Customer's reservation is recorded]
+    E -- No --> H[Customer's order is recorded]
+    F -- Yes --> H
+    F -- No --> I{Delivery}
+    G --> J[Customer's address and customer's order are recorded]
+    H --> J
+    I -- Yes --> K[Customer's address and customer's order are recorded]
+    I -- No --> L[Customer's car make and model and customer's order are recorded]
+
+```
 The upgraded system uses data not supplied by the customer. The new site is supposed to increase sales by suggesting products (like “fries with that?”) and decreasing processing time.
 
 Which of the following data is LEAST likely to be included in the web-based ordering system?
@@ -120,6 +162,48 @@ Which of the following data is LEAST likely to be included in the web-based orde
 0. Storing customer information will increase the likelihood of a phishing attack by rogue hackers  
 1. Customers’ personal data can be compromised if hackers gain access into the ordering system  
 
+A restaurant uses phones to take reservations and to place to-go orders. The restaurant is planning to update its system to provide more options to customers while decreasing the ordering time. Customers will now interact with a website instead of an actual person.
+
+The **upgraded system** (but not the original system) stores all information from the web interactions for future references. This includes food items ordered, address, telephone number, and credit card info.
+
+The original system and the upgraded system are described in the following flowcharts. Each flowchart uses the following blocks:
+
+| Block         | Explanation                                                                 |
+|---------------|------------------------------------------------------------------------------|
+| Oval          | The start of the algorithm                                                   |
+| Parallelogram | An input or output step                                                      |
+| Diamond       | A conditional or decision step, where execution proceeds to "Yes" or "No"   |
+| Rectangle     | The result of the algorithm                                                  |
+
+Original System
+```mermaid
+flowchart TD
+    A[Start] --> B[Customer's call is answered by employee]
+    B --> C{Dining}
+    C -- Yes --> D{Reservation}
+    C -- No --> E[Customer's to-go order is recorded]
+    D -- Yes --> F[Customer's reservation is recorded]
+    D -- No --> E
+```
+
+Upgraded System
+```mermaid
+flowchart TD
+    A[Start] --> B[Customer visits website]
+    B --> C[Answer questions via email]
+    C --> D{Dining}
+    D -- Yes --> E{Reservation}
+    D -- No --> F{Pickup}
+    E -- Yes --> G[Customer's reservation is recorded]
+    E -- No --> H[Customer's order is recorded]
+    F -- Yes --> H
+    F -- No --> I{Delivery}
+    G --> J[Customer's address and customer's order are recorded]
+    H --> J
+    I -- Yes --> K[Customer's address and customer's order are recorded]
+    I -- No --> L[Customer's car make and model and customer's order are recorded]
+
+```
 Which of the following is MOST likely a data privacy concern of the upgraded system?
 
 ---
@@ -129,6 +213,48 @@ Which of the following is MOST likely a data privacy concern of the upgraded sys
 1. An increase in awareness of the restaurant  
 0. A decrease in incorrect orders and delivery addresses  
 
+A restaurant uses phones to take reservations and to place to-go orders. The restaurant is planning to update its system to provide more options to customers while decreasing the ordering time. Customers will now interact with a website instead of an actual person.
+
+The **upgraded system** (but not the original system) stores all information from the web interactions for future references. This includes food items ordered, address, telephone number, and credit card info.
+
+The original system and the upgraded system are described in the following flowcharts. Each flowchart uses the following blocks:
+
+| Block         | Explanation                                                                 |
+|---------------|------------------------------------------------------------------------------|
+| Oval          | The start of the algorithm                                                   |
+| Parallelogram | An input or output step                                                      |
+| Diamond       | A conditional or decision step, where execution proceeds to "Yes" or "No"   |
+| Rectangle     | The result of the algorithm                                                  |
+
+Original System
+```mermaid
+flowchart TD
+    A[Start] --> B[Customer's call is answered by employee]
+    B --> C{Dining}
+    C -- Yes --> D{Reservation}
+    C -- No --> E[Customer's to-go order is recorded]
+    D -- Yes --> F[Customer's reservation is recorded]
+    D -- No --> E
+```
+
+Upgraded System
+```mermaid
+flowchart TD
+    A[Start] --> B[Customer visits website]
+    B --> C[Answer questions via email]
+    C --> D{Dining}
+    D -- Yes --> E{Reservation}
+    D -- No --> F{Pickup}
+    E -- Yes --> G[Customer's reservation is recorded]
+    E -- No --> H[Customer's order is recorded]
+    F -- Yes --> H
+    F -- No --> I{Delivery}
+    G --> J[Customer's address and customer's order are recorded]
+    H --> J
+    I -- Yes --> K[Customer's address and customer's order are recorded]
+    I -- No --> L[Customer's car make and model and customer's order are recorded]
+
+```
 Of the following potential benefits, which is LEAST likely to be provided by the upgraded system?
 
 ---
@@ -138,6 +264,48 @@ Of the following potential benefits, which is LEAST likely to be provided by the
 1. Reservations will be primarily made by customers who can afford internet access  
 0. Repeat business will increase  
 
+A restaurant uses phones to take reservations and to place to-go orders. The restaurant is planning to update its system to provide more options to customers while decreasing the ordering time. Customers will now interact with a website instead of an actual person.
+
+The **upgraded system** (but not the original system) stores all information from the web interactions for future references. This includes food items ordered, address, telephone number, and credit card info.
+
+The original system and the upgraded system are described in the following flowcharts. Each flowchart uses the following blocks:
+
+| Block         | Explanation                                                                 |
+|---------------|------------------------------------------------------------------------------|
+| Oval          | The start of the algorithm                                                   |
+| Parallelogram | An input or output step                                                      |
+| Diamond       | A conditional or decision step, where execution proceeds to "Yes" or "No"   |
+| Rectangle     | The result of the algorithm                                                  |
+
+Original System
+```mermaid
+flowchart TD
+    A[Start] --> B[Customer's call is answered by employee]
+    B --> C{Dining}
+    C -- Yes --> D{Reservation}
+    C -- No --> E[Customer's to-go order is recorded]
+    D -- Yes --> F[Customer's reservation is recorded]
+    D -- No --> E
+```
+
+Upgraded System
+```mermaid
+flowchart TD
+    A[Start] --> B[Customer visits website]
+    B --> C[Answer questions via email]
+    C --> D{Dining}
+    D -- Yes --> E{Reservation}
+    D -- No --> F{Pickup}
+    E -- Yes --> G[Customer's reservation is recorded]
+    E -- No --> H[Customer's order is recorded]
+    F -- Yes --> H
+    F -- No --> I{Delivery}
+    G --> J[Customer's address and customer's order are recorded]
+    H --> J
+    I -- Yes --> K[Customer's address and customer's order are recorded]
+    I -- No --> L[Customer's car make and model and customer's order are recorded]
+
+```
 Which of the following may be an unintended effect of the upgraded system?
 
 ---
