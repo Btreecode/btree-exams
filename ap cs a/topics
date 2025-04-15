@@ -1,44 +1,8 @@
-Object Oriented Programming
-- Basic Classes and Objects
-- Minor topics (this, static, etc.)
-- Inheritance
-- Polymorphism
-
-Basics
-- Primitive vs Reference Types
-- Default Values
-- Booleans and If Statements
-- Typecasting
-
-Iteration
-- Enhanced Loop Iteration
-- Single Loop Iteration
-- Nested Loop Iteration
-
-Strings
-- String methods
-- Substrings
-- String Iteration
-
-Arrays
-- Arrays
-- ArrayLists
-- ^ Iteration
-
-2D Arrays
-- 2D Arrays
-- 2D ArrayLists
-- ^ Iteration
-
-Object Data Structures
-- Array/ArrayList of Objects
-- 2D Array/ArrayList of Objects
-- ^ Iteration
-
-Miscellaneous
-- Recursion
-- Sorting Algorithms
-- Searching Algorithms
-- Errors
-- Random
-- Number Systems
+2d-arrays
+arrays
+basics
+iteration
+miscellaneous
+object-data-structures
+object-oriented-programming
+strings
