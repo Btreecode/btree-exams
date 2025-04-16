@@ -1,7 +1,9 @@
+---
 questions:
-  - question: [Simplest Setting] What is **2+2**
+  # SIMPLE
+  - question: What is **1+1**
     correct_options:
-      - 4
+      - 1
     wrong_options:
       - 0
       - 2
