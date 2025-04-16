@@ -7,7 +7,7 @@ questions:
       - 2
       - 3
   - question: |
-      [Most Complex Setting]
+      [More Complex Setting]
       This is a multiline question. Pick all options which can NEVER be the result of executing the following code.
 
       ```java
@@ -24,7 +24,10 @@ questions:
       - 1
       - 3
       - 9
-      - 10
+      - |
+        10
+        11
+        12 (a **multiline** option) with `code`
 
     # This option can be used to overrid the default (4)
     # Recommended numbers: 2, 4 or 6
