@@ -34,10 +34,10 @@ questions:
     total_options_to_display: 4
 
     # You can decide the minimum and the maximum number of "correct options" to display.
-    # First, the system will decide how many CORRECT options will be displayed
+    # First, the system will decide how many CORRECT options to be shown
     # Second, the system will randomly choose the CORRECT options
     # Third, random incorrect options will be chosen to fill the total number. 
     # Make sure enough correct/incorrect options are available!
-    num_correct_options:
+    num_correct_options_range:
       - 1
       - 4
