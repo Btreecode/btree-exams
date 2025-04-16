@@ -169,3 +169,50 @@ When the programmer tests the constructor of the Caller class, she gets a NullPo
 Which could be the cause of this error?
 
 ---
+
+0. 3  
+1. 4  
+0. 5  
+0. 10  
+0. 13  
+
+```java
+public class Searcher
+{
+    private int[] arr;
+
+    /** Constructor. Initializes arr with integers. */
+    public Searcher()
+    { /* implementation not shown */ }
+
+    /**
+     * Precondition: arr[first]...arr[last] sorted in ascending order.
+     * Postcondition: Returns index of key in arr. If key not in arr,
+     * returns -1.
+     */
+    public int search(int first, int last, int key)
+    {
+        int mid;
+        while (first <= last)
+        {
+            mid = (first + last) / 2;
+            if (arr[mid] == key) // found key, exit search
+                return mid;
+            else if (arr[mid] < key) // key to right of arr[mid]
+                first = mid + 1;
+            else // key to left of arr[mid]
+                last = mid - 1;
+        }
+        return -1; // key not in list
+    }
+}
+```
+
+Consider the array `a` with values:
+4, 7, 19, 25, 36, 37, 50, 100, 101, 205, 220, 271, 306, 321  
+
+where 4 is `a[0]` and 321 is `a[13]`. Suppose that the `search` method is called with `first = 0` and `last = 13` to locate the key `205`.  
+
+How many iterations of the `while` loop must be made in order to locate it?
+
+---

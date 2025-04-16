@@ -1,44 +1,48 @@
-Object Oriented Programming
-- Basic Classes and Objects
-- Minor topics (this, static, etc.)
-- Inheritance
-- Polymorphism
+Basic Object Oriented Programming
+- classes
+- objects
+- field variables
+- constructors
+- methods
+- this
+
+Advanced Object Oriented Programming
+- super
+- static
+- composition
+- inheritance
+- polymorphism
+- private, public
+- upcasting, downcasting
+- object data structures
+- object data structure iteration
 
 Basics
-- Primitive vs Reference Types
-- Default Values
-- Booleans and If Statements
-- Typecasting
-
-Iteration
-- Enhanced Loop Iteration
-- Single Loop Iteration
-- Nested Loop Iteration
+- data types
+- typecasting
+- default values
+- conditionals
+- while loops
+- for loops
+- enhanced loops
+- random
+- number systems
 
 Strings
-- String methods
-- Substrings
-- String Iteration
+- methods
+- iteration
 
-Arrays
-- Arrays
-- ArrayLists
-- ^ Iteration
+1D Data Structures
+- 1d array, arraylist of any data type
+- iteration
 
-2D Arrays
-- 2D Arrays
-- 2D ArrayLists
-- ^ Iteration
+2D Data Structures
+- 2d array, arraylist of any data type
+- iteration
 
-Object Data Structures
-- Array/ArrayList of Objects
-- 2D Array/ArrayList of Objects
-- ^ Iteration
-
-Miscellaneous
-- Recursion
-- Sorting Algorithms
-- Searching Algorithms
-- Errors
-- Random
-- Number Systems
+Advanced Concepts
+- recursion
+- sorting algorithms
+- searching algorithms
+- primitive, reference
+- errors

@@ -81,3 +81,25 @@ public static void someMethod(int[][] mat)
 Which method described above corresponds to someMethod?
 
 ---
+
+0. 9  
+0. 11  
+0. 13  
+1. 20  
+0. 33  
+
+Consider the following code segment.
+
+```java
+int[][] mat = {{3, 4, 5},
+               {6, 7, 8}};
+
+int sum = 0;
+for (int[] arr : mat) {
+    for (int n = 0; n < mat.length; n++) {
+        sum += arr[n];
+    }
+}
+```
+
+---
