@@ -1,6 +1,6 @@
 questions:
   - question: [Simplest Setting] What is **1+1**
-    corrent_options:
+    correct_options:
       - 1
     wrong_options:
       - 0

@@ -1,6 +1,6 @@
 questions:
   - question: [Simplest Setting] What is **2+2**
-    corrent_options:
+    correct_options:
       - 4
     wrong_options:
       - 0
