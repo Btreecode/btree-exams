@@ -1,59 +1,8 @@
 questions:
-  - question: |
-      Consider the following code segment, which uses the variable a and c:
-
-      ```text
-      a <- 3
-      a <- a + 5
-      c <- 3
-      a <- c + a
-
-      Display(a)
-      Display(c)
-      ```
-
-      What is displayed when running the code segment?
-    options:
-      - |
-        a: 3
-        c: 3
-      - |
-        a: 3
-        c: 8
-      - |
-        a: 11
-        c: 3
-      - |
-        a: 3
-        c: 11
-    correct_options:
-      - 2
-
-  - question: |
-      What is the output of the following pseudocode?
-
-      ```text
-      x <- 2
-      y <- 4
-      z <- x * y
-      y <- z - x
-
-      Display(x)
-      Display(y)
-      ```
-
-    options:
-      - |
-        x: 2
-        y: 6
-      - |
-        x: 2
-        y: 8
-      - |
-        x: 4
-        y: 6
-      - |
-        x: 2
-        y: 4
-    correct_options:
+  - question: [Simplest Setting] What is **3+3**
+    corrent_options:
+      - 6
+    wrong_options:
       - 0
+      - 2
+      - 3
