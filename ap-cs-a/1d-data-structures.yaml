@@ -1,0 +1,149 @@
+questions:
+  - question: |
+      Refer to the following method that finds the smallest value in an array:
+
+      ```java
+      /** Precondition: arr is an array of nonzero length
+        * and is initialized with int values.
+        * @param arr the array to be processed
+        * @return the smallest value in arr
+        */
+      public static int findMin(int[] arr)
+      {
+          int min = /* some value */;
+          int index = 0;
+          while (index < arr.length)
+          {
+              if (arr[index] < min)
+                  min = arr[index];
+              index++;
+          }
+          return min;
+      }
+      ```
+      Which replacement(s) for `/* some value */` will always result in correct execution of the findMin method?
+      ```java
+      I.   Integer.MIN_VALUE  
+      II.  Integer.MAX_VALUE  
+      III. arr[0]
+      ```
+    correct_options:
+      - II and III only  
+    wrong_options:
+      - I only  
+      - II only  
+      - III only  
+      - I and II only
+      - I and III only  
+  - question: |
+      A method is to be written to search an array for a value that is larger than a given item and return its index.  
+      The problem specification does not indicate what should be returned if there are several such values in the array.  
+      Which of the following actions would be best?
+    correct_options:
+      - The specification should be modified to indicate what should be done if there is more than one index of larger values.  
+    wrong_options:
+      - The method should be written on the assumption that there is only one value in the array that is larger than the given item.  
+      - The method should be written so as to return the index of every occurrence of a larger value.  
+      - The method should be written to delete all subsequent larger items after a suitable index is returned.  
+  - question: |
+      Refer to the `doSomething` method below.
+
+      ```java
+      // postcondition
+      public static void doSomething(ArrayList<SomeType> list, int i, int j)
+      {
+          SomeType temp = list.get(i);
+          list.set(i, list.get(j));
+          list.set(j, temp);
+      }
+      ```
+
+      Which best describes the postcondition for `doSomething`?
+    correct_options:
+      - Interchanges in `list` the objects indexed at `i` and `j`  
+    wrong_options:
+      - Removes from `list` the objects indexed at `i` and `j`  
+      - Replaces in `list` the object indexed at `i` with the object indexed at `j`
+      - Replaces in `list` the objects indexed at `i` and `j` with `temp`  
+  - question: |
+      Consider the following `RandomList` class.
+
+      ```java
+      public class RandomList
+      {
+          private int[] ranList;
+
+          public RandomList()
+          { 
+              ranList = getList(); 
+          }
+
+          /** @return array with random Integers from 0 to 100 inclusive */
+          public int[] getList()
+          {
+              System.out.println("How many integers? ");
+              int listLength = ...; // read user input
+              int[] list = new int[listLength];
+              for (int i = 0; i < listLength; i++)
+              {
+                  /* code to add integer to list */
+              }
+              return list;
+          }
+
+          /** Print all elements of this list. */
+          public void printList()
+          {
+              ...
+          }
+      }
+      ```
+      Which represents correct /* code to add integer to list */?
+    correct_options:
+      - list[i] = (int) (Math.random() * 101);  
+    wrong_options:
+      - list[i] = Math.random() * 101;
+      - list.add((int) (Math.random() * 101));  
+      - list[i] = (int) (Math.random() * 100);  
+      - list.add(new Integer(Math.random() * 100));  
+      - list[i] = (int) (Math.random() * 100) + 1;  
+  - question: |
+      Consider a method `partialProd` that returns an integer array `prod` such that for all `k`, `prod[k]` is equal to  
+      `arr[0] * arr[1] * ... * arr[k]`. For example, if `arr` contains the values `{2, 5, 3, 4, 10}`,  
+      the array `prod` will contain the values `{2, 10, 30, 120, 1200}`.
+
+      ```java
+      public static int[] partialProd(int[] arr) {
+          int[] prod = new int[arr.length];
+          for (int j = 0; j < arr.length; j++) {
+              prod[j] = 1;
+          }
+          /* missing code */
+          return prod;
+      }
+      ```
+      Consider the following two implementations of /* missing code */.
+
+      **Implementation 1**
+      ```java
+      for (int j = 1; j < arr.length; j++) {
+          prod[j] = prod[j - 1] * arr[j];
+      }
+      ```
+      **Implementation 2**
+      ```java
+      for (int j = 0; j < arr.length; j++) {
+          for (int k = 0; k <= j; k++) {
+              prod[j] = prod[j] * arr[k];
+          }
+      }
+      ```
+      Which of the following statements is true?
+    correct_options:
+      - Implementation 1 doesn't work as intended because the elements of prod are incorrectly assigned.  
+    wrong_options:
+      - Both implementations work as intended but Implementation 1 is faster than Implementation 2.  
+      - Both implementations work as intended but Implementation 2 is faster than Implementation 1.  
+      - Both implementations work as intended and are equally fast.  
+      - Implementation 2 doesn’t work as intended because the elements of prod are incorrectly assigned.  
+      - Neither implementations work as intended.

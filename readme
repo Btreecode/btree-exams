@@ -1,29 +1,29 @@
-QUESTION FORMAT
+---
+questions:
+  # SIMPLE
+  - question: What is **1+1**
+    correct_options:
+      - 1
+    wrong_options:
+      - 0
+      - 2
+      - 3
 
-:::
-1 
-Answer 1
-:::
-0
-Answer 2
-:::
-0 
-Answer 3
-:::
-0
-Answer 4
-::::::
-Question Text
+  # MORE MULTILINES
+  - question: |
+      Pick all options which can NEVER be the result of executing the following code.
 
-:::::::::
-
-
-
-
-
-
-
-
-Use --- to delimit questions
-1. is correct answers (use multiple 1. for multiple answer questions)
-0. is wrong answers
+      ```java
+      int x = Math.floor(Math.random() * 10) + 1;
+      System.out.println(x);
+      ```
+    correct_options:
+      - -1
+      - 0
+    wrong_options:
+      - 1
+      - 100
+      - |
+        10
+        11
+        12 (a **multiline** option) with `code`

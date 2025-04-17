@@ -1,0 +1,218 @@
+questions:
+  - question: |
+      Consider the following code segment, which is intended to add zero to the end of `list` every time a certain condition is met. You may assume that `list` is an `ArrayList<Integer>` that contains at least one element.
+
+      ```java
+      for (Integer num : list) {
+          if (<condition>)
+              list.add(0);
+      }
+      ```
+
+      What kind of error would be expected from this code segment?
+    correct_options:
+      - ConcurrentModificationException
+    wrong_options:
+      - ArrayIndexOutOfBoundsException  
+      - IndexOutOfBoundsException  
+      - NullPointerException  
+      - ArithmeticException  
+      - There is no error
+  - question: |
+      When will method `whatIsIt` cause a stack overflow (i.e., cause computer memory to be exhausted)?
+
+      ```java
+      public static int whatIsIt(int x, int y) {
+        if (x > y)
+          return x * y;
+        else
+          return whatIsIt(x - 1, y);
+      }
+      ```
+    correct_options:
+      - Only when x ≤ y  
+    wrong_options:
+      - Only when x < y  
+      - Only when x > y
+      - Only when x ≥ y  
+      - For all values of x and y  
+      - The method will never cause stack overflow  
+  - question: |
+      Consider a Clown class that has a no-argument constructor. Suppose a `list ArrayList<Clown> list` is initialized.
+      Which of the following will not cause an IndexOutOfBoundsException to be thrown?
+    correct_options:
+      - list.add(list.size(), new Clown());
+    wrong_options:
+      - |
+        for (int i = 0; i <= list.size(); i++){  
+          list.set(i, new Clown());  
+        }
+      - Clown c = list.remove(list.size());
+      - list.add(-1, new Clown());
+  - question: |
+      ```java
+      public static void whatsIt(int n) {
+          if (n > 10)
+              whatsIt(n / 10);
+          System.out.print(n % 10);
+      }
+      ```
+      What will be output as a result of the method call `whatsIt(347)`?
+    correct_options:
+      - 347
+    wrong_options:
+      - 74
+      - 47
+      - 734
+      - 743
+      - 34
+  - question: |
+      A large list of numbers is to be sorted into ascending order.  
+      Assuming that a "data movement" is a swap or reassignment of an element, which of the following is a true statement?
+    correct_options:
+      - The number of comparisons for selection sort is independent of the initial arrangement of elements.  
+    wrong_options:
+      - If the array is initially sorted in descending order, then insertion sort will be more efficient than selection sort.  
+      - The number of comparisons for insertion sort is independent of the initial arrangement of elements.
+      - The number of comparisons for selection sort is dependent of the initial arrangement of elements.    
+      - The number of data movements in selection sort depends on the initial arrangement of elements.  
+      - The number of data movements in insertion sort is independent of the initial arrangement of elements.  
+  - question: |
+      Three numbers a, b, and c are said to be a *Pythagorean Triple* if and only if the sum of the squares of two of the numbers equals the square of the third. A programmer writes a method `isPythTriple` to test if its three parameters form a Pythagorean Triple:
+
+      ```java
+      // Returns true if a * a + b * b == c * c; otherwise returns false
+      public static boolean isPythTriple(double a, double b, double c) {
+          double d = Math.sqrt(a * a + b * b);
+          return d == c;
+      }
+      ```
+      When the method was tested with known Pythagorean triples, isPythTriple sometimes erroneously returned false. What was the most likely cause of the error?
+    correct_options:
+      - Round-off error was caused by calculations with floating-point numbers  
+    wrong_options:
+      - Type boolean was not recognized by an obsolete version of Java  
+      - An overflow error was caused by entering numbers that were too large.
+      - c and d should have been cast to integers before testing for equality  
+      - Bad test data were selected  
+  - question: |
+      ```java
+      public class Searcher
+      {
+          private int[] arr;
+
+          /** Constructor. Initializes arr with integers. */
+          public Searcher()
+          { /* implementation not shown */ }
+
+          /**
+          * Precondition: arr[first]...arr[last] sorted in ascending order.
+          * Postcondition: Returns index of key in arr. If key not in arr,
+          * returns -1.
+          */
+          public int search(int first, int last, int key)
+          {
+              int mid;
+              while (first <= last)
+              {
+                  mid = (first + last) / 2;
+                  if (arr[mid] == key) // found key, exit search
+                      return mid;
+                  else if (arr[mid] < key) // key to right of arr[mid]
+                      first = mid + 1;
+                  else // key to left of arr[mid]
+                      last = mid - 1;
+              }
+              return -1; // key not in list
+          }
+      }
+      ```
+      Which assertion is true just before each execution of the `while` loop?
+    correct_options:
+      - arr[first] ≤ key ≤ arr[last] or key is not in arr  
+    wrong_options:
+      - arr[first] < key < arr[last]  
+      - arr[first] ≤ key ≤ arr[last]  
+      - arr[first] < key < arr[last] or key is not in arr
+      - arr[first] ≥ key ≥ arr[last] or key is not in ar
+      - key ≤ arr[first] or key ≥ arr[last] or key is not in arr  
+  - question: |
+      The programmer decides to use an `ArrayList<Integer>` to store the numbers to be called by the `Caller`,  
+      but there is an error in the code.
+
+      ```java
+      public class Caller
+      {
+          private ArrayList<Integer> numbers;
+
+          public Caller()
+          {
+              numbers = getList();
+              shuffleNumbers();
+          }
+
+          /** Returns the numbers 0...90 in order. */
+          private ArrayList<Integer> getList()
+          { /* implementation not shown */ }
+
+          /** Shuffle the numbers. */
+          private void shuffleNumbers()
+          { /* implementation not shown */ }
+      }
+      ```
+      When the programmer tests the constructor of the Caller class, she gets a NullPointerException.
+      Which could be the cause of this error?
+    correct_options:
+      - In the `getList` method, an attempt was made to add an `Integer` to an `ArrayList` that had not been created with `new`. 
+    wrong_options:
+      - The `Caller` object in the driver class was not created with `new`.  
+      - The programmer forgot the `return` statement in `getList` that returns the list of `Integers`.  
+      - |
+        The declaration of `numbers` is incorrect. It needed to be  
+        `private ArrayList<Integer> numbers = null;`  
+      - The `shuffleNumbers` algorithm went out of range, causing a `null Integer` to be shuffled into the `ArrayList`. 
+  - question: |
+      ```java
+      public class Searcher
+      {
+          private int[] arr;
+
+          /** Constructor. Initializes arr with integers. */
+          public Searcher()
+          { /* implementation not shown */ }
+
+          /**
+          * Precondition: arr[first]...arr[last] sorted in ascending order.
+          * Postcondition: Returns index of key in arr. If key not in arr,
+          * returns -1.
+          */
+          public int search(int first, int last, int key)
+          {
+              int mid;
+              while (first <= last)
+              {
+                  mid = (first + last) / 2;
+                  if (arr[mid] == key) // found key, exit search
+                      return mid;
+                  else if (arr[mid] < key) // key to right of arr[mid]
+                      first = mid + 1;
+                  else // key to left of arr[mid]
+                      last = mid - 1;
+              }
+              return -1; // key not in list
+          }
+      }
+      ```
+
+      Consider the array `a` with values:
+      4, 7, 19, 25, 36, 37, 50, 100, 101, 205, 220, 271, 306, 321  
+
+      where 4 is `a[0]` and 321 is `a[13]`. Suppose that the `search` method is called with `first = 0` and `last = 13` to locate the key `205`.  
+
+      How many iterations of the `while` loop must be made in order to locate it?
+    correct_options:
+      - 4
+    wrong_options:
+      - 3  
+      - 5  
+      - 10

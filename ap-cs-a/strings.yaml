@@ -1,0 +1,70 @@
+questions:
+  - question: |
+      Which of the following will execute **without** throwing an exception?
+
+      **I.**
+      ```java
+      String s = null;
+      String t = "";
+      if (s.equals(t))
+        System.out.println("empty strings?");
+      ```
+      **II.**
+      ```java
+      String s = "holy";
+      String t = "moly";
+      if (s.equals(t))
+        System.out.println("holy moly");
+      ```
+      **III.**
+      ```java
+      String s = "holy";
+      String t = s.substring(4);
+      System.out.println(s + t);
+      ```
+    correct_options:
+      - II and III only  
+    wrong_options:
+      - I only  
+      - II only  
+      - III only  
+      - I and II only  
+      - I and III only
+  - question: |
+      Refer to method `insert` described here. The `insert` method has two string parameters and one integer parameter. The method returns the string obtained by inserting the second string into the first starting at the position indicated by the integer parameter `pos`. For example, if `str1` contains `xy` and `str2` contains `cat`, then
+      ```java
+      insert(str1, str2, 0)  returns catxy  
+      insert(str1, str2, 1)  returns xcaty  
+      insert(str1, str2, 2)  returns xycat  
+      ```
+      Method `insert` follows:
+      ```java
+      /** Precondition: 0 <= pos <= str1.length().
+      *  Postcondition: If str1 = a0a1...an-1 and str2 = b0b1...bm-1,
+      *                 returns a0a1...apos-1b0b1...bm-1apos...an-1
+      */
+      public static String insert(String str1, String str2, int pos)
+      {
+          String first, last;
+          /* more code */
+          return first + str2 + last;
+      }
+      ```
+      Which of the following is a correct replacement for /* more code */?
+    correct_options:
+    - | 
+      first = str1.substring(0, pos);  
+      last = str1.substring(pos);
+    wrong_options:
+  - |
+    first = str1.substring(0, pos - 1);  
+    last = str1.substring(pos);
+  - |
+    first = str1.substring(0, pos + 1);  
+    last = str1.substring(pos + 1);
+  - |
+    first = str1.substring(0, pos);  
+    last = str1.substring(pos + 1, str1.length());
+  - |
+    first = str1.substring(0, pos);  
+    last = str1.substring(pos, str1.length() + 1);
