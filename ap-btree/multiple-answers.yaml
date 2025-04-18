@@ -25,7 +25,7 @@ questions:
         print(1)
         ```
     wrong_options:
-      - `print(100)`
+      - "`print(100)`"
       - |
         ```java
         if (1 < 2) {
