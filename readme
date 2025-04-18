@@ -1,29 +1,36 @@
+ADMIN TOOL for YAML: https://stackblitz.com/edit/vitejs-vite-vwv2higz?file=README.md
+
 ---
+
 questions:
-  # SIMPLE
-  - question: What is **1+1**
-    correct_options:
-      - 1
-    wrong_options:
-      - 0
-      - 2
-      - 3
 
-  # MORE MULTILINES
-  - question: |
-      Pick all options which can NEVER be the result of executing the following code.
+# SIMPLE
 
-      ```java
-      int x = Math.floor(Math.random() * 10) + 1;
-      System.out.println(x);
-      ```
-    correct_options:
-      - -1
-      - 0
-    wrong_options:
-      - 1
-      - 100
-      - |
-        10
-        11
-        12 (a **multiline** option) with `code`
+- question: What is **1+1**
+  correct_options:
+    - 1
+  wrong_options:
+    - 0
+    - 2
+    - 3
+
+# MORE MULTILINES
+
+- question: |
+  Pick all options which can NEVER be the result of executing the following code.
+
+  ```java
+  int x = Math.floor(Math.random() * 10) + 1;
+  System.out.println(x);
+  ```
+
+  correct_options:
+    - -1
+    - 0
+  wrong_options:
+    - 1
+    - 100
+    - |
+      10
+      11
+      12 (a **multiline** option) with `code`
