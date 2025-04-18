@@ -1,0 +1,802 @@
+questions:
+  - question:
+      A programmer is writing software for a diverse set of users. While the
+      program runs, the programmer wants to meet the needs of all her customers and
+      reduce potential bias in her algorithms. What would be the benefit of
+      collaborating with colleagues?
+    correct_options:
+      - Multiple people with different life experiences can see the code and give
+        perspective on the ways the original programmer can decrease bias.
+    wrong_options:
+      - When collaborationg, too many people try to lead the group and not enough
+        members are willing to take a backseat, which will delay the release of the
+        program.
+      - Conflicts in the working styles within the group will decrease staff morale.
+      - With multiple people looking over code, errors can be quickly fixed.
+  - question: Which of the following examples LEAST likely indicates a phishing attack?
+    correct_options:
+      - "An email from your credit card company with the correct bank logo indicates
+        that there has been unusual activity on your credit card and to call the
+        number on your card to confirm the purchase.  "
+    wrong_options:
+      - "An email indicates that a password is expiring and asks you to click a link
+        to renew your password.  "
+      - "An email from a familiar company, which has the exact look of previous
+        emails from this company, reports that the current credit card information
+        on file has expired and has a link for you to reenter credit card
+        information.  "
+      - "An email from the IRS contains the correct IRS logo and asks you to submit
+        your social security number so the IRS can mail an additional tax refund.
+        Additionally, the email contains a warning that if this information is not
+        filled out within 30 days, the refund will be lost.  "
+  - question: In 2013, hackers tricked a third-party vendor into clicking a
+      malicious link that installed software that compromised the credit card
+      numbers and other personal information for millions of customers of Target, a
+      large retail chain. What category of cyber attack does the Target hack fit?
+    correct_options:
+      - "Phishing attack"
+    wrong_options:
+      - Keylogging
+      - Rogue access point
+      - Packet metadata
+  - question: >-
+      A small team of butterfly researchers are working on a project that monitors
+      the success rate of the caterpillars to butterfly transition. Which of the
+      following best explains why citizen science is considered useful for this
+      project?  
+
+      *Select two answers.*
+    correct_options:
+      - "Distributed individuals are more likely able to count a larger number of
+        caterpillars and butterflies over a larger area than a small team of
+        researchers.  "
+      - "The reach of social media can be used to allow interested individuals from
+        different locations to contribute to this project.  "
+    wrong_options:
+      - "The general public are more likely to accurately identify the type of
+        caterpillar.  "
+      - >
+        Counting caterpillars and butterflies is inherently too complex for citizen
+        scientists.
+  - question: >-
+      A certain computer has two identical processors that can run in parallel. Each
+      processor can run only one process at a time, and each process must be
+      executed on a single processor. In this problem, processes four and five must
+      be run sequentially while processes one, two, and three can all run in
+      parallel. The following table indicates the amount of time each process takes
+      to execute on a single processor.
+
+
+      | Process | Execution Time (seconds) |
+
+      |---------|--------------------------|
+
+      | One     | 3                        |
+
+      | Two     | 2                        |
+
+      | Three   | 5                        |
+
+      | Four    | 4                        |
+
+      | Five    | 4                        |
+
+
+      Which of the following best approximates the minimum possible time to run the
+      five processes?
+    correct_options:
+      - 13 seconds
+    wrong_options:
+      - 5 seconds
+      - 9 seconds
+      - 18 seconds
+  - question: >-
+      In general, which of the following are NOT advantages of using computer
+      simulations?  
+
+      *Select two answers.*
+    correct_options:
+      - "Simulations are more expensive to use and harder to make changes to  "
+      - "Information gathered by simulations is more accurate than that gathered by
+        real-world experiments  "
+    wrong_options:
+      - "The parameters of a simulation can be altered easily to test varying
+        circumstances"
+      - "Simulations can run faster than real-time experiments and thus save time  "
+  - question:
+      Which of the following would **NOT** be considered a reasonable number
+      of steps if an algorithm has _n_ number of steps?
+    correct_options:
+      - 3ⁿ
+    wrong_options:
+      - n
+      - "4n + 8n²"
+      - 100n⁴
+  - question: >-
+      Which of the following are benefits to having information be easy to access?
+
+
+      I. Information can be easily found by researchers, which can improve
+      experimental and investigational findings.  
+
+      II. Information can be easily found by students, who can use it to improve
+      their understanding of a topic.  
+
+      III. Information can be easily checked by third parties, which ensures that it
+      is always correct and up-to-date.
+    correct_options:
+      - "I and II  "
+    wrong_options:
+      - I, II, and III
+      - II only
+      - "I only "
+  - question: >-
+      Which of the following code segments will correctly search for a value using a
+      binary search?
+
+
+      **Abstractions used:**  
+
+      - `Sort(list)` — Sorts a list from lowest to highest number  
+
+      - `Combine(list1, list2)` — Creates a new list by combining the elements of
+      list1 followed by the elements of list2  
+
+      - `BinarySearch(list, value)` — Returns the index of `value` in `list` using a
+      binary search. Returns -1 if not in the list.
+    correct_options:
+      - |-
+        resultList ← Sort(Combine(list1, list2))  
+        BinarySearch(resultList, value)
+    wrong_options:
+      - |-
+        BinarySearch(list1, value)  
+        BinarySearch(list2, value)
+      - |-
+        resultList ← Combine(list1, list2)  
+        BinarySearch(resultList, value)
+      - |-
+        list1 ← Sort(list1)  
+        list2 ← Sort(list2)  
+        resultList ← Combine(list1, list2)  
+        BinarySearch(resultList, value)
+  - question: >-
+      Which of the following codes would move the robot one square forward 1% of the
+      time?  
+
+
+      The question uses a robot in a grid of squares. The robot is represented as a
+      triangle, which is initially facing toward the top of the grid.
+    correct_options:
+      - |-
+        IF RANDOM(1, 100) = 4  
+        MOVE_FORWARD()
+      - |-
+        IF RANDOM(1, 100) < 2  
+        MOVE_FORWARD()
+    wrong_options:
+      - |-
+        IF RANDOM(0, 100) = 4  
+        MOVE_FORWARD()
+      - |-
+        IF RANDOM(1, 100) ≤ 2  
+        MOVE_FORWARD()
+  - question: >-
+      Using a binary search, how many iterations would it take to find the letter `u`?
+
+      str ← [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+    correct_options:
+      - "3"
+    wrong_options:
+      - "2"
+      - "23"
+      - "24"
+  - question: >-
+      Using a linear search, how many iterations would it take to find the letter
+      `x`?
+
+
+      str ← [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x,
+      y, z]
+    correct_options:
+      - "24"
+    wrong_options:
+      - "3"
+      - "4"
+      - "23"
+  - question: >-
+      What will the below algorithm display?
+
+
+      **Flowchart Blocks Used:**  
+
+      - **Oval**: The start or end of the algorithm  
+
+      - **Parallelogram**: Display a message  
+
+      - **Diamond**: A conditional or decision step  
+
+      - **Rectangle**: One or more processing steps, such as a statement that
+      assigns a value to variables
+
+
+      ```mermaid
+
+      flowchart TD
+          Start([Start]) --> A[Set num ← 1]
+          A --> B{num ≤ 7?}
+          B -- No --> End([End])
+          B -- Yes --> C{num MOD 2 = 0}
+          C -- Yes --> D[Display num]
+          C -- No --> E
+          D --> E[Set num ← num + 1]
+          E --> B
+
+      ```
+    correct_options:
+      - "8"
+    wrong_options:
+      - "6"
+      - "10"
+      - No numbers due to an infinite loop
+  - question: |-
+      Sequencing, selection, and iteration are building blocks of algorithms.  
+      Which of the following is considered **selection**?
+    correct_options:
+      - Using a Boolean condition to determine which part of an algorithm is used
+    wrong_options:
+      - The repetition of part of an algorithm until a condition is met or for a
+        specified number of times
+      - The decision to use a high-level computing language to evaluate an algorithm
+      - The application of each step of an algorithm in the order in which the
+        statements are given
+  - question:
+      If your algorithm needs to search through a list of sorted words, what
+      type of search would you use?
+    correct_options:
+      - Linear search
+    wrong_options:
+      - Binary search
+      - Bubble sort
+      - Insertion sort
+  - question: >-
+      The code segment below is a test program intended to diagnose the disease held
+      by a young child based on a user's entry of `fatigue_present` and `has_cough`.
+
+      ```
+
+      IF fatigue_present AND has_cough
+
+        DISPLAY "Flu"
+
+
+      IF has_cough
+
+        DISPLAY "Cold"
+
+
+      DISPLAY "Healthy"
+
+      ```
+
+      If all variables have the value TRUE, what is displayed as a result of running
+      the segments as shown?
+    correct_options:
+      - Flu Cold Healthy
+    wrong_options:
+      - Flu Healthy
+      - Cold
+      - Flu
+  - question: |-
+      What is a possible value that can be displayed after this code segment is run?
+      ```
+      a ← RANDOM(1, 10)
+      b ← RANDOM(11, 20)
+      a ← a - b
+      DISPLAY(a * -1)
+      ```
+    correct_options:
+      - "5"
+    wrong_options:
+      - "-5"
+      - "-1"
+      - "20"
+  - question: |-
+      What will the following code segment display?
+      ```
+      nums ← [1, 4, 7, 10, 13]
+      count ← 0
+
+      REPEAT LENGTH(nums) TIMES
+        DISPLAY nums[LENGTH(nums) - count]
+        count ← count + 1
+      ```
+    correct_options:
+      - 13 10 7 4 1
+    wrong_options:
+      - "35"
+      - 1 4 7 10 13
+      - 1 4 7 1 4 7
+  - question: |-
+      What is displayed after running the following algorithm?
+      ```
+      list1 ← [1, 35, 6, 76, -4, -98]
+      min ← 0
+      FOR EACH item IN list1
+        IF item < min
+          min ← item
+      DISPLAY min
+      ```
+    correct_options:
+      - "-98"
+    wrong_options:
+      - "-4"
+      - "0"
+      - "76"
+  - question: |-
+      What is displayed after running the following algorithm?
+      ```
+      list1 ← [-1, -35, -6, -76, -4, -98]
+      max ← 0
+      FOR EACH item IN list1
+        IF item > max
+          max ← item
+      DISPLAY max
+      ```
+    correct_options:
+      - "0"
+    wrong_options:
+      - "-1"
+      - "-98"
+      - "-76"
+  - question: >-
+      The procedure `getTotalEven` is intended to display the sum of all the even
+      numbers in the list.  
+
+      Which of the following procedures will **correctly** display the total of the
+      even numbers in the list?
+    correct_options:
+      - |-
+        PROCEDURE getTotalEven(list)  
+          total ← 0  
+          FOR EACH item IN list  
+            IF item MOD 2 = 1  
+              total ← total + item  
+          DISPLAY total
+    wrong_options:
+      - |-
+        PROCEDURE getTotalEven(list)  
+          total ← 0  
+            FOR EACH item IN list  
+              total ← total + item  
+          DISPLAY total
+      - |-
+        PROCEDURE getTotalEven(list)  
+          total ← 0  
+          FOR EACH item IN list  
+            total ← total + (item MOD 2)  
+          DISPLAY total
+      - |-
+        PROCEDURE getTotalEven(list)  
+          total ← 0  
+          FOR EACH item IN list  
+            IF item MOD 2 = 1  
+              total ← total + item  
+          DISPLAY total
+  - question: >-
+      What is the percentage chance that the robot lands on the star?
+
+      <table style="border-collapse: collapse; text-align: center;">
+        <tbody>
+          <tr>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+          </tr>
+          <tr>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+          </tr>
+          <tr>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc; font-size: 24px;">▶️</td> <!-- 로봇 -->
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc; font-size: 24px;">★</td> <!-- 별 -->
+          </tr>
+          <tr>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+          </tr>
+          <tr>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+            <td style="width: 50px; height: 50px; border: 1px solid #ccc;"></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      ```
+      REPEAT UNTIL (CAN_MOVE(forward) = false)
+        MOVE_FORWARD()
+
+      REPEAT 6 TIMES
+      ROTATE_RIGHT
+      x ← RANDOM(0, 3)
+
+      REPEAT x TIMES
+      MOVE_FORWARD
+      ```
+    correct_options:
+      - 50%
+    wrong_options:
+      - 0%
+      - 25%
+      - 100%
+  - question: >-
+      The following question uses a robot in a grid of squares.  
+
+      The robot is represented as a triangle, which is initially in the
+      **bottom-left square and facing right**.  
+
+      Which of the following code segments places the robot in the gray goal?  
+
+      ```java
+
+      PROCEDURE moveForward (int y)
+
+      {
+          REPEAT y TIMES
+          {
+              MOVE_FORWARD()
+          }
+      }
+
+
+      PROCEDURE TurnRight (int x)
+
+      {
+          REPEAT x TIMES
+          {
+              TURN_RIGHT()
+          }
+      }
+
+      ```
+
+      <table style="border-collapse: collapse;">
+        <tbody>
+          <!-- Row 1 -->
+          <tr>
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (1,1) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (1,2) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (1,3) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (1,4) -->
+            <td style="width:52px; height:52px; background:gray; border:1px solid black;"></td>  <!-- (1,5) 목표 -->
+          </tr>
+          <!-- Row 2 -->
+          <tr>
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (2,1) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (2,2) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (2,3) -->
+            <td style="width:52px; height:52px; background:white; border:1px solid black;"></td> <!-- (2,4) -->
+            <td style="width:52px; height:52px; background:white; border:1px solid black;"></td> <!-- (2,5) -->
+          </tr>
+          <!-- Row 3 -->
+          <tr>
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (3,1) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (3,2) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (3,3) -->
+            <td style="width:52px; height:52px; background:white; border:1px solid black;"></td> <!-- (3,4) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (3,5) -->
+          </tr>
+          <!-- Row 4 -->
+          <tr>
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (4,1) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (4,2) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (4,3) -->
+            <td style="width:52px; height:52px; background:white; border:1px solid black;"></td> <!-- (4,4) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (4,5) -->
+          </tr>
+          <!-- Row 5 -->
+          <tr>
+            <td style="width:52px; height:52px; background:white; border:1px solid black; font-size: 24px;">▶️</td> <!-- (5,1) 로봇 -->
+            <td style="width:52px; height:52px; background:white; border:1px solid black;"></td>  <!-- (5,2) -->
+            <td style="width:52px; height:52px; background:white; border:1px solid black;"></td>  <!-- (5,3) -->
+            <td style="width:52px; height:52px; background:white; border:1px solid black;"></td>  <!-- (5,4) -->
+            <td style="width:52px; height:52px; background:black; border:1px solid black;"></td> <!-- (5,5) -->
+          </tr>
+        </tbody>
+      </table>
+    correct_options:
+      - |-
+        MoveForward(3)  
+        TurnRight(3)  
+        MoveForward(3)  
+        TurnRight(1)  
+        MoveForward(1)  
+        TurnRight(3)  
+        MoveForward(1)
+    wrong_options:
+      - |-
+        MoveForward(4)  
+        TurnRight(1)   
+        MoveForward(4)  
+        TurnRight(1)  
+        MoveForward(1)  
+        TurnRight(1)  
+        MoveForward(1)
+      - |-
+        MoveForward(4)  
+        TurnRight(3)  
+        MoveForward(4)  
+        TurnRight(1)  
+        MoveForward(1)  
+        TurnRight(3)  
+        MoveForward(1)
+      - |-
+        MoveForward(3)  
+        TurnRight(3)  
+        MoveForward(3)  
+        TurnRight(3)  
+        MoveForward(1)  
+        TurnRight(3)  
+        MoveForward(1)
+  - question: |-
+      What elements does list2 contain after the algorithm is run?
+
+      ```
+      list1 ← [1, 1, 35, 6, 76, -4, -98]
+      list2 ← [ ]
+
+      FOR EACH item IN list1
+        IF item MOD 2 = 0 AND item MOD 2 = 1
+          APPEND list2, item
+      ```
+    correct_options:
+      - "[]"
+    wrong_options:
+      - "[-4, -98]"
+      - "[1, 35, 6, 76, -4, -98]"
+      - "[6, 4, 98]"
+  - question: |-
+      How many times does the inner loop iterate in the following?
+      ```
+      REPEAT x TIMES
+      {
+          REPEAT y TIMES
+          {
+              <Program Statement>
+          }
+      }
+      ```
+    correct_options:
+      - x * y
+    wrong_options:
+      - 2x
+      - y * (x - 1)
+      - 2x * y
+  - question: >-
+      The figure below uses a robot in a grid of squares. The robot is represented
+      as a triangle, which is initially in the bottom-left square and facing right.
+      Which of the following algorithms will place the robot into the grey square?
+
+
+      <div style="display: grid; grid-template-columns: repeat(5, 52px);
+      grid-template-rows: repeat(5, 52px); width: 260px; border: 2px solid black;">
+        <!-- Row 1 -->
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:gray; border: 1px solid black;"></div>
+        <!-- Row 2 -->
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <!-- Row 3 -->
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <!-- Row 4 -->
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <!-- Row 5 -->
+        <div style="background:white; border: 1px solid black; display: flex; align-items: center; justify-content: center;">▶️</div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+        <div style="background:white; border: 1px solid black;"></div>
+      </div>
+    correct_options:
+      - |-
+        REPEAT 4 TIMES
+        {
+        MOVE_FORWARD()
+        }
+        ROTATE_LEFT()
+        REPEAT 4 TIMES
+        {
+        MOVE_FORWARD()
+        }
+    wrong_options:
+      - |-
+        ROTATE_LEFT()
+        MOVE_FORWARD()
+        MOVE_FORWARD()
+        MOVE_FORWARD()
+        MOVE_FORWARD()
+        ROTATE_LEFT()
+        MOVE_FORWARD()
+        MOVE_FORWARD()
+        MOVE_FORWARD()
+        MOVE_FORWARD()
+      - |-
+        ROTATE_LEFT()
+        REPEAT 4 TIMES
+        {
+        MOVE_FORWARD()
+        }
+        ROTATE_LEFT()
+        REPEAT 4 TIMES
+        {
+        MOVE_FORWARD()
+        }
+      - |-
+        ROTATE_LEFT()
+        REPEAT 4 TIMES
+        {
+        MOVE_FORWARD()
+        }
+        ROTATE_LEFT()
+        ROTATE_LEFT()
+        REPEAT 4 TIMES
+        {
+        MOVE_FORWARD()
+        }
+  - question: |-
+      What percentage of the time will the following program display an even number?
+      ```
+      DISPLAY(RANDOM(1, 10))
+      ```
+    correct_options:
+      - 50%
+    wrong_options:
+      - 0%
+      - 10%
+      - 40%
+  - question: >-
+      Which of the following codes performs the following?
+
+
+      Step 1: A user enters a number.  
+
+      Step 2: If the number is between 0 and 10 inclusive, write the word
+      *Waffles*.  
+
+      Step 3: If the number is between 11 and 20 inclusive, write the word
+      *Novack*.  
+
+      Step 4: If it’s any other number, write the word *Benji*.
+    correct_options:
+      - |-
+        num ← input()  
+        IF num ≥ 0 and num ≤ 10  
+          DISPLAY("waffles")  
+        IF num ≥ 11 and num ≤ 20  
+          DISPLAY("Novack")  
+        IF num > 20  
+          DISPLAY("Benji")
+    wrong_options:
+      - |-
+        num ← input()  
+        IF num ≥ 0 and num ≤ 10  
+          DISPLAY("waffles")  
+        ELSE IF num ≥ 11 and num ≤ 20  
+          DISPLAY("Novack")  
+        ELSE  
+          DISPLAY("Benji")
+      - |-
+        num ← input()  
+        IF num ≥ 0 and num ≤ 10  
+          DISPLAY("waffles")  
+        IF num ≥ 11 and num ≤ 20  
+          DISPLAY("Novack")  
+        ELSE  
+          DISPLAY("Benji")
+      - |-
+        num ← input()  
+        IF num > 0 and num < 10  
+          DISPLAY("waffles")  
+        IF num > 10 and num < 20  
+          DISPLAY("Novack")  
+        ELSE  
+          DISPLAY("Benji")
+  - question: Which of the expressions are equivalent to the Boolean expression
+      NOT(num < 13)?
+    correct_options:
+      - num > 13 OR num = 13
+    wrong_options:
+      - num > 13
+      - num < 13 AND num = 13
+      - num > 13 AND num = 13
+  - question: Why would a heuristic analysis be useful in an antivirus program?
+    correct_options:
+      - Heuristic solutions are used when an exact solution is not needed. By not
+        checking every file and instead just investigating the most likely infected
+        programs, it will decrease the run time of antivirus programs.
+    wrong_options:
+      - A heuristic solution will fully guarantee that the entire computer will be
+        virus free.
+      - It is more capable of separating dangerous viruses from simple adware.
+      - It is able to pick out viruses without selecting false positives and without
+        requiring a full file scan at all.
+  - question: |-
+      A simulation for a coin flip should result in 50% heads and 50% tails.  
+      Select two answers that could replace the missing condition.
+      ```
+      sum ← 0  
+      REPEAT 1000 TIMES  
+        IF < MISSING CONDITION >  
+          sum ← sum + 1  
+
+      IF sum = 500  
+        DISPLAY "TRUE"  
+      ELSE  
+        DISPLAY "FALSE"
+      ```
+      **Select two answers.**
+    correct_options:
+      - RANDOM(1, 10) < 6
+      - RANDOM(1, 2) = 2
+    wrong_options:
+      - RANDOM(1, 5) < 2
+      - RANDOM(6, 10) < 6
+  - question: |-
+      Which of the following is **NOT** a possible answer?
+
+      **Select two answers.**  
+
+      `DISPLAY(RANDOM(1, 4) + RANDOM(2, 5))`
+    correct_options:
+      - "1"
+      - "10"
+    wrong_options:
+      - "5"
+      - "6"
+  - question: |-
+      The algorithm below displays TRUE 60% of the time.
+
+      ```
+      x ← RANDOM(5 , 14)
+      IF <MISSING CONDITION>
+          DISPLAY("TRUE")
+      ELSE
+          DISPLAY("FALSE")
+      ```
+      What can replace "MISSING CONDITION" so that the algorithm works as intended?
+      **Select Two Answers*
+    correct_options:
+      - x > 8
+      - x <= 10
+    wrong_options:
+      - x > 10
+      - x >= 10

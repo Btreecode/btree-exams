@@ -1,0 +1,137 @@
+questions:
+  - question: |-
+      When writing a program, what is true about program documentation?  
+      I. Program documentation is useful while writing the program.  
+      II. Program documentation is useful after the program is written.  
+      III. Program documentation is not useful when run speed is a factor.
+    correct_options:
+      - I and II only
+    wrong_options:
+      - I only
+      - II only
+      - I,II, and III
+  - question: |-
+      What will the following code segment display?
+      ```
+      list1 ← [11, 3, 5, 6]
+      DISPLAY list1[4]
+      ```
+    correct_options:
+      - "6"
+    wrong_options:
+      - "3"
+      - "11"
+      - Nothing will be displayed due to an error.
+  - question: |-
+      What is displayed after running the following algorithm?
+      ```
+      list1 ← [1, 1, 35, 6]
+      total ← 0
+      FOR EACH item IN list1
+        total ← total + item
+      DISPLAY total
+      ```
+    correct_options:
+      - "43"
+    wrong_options:
+      - "35"
+      - "68"
+      - "73"
+  - question: |-
+      What error has occurred if the phrase “Error” is displayed?
+
+      ```plaintext
+      x ← 2/3  
+      y ← 2/3  
+      IF x = y  
+          DISPLAY "Correct"  
+      ELSE  
+          DISPLAY "Error"
+      ```
+    correct_options:
+      - Roundoff error
+    wrong_options:
+      - Overflow error
+      - Logical error
+      - 2/3 will always equal 2/3
+  - question: >-
+      A programmer is planning to make a program that allows a company to organize
+      its employees by name, ID number, and salary. Suppose the programmer is making
+      a procedure called `newEntry` that takes in this data to create a new entry.  
+
+
+      Which of the following would be a good header for the procedure?
+    correct_options:
+      - newEntry(name, idNo, salary)
+    wrong_options:
+      - newEntry(n, i, s)
+      - newEntry(id, n, s, n)
+      - newEntry(name, idNO)
+  - question:
+      Why is it best to use an iterative and incremental process of program
+      development?
+    correct_options:
+      - It's easier to find errors because any error-causing code is usually in the
+        last change.
+    wrong_options:
+      - It is faster because it requires less testing.
+      - It always produces the desired output regardless of the point in the
+        development cycle.
+      - It requires less processor time at all stages of development.
+  - question:
+      Most coding languages enable programmers to include a source file in
+      the form of abstractions. For example, in C++, the command `#include
+      <iostream>` grants the program access to basic input/output commands. Why
+      would such a feature be useful in a language?
+    correct_options:
+      - It enables features to be used in multiple programs, which reduces the
+        complexity of the code by allowing for reuse.
+    wrong_options:
+      - It is a useful reminder to copy the entire source file at a later time.
+      - It ensures programmers can modify the language’s functions.
+      - It enables programmers to increase the level of complexity of the program
+        and just focus on the current program.
+  - question: >-
+      "Boids" is a flocking algorithm that is used to determine the direction of
+      objects in a moving population. It is built on three principles:
+
+
+      I. Separation: steer to keep local flock mates at a certain distance  
+
+      II. Alignment: steer toward the average heading  
+
+      III. Cohesion: steer toward the center of the flock  
+
+
+      Suppose that a programmer is creating a method called `findBoidHeading` that
+      calculates the heading of an individual boid in the flock. `findBoidHeading`
+      takes in a data structure of the other boids in the program.  
+
+
+      The following commands are used on Boid objects. Assume that the name is
+      representative of the function. Which might be useful in `findBoidHeading`?  
+
+
+      **Select two answers.**
+    correct_options:
+      - getVelocity
+      - getHeading
+    wrong_options:
+      - getDate
+      - getShape
+  - question: >-
+      Why is it more effective to use abstractions in a program than to repeat
+      code?  
+
+
+      **Select two answers.**
+    correct_options:
+      - Abstractions simplify editing by requiring only one edit to the abstraction
+        rather than to every instance of the code.
+      - Using abstractions takes up less space than repeating code, which makes the
+        program easier to read.
+    wrong_options:
+      - Abstractions make it harder to edit because every extraction is saved on a
+        distinct file.
+      - Abstractions are guaranteed to work in every instance, and if they work
+        once, they are used.
