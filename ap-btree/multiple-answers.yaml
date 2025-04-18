@@ -1,0 +1,42 @@
+---
+questions:
+  # SIMPLE
+  - question: Check all even numbers
+    correct_options: [2, 4, 6]
+    wrong_options: [3.1415]
+
+  # MORE MULTILINES
+  - question: |
+      Which code will result in the following output? Pick all the applies
+
+      ```
+      1
+      ```
+
+    correct_options:
+      - |
+        ```java
+        for(int i=0; i<1; i++) {
+          System.out.println(i+1);
+        }
+        ```
+      - |
+        ```python
+        print(1)
+        ```
+    wrong_options:
+      - `print(100)`
+      - |
+        ```java
+        if (1 < 2) {
+          System.out.println(1);
+        }
+        ```
+      - |
+        ```python
+        # print 1
+        ```
+      - |
+        ```java
+        1
+        ```

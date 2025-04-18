@@ -1,0 +1,14 @@
+---
+questions:
+  - question: What is **1+1**
+    correct_options: [2]
+    wrong_options: [3, 4, 5]
+
+  - question: |
+      What is the result of executing the following code
+
+      ```java
+      System.out.println("hello world");
+      ```
+    correct_options: ["Hello World"]
+    wrong_options: ["Good Bye", "Life is good", "Just do it"]
