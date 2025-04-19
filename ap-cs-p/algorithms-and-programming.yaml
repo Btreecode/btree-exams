@@ -417,3 +417,56 @@ questions:
     wrong_options:
       - The program never correctly displays the correct value for count.
       - TRUE when A is TRUE and B is FALSE
+  - question: >-
+      What should replace <missing condition> so that the program below displays
+      TRUE 10% of the time?
+
+      ```
+      x ← RANDOM(1, 10)
+              IF <missing condition>
+                  DISPLAY "TRUE"
+              ELSE
+                  DISPLAY "FALSE"
+      ```
+
+    correct_options:
+      - x <= 9
+    wrong_options:
+      - x < 1
+      - x <= 1
+      - x < 9
+  - question: >-
+      Consider the following code segment, which uses the variables x, y, and z.
+      What will the following program display?
+
+
+      Line 1:  x ← 6  
+
+      Line 2:  y ← 12  
+
+      Line 3:  z ← 24  
+
+      Line 4:  IF (y MOD x = 0)  
+
+      Line 5:  {  
+
+      Line 6:      x ← y  
+
+      Line 7:  }  
+
+      Line 8:  IF (z MOD x = 0)  
+
+      Line 9:  {  
+
+      Line 10:     z ← x  
+
+      Line 11: }  
+
+      Line 12: DISPLAY (x, y, z)
+    correct_options:
+      - 12 12 12
+    wrong_options:
+      - 6 12 24
+      - 24 24 24
+      - 12 24 24
+  

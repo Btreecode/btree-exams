@@ -67,7 +67,7 @@ questions:
       - newEntry(n, i, s)
       - newEntry(id, n, s, n)
       - newEntry(name, idNO)
-  - question:
+  - question: >-
       Why is it best to use an iterative and incremental process of program
       development?
     correct_options:
@@ -78,7 +78,7 @@ questions:
       - It always produces the desired output regardless of the point in the
         development cycle.
       - It requires less processor time at all stages of development.
-  - question:
+  - question: >-
       Most coding languages enable programmers to include a source file in
       the form of abstractions. For example, in C++, the command `#include
       <iostream>` grants the program access to basic input/output commands. Why
@@ -135,3 +135,75 @@ questions:
         distinct file.
       - Abstractions are guaranteed to work in every instance, and if they work
         once, they are used.
+  - question: >-
+      A video game played using a home system has released the second game in the
+      series, which uses a mobile phone to play the game. This upgraded game
+      interacts with real-life locations, resulting in a virtual reality experience.
+      The user interacts with the game based on his or her location and the time of
+      day. The game will not work if the user is traveling faster than 3 miles per
+      hour to prevent people from playing while driving. By making events at
+      locations of interest, the video game will expose the user to public artwork,
+      historical sites, and local businesses.
+
+      Which of the following input data is needed by the upgraded game that was NOT
+      needed by the original game?
+    correct_options:
+      - GPS location
+    wrong_options:
+      - Event sensing; an event would be the user pushing a button or screen
+      - Age of the player
+      - Picture of the player
+  - question: >-
+      A video game played using a home system has released the second game in the
+      series, which uses a mobile phone to play the game. This upgraded game
+      interacts with real-life locations, resulting in a virtual reality experience.
+      The user interacts with the game based on his or her location and the time of
+      day. The game will not work if the user is traveling faster than 3 miles per
+      hour to prevent people from playing while driving. By making events at
+      locations of interest, the video game will expose the user to public artwork,
+      historical sites, and local businesses.
+
+      Which of the following data is not provided directly by the user but is
+      necessary for the upgraded game to operate as described?
+    correct_options:
+      - Location of landmarks used in the game
+    wrong_options:
+      - GPS location of user
+      - Speed traveling
+      - User name
+  - question: >-
+      A video game played using a home system has released the second game in the
+      series, which uses a mobile phone to play the game. This upgraded game
+      interacts with real-life locations, resulting in a virtual reality experience.
+      The user interacts with the game based on his or her location and the time of
+      day. The game will not work if the user is traveling faster than 3 miles per
+      hour to prevent people from playing while driving. By making events at
+      locations of interest, the video game will expose the user to public artwork,
+      historical sites, and local businesses.
+
+      Which of the following is LEAST likely to be included with the game?
+    correct_options:
+      - What protocols the mobile device uses to connect to the internet
+    wrong_options:
+      - What types of mobile devices can be used
+      - Location of high-crime areas
+      - Location of highly trafficked roads and bridges
+  - question: >-
+      A video game played using a home system has released the second game in the
+      series, which uses a mobile phone to play the game. This upgraded game
+      interacts with real-life locations, resulting in a virtual reality experience.
+      The user interacts with the game based on his or her location and the time of
+      day. The game will not work if the user is traveling faster than 3 miles per
+      hour to prevent people from playing while driving. By making events at
+      locations of interest, the video game will expose the user to public artwork,
+      historical sites, and local businesses.
+
+      Which of the following is considered a potential effect of the mobile game
+      rather than the purpose of the game?
+    correct_options:
+      - People are not watching where they are walking and are getting injured
+    wrong_options:
+      - People are exercising
+      - Social anxiety is decreasing when interacting with other players
+      - Players are becoming more cultured by visiting artworks
+  - 
