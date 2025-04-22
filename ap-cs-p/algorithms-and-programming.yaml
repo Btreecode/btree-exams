@@ -1,472 +1,1190 @@
-questions:
-  - question: |-
-      Consider the following code segment, which uses the variable a and c  
-      ```
-      a <- 3  
-      a <- a + 5  
-      c <- 3  
-      a <- c + a  
-
-      Display(a)  
-      Display(c)
-      ```
-      what is displayed when running the code segment?
-    correct_options:
-      - 11 and 3
-    wrong_options:
-      - 3 3
-      - 3 8
-      - 3 11
-  - question: |-
-      What type of error will the following procedure cause?  
-      ```
-      Line 1: alist ← [1, 1, 35, 6]  
-      Line 2: DISPLAY mystery(alist)  
-      Line 3: PROCEDURE mystery(alist)  
-      Line 4: RETURN alist[0]  
-      ```
-    correct_options:
-      - Runtime error on line 4
-    wrong_options:
-      - Logic error on line 1
-      - Syntax error on line 4
-      - Overflow error on line 1
-  - question: >-
-      A small team of butterfly researchers are working on a project that monitors
-      the success rate of the caterpillars to butterfly transition. Which of the
-      following best explains why citizen science is considered useful for this
-      project?  
-
-      *Select two answers.*
-    correct_options:
-      - Distributed individuals are more likely able to count a larger number of
-        caterpillars and butterflies over a larger area than a small team of
-        researchers.
-      - The reach of social media can be used to allow interested individuals from
-        different locations to contribute to this project.
-    wrong_options:
-      - The general public are more likely to accurately identify the type of
-        caterpillar.
-      - Counting caterpillars and butterflies is inherently too complex for citizen
-        scientists.
-  - question: |-
-      What type of error will the following procedure cause?  
-      ```
-      Line 1: alist ← [1, 1, 35, 6]  
-      Line 2: DISPLAY mystery(alist)  
-      Line 3: PROCEDURE mystery(alist)  
-      Line 4: RETURN alist[0]  
-      ```
-    correct_options:
-      - Runtime error on line 4
-    wrong_options:
-      - Overflow error on line 1
-      - Syntax error on line 4
-      - Logic error on line 1
-  - question: |-
-      What will the following code display?  
-
-      ```
-      words ← ["Cat", "Meow", "Cow", "Bark"]  
-      DISPLAY mystery(words)  
-
-      PROCEDURE mystery(words)  
-        a ← "Friend"  
-        FOR EACH item IN words  
-        a ← a + item  
-        a ← a + "Friend"  
-        RETURN a
-      ```
-    correct_options:
-      - FriendCatMeowCowBarkFriend
-    wrong_options:
-      - Friend
-      - FriendFriend
-      - a
-  - question: |-
-      A restaurant uses phones to take reservations and to place to-go orders. The restaurant is planning to update its system to provide more options to customers while decreasing the ordering time. Customers will now interact with a website instead of an actual person.
-
-      The **upgraded system** (but not the original system) stores all information from the web interactions for future references. This includes food items ordered, address, telephone number, and credit card info.
-
-      The original system and the upgraded system are described in the following flowcharts. Each flowchart uses the following blocks:
-
-      | Block         | Explanation                                                                 |
-      |---------------|------------------------------------------------------------------------------|
-      | Oval          | The start of the algorithm                                                   |
-      | Parallelogram | An input or output step                                                      |
-      | Diamond       | A conditional or decision step, where execution proceeds to "Yes" or "No"   |
-      | Rectangle     | The result of the algorithm                                                  |
-
-      Original System
-      ```mermaid
-      flowchart TD
-          A[Start] --> B[Customer's call is answered by employee]
-          B --> C{Dining}
-          C -- Yes --> D{Reservation}
-          C -- No --> E[Customer's to-go order is recorded]
-          D -- Yes --> F[Customer's reservation is recorded]
-          D -- No --> E
-      ```
-
-      Upgraded System
-      ```mermaid
-      flowchart TD
-          A[Start] --> B[Customer visits website]
-          B --> C[Answer questions via email]
-          C --> D{Dining}
-          D -- Yes --> E{Reservation}
-          D -- No --> F{Pickup}
-          E -- Yes --> G[Customer's reservation is recorded]
-          E -- No --> H[Customer's order is recorded]
-          F -- Yes --> H
-          F -- No --> I{Delivery}
-          G --> J[Customer's address and customer's order are recorded]
-          H --> J
-          I -- Yes --> K[Customer's address and customer's order are recorded]
-          I -- No --> L[Customer's car make and model and customer's order are recorded]
-
-      ```
-
-      Which of the following input data is needed by the upgraded system but was NOT needed by the original system?
-    correct_options:
-      - Customer's car make and model
-    wrong_options:
-      - Time of pickup or reservation
-      - Name
-      - Order
-  - question: |-
-      A restaurant uses phones to take reservations and to place to-go orders. The restaurant is planning to update its system to provide more options to customers while decreasing the ordering time. Customers will now interact with a website instead of an actual person.
-
-      The **upgraded system** (but not the original system) stores all information from the web interactions for future references. This includes food items ordered, address, telephone number, and credit card info.
-
-      The original system and the upgraded system are described in the following flowcharts. Each flowchart uses the following blocks:
-
-      | Block         | Explanation                                                                 |
-      |---------------|------------------------------------------------------------------------------|
-      | Oval          | The start of the algorithm                                                   |
-      | Parallelogram | An input or output step                                                      |
-      | Diamond       | A conditional or decision step, where execution proceeds to "Yes" or "No"   |
-      | Rectangle     | The result of the algorithm                                                  |
-
-      Original System
-      ```mermaid
-      flowchart TD
-          A[Start] --> B[Customer's call is answered by employee]
-          B --> C{Dining}
-          C -- Yes --> D{Reservation}
-          C -- No --> E[Customer's to-go order is recorded]
-          D -- Yes --> F[Customer's reservation is recorded]
-          D -- No --> E
-      ```
-
-      Upgraded System
-      ```mermaid
-      flowchart TD
-          A[Start] --> B[Customer visits website]
-          B --> C[Answer questions via email]
-          C --> D{Dining}
-          D -- Yes --> E{Reservation}
-          D -- No --> F{Pickup}
-          E -- Yes --> G[Customer's reservation is recorded]
-          E -- No --> H[Customer's order is recorded]
-          F -- Yes --> H
-          F -- No --> I{Delivery}
-          G --> J[Customer's address and customer's order are recorded]
-          H --> J
-          I -- Yes --> K[Customer's address and customer's order are recorded]
-          I -- No --> L[Customer's car make and model and customer's order are recorded]
-
-      ```
-      The upgraded system uses data not supplied by the customer. The new site is supposed to increase sales by suggesting products (like “fries with that?”) and decreasing processing time.
-
-      Which of the following data is LEAST likely to be included in the web-based ordering system?
-    correct_options:
-      - IP address of the customer
-    wrong_options:
-      - Previous list of food orders
-      - A list of popular items frequently added to orders
-      - Time to prepare order
-  - question: |-
-      A restaurant uses phones to take reservations and to place to-go orders. The restaurant is planning to update its system to provide more options to customers while decreasing the ordering time. Customers will now interact with a website instead of an actual person.
-
-      The **upgraded system** (but not the original system) stores all information from the web interactions for future references. This includes food items ordered, address, telephone number, and credit card info.
-
-      The original system and the upgraded system are described in the following flowcharts. Each flowchart uses the following blocks:
-
-      | Block         | Explanation                                                                 |
-      |---------------|------------------------------------------------------------------------------|
-      | Oval          | The start of the algorithm                                                   |
-      | Parallelogram | An input or output step                                                      |
-      | Diamond       | A conditional or decision step, where execution proceeds to "Yes" or "No"   |
-      | Rectangle     | The result of the algorithm                                                  |
-
-      Original System
-      ```mermaid
-      flowchart TD
-          A[Start] --> B[Customer's call is answered by employee]
-          B --> C{Dining}
-          C -- Yes --> D{Reservation}
-          C -- No --> E[Customer's to-go order is recorded]
-          D -- Yes --> F[Customer's reservation is recorded]
-          D -- No --> E
-      ```
-
-      Upgraded System
-      ```mermaid
-      flowchart TD
-          A[Start] --> B[Customer visits website]
-          B --> C[Answer questions via email]
-          C --> D{Dining}
-          D -- Yes --> E{Reservation}
-          D -- No --> F{Pickup}
-          E -- Yes --> G[Customer's reservation is recorded]
-          E -- No --> H[Customer's order is recorded]
-          F -- Yes --> H
-          F -- No --> I{Delivery}
-          G --> J[Customer's address and customer's order are recorded]
-          H --> J
-          I -- Yes --> K[Customer's address and customer's order are recorded]
-          I -- No --> L[Customer's car make and model and customer's order are recorded]
-
-      ```
-      Which of the following is MOST likely a data privacy concern of the upgraded system?
-    correct_options:
-      - Customers’ personal data can be compromised if hackers gain access into the
-        ordering system
-    wrong_options:
-      - Storing customer information will increase the likelihood of a phishing
-        attack by rogue hackers
-      - Previous list of food orders
-      - Storing credit card information can provide the user with a better
-        experience by auto filling in data to speed up ordering
-  - question: |-
-      A restaurant uses phones to take reservations and to place to-go orders. The restaurant is planning to update its system to provide more options to customers while decreasing the ordering time. Customers will now interact with a website instead of an actual person.
-
-      The **upgraded system** (but not the original system) stores all information from the web interactions for future references. This includes food items ordered, address, telephone number, and credit card info.
-
-      The original system and the upgraded system are described in the following flowcharts. Each flowchart uses the following blocks:
-
-      | Block         | Explanation                                                                 |
-      |---------------|------------------------------------------------------------------------------|
-      | Oval          | The start of the algorithm                                                   |
-      | Parallelogram | An input or output step                                                      |
-      | Diamond       | A conditional or decision step, where execution proceeds to "Yes" or "No"   |
-      | Rectangle     | The result of the algorithm                                                  |
-
-      Original System
-      ```mermaid
-      flowchart TD
-          A[Start] --> B[Customer's call is answered by employee]
-          B --> C{Dining}
-          C -- Yes --> D{Reservation}
-          C -- No --> E[Customer's to-go order is recorded]
-          D -- Yes --> F[Customer's reservation is recorded]
-          D -- No --> E
-      ```
-
-      Upgraded System
-      ```mermaid
-      flowchart TD
-          A[Start] --> B[Customer visits website]
-          B --> C[Answer questions via email]
-          C --> D{Dining}
-          D -- Yes --> E{Reservation}
-          D -- No --> F{Pickup}
-          E -- Yes --> G[Customer's reservation is recorded]
-          E -- No --> H[Customer's order is recorded]
-          F -- Yes --> H
-          F -- No --> I{Delivery}
-          G --> J[Customer's address and customer's order are recorded]
-          H --> J
-          I -- Yes --> K[Customer's address and customer's order are recorded]
-          I -- No --> L[Customer's car make and model and customer's order are recorded]
-
-      ```
-      Of the following potential benefits, which is LEAST likely to be provided by the upgraded system?
-    correct_options:
-      - An increase in awareness of the restaurant
-    wrong_options:
-      - Customers being more likely to order to-go orders
-      - An increase in food per order
-      - A decrease in incorrect orders and delivery addresses
-  - question: |-
-      A restaurant uses phones to take reservations and to place to-go orders. The restaurant is planning to update its system to provide more options to customers while decreasing the ordering time. Customers will now interact with a website instead of an actual person.
-
-      The **upgraded system** (but not the original system) stores all information from the web interactions for future references. This includes food items ordered, address, telephone number, and credit card info.
-
-      The original system and the upgraded system are described in the following flowcharts. Each flowchart uses the following blocks:
-
-      | Block         | Explanation                                                                 |
-      |---------------|------------------------------------------------------------------------------|
-      | Oval          | The start of the algorithm                                                   |
-      | Parallelogram | An input or output step                                                      |
-      | Diamond       | A conditional or decision step, where execution proceeds to "Yes" or "No"   |
-      | Rectangle     | The result of the algorithm                                                  |
-
-      Original System
-      ```mermaid
-      flowchart TD
-          A[Start] --> B[Customer's call is answered by employee]
-          B --> C{Dining}
-          C -- Yes --> D{Reservation}
-          C -- No --> E[Customer's to-go order is recorded]
-          D -- Yes --> F[Customer's reservation is recorded]
-          D -- No --> E
-      ```
-
-      Upgraded System
-      ```mermaid
-      flowchart TD
-          A[Start] --> B[Customer visits website]
-          B --> C[Answer questions via email]
-          C --> D{Dining}
-          D -- Yes --> E{Reservation}
-          D -- No --> F{Pickup}
-          E -- Yes --> G[Customer's reservation is recorded]
-          E -- No --> H[Customer's order is recorded]
-          F -- Yes --> H
-          F -- No --> I{Delivery}
-          G --> J[Customer's address and customer's order are recorded]
-          H --> J
-          I -- Yes --> K[Customer's address and customer's order are recorded]
-          I -- No --> L[Customer's car make and model and customer's order are recorded]
-
-      ```
-      Which of the following may be an unintended effect of the upgraded system?
-    correct_options:
-      - Reservations will be primarily made by customers who can afford internet
-        access
-    wrong_options:
-      - Repeat business will increase
-      - Increase income for the staff
-      - Reservations for the restaurant will increase
-  - question: >-
-      What can replace `[missing condition]` to complete the last column of the
-      table?
-
-
-      | A | B | [missing condition] |
-
-      |---|---|----------------------|
-
-      | F | F | T                    |
-
-      | F | T | F                    |
-
-      | T | F | F                    |
-
-      | T | T | F                    |
-    correct_options:
-      - A AND NOT(B)
-    wrong_options:
-      - NOT(A OR B)
-      - A OR B
-      - A AND B
-  - question: >-
-      The diagram below shows a circuit composed of logic gates. Each gate takes two
-      inputs and produces a single output. What will the algorithm produce?
-
-
-      Diagram:
-
-      ```mermaid
-
-      graph TD
-          A1[TRUE] --> OR1
-          A2[A] --> OR1
-          OR1 --> AND1
-          A3[TRUE] --> AND1
-          AND1 --> OR2
-          A4[B] --> OR2
-          OR2 --> ANSWER[Answer]
-      ```
-    correct_options:
-      - Always TRUE regardless of the values of A and B
-    wrong_options:
-      - TRUE when both A and B are TRUE only
-      - TRUE when A is TRUE and B is FALSE
-      - Always FALSE regardless of the values of A and B
-  - question: >-
-      Consider the following procedure called `mystery`, which is intended to
-      display the number of times a number `target` appears in a list.
-
-
-      ```
-
-      PROCEDURE mystery(list, target)
-
-        count ← 0
-
-        FOR EACH item IN list
-
-          IF item = target
-
-            count ← count + 1
-
-        DISPLAY count
-
-      ```
-
-      Which of the following best describes the behavior of the procedure?  
-
-      **Select two answers.**
-    correct_options:
-      - The program correctly displays the count if the target is not in the list.
-      - The program correctly displays the count if the target appears once in the
-        list and also at the end of the list.
-    wrong_options:
-      - The program never correctly displays the correct value for count.
-      - TRUE when A is TRUE and B is FALSE
-  - question: >-
-      What should replace <missing condition> so that the program below displays
-      TRUE 10% of the time?
-
-      ```
-      x ← RANDOM(1, 10)
-              IF <missing condition>
-                  DISPLAY "TRUE"
-              ELSE
-                  DISPLAY "FALSE"
-      ```
-
-    correct_options:
-      - x <= 9
-    wrong_options:
-      - x < 1
-      - x <= 1
-      - x < 9
-  - question: >-
-      Consider the following code segment, which uses the variables x, y, and z.
-      What will the following program display?
-
-
-      Line 1:  x ← 6  
-
-      Line 2:  y ← 12  
-
-      Line 3:  z ← 24  
-
-      Line 4:  IF (y MOD x = 0)  
-
-      Line 5:  {  
-
-      Line 6:      x ← y  
-
-      Line 7:  }  
-
-      Line 8:  IF (z MOD x = 0)  
-
-      Line 9:  {  
-
-      Line 10:     z ← x  
-
-      Line 11: }  
-
-      Line 12: DISPLAY (x, y, z)
-    correct_options:
-      - 12 12 12
-    wrong_options:
-      - 6 12 24
-      - 24 24 24
-      - 12 24 24
-  
+- question: >-
+    A program includes the following code:
+
+    ```plaintext
+    num ← 4  
+    result ← num * 2 + 3  
+    DISPLAY(result)
+    ```
+
+    What will be displayed?
+  correct_options:
+    - 11
+  wrong_options:
+    - 7
+    - 10
+    - 8
+    - result
+    - num
+  explanation: >-
+    - **Correct:** 4 * 2 + 3 = 11.
+    - **Incorrect:** Others ignore order of operations or output variable values rather than names.
+
+- question: >-
+    A list named `scores` contains the following values: [4, 8, 15, 16, 23, 42]
+
+    Which of the following correctly accesses the third value in the list?
+  correct_options:
+    - scores[2]
+  wrong_options:
+    - scores[3]
+    - scores[1]
+    - scores(2)
+    - scores["third"]
+    - scores[4]
+  explanation: >-
+    - **Correct:** List indices start at 0, so the third value is at index 2.
+    - **Incorrect:** Index 3 gives the 4th value, and other syntax is invalid.
+
+- question: >-
+    Fill in the blank:  
+    A _______________ is used to simplify code by allowing a sequence of instructions to be reused multiple times.
+  correct_options:
+    - procedure
+  wrong_options:
+    - comment
+    - list
+    - loop
+    - expression
+    - constant
+  explanation: >-
+    - **Correct:** Procedures (or functions) encapsulate reusable logic.
+    - **Incorrect:** Loops repeat, but don’t encapsulate logic; others are not reusable blocks.
+
+- question: >-
+    What is the result of the following Boolean expression?
+
+    ```plaintext
+    (true AND false) OR (true AND true)
+    ```
+  correct_options:
+    - true
+  wrong_options:
+    - false
+    - AND
+    - OR
+    - undefined
+    - true AND false
+  explanation: >-
+    - **Correct:** 
+      - true AND false → false  
+      - true AND true → true  
+      - false OR true → true  
+    - **Incorrect:** Others misapply Boolean logic or treat expressions as values.
+
+- question: >-
+    Reorder the steps of the linear search algorithm:
+
+    a. Compare the current item to the target  
+    b. Return the index if it matches  
+    c. Move to the next item  
+    d. Start at the first item  
+    e. If no match is found, return -1
+
+  correct_options:
+    - d → a → b → c → e
+  wrong_options:
+    - a → d → c → b → e
+    - b → d → a → c → e
+    - d → c → a → b → e
+    - d → a → c → b → e
+  explanation: >-
+    - **Correct:** Search starts at the first item → check → return index or move on → repeat → fail = -1.
+    - **Incorrect:** Wrong orders skip logic or return before a check.
+
+- question: >-
+    Which of the following are examples of **abstraction** in programming?
+
+    Select **two** correct answers.
+  correct_options:
+    - Creating a function named `calculateGrade()` that wraps complex math
+    - Using a variable named `userAge` instead of the literal number 17
+  wrong_options:
+    - Repeating the same block of code for each student
+    - Using a list instead of a variable
+    - Typing out every operation in long form
+    - Avoiding procedures to make the code faster
+  explanation: >-
+    - **Correct:** Abstraction simplifies and hides complexity — functions and meaningful variable names do this.
+    - **Incorrect:** Avoiding abstraction or repeating code increases complexity.
+
+- question: >-
+    A student writes the following loop:
+
+    ```plaintext
+    count ← 1  
+    REPEAT UNTIL count = 5  
+        DISPLAY(count)  
+        count ← count + 1
+    ```
+
+    What is displayed?
+  correct_options:
+    - 1, 2, 3, 4
+  wrong_options:
+    - 1, 2, 3, 4, 5
+    - 0, 1, 2, 3, 4
+    - 1, 2, 3
+    - 5
+    - Nothing
+  explanation: >-
+    - **Correct:** Loop runs while count ≠ 5. It stops after displaying 4 and incrementing to 5.
+    - **Incorrect:** 5 is not displayed; counting doesn't start at 0.
+
+- question: >-
+    Which of the following problems are **undecidable**?
+
+    Select **two** correct answers.
+  correct_options:
+    - Determining if any program will always halt for all inputs
+    - Determining if a program outputs a specific result for every possible input
+  wrong_options:
+    - Determining if a number is even
+    - Checking if a list is empty
+    - Finding the sum of two values
+    - Searching for a value in a list
+  explanation: >-
+    - **Correct:** These are classic examples of problems with no general algorithmic solution (Halting Problem).
+    - **Incorrect:** The other tasks are solvable with algorithms.
+
+- question: >-
+    Which of the following are characteristics of **efficient algorithms**?
+
+    Select **two** correct answers.
+  correct_options:
+    - They complete tasks using fewer steps or comparisons
+    - They scale reasonably as the size of the input grows
+  wrong_options:
+    - They are shorter in code length
+    - They always use recursion
+    - They run faster only on small datasets
+    - They use more variables to store intermediate values
+  explanation: >-
+    - **Correct:** Efficiency refers to performance in time and space, especially at scale.
+    - **Incorrect:** Code length and recursion don’t determine efficiency; variables may or may not help.
+
+- question: >-
+    A student is writing a program to compute the average of values in a list.  
+    Which of the following strategies would be MOST appropriate?
+
+  correct_options:
+    - Use a loop to traverse the list and sum the values, then divide by the length
+  wrong_options:
+    - Sort the list and select the middle value
+    - Use only the first and last values
+    - Multiply all values together
+    - Convert the list into a string and find its length
+    - Remove all even values first
+  explanation: >-
+    - **Correct:** Averaging requires summing all values and dividing by count.
+    - **Incorrect:** Sorting gives the median; others don’t produce a valid mean.
+- question: >-
+    Consider the following code segment:
+
+    ```plaintext
+    x ← 4  
+    y ← 10  
+    IF y MOD x = 2  
+        DISPLAY("Divides evenly with remainder 2")  
+    ELSE  
+        DISPLAY("Does not divide evenly with remainder 2")
+    ```
+
+    What will be displayed?
+  correct_options:
+    - Divides evenly with remainder 2
+  wrong_options:
+    - Does not divide evenly with remainder 2
+    - 2
+    - 0
+    - Error
+    - Nothing
+  explanation: >-
+    - **Correct:** 10 MOD 4 = 2, so the condition evaluates to true.
+    - **Incorrect:** Other answers misinterpret the use of modulus or assume syntax issues.
+
+- question: >-
+    What does the following code segment output?
+
+    ```plaintext
+    words ← ["a", "b", "c"]  
+    PROCEDURE mystery(list)  
+        result ← ""  
+        FOR EACH item IN list  
+            result ← result + item  
+        RETURN result  
+
+    DISPLAY(mystery(words))
+    ```
+  correct_options:
+    - abc
+  wrong_options:
+    - a b c
+    - result
+    - list
+    - cba
+    - abcabc
+  explanation: >-
+    - **Correct:** Concatenates each string in the list: "a" + "b" + "c".
+    - **Incorrect:** Doesn’t separate with spaces or reverse — no repetition occurs.
+
+- question: >-
+    What type of error is produced by the following code?
+
+    ```plaintext
+    nums ← [5, 7, 9]  
+    DISPLAY(nums[5])
+    ```
+  correct_options:
+    - Runtime error
+  wrong_options:
+    - Syntax error
+    - Logic error
+    - Overflow error
+    - No error
+    - Type error
+  explanation: >-
+    - **Correct:** Index 5 is out of bounds for a list of size 3 — runtime error.
+    - **Incorrect:** Syntax is valid; no arithmetic overflow or type mismatch.
+
+- question: >-
+    What can replace `[missing condition]` to complete the truth table?
+
+    | A | B | [missing condition] |
+
+    |---|---|----------------------|
+
+    | F | F | T                    |
+
+    | F | T | T                    |
+
+    | T | F | F                    |
+
+    | T | T | F                    |
+  correct_options:
+    - NOT A
+  wrong_options:
+    - A AND NOT B
+    - A OR B
+    - A AND B
+    - A
+    - TRUE
+  explanation: >-
+    - **Correct:** The output is TRUE when A is FALSE — matches the NOT A logic.
+    - **Incorrect:** Others do not match the table logic or misinterpret conditions.
+
+- question: >-
+    Which of the following is an example of **procedural abstraction**?
+
+    Select **two** correct answers.
+  correct_options:
+    - Creating a function called `findMax()` to identify the largest number
+    - Writing a `calculateTax()` procedure instead of repeating tax logic everywhere
+  wrong_options:
+    - Using a loop to repeat a task 10 times
+    - Storing input in a variable named `x`
+    - Typing the same formula multiple times
+    - Renaming variables to shorter names
+  explanation: >-
+    - **Correct:** Abstraction groups logic into procedures for reuse and clarity.
+    - **Incorrect:** Loops and variables don’t abstract behavior; repetition is the opposite of abstraction.
+
+- question: >-
+    The following code is intended to simulate a 25% chance of displaying "YES":
+
+    ```plaintext
+    x ← RANDOM(1, 4)  
+    IF [missing condition]  
+        DISPLAY("YES")  
+    ELSE  
+        DISPLAY("NO")
+    ```
+
+    What should replace `[missing condition]`?
+  correct_options:
+    - x = 1
+  wrong_options:
+    - x > 1
+    - x <= 2
+    - x MOD 2 = 0
+    - x = 4
+    - x != 1
+  explanation: >-
+    - **Correct:** RANDOM(1,4) gives 4 options. One option = 25%, so condition should trigger only for x = 1.
+    - **Incorrect:** Other conditions trigger multiple values (e.g., x ≤ 2 = 50%).
+
+- question: >-
+    What is MOST likely to be an **unintended effect** of using facial recognition in a public space?
+  correct_options:
+    - People may feel their privacy is being violated without their knowledge
+  wrong_options:
+    - Facial recognition always increases safety
+    - People are more likely to smile at the camera
+    - The system always improves performance
+    - It will reduce the need for electricity
+    - The accuracy is guaranteed
+  explanation: >-
+    - **Correct:** Use of sensitive data without consent can lead to ethical concerns.
+    - **Incorrect:** Accuracy and performance are not guaranteed and may vary.
+
+- question: >-
+    What is the final value of `total` after this code runs?
+
+    ```plaintext
+    total ← 0  
+    numbers ← [1, 2, 3, 4]  
+    FOR EACH num IN numbers  
+        total ← total + num  
+    DISPLAY(total)
+    ```
+  correct_options:
+    - 10
+  wrong_options:
+    - 6
+    - 4
+    - 5
+    - 0
+    - 1234
+  explanation: >-
+    - **Correct:** Adds all numbers: 1+2+3+4 = 10.
+    - **Incorrect:** Other answers represent partial addition, length, or concatenation.
+
+- question: >-
+    A program is designed to recommend restaurants based on user preferences.  
+    It uses a list of restaurants and filters them based on dietary needs.
+
+    What is the BEST way to write this part of the program?
+  correct_options:
+    - Use a loop to traverse the list and add matching items to a new list
+  wrong_options:
+    - Display all restaurants regardless of preference
+    - Use the same restaurant for every user
+    - Sort the list alphabetically without filtering
+    - Ask the user to provide code for their own filter
+  explanation: >-
+    - **Correct:** Filtering through a loop ensures the recommendation matches preferences.
+    - **Incorrect:** Other approaches don’t personalize results.
+
+- question: >-
+    What will be the output of the following Boolean logic circuit?
+
+    ```mermaid
+    graph TD
+        A1[TRUE] --> OR1
+        A2[FALSE] --> OR1
+        OR1 --> AND1
+        A3[TRUE] --> AND1
+        AND1 --> ANSWER[Answer]
+    ```
+
+    What does the final `ANSWER` node output?
+  correct_options:
+    - TRUE
+  wrong_options:
+    - FALSE
+    - AND1
+    - OR1
+    - A2
+    - Error
+  explanation: >-
+    - **Correct:** TRUE OR FALSE = TRUE → TRUE AND TRUE = TRUE.
+    - **Incorrect:** All other responses ignore proper logic flow or misinterpret values.
+- question: >-
+    What is the value of `result` after this segment runs?
+
+    ```plaintext
+    a ← 5  
+    b ← 3  
+    result ← a * b + 4
+    ```
+  correct_options:
+    - 19
+  wrong_options:
+    - 15
+    - 8
+    - 12
+    - 7
+    - 20
+  explanation: >-
+    - **Correct:** 5 * 3 + 4 = 15 + 4 = 19
+    - **Incorrect:** Some confuse order of operations or skip multiplication.
+
+- question: >-
+    Consider this list: `nums ← [8, 3, 9, 2, 5]`  
+    Which expression correctly accesses the **last** item in the list?
+  correct_options:
+    - nums[4]
+  wrong_options:
+    - nums[5]
+    - nums[0]
+    - nums[-1]
+    - nums[1]
+    - nums["end"]
+  explanation: >-
+    - **Correct:** Index 4 = 5th item. Lists start at index 0.
+    - **Incorrect:** Index 5 is out of range; others are invalid or incorrect syntax.
+
+- question: >-
+    What does the following code display?
+
+    ```plaintext
+    name ← "Ava"  
+    greeting ← "Hello, " + name  
+    DISPLAY(greeting)
+    ```
+  correct_options:
+    - Hello, Ava
+  wrong_options:
+    - Ava
+    - name
+    - Hello
+    - Hello + Ava
+    - HelloAva
+  explanation: >-
+    - **Correct:** String concatenation produces “Hello, Ava”
+    - **Incorrect:** Others reflect partial results or misinterpret variables.
+
+- question: >-
+    What is the final value of `x`?
+
+    ```plaintext
+    x ← 2  
+    x ← x * 2  
+    x ← x + 3  
+    x ← x - 1
+    ```
+  correct_options:
+    - 6
+  wrong_options:
+    - 5
+    - 7
+    - 4
+    - 3
+    - 8
+  explanation: >-
+    - **Correct:** 2→4→7→6
+    - **Incorrect:** Other values skip a step or apply incorrect arithmetic.
+
+- question: >-
+    Which of the following is a **Boolean expression**?
+
+    Select **two** correct answers.
+  correct_options:
+    - x > 7
+    - x = y AND y < 10
+  wrong_options:
+    - x + y
+    - "Hello"
+    - RETURN x
+    - PROCEDURE sum(x, y)
+  explanation: >-
+    - **Correct:** Boolean expressions evaluate to true or false.
+    - **Incorrect:** Others are strings, math expressions, or procedures.
+
+- question: >-
+    A program uses this loop:
+
+    ```plaintext
+    i ← 1  
+    REPEAT UNTIL i > 3  
+        DISPLAY(i)  
+        i ← i + 1
+    ```
+
+    What is the output?
+  correct_options:
+    - 1, 2, 3
+  wrong_options:
+    - 1, 2
+    - 0, 1, 2, 3
+    - 2, 3
+    - 1, 2, 3, 4
+    - Nothing
+  explanation: >-
+    - **Correct:** Loop runs until i > 3. Displays 1, 2, 3.
+    - **Incorrect:** Some include 4, 0, or cut the loop early.
+
+- question: >-
+    What does this procedure do?
+
+    ```plaintext
+    PROCEDURE isEven(n)  
+        IF (n MOD 2 = 0)  
+            RETURN true  
+        ELSE  
+            RETURN false
+    ```
+
+    Select **two** correct answers.
+  correct_options:
+    - Returns true for even inputs
+    - Uses a conditional with MOD to determine parity
+  wrong_options:
+    - Only returns true if input is a multiple of 3
+    - Counts how many even numbers are in a list
+    - Is equivalent to n + 2
+    - Displays output directly to the screen
+  explanation: >-
+    - **Correct:** MOD 2 = 0 checks if a number is even.
+    - **Incorrect:** The procedure checks only one number, does not loop or display.
+
+- question: >-
+    Which of the following are benefits of using **procedures**?
+
+    Select **two** correct answers.
+  correct_options:
+    - Helps break down complex programs into manageable pieces
+    - Allows reuse of code without rewriting it
+  wrong_options:
+    - Makes programs automatically faster
+    - Replaces the need for loops
+    - Prevents all errors
+    - Eliminates memory usage
+  explanation: >-
+    - **Correct:** Procedures help with modularity and code reuse.
+    - **Incorrect:** They don’t guarantee speed, error-proofing, or memory reduction.
+
+- question: >-
+    A student uses a **linear search** to find a value in a list of 20 elements.  
+    What is the **maximum number of comparisons** the algorithm may perform?
+  correct_options:
+    - 20
+  wrong_options:
+    - 10
+    - 5
+    - 19
+    - 0
+    - 21
+  explanation: >-
+    - **Correct:** In the worst case, it checks all 20 elements.
+    - **Incorrect:** These either underestimate or exceed the list length.
+
+- question: >-
+    What is the main difference between **linear search** and **binary search**?
+
+    Select **two** correct answers.
+  correct_options:
+    - Binary search requires the list to be sorted
+    - Binary search checks fewer elements than linear in large datasets
+  wrong_options:
+    - Linear search only works on even numbers
+    - Binary search loops backward
+    - Linear search needs recursion
+    - Binary search sorts the list automatically
+  explanation: >-
+    - **Correct:** Binary search divides the list in half; it needs sorted input.
+    - **Incorrect:** Linear search doesn't care about order; binary doesn’t sort for you.
+
+- question: >-
+    Which of the following problems is **undecidable**?
+
+  correct_options:
+    - Determining if any algorithm halts on all inputs
+  wrong_options:
+    - Checking if a number is prime
+    - Counting how many elements are in a list
+    - Displaying the first 10 even numbers
+    - Sorting a list alphabetically
+    - Calculating a factorial
+  explanation: >-
+    - **Correct:** Halting problem is a classic undecidable problem.
+    - **Incorrect:** All other problems are solvable by known algorithms.
+
+- question: >-
+    Two algorithms are tested on different input sizes. Algorithm A takes 10 steps for every input, while Algorithm B takes twice the input size in steps.  
+
+    Which statement is true?
+  correct_options:
+    - Algorithm A is more efficient as input grows
+  wrong_options:
+    - Algorithm B is constant time
+    - Both algorithms scale equally
+    - Algorithm A uses more memory
+    - Algorithm B always finishes faster
+  explanation: >-
+    - **Correct:** Algorithm A has constant time; B is linear, so A scales better.
+    - **Incorrect:** B is not constant; speed and memory aren’t guaranteed.
+
+- question: >-
+    Consider the following code segment:
+
+    ```plaintext
+    x ← 3  
+    y ← 4  
+    z ← x  
+    x ← y  
+    y ← z  
+    DISPLAY(x, y)
+    ```
+
+    What will be displayed?
+  correct_options:
+    - 4 3
+  wrong_options:
+    - 3 4
+    - 4 4
+    - 3 3
+    - x y
+    - Error
+  explanation: >-
+    - **Correct:** x becomes 4, y becomes 3 (swapped via z as a temporary variable).
+    - **Incorrect:** Others ignore reassignment order or treat variables as undeclared.
+
+- question: >-
+    The following procedure is missing one line:
+
+    ```plaintext
+    PROCEDURE addToTotal(list)  
+        total ← 0  
+        FOR EACH item IN list  
+            [missing line]  
+        RETURN total
+    ```
+
+    What line best completes the procedure to return the sum of the values?
+  correct_options:
+    - total ← total + item
+  wrong_options:
+    - total ← item
+    - RETURN item
+    - total ← 0
+    - item ← total + 1
+    - total ← item + 1
+  explanation: >-
+    - **Correct:** Adds each item to the total — classic accumulation pattern.
+    - **Incorrect:** Others overwrite or incorrectly assign values.
+
+- question: >-
+    A student writes this code to check if any value in a list is negative:
+
+    ```plaintext
+    PROCEDURE hasNegative(list)  
+        FOR EACH num IN list  
+            IF num < 0  
+                RETURN true  
+        RETURN false
+    ```
+
+    What is the correct description of this program?
+
+    Select **two** correct answers.
+  correct_options:
+    - It returns true as soon as a negative value is found
+    - It returns false only if no values are negative
+  wrong_options:
+    - It returns the number of negative values
+    - It modifies the original list
+    - It adds all values to get a total
+    - It displays the negative values
+  explanation: >-
+    - **Correct:** The code returns early on negative values; otherwise, it finishes the loop and returns false.
+    - **Incorrect:** No list modification or output occurs — it returns a Boolean only.
+
+- question: >-
+    What is the output of this logic sequence?
+
+    ```plaintext
+    x ← 5  
+    IF x < 10 THEN  
+        IF x > 3 THEN  
+            DISPLAY("A")  
+        ELSE  
+            DISPLAY("B")  
+    ELSE  
+        DISPLAY("C")
+    ```
+
+  correct_options:
+    - A
+  wrong_options:
+    - B
+    - C
+    - Error
+    - AB
+    - Nothing
+  explanation: >-
+    - **Correct:** x = 5 meets both conditions: less than 10 and greater than 3 → displays “A”.
+    - **Incorrect:** B and C would display only if first or second condition failed.
+
+- question: >-
+    A student writes this loop:
+
+    ```plaintext
+    x ← 1  
+    REPEAT UNTIL x = 4  
+        DISPLAY(x)  
+        x ← x + 1
+    ```
+
+    What is the last number displayed?
+  correct_options:
+    - 3
+  wrong_options:
+    - 4
+    - 1
+    - 0
+    - 5
+    - Error
+  explanation: >-
+    - **Correct:** Loop runs while x ≠ 4. It displays 1, 2, 3 then exits.
+    - **Incorrect:** 4 is the exit condition, not part of the display.
+
+- question: >-
+    The following function is meant to return the **largest value** in a list but doesn’t work correctly:
+
+    ```plaintext
+    PROCEDURE maxVal(list)  
+        max ← 0  
+        FOR EACH num IN list  
+            IF num > max  
+                max ← num  
+        RETURN max
+    ```
+
+    What is the problem with this function?
+
+  correct_options:
+    - It assumes all numbers are greater than 0, which fails for negative lists
+  wrong_options:
+    - It uses a loop, which is not allowed
+    - It overwrites the original list
+    - It doesn’t return any value
+    - It uses recursion instead of iteration
+    - It skips the first item in the list
+  explanation: >-
+    - **Correct:** Initializing max to 0 makes it fail if all list values are negative.
+    - **Incorrect:** The loop works, and the list isn't changed.
+
+- question: >-
+    A student creates this procedure:
+
+    ```plaintext
+    PROCEDURE countDivBy3(list)  
+        count ← 0  
+        FOR EACH num IN list  
+            IF num MOD 3 = 0  
+                count ← count + 1  
+        RETURN count
+    ```
+
+    What does this procedure do?
+
+  correct_options:
+    - Counts how many numbers are divisible by 3 in the list
+  wrong_options:
+    - Adds all values in the list
+    - Checks if the list is sorted
+    - Returns true if all values are divisible by 3
+    - Returns the largest number in the list
+    - Filters out values not divisible by 3
+  explanation: >-
+    - **Correct:** A count is incremented for each value where MOD 3 = 0.
+    - **Incorrect:** It neither sums, filters, nor compares all values.
+
+- question: >-
+    What is the output of this conditional logic?
+
+    ```plaintext
+    A ← TRUE  
+    B ← FALSE  
+    IF NOT A OR B THEN  
+        DISPLAY("X")  
+    ELSE  
+        DISPLAY("Y")
+    ```
+
+  correct_options:
+    - Y
+  wrong_options:
+    - X
+    - TRUE
+    - FALSE
+    - A
+    - Error
+  explanation: >-
+    - **Correct:** NOT A = FALSE; FALSE OR FALSE = FALSE → ELSE executes → “Y”
+    - **Incorrect:** Logic operation is misapplied in other choices.
+
+- question: >-
+    A procedure takes a list of temperatures in Celsius and should return a new list of Fahrenheit values.  
+    What line should go inside the loop?
+
+    ```plaintext
+    PROCEDURE convertTemps(celsiusList)  
+        fahrenheitList ← []  
+        FOR EACH temp IN celsiusList  
+            [missing line]  
+        RETURN fahrenheitList
+    ```
+
+  correct_options:
+    - APPEND fahrenheitList, (temp * 9 / 5 + 32)
+  wrong_options:
+    - temp ← temp * 9 + 5
+    - fahrenheitList ← temp
+    - APPEND celsiusList, temp
+    - RETURN temp
+    - DISPLAY(fahrenheitList)
+  explanation: >-
+    - **Correct:** Correctly converts Celsius to Fahrenheit and appends.
+    - **Incorrect:** Other lines modify the wrong list or fail to build the result list.
+- question: >-
+    Consider the following list:  
+    `nums ← [2, 4, 6, 8, 10]`
+
+    Which of the following is a correct **linear search** to find the value 6?
+
+    Select **two** correct answers.
+  correct_options:
+    - Traverse each item and compare to 6
+    - Return the index when item = 6
+  wrong_options:
+    - Jump directly to the middle of the list and stop
+    - Sort the list before checking values
+    - Use binary search with no condition
+    - Return the first item in the list
+  explanation: >-
+    - **Correct:** Linear search checks each element until it finds the target.
+    - **Incorrect:** Binary search needs sorted lists, and jumping ahead breaks linear logic.
+
+- question: >-
+    What is the **first step** of the binary search algorithm?
+
+  correct_options:
+    - Check the middle element of the sorted list
+  wrong_options:
+    - Check the first element
+    - Sort the list again
+    - Check the last element
+    - Count the elements
+    - Reverse the list
+  explanation: >-
+    - **Correct:** Binary search begins at the midpoint.
+    - **Incorrect:** Other actions are unnecessary or not part of binary logic.
+
+- question: >-
+    A student wants to simulate dice rolls and count how often a 6 appears.  
+    What’s the most appropriate code structure?
+
+  correct_options:
+    - Use a loop that repeats many times and increments a counter when RANDOM(1,6) = 6
+  wrong_options:
+    - Use a conditional that runs once
+    - Create a list of only 6s and count it
+    - Ask the user to input results manually
+    - Multiply all numbers together
+    - Use REPEAT UNTIL RANDOM(1,6) = 6
+  explanation: >-
+    - **Correct:** A loop simulates repeated trials; condition inside increments for matches.
+    - **Incorrect:** Simulation fails without repetition and randomness.
+
+- question: >-
+    What does this nested loop output?
+
+    ```plaintext
+    FOR i ← 1 TO 2  
+        FOR j ← 1 TO 3  
+            DISPLAY(i * j)
+    ```
+
+  correct_options:
+    - 1, 2, 3, 2, 4, 6
+  wrong_options:
+    - 1, 2, 3
+    - 2, 4, 6
+    - 1, 4, 9
+    - 3, 6
+    - 1, 2, 3, 4, 5, 6
+  explanation: >-
+    - **Correct:** First i=1 → 1×1, 1×2, 1×3 → 1,2,3  
+      Then i=2 → 2×1, 2×2, 2×3 → 2,4,6
+    - **Incorrect:** Others skip one loop or misinterpret order.
+
+- question: >-
+    The following sorting procedure is intended to sort a list in increasing order, but is **not complete**:
+
+    ```plaintext
+    PROCEDURE bubbleSort(list)  
+        FOR i ← 0 TO LENGTH(list) - 2  
+            FOR j ← 0 TO LENGTH(list) - 2  
+                IF list[j] > list[j+1]  
+                    temp ← list[j]  
+                    list[j] ← list[j+1]  
+                    list[j+1] ← temp
+    ```
+
+    What key step is **missing**?
+
+  correct_options:
+    - Repeat outer loop enough times to fully sort the list
+  wrong_options:
+    - Add another inner loop to reverse the list
+    - Remove the comparison
+    - Change the list to a string
+    - Add a print statement only
+    - Sort the list before calling the function
+  explanation: >-
+    - **Correct:** Bubble sort requires repeated passes — the current loop doesn’t do enough iterations.
+    - **Incorrect:** Sorting beforehand or ignoring the swap logic breaks the algorithm.
+
+- question: >-
+    A program models how water spreads across a 2D field. Each step, water moves one space to the right if the space is empty.
+
+    What structure would most effectively model this?
+
+    Select **two** correct answers.
+  correct_options:
+    - A list of lists to represent the 2D grid
+    - A loop that updates each row in the grid
+  wrong_options:
+    - A single number representing the entire grid
+    - Sorting the list alphabetically
+    - Using only one procedure with no loops
+    - Ignoring empty spaces
+  explanation: >-
+    - **Correct:** 2D movement requires a grid structure; loops update behavior over time.
+    - **Incorrect:** Modeling with one value or static steps breaks simulation logic.
+
+- question: >-
+    What is the **output** of this nested conditional?
+
+    ```plaintext
+    x ← 10  
+    y ← 5  
+    IF x > 5  
+        IF y < 3  
+            DISPLAY("A")  
+        ELSE  
+            DISPLAY("B")  
+    ELSE  
+        DISPLAY("C")
+    ```
+
+  correct_options:
+    - B
+  wrong_options:
+    - A
+    - C
+    - TRUE
+    - FALSE
+    - Error
+  explanation: >-
+    - **Correct:** x > 5 is TRUE → y < 3 is FALSE → ELSE → B
+    - **Incorrect:** Others fail to trace nesting or assume early exit.
+
+- question: >-
+    A simulation models how a plant grows in height every day, doubling in size until it reaches a limit.  
+
+    What’s the best way to structure this simulation?
+
+  correct_options:
+    - Use a REPEAT UNTIL loop that stops when height > maxHeight
+  wrong_options:
+    - Use only IF statements and no loop
+    - Print the height manually each day
+    - Replace the loop with a sorting function
+    - Store heights as colors instead of numbers
+    - Multiply the height by zero each time
+  explanation: >-
+    - **Correct:** Doubling each step until a threshold is a classic use of REPEAT UNTIL.
+    - **Incorrect:** Printing, sorting, or multiplying by 0 ruins simulation behavior.
+
+- question: >-
+    Two students implement an algorithm to find the **largest even number** in a list of integers.
+
+    - **Student A**: Sorts the list, reverses it, and finds the first even number  
+    - **Student B**: Traverses the list once, storing the largest even value
+
+    Which implementation is more efficient, and why?
+
+  correct_options:
+    - Student B’s approach is more efficient because it uses fewer steps and only one pass through the list
+  wrong_options:
+    - Student A’s approach is faster because sorting is always faster
+    - Both approaches are equally efficient
+    - Student A’s approach uses fewer comparisons
+    - Student B’s algorithm only works on sorted lists
+  explanation: >-
+    - **Correct:** Student B performs linear search with constant comparisons.
+    - **Incorrect:** Sorting increases time complexity; B doesn’t require sorted input.
+
+- question: >-
+    What does the following code display?
+
+    ```plaintext
+    nums ← [1, 2, 3, 4]  
+    total ← 0  
+    FOR EACH n IN nums  
+        IF n MOD 2 = 0  
+            total ← total + n  
+    DISPLAY(total)
+    ```
+
+  correct_options:
+    - 6
+  wrong_options:
+    - 10
+    - 4
+    - 0
+    - 3
+    - 2
+  explanation: >-
+    - **Correct:** Only even numbers are 2 and 4 → sum = 6
+    - **Incorrect:** Others include odd values or miscount.
+
+- question: >-
+    Which of the following algorithms would be MOST efficient for checking if a name appears in a **sorted list of names**?
+
+  correct_options:
+    - Binary search
+  wrong_options:
+    - Linear search
+    - Insertion sort
+    - Bubble sort
+    - Reversing the list
+    - Random sampling
+  explanation: >-
+    - **Correct:** Binary search uses divide-and-conquer, O(log n)
+    - **Incorrect:** Sorting is unnecessary; linear search is slower
+
+- question: >-
+    A program sorts a list using selection sort. Another uses merge sort.  
+    For a list with 10,000 elements, which will perform fewer comparisons?
+
+  correct_options:
+    - Merge sort
+  wrong_options:
+    - Selection sort
+    - Bubble sort
+    - Both perform the same
+    - Depends on the data type
+    - Cannot be determined
+  explanation: >-
+    - **Correct:** Merge sort is O(n log n); selection sort is O(n²)
+    - **Incorrect:** Bubble and selection sort scale poorly
+
+- question: >-
+    Which of the following best describes **abstraction** in algorithm design?
+
+    Select **two** correct answers.
+  correct_options:
+    - Creating a procedure to hide complex logic
+    - Using a function to represent a step in a larger program
+  wrong_options:
+    - Writing all code in one large block
+    - Avoiding the use of variables
+    - Removing comments to reduce distractions
+    - Using recursion to reduce runtime
+  explanation: >-
+    - **Correct:** Abstraction means hiding complexity and organizing logic
+    - **Incorrect:** Removing structure or readability harms abstraction
+
+- question: >-
+    What is the output of this trace?
+
+    ```plaintext
+    PROCEDURE mystery(n)
+      total ← 0  
+      FOR i ← 1 TO n  
+        IF i MOD 2 ≠ 0  
+          total ← total + i  
+      RETURN total
+
+    DISPLAY(mystery(5))
+    ```
+
+  correct_options:
+    - 9
+  wrong_options:
+    - 6
+    - 5
+    - 8
+    - 15
+    - 7
+  explanation: >-
+    - **Correct:** Adds 1, 3, 5 → 9
+    - **Incorrect:** Others count even numbers or sum all
+
+- question: >-
+    A programmer writes the following algorithm:
+
+    ```plaintext
+    x ← 0  
+    WHILE x < 5  
+        x ← x + 1  
+        IF x = 3  
+            CONTINUE  
+        DISPLAY(x)
+    ```
+
+    What values will be displayed?
+
+  correct_options:
+    - 1, 2, 4, 5
+  wrong_options:
+    - 1, 2, 3, 4, 5
+    - 3
+    - 1, 2
+    - 1, 2, 3, 4
+    - None
+  explanation: >-
+    - **Correct:** When x = 3, CONTINUE skips DISPLAY
+    - **Incorrect:** CONTINUE does not terminate the loop
+
+- question: >-
+    Which of the following pairs of programs would **produce the same result** for a given input?
+
+    **Program A**:
+    ```plaintext
+    x ← x + 1  
+    x ← x * 2
+    ```
+
+    **Program B**:
+    ```plaintext
+    x ← x * 2  
+    x ← x + 2
+    ```
+
+    Assume initial value: x = 3
+
+  correct_options:
+    - Neither produces the same result as the other
+  wrong_options:
+    - Program A only
+    - Program B only
+    - They produce the same result
+    - Cannot be determined
+  explanation: >-
+    - **Correct:**  
+      - A: (3+1)×2 = 8  
+      - B: (3×2)+2 = 8  
+      - Wait… they **do** produce the same result! Update:
+
+  correct_options:
+    - They produce the same result
+  wrong_options:
+    - Program A only
+    - Program B only
+    - Neither produces the same result
+    - Cannot be determined
+  explanation: >-
+    - **Correct:** A = 8, B = 8 → same output for input x = 3
+    - **Incorrect:** Assumes order affects output, but not in this case
+
+- question: >-
+    A student designs a program that simulates how quickly a virus spreads.  
+    Each day, the number of infected people triples until it reaches 10,000 or more.  
+    Which control structure is best?
+
+  correct_options:
+    - REPEAT UNTIL infected ≥ 10,000
+  wrong_options:
+    - FOR i ← 1 TO 10,000
+    - Use a SWITCH statement
+    - LOOP until infected < 10,000
+    - DECLARE infected ← 10,000
+  explanation: >-
+    - **Correct:** The stopping condition is based on a threshold, not a known count
+    - **Incorrect:** A FOR loop with fixed steps isn’t ideal for exponential growth
+

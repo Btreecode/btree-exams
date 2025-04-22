@@ -1,209 +1,536 @@
 questions:
   - question: >-
-      With the lowering of the digital divide and more products using the internet,
-      the world is running out of IP addresses. The current plan is to switch from
-      IPv4, which holds 32 bits, to IPv6, which holds 128 bits.
-
-
-      With the increase from 32 bits to 128 bits, what is the resulting increase in
-      possible IP addresses?
+      When switching from IPv4 (32-bit) to IPv6 (128-bit), how many more unique addresses become available?
     correct_options:
       - 2^96
     wrong_options:
       - 96^2
-      - "96"
       - 2 * 96
+      - 128 / 32
+    explanation: >-
+      - **Correct:** IPv6 has 128 bits vs IPv4’s 32 bits → 2^96 times more addresses.
+      - **Incorrect:** Other options confuse bit arithmetic with basic math.
+
   - question: >-
-      Which of the following trade-offs is true when representing information as
-      digital data?  
+      Which of the following best describes the **minimum number of cuts** needed to isolate Node A in the network diagram?
 
-      I. An analog signal must be sampled and turned into numbers that are then
-      stored digitally as bits.  
+      (Assume A is connected to three nodes via direct lines.)
 
-      II. Reading data and updating data have different storage requirements.  
-
-      III. Lossy data compression reduces the number of bits stored or transmitted
-      at the cost of being able to reconstruct only an approximation of the
-      original.
-    correct_options:
-      - I, II, and III
-    wrong_options:
-      - I and III only
-      - I and II only
-      - II and III only
-  - question: >-
-      This is a web of devices connected through the fault-tolerant redundant
-      internet.
-
-      What is the minimum number of other devices that device C must connect with to
-      communicate with D?
-
-      ```mermaid
-
-      graph TD
-          A --- B
-          A --- C
-          A --- D
-          B --- C
-          B --- E
-          C --- E
-          C --- F
-          D --- E
-          E --- F
-          E --- G
-          F --- G
-      ```
-    correct_options:
-      - "1"
-    wrong_options:
-      - "2"
-      - "3"
-      - "4"
-  - question: >-
-      A smartphone stores the following data for each picture taken using the
-      phone:  
-
-      The location where the photo was taken  
-
-      The number of photos taken at the location  
-
-      The date and time the photo was taken  
-
-      The filename of the photo  
-
-
-      Which of the following can be determined using the metadata described above?
-
-
-      I. How many photos were taken at Walt Disney World  
-
-      II. The name of the person who took the most recent photo  
-
-      III. Whether people tend to take more photos on the weekend than during the
-      week
-    correct_options:
-      - I, II, and III
-    wrong_options:
-      - I only
-      - III only
-      - I and III only
-  - question: >-
-      How many lines need to be cut to completely isolate A?
-
-
-      <div style="position: relative; width: 300px; height: 300px; background:
-      black; margin: 50px auto;">
-        <!-- Center node -->
-        <div style="position: absolute; top: 130px; left: 130px; 
-                    width: 40px; height: 40px; border-radius: 50%; 
-                    background: white;"></div>
-
-        <!-- A (top) -->
-        <div style="position: absolute; top: 0px; left: 140px; color: white;">A</div>
-        <svg style="position: absolute; top: 40px; left: 150px;" width="2" height="90">
-          <line x1="1" y1="90" x2="1" y2="0" stroke="white" stroke-width="2" />
-        </svg>
-
-        <!-- B (left) -->
-        <div style="position: absolute; top: 140px; left: 0px; color: white;">B</div>
-        <svg style="position: absolute; top: 150px; left: 40px;" width="90" height="2">
-          <line x1="90" y1="1" x2="0" y2="1" stroke="white" stroke-width="2" />
-        </svg>
-
-        <!-- C (right) -->
-        <div style="position: absolute; top: 140px; left: 270px; color: white;">C</div>
-        <svg style="position: absolute; top: 150px; left: 170px;" width="90" height="2">
-          <line x1="0" y1="1" x2="90" y2="1" stroke="white" stroke-width="2" />
-        </svg>
-
-        <!-- D (bottom-left) -->
-        <div style="position: absolute; top: 250px; left: 30px; color: white;">D</div>
-        <svg style="position: absolute; top: 170px; left: 70px;" width="80" height="80">
-          <line x1="80" y1="0" x2="0" y2="80" stroke="white" stroke-width="2" />
-        </svg>
-
-        <!-- E (bottom-right) -->
-        <div style="position: absolute; top: 250px; left: 230px; color: white;">E</div>
-        <svg style="position: absolute; top: 170px; left: 150px;" width="80" height="80">
-          <line x1="0" y1="0" x2="80" y2="80" stroke="white" stroke-width="2" />
-        </svg>
-      </div>
     correct_options:
       - 3 lines
     wrong_options:
       - 1 line
+      - 2 lines
       - 4 lines
-      - 5 lines
+    explanation: >-
+      - **Correct:** A must be fully disconnected from all direct neighbors, which requires 3 cuts.
+      - **Incorrect:** Fewer cuts would leave paths open; more is unnecessary.
+
   - question: >-
-      Which of the following best approximates the minimum possible time to run all
-      three processes in series?
-
-
-      | Process | Execution Time (seconds) |
-
-      |---------|--------------------------|
-
-      | One     | 8                        |
-
-      | Two     | 2                        |
-
-      | Three   | 6                        |
-
-
-      A certain computer has a single central processing unit (CPU). The following
-      table indicates the amount of time the computer takes to execute processes
-      using a single CPU. Assume none of the processes are dependent on any other
-      process.
+      In a **centralized** internet system, what is the minimum number of nodes needed to disable the entire system?
     correct_options:
-      - 16 seconds
+      - 1
     wrong_options:
-      - 2 seconds
-      - 6 seconds
-      - 8 seconds
-  - question:
-      In a centralized internet, what is the minimum number of nodes needed
-      to disable the internet?
-    correct_options:
-      - "1"
-    wrong_options:
-      - "7"
-      - 11,356
-      - 12,587
+      - 7
+      - 1000
+      - All nodes
+    explanation: >-
+      - **Correct:** Centralized systems depend on one hub — destroying it disables the system.
+      - **Incorrect:** Distributed systems are resilient, but centralized systems are not.
+
   - question: >-
-      Which of the following describes a lossy transformation of digital data?
+      Which of the following best describes how data travel across the internet?
 
-
-      I. Compressing an image file into a smaller resolution image so the image can
-      easily be emailed  
-
-      II. Inverting the colors of an image by subtracting each RGB value from 255  
-
-      III. Converting an image by averaging its RGB values and assigning the new
-      value to a shade of gray ranging from white to black
-    correct_options:
-      - I and III only
-    wrong_options:
-      - I only
-      - I and II only
-      - II only
-  - question: >-
-      The following are steps data take as the data travel across the internet.  
-
-      I. Data are chopped into chunks called packets.  
-
-      II. Packets are reassembled into a coherent message.  
-
-      III. Packets are routed throughout the internet.  
-
-      IV. Packets go through internet service providers (ISPs) to access the
-      internet.  
-
-
-      Which of the following is the correct path data take when the data travel from
-      one device to another device through the internet?
+      Select steps in correct order.
     correct_options:
       - I → IV → III → II
     wrong_options:
-      - I → IV → II → III
+      - I → II → III → IV
+      - IV → I → III → II
       - I → III → IV → II
-      - IV → II → I → III
+    explanation: >-
+      - **Correct:** Data → packets (I) → ISP connection (IV) → routed (III) → reassembled (II)
+      - **Incorrect:** Other orders break actual protocol flow.
+
+  - question: >-
+      A smartphone logs metadata for every photo. The metadata includes:
+
+      - Location  
+      - Timestamp  
+      - Number of photos at the location  
+      - Filename
+
+      Which of the following can be determined from the metadata?
+
+      Select **two** correct answers.
+    correct_options:
+      - How many photos were taken at Walt Disney World
+      - Whether people take more photos on weekends
+    wrong_options:
+      - Name of the person who took the photo
+      - Resolution of the image
+      - The device’s battery level at the time
+    explanation: >-
+      - **Correct:** Timestamp and location reveal patterns.
+      - **Incorrect:** Metadata listed doesn’t include personal identity or technical stats.
+
+  - question: >-
+      A computer performs the following 3 tasks using **one CPU**:
+
+      | Task   | Time (s) |
+      |--------|----------|
+      | Task A | 8        |
+      | Task B | 2        |
+      | Task C | 6        |
+
+      What is the **minimum time** required to complete all three tasks?
+
+    correct_options:
+      - 16 seconds
+    wrong_options:
+      - 6 seconds
+      - 8 seconds
+      - 10 seconds
+      - 14 seconds
+    explanation: >-
+      - **Correct:** With one CPU, tasks must run in sequence → total = 8 + 2 + 6 = 16.
+      - **Incorrect:** Other options assume parallelism or omit one task.
+
+  - question: >-
+      What are the main **benefits** of redundancy in internet infrastructure?
+
+      Select **two** correct answers.
+    correct_options:
+      - Increases fault tolerance
+      - Maintains connectivity when paths fail
+    wrong_options:
+      - Increases packet loss to reduce bandwidth
+      - Eliminates the need for IP addresses
+      - Allows devices to operate without power
+      - Replaces the need for ISPs
+    explanation: >-
+      - **Correct:** Redundancy ensures the system keeps working if one route fails.
+      - **Incorrect:** Redundancy doesn’t eliminate core infrastructure.
+
+  - question: >-
+      Which of the following transformations are **lossy**?
+
+      Select **two** correct answers.
+    correct_options:
+      - Compressing an image into lower resolution
+      - Converting an image into grayscale
+    wrong_options:
+      - Copying a file to another folder
+      - Encrypting data
+      - Backing up a file to the cloud
+      - Sampling an analog signal with no compression
+    explanation: >-
+      - **Correct:** Resolution loss and grayscale conversion reduce detail.
+      - **Incorrect:** Others retain all data or involve no change to representation.
+
+  - question: >-
+      A device on the internet uses **128-bit addressing** and must route a packet to another device.
+
+      Which protocol helps this device determine the path?
+
+    correct_options:
+      - IP (Internet Protocol)
+    wrong_options:
+      - TCP
+      - DNS
+      - HTML
+      - FTP
+      - CSS
+    explanation: >-
+      - **Correct:** IP is responsible for addressing and routing packets.
+      - **Incorrect:** TCP ensures delivery; DNS resolves domains; HTML/CSS/FTP are unrelated.
+
+  - question: >-
+      What trade-offs are involved when converting **analog audio** into **digital sound files**?
+
+      Select **three** correct answers.
+    correct_options:
+      - Sound must be sampled into discrete intervals
+      - Higher sample rates produce better quality but require more storage
+      - Lossy compression may reduce fidelity to save space
+    wrong_options:
+      - Audio files cannot be stored digitally
+      - Sampling increases signal range
+      - Digital sound cannot be edited
+    explanation: >-
+      - **Correct:** Sampling introduces limitations; compression trades quality for size.
+      - **Incorrect:** Digital audio is editable and widely used.
+  - question: >-
+      Which of the following **secure transmission methods** help protect data sent over the internet?
+
+      Select **two** correct answers.
+    correct_options:
+      - Using HTTPS instead of HTTP
+      - Encrypting data before transmission
+    wrong_options:
+      - Compressing the data to reduce file size
+      - Sending the data via email attachments
+      - Using a faster Wi-Fi connection
+      - Disabling JavaScript
+    explanation: >-
+      - **Correct:** HTTPS uses SSL/TLS to encrypt; encryption secures data at rest or in transit.
+      - **Incorrect:** Compression or email lacks encryption; faster internet ≠ more secure.
+
+  - question: >-
+      A website uses **asymmetric encryption** to protect login credentials.  
+      Which statement describes how asymmetric encryption works?
+
+    correct_options:
+      - The public key encrypts the data, and the private key decrypts it
+    wrong_options:
+      - Both sender and receiver use the same key to encrypt and decrypt
+      - A password is hashed, not encrypted
+      - The encryption only works if the Wi-Fi is private
+      - It is less secure than symmetric encryption
+    explanation: >-
+      - **Correct:** Asymmetric encryption uses a public-private key pair.
+      - **Incorrect:** Symmetric uses one key; hashing is different; Wi-Fi privacy isn’t encryption.
+
+  - question: >-
+      Which of the following are **examples of authentication methods**?
+
+      Select **three** correct answers.
+    correct_options:
+      - Fingerprint recognition
+      - Password entry
+      - Two-factor authentication
+    wrong_options:
+      - Using cookies to remember a user
+      - DNS lookups
+      - Encrypting a message with AES
+    explanation: >-
+      - **Correct:** Authentication confirms identity — biometric, password, multi-step.
+      - **Incorrect:** Cookies and DNS don’t verify user identity; encryption ≠ authentication.
+
+  - question: >-
+      A hacker sets up a fake website that looks like a bank’s login page to trick users.  
+      This is an example of:
+
+    correct_options:
+      - Phishing
+    wrong_options:
+      - Spoofing
+      - DDoS
+      - Malware injection
+      - Logic error
+      - Data scraping
+    explanation: >-
+      - **Correct:** Phishing deceives users into submitting sensitive data.
+      - **Incorrect:** Spoofing impersonates IPs/domains; others are different threats.
+
+  - question: >-
+      Which of the following protocols are responsible for **accurate and complete delivery** of data?
+
+    correct_options:
+      - TCP
+    wrong_options:
+      - IP
+      - DNS
+      - FTP
+      - HTML
+      - CSS
+    explanation: >-
+      - **Correct:** TCP (Transmission Control Protocol) ensures ordered, complete delivery.
+      - **Incorrect:** IP routes; DNS maps names; FTP/HTML/CSS are for content and styling.
+
+  - question: >-
+      Which of the following statements about **routing on the internet** are true?
+
+      Select **two** correct answers.
+    correct_options:
+      - Routers choose paths based on current traffic and availability
+      - Data can take different paths to the same destination
+    wrong_options:
+      - Routers always use the shortest path
+      - Data packets must travel through only one ISP
+      - All packets in a message follow the same route
+      - Packets must go through a central server
+    explanation: >-
+      - **Correct:** Routing is dynamic; redundancy allows different paths.
+      - **Incorrect:** Packets don’t always follow the same path, and routing adapts in real time.
+
+  - question: >-
+      DNS (Domain Name System) plays which role in the internet’s communication model?
+
+    correct_options:
+      - Translates human-readable domains to IP addresses
+    wrong_options:
+      - Encrypts messages before transmission
+      - Checks for packet delivery errors
+      - Tracks user activity
+      - Measures data transmission speed
+      - Blocks unauthorized access
+    explanation: >-
+      - **Correct:** DNS resolves domain names like "openai.com" into IP addresses.
+      - **Incorrect:** Other tasks are handled by different components (TCP, firewalls, etc.).
+
+  - question: >-
+      A school installs a firewall that blocks certain IP addresses and restricts traffic to only trusted websites.  
+      What **threat prevention** strategy is this?
+
+    correct_options:
+      - Network filtering
+    wrong_options:
+      - Authentication
+      - Encryption
+      - Key exchange
+      - Routing optimization
+      - Denial of service
+    explanation: >-
+      - **Correct:** Firewalls filter traffic to prevent unauthorized communication.
+      - **Incorrect:** This is not authentication or encryption — it's access control.
+
+  - question: >-
+      Which of the following are **goals of cybersecurity**?
+
+      Select **three** correct answers.
+    correct_options:
+      - Protect confidentiality of data
+      - Ensure data integrity during transmission
+      - Maintain availability of systems and services
+    wrong_options:
+      - Increase the number of devices connected to a network
+      - Guarantee 100% privacy under all conditions
+      - Speed up download times
+    explanation: >-
+      - **Correct:** Cybersecurity’s goals are often summarized as CIA: Confidentiality, Integrity, Availability.
+      - **Incorrect:** Privacy isn’t absolute; performance is not a primary security goal.
+  - question: >-
+      A hospital's system is hit by ransomware. All patient records become encrypted and inaccessible until a payment is made. The hospital refuses to pay and calls in cybersecurity specialists.
+
+      What are appropriate **initial response steps**?
+
+      Select **two** correct answers.
+    correct_options:
+      - Disconnect affected systems from the network to prevent spread
+      - Investigate backups to determine recovery options
+    wrong_options:
+      - Pay the ransom immediately
+      - Restart all machines without scanning
+      - Announce publicly that the attack was the IT team's fault
+      - Delete all encrypted files
+    explanation: >-
+      - **Correct:** Isolation and recovery planning are top priorities.
+      - **Incorrect:** Paying ransoms is discouraged; blaming or deleting data is harmful.
+
+  - question: >-
+      A university student gains unauthorized access to the gradebook and changes their own score from a B to an A. They claim they didn't "steal" anything and that it's a victimless crime.
+
+      What **ethical and legal violations** are present?
+
+      Select **two** correct answers.
+    correct_options:
+      - Unauthorized access to a secure system
+      - Integrity of academic records was compromised
+    wrong_options:
+      - Freedom of information was upheld
+      - It's allowed as long as no money is stolen
+      - The system design flaw makes it ethical
+      - The student used their own login credentials, so it’s not illegal
+    explanation: >-
+      - **Correct:** Tampering with records is both unethical and illegal.
+      - **Incorrect:** Intent or access method doesn’t justify the action.
+
+  - question: >-
+      An online shopping platform experiences a security breach in which encrypted credit card numbers are stolen. The company waits two months to notify customers.
+
+      What **ethical principle** has most clearly been violated?
+
+    correct_options:
+      - Users' right to informed consent and timely disclosure of risks
+    wrong_options:
+      - Users' right to freely browse the site
+      - The company’s right to keep internal problems secret
+      - Data compression practices
+      - IP address availability
+      - Freedom of speech
+    explanation: >-
+      - **Correct:** Users have the right to know when their private data is at risk.
+      - **Incorrect:** Other rights are unrelated to breach disclosure.
+
+  - question: >-
+      After a new student portal is launched, IT notices that hundreds of login attempts are made per second from foreign IP addresses. These attempts use common usernames and passwords.
+
+      What type of threat is occurring, and what’s the best **first response**?
+
+    correct_options:
+      - Brute force attack; block the suspicious IP addresses
+    wrong_options:
+      - DDoS attack; remove encryption temporarily
+      - Social engineering; require longer passwords
+      - Man-in-the-middle; turn off HTTPS
+      - Logic bomb; reboot the system
+    explanation: >-
+      - **Correct:** Brute force attempts are systematic; IP blocking slows attackers.
+      - **Incorrect:** These are not symptoms of DDoS or social engineering.
+
+  - question: >-
+      A ride-sharing company collects users’ location data in real time to improve driver matching and response time. Users were not informed clearly about this data collection.
+
+      What trade-off is being made, and what ethical concern does it raise?
+
+      Select **two** correct answers.
+    correct_options:
+      - Trade-off: More precise service vs. user privacy
+      - Concern: Data was collected without meaningful user consent
+    wrong_options:
+      - There is no ethical issue if no one complains
+      - Location data isn't considered private
+      - Collecting data is always legal for business use
+      - User data was publicly shared, so no breach occurred
+    explanation: >-
+      - **Correct:** Consent and transparency are key to ethical data collection.
+      - **Incorrect:** Ethical guidelines apply regardless of complaints or legality.
+
+  - question: >-
+      A school district is hit by a phishing attack where teachers unknowingly provide their passwords. Attackers send fake emails to parents requesting personal data.
+
+      What are the **best follow-up actions**?
+
+      Select **three** correct answers.
+    correct_options:
+      - Require affected users to change their passwords
+      - Notify parents and affected stakeholders
+      - Educate staff on how to recognize phishing attacks
+    wrong_options:
+      - Disable all teacher email accounts indefinitely
+      - Keep the incident confidential to avoid panic
+      - Stop using email altogether
+    explanation: >-
+      - **Correct:** Transparency, password resets, and training help prevent recurrence.
+      - **Incorrect:** Panic responses or secrecy make future attacks more likely.
+
+  - question: >-
+      A popular messaging app stores user messages in encrypted form but keeps the encryption key on the same server as the data.
+
+      What vulnerability does this create?
+
+    correct_options:
+      - If the server is compromised, both data and keys can be stolen
+    wrong_options:
+      - The messages are too large to encrypt
+      - Encryption is only useful for images and files
+      - It violates TCP/IP standards
+      - The app is not connected to the internet
+    explanation: >-
+      - **Correct:** Storing keys and data together eliminates the benefit of encryption.
+      - **Incorrect:** The issue isn’t size, format, or connection method.
+  - question: >-
+      A fitness tracking app collects users’ GPS locations, heart rates, and activity data.  
+      Its terms of service mention data collection in vague language and do not mention third-party data sharing.
+
+      What privacy principle is most clearly violated?
+
+    correct_options:
+      - Transparency and informed consent
+    wrong_options:
+      - Data encryption
+      - Speed of data access
+      - Multi-factor authentication
+      - Software compatibility
+      - User interface design
+    explanation: >-
+      - **Correct:** Terms of service should clearly disclose how personal data is collected and shared.
+      - **Incorrect:** Encryption, authentication, and UI are separate issues from consent.
+
+  - question: >-
+      Which of the following are **requirements under GDPR** (General Data Protection Regulation) in the European Union?
+
+      Select **three** correct answers.
+    correct_options:
+      - Users must be able to access and delete their personal data
+      - Companies must disclose data breaches in a timely manner
+      - Users must give explicit consent before data is collected
+    wrong_options:
+      - All data must be stored in the user's country
+      - Companies must provide internet to users
+      - Encryption must be optional
+    explanation: >-
+      - **Correct:** GDPR enforces data access, breach notification, and explicit opt-in consent.
+      - **Incorrect:** It doesn't dictate where data is stored geographically or provide internet.
+
+  - question: >-
+      A social media platform updates its terms of service to allow use of uploaded content in advertising. Users are not notified directly.
+
+      What is the primary ethical issue?
+
+    correct_options:
+      - Users were not meaningfully informed of changes that affect their rights
+    wrong_options:
+      - The platform lost money
+      - The platform offered better ad recommendations
+      - The platform is legally required to delete all photos after 90 days
+      - Users can no longer log in
+    explanation: >-
+      - **Correct:** Material changes to data use require user awareness and understanding.
+      - **Incorrect:** Financial and login issues are unrelated.
+
+  - question: >-
+      Which of the following are examples of **ethical concerns in global computing**?
+
+      Select **two** correct answers.
+    correct_options:
+      - Surveillance tools sold to countries with poor human rights records
+      - Biased algorithms deployed in hiring systems across cultures
+    wrong_options:
+      - Using translation software to build multilingual websites
+      - Lower prices for cloud services in some countries
+      - Designing applications with local time zones
+      - Hosting servers in different regions
+    explanation: >-
+      - **Correct:** Cross-border technology can reinforce inequality or surveillance.
+      - **Incorrect:** Localization and pricing aren't inherently unethical.
+
+  - question: >-
+      A company uses predictive analytics to identify students at risk of dropping out. However, the system incorrectly flags certain students due to biased historical data.
+
+      What are the two main ethical concerns?
+
+    correct_options:
+      - The algorithm reinforces existing bias
+      - Students are being evaluated by a system they cannot explain or challenge
+    wrong_options:
+      - Students don’t have access to free internet
+      - The predictions are kept confidential
+      - The system is faster than human counselors
+      - The school has too many servers
+    explanation: >-
+      - **Correct:** Lack of transparency and algorithmic bias raise fairness issues.
+      - **Incorrect:** Speed and infrastructure aren’t the problem here.
+
+  - question: >-
+      Which of the following would be a violation of **Children’s Online Privacy Protection Act (COPPA)** in the U.S.?
+
+    correct_options:
+      - Collecting personal data from users under 13 without parental consent
+    wrong_options:
+      - Limiting content availability to children
+      - Hosting a kid-safe search engine
+      - Displaying child-friendly ads
+      - Asking for age verification
+      - Offering free games for students
+    explanation: >-
+      - **Correct:** COPPA requires parental permission for data collection from children under 13.
+      - **Incorrect:** Age-gated services and child-oriented design do not violate COPPA.
+
+  - question: >-
+      A mobile app tracks a user’s location even when it’s not open. The app’s settings do not clearly allow the user to disable tracking.
+
+      What **privacy principle** is most likely being violated?
+
+    correct_options:
+      - User control over data collection
+    wrong_options:
+      - Data redundancy
+      - Proper syntax usage
+      - Device resolution
+      - Bandwidth usage
+      - Open-source licensing
+    explanation: >-
+      - **Correct:** Ethical and legal guidelines expect users to control how and when data is collected.
+      - **Incorrect:** Technical factors like syntax and bandwidth aren’t relevant to privacy control.
