@@ -1160,18 +1160,6 @@
       - A: (3+1)×2 = 8  
       - B: (3×2)+2 = 8  
       - Wait… they **do** produce the same result! Update:
-
-  correct_options:
-    - They produce the same result
-  wrong_options:
-    - Program A only
-    - Program B only
-    - Neither produces the same result
-    - Cannot be determined
-  explanation: >-
-    - **Correct:** A = 8, B = 8 → same output for input x = 3
-    - **Incorrect:** Assumes order affects output, but not in this case
-
 - question: >-
     A student designs a program that simulates how quickly a virus spreads.  
     Each day, the number of infected people triples until it reaches 10,000 or more.  
@@ -1187,4 +1175,3 @@
   explanation: >-
     - **Correct:** The stopping condition is based on a threshold, not a known count
     - **Incorrect:** A FOR loop with fixed steps isn’t ideal for exponential growth
-
