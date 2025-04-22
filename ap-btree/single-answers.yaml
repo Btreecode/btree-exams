@@ -1,14 +1,18 @@
 ---
 questions:
-  - question: What is **1+1**
+  - question: 1 What is **1+1**
     correct_options: [2]
     wrong_options: [3, 4, 5]
 
   - question: |
-      What is the result of executing the following code
+      2 What is the result of executing the following code
 
       ```java
-      System.out.println("hello world");
+      System.out.println("Hello World");
       ```
     correct_options: ["Hello World"]
     wrong_options: ["Good Bye", "Life is good", "Just do it"]
+
+  - question: 3. answer is ZERO
+    correct_options: [0]
+    wrong_options: [1, 2, 3]
