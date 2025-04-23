@@ -1,6 +1,24 @@
 ---
 questions:
   - question: |
+
+      java code
+      ```java
+      public class Person {
+        public static void main() {
+          System.out.println("hello");
+        }
+      }
+      ```
+
+      no language specified code block
+      ```
+      for i in range(10):
+        print(i)
+      ```
+
+      inline code block: `int x = 10`
+
       ```mermaid
       graph LR
           A[Square Rect] -- Link text --> B((Circle))
