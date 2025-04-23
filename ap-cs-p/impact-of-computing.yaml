@@ -1,5 +1,5 @@
 questions:
-  - question: >-
+  - question: |
       A programmer is designing an algorithm used to assess loan applications.  
       Which of the following would help reduce bias in the algorithm?
 
@@ -10,11 +10,11 @@ questions:
       - Apply a single fixed rule for all applicants
       - Minimize human involvement to avoid emotion
       - Use the fastest machine learning model available
-    explanation: >-
+    explanation: |
       - **Correct:** Collaboration and diverse testing uncover bias in logic and data.
       - **Incorrect:** Relying on past data or eliminating human review may reinforce existing bias.
 
-  - question: >-
+  - question: |
       What is the main benefit of using **citizen science** to support butterfly population research?
 
       Select **two** correct answers.
@@ -25,11 +25,11 @@ questions:
       - The public is better at identifying insects than experts
       - Volunteers can make conclusions without expert analysis
       - Scientific data is less important than anecdotal reports
-    explanation: >-
+    explanation: |
       - **Correct:** Citizen science expands scale and reach.
       - **Incorrect:** Public contributions support, but don’t replace, expert insight.
 
-  - question: >-
+  - question: |
       A credit card company sends you an email with its logo, asking you to call the number on the back of your card to confirm a charge.  
       Which of the following makes this example **least likely** to be phishing?
 
@@ -40,11 +40,11 @@ questions:
       - It mentions your credit card
       - It uses strong emotional language
       - It says “URGENT” in the subject line
-    explanation: >-
+    explanation: |
       - **Correct:** Encouraging use of a known, official contact method avoids redirection to fake links.
       - **Incorrect:** Logos and familiar info can be faked.
 
-  - question: >-
+  - question: |
       In 2013, hackers used a malicious link to infect a vendor’s system and gain access to millions of customer credit cards through Target’s payment processing.
 
       What type of attack was this?
@@ -56,11 +56,11 @@ questions:
       - Brute force
       - Keylogging
       - Packet interception
-    explanation: >-
+    explanation: |
       - **Correct:** Social engineering and email bait were used to install malware.
       - **Incorrect:** The attack wasn’t based on direct data entry or login guessing.
 
-  - question: >-
+  - question: |
       A company trains an algorithm to review resumes but later finds that it ranks male applicants higher due to biased training data.
 
       What is the **most likely cause** of this issue?
@@ -72,11 +72,11 @@ questions:
       - The algorithm used too many features
       - Resume order affected ranking
       - The output was not encrypted
-    explanation: >-
+    explanation: |
       - **Correct:** Bias in historical hiring patterns gets baked into training sets.
       - **Incorrect:** Volume, encryption, or features don’t directly explain bias.
 
-  - question: >-
+  - question: |
       A computer has two identical processors. Processes 4 and 5 must run sequentially.  
       Processes 1–3 can run in parallel.
 
@@ -97,11 +97,11 @@ questions:
       - 18 seconds
       - 7 seconds
       - 11 seconds
-    explanation: >-
+    explanation: |
       - **Correct:** Max(5,3+2) = 5 seconds for P1–3 in parallel; then 4+4 = 8 → total = 13s.
       - **Incorrect:** Others miscalculate parallel runtime or overlook dependency.
 
-  - question: >-
+  - question: |
       Which of the following are NOT advantages of simulations?
 
       Select **two** correct answers.
@@ -113,11 +113,11 @@ questions:
       - They’re safer for testing dangerous situations
       - They reduce physical resources used
       - They can be adjusted more easily
-    explanation: >-
+    explanation: |
       - **Correct:** Simulations reduce cost and offer control, but aren’t always more accurate.
       - **Incorrect:** Most benefits stem from flexibility and accessibility.
 
-  - question: >-
+  - question: |
       Which of the following would NOT be considered a **reasonable number of steps** for an algorithm?
 
     correct_options:
@@ -127,11 +127,11 @@ questions:
       - 4n + 8n²
       - 100n⁴
       - log₂(n)
-    explanation: >-
+    explanation: |
       - **Correct:** 3ⁿ grows exponentially and becomes unreasonable quickly.
       - **Incorrect:** Polynomial and logarithmic growth are reasonable.
 
-  - question: >-
+  - question: |
       Which of the following are **benefits of easy access to information**?
 
       Select **two** correct answers.
@@ -142,11 +142,11 @@ questions:
       - All publicly available data is guaranteed to be accurate
       - Easy access ensures privacy is preserved
       - It guarantees unbiased information
-    explanation: >-
+    explanation: |
       - **Correct:** Access helps support education and research.
       - **Incorrect:** Access ≠ accuracy, privacy, or objectivity.
 
-  - question: >-
+  - question: |
       A health app gives fitness advice. The app’s recommendations change depending on age, gender, and prior input history.  
       Over time, users are funneled toward only certain options.
 
@@ -159,10 +159,10 @@ questions:
       - The app is using dynamic memory allocation
       - Health advice must never change
       - The app loads slowly on older devices
-    explanation: >-
+    explanation: |
       - **Correct:** Algorithms can unintentionally limit exposure to alternative paths (filter bubble).
       - **Incorrect:** Speed and memory aren't ethical concerns in this context.
-  - question: >-
+  - question: |
       A student copies a photo from a website and uses it in a published blog post without giving credit.
 
       What issue does this raise?
@@ -175,11 +175,11 @@ questions:
       - Phishing
       - Malware
       - Public domain use
-    explanation: >-
+    explanation: |
       - **Correct:** Reusing copyrighted content without permission or attribution is a legal issue.
       - **Incorrect:** This isn't about security or software access.
 
-  - question: >-
+  - question: |
       Which of the following are benefits of **open-source software**?
 
       Select **three** correct answers.
@@ -191,11 +191,11 @@ questions:
       - It ensures the software is always secure
       - It can only be used for nonprofit projects
       - It prevents all forms of hacking
-    explanation: >-
+    explanation: |
       - **Correct:** Open-source promotes accessibility, customization, and community contributions.
       - **Incorrect:** Open-source does not guarantee security or restrict use.
 
-  - question: >-
+  - question: |
       A rural community lacks stable broadband internet, making it difficult for students to complete assignments or access lessons during remote learning.
 
       What issue does this illustrate?
@@ -207,11 +207,11 @@ questions:
       - File format errors
       - Network redundancy
       - IPv6 transition issues
-    explanation: >-
+    explanation: |
       - **Correct:** Digital divide describes unequal access to technology and the internet.
       - **Incorrect:** Technical specs and formats aren’t the root of this access gap.
 
-  - question: >-
+  - question: |
       Which of the following are **consequences of unequal access to computing resources**?
 
       Select **two** correct answers.
@@ -223,11 +223,11 @@ questions:
       - Those with access always become computer experts
       - Devices with smaller screens are more biased
       - Broadband is guaranteed by law
-    explanation: >-
+    explanation: |
       - **Correct:** Inequity in access results in skill gaps and economic disadvantages.
       - **Incorrect:** Technical assumptions or overgeneralizations are misleading.
 
-  - question: >-
+  - question: |
       Which of the following licenses allows others to freely use, share, and modify a work as long as credit is given?
 
     correct_options:
@@ -238,11 +238,11 @@ questions:
       - Private repository license
       - Trade secret protections
       - None of the above
-    explanation: >-
+    explanation: |
       - **Correct:** Creative Commons licenses encourage sharing with proper attribution.
       - **Incorrect:** Other licenses restrict use or are not freely shareable.
 
-  - question: >-
+  - question: |
       A school uses **open-source platforms** for student projects.  
       Which of the following are potential advantages?
 
@@ -255,11 +255,11 @@ questions:
       - Software never needs updating
       - Only computer science students can use it
       - Open-source means the data is public
-    explanation: >-
+    explanation: |
       - **Correct:** Open-source software supports transparency and cost savings.
       - **Incorrect:** Bugs and updates still apply; access isn’t restricted to experts.
 
-  - question: >-
+  - question: |
       A popular online resource offers free, editable learning materials and allows users to improve or remix them.
 
       What term best describes this practice?
@@ -272,11 +272,11 @@ questions:
       - Exclusive copyright
       - Brute force learning
       - Blacklisting
-    explanation: >-
+    explanation: |
       - **Correct:** Open access allows anyone to use and improve materials freely.
       - **Incorrect:** Other terms relate to security or limitations.
 
-  - question: >-
+  - question: |
       Which of the following statements are true about **open data**?
 
       Select **two** correct answers.
@@ -288,10 +288,10 @@ questions:
       - It prevents the spread of misinformation
       - It limits collaboration due to data volume
       - It can only be accessed by professionals
-    explanation: >-
+    explanation: |
       - **Correct:** Open data supports transparency and reproducibility.
       - **Incorrect:** Open data may contain errors or require interpretation.
-  - question: >-
+  - question: |
       A police department uses a predictive policing algorithm to identify areas with a high likelihood of crime. Over time, the same neighborhoods are repeatedly flagged and patrolled, even though the number of reported incidents there is declining.
 
       What is the **most likely ethical concern**?
@@ -303,11 +303,11 @@ questions:
       - The algorithm was open-source, which made it less secure
       - The police failed to use location-based services
       - The algorithm increases internet traffic in those areas
-    explanation: >-
+    explanation: |
       - **Correct:** Predictive systems can create feedback loops if based on biased data.
       - **Incorrect:** Performance and security are not the issue here.
 
-  - question: >-
+  - question: |
       A company uses AI to review job applications. Applicants with non-traditional education paths or gaps in employment are often ranked lower, even if qualified.
 
       What are the main **social impacts** of this algorithm?
@@ -321,11 +321,11 @@ questions:
       - It helps hire only candidates from top universities
       - It guarantees better hiring decisions
       - It avoids human bias entirely
-    explanation: >-
+    explanation: |
       - **Correct:** Automated filters can overlook qualified individuals and reinforce existing biases.
       - **Incorrect:** AI does not eliminate bias — it can amplify it if unchecked.
 
-  - question: >-
+  - question: |
       A school district uses a proprietary algorithm to place students in classes. Some students are consistently placed in remedial sections without explanation. The district refuses to share how placements are made.
 
       What ethical issue does this raise?
@@ -337,11 +337,11 @@ questions:
       - The algorithm is not open-source
       - The algorithm runs too slowly
       - The software is copyrighted
-    explanation: >-
+    explanation: |
       - **Correct:** Decisions that impact students should be explainable and reviewable.
       - **Incorrect:** Speed, source code, or copyright are unrelated.
 
-  - question: >-
+  - question: |
       An online platform shows different product prices to users based on location and device. Users in wealthier neighborhoods see higher prices than others.
 
       What is the **primary ethical concern**?
@@ -353,11 +353,11 @@ questions:
       - The product selection is too broad
       - The algorithm is not mobile-optimized
       - Too many users are visiting the site at once
-    explanation: >-
+    explanation: |
       - **Correct:** Pricing based on demographic profiling can be ethically problematic.
       - **Incorrect:** The issue is fairness, not performance or functionality.
 
-  - question: >-
+  - question: |
       A content platform shows users only stories that match their prior reading history, eventually filtering out differing viewpoints.
 
       What **negative consequence** could this cause?
@@ -369,11 +369,11 @@ questions:
       - Users get access to fewer articles overall
       - The app requires higher bandwidth
       - The platform becomes less secure
-    explanation: >-
+    explanation: |
       - **Correct:** Algorithmic filtering can reduce exposure to diverse ideas.
       - **Incorrect:** Technical or financial issues are not the concern here.
 
-  - question: >-
+  - question: |
       A logistics company replaces many warehouse workers with automated robots.  
       What are potential **societal consequences** of this decision?
 
@@ -386,11 +386,11 @@ questions:
       - The company becomes open-source
       - Robots require healthcare benefits
       - Job postings increase immediately
-    explanation: >-
+    explanation: |
       - **Correct:** Automation improves efficiency but may increase inequality and unemployment.
       - **Incorrect:** Sci-fi tropes or unrelated details aren't realistic impacts.
 
-  - question: >-
+  - question: |
       A startup uses facial recognition to unlock phones. However, users with darker skin tones report higher failure rates.
 
       What is the **likely cause**, and what should be done?
@@ -404,6 +404,6 @@ questions:
       - The software must run on faster processors
       - The phones should block darker backgrounds
       - The user must reset the system after each use
-    explanation: >-
+    explanation: |
       - **Correct:** Biased training data creates discriminatory systems; review and retraining are essential.
       - **Incorrect:** Hardware or usage factors are not the root of the issue.

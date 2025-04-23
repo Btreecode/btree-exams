@@ -1,5 +1,5 @@
 questions:
-  - question: >-
+  - question: |
       A program includes the following code:
 
       ```plaintext
@@ -17,11 +17,11 @@ questions:
       - 8
       - result
       - num
-    explanation: >-
+    explanation: |
       - **Correct:** 4 * 2 + 3 = 11.
       - **Incorrect:** Others ignore order of operations or output variable values rather than names.
 
-  - question: >-
+  - question: |
       A list named `scores` contains the following values: [4, 8, 15, 16, 23, 42]
 
       Which of the following correctly accesses the third value in the list?
@@ -33,11 +33,11 @@ questions:
       - scores(2)
       - scores["third"]
       - scores[4]
-    explanation: >-
+    explanation: |
       - **Correct:** List indices start at 0, so the third value is at index 2.
       - **Incorrect:** Index 3 gives the 4th value, and other syntax is invalid.
 
-  - question: >-
+  - question: |
       Fill in the blank:  
       A _______________ is used to simplify code by allowing a sequence of instructions to be reused multiple times.
     correct_options:
@@ -48,11 +48,11 @@ questions:
       - loop
       - expression
       - constant
-    explanation: >-
+    explanation: |
       - **Correct:** Procedures (or functions) encapsulate reusable logic.
       - **Incorrect:** Loops repeat, but don’t encapsulate logic; others are not reusable blocks.
 
-  - question: >-
+  - question: |
       What is the result of the following Boolean expression?
 
       ```plaintext
@@ -66,14 +66,14 @@ questions:
       - OR
       - undefined
       - true AND false
-    explanation: >-
+    explanation: |
       - **Correct:** 
         - true AND false → false  
         - true AND true → true  
         - false OR true → true  
       - **Incorrect:** Others misapply Boolean logic or treat expressions as values.
 
-  - question: >-
+  - question: |
       Reorder the steps of the linear search algorithm:
 
       a. Compare the current item to the target  
@@ -89,11 +89,11 @@ questions:
       - b → d → a → c → e
       - d → c → a → b → e
       - d → a → c → b → e
-    explanation: >-
+    explanation: |
       - **Correct:** Search starts at the first item → check → return index or move on → repeat → fail = -1.
       - **Incorrect:** Wrong orders skip logic or return before a check.
 
-  - question: >-
+  - question: |
       Which of the following are examples of **abstraction** in programming?
 
       Select **two** correct answers.
@@ -105,11 +105,11 @@ questions:
       - Using a list instead of a variable
       - Typing out every operation in long form
       - Avoiding procedures to make the code faster
-    explanation: >-
+    explanation: |
       - **Correct:** Abstraction simplifies and hides complexity — functions and meaningful variable names do this.
       - **Incorrect:** Avoiding abstraction or repeating code increases complexity.
 
-  - question: >-
+  - question: |
       A student writes the following loop:
 
       ```plaintext
@@ -128,11 +128,11 @@ questions:
       - 1, 2, 3
       - 5
       - Nothing
-    explanation: >-
+    explanation: |
       - **Correct:** Loop runs while count ≠ 5. It stops after displaying 4 and incrementing to 5.
       - **Incorrect:** 5 is not displayed; counting doesn't start at 0.
 
-  - question: >-
+  - question: |
       Which of the following problems are **undecidable**?
 
       Select **two** correct answers.
@@ -144,11 +144,11 @@ questions:
       - Checking if a list is empty
       - Finding the sum of two values
       - Searching for a value in a list
-    explanation: >-
+    explanation: |
       - **Correct:** These are classic examples of problems with no general algorithmic solution (Halting Problem).
       - **Incorrect:** The other tasks are solvable with algorithms.
 
-  - question: >-
+  - question: |
       Which of the following are characteristics of **efficient algorithms**?
 
       Select **two** correct answers.
@@ -160,11 +160,11 @@ questions:
       - They always use recursion
       - They run faster only on small datasets
       - They use more variables to store intermediate values
-    explanation: >-
+    explanation: |
       - **Correct:** Efficiency refers to performance in time and space, especially at scale.
       - **Incorrect:** Code length and recursion don’t determine efficiency; variables may or may not help.
 
-  - question: >-
+  - question: |
       A student is writing a program to compute the average of values in a list.  
       Which of the following strategies would be MOST appropriate?
 
@@ -176,10 +176,10 @@ questions:
       - Multiply all values together
       - Convert the list into a string and find its length
       - Remove all even values first
-    explanation: >-
+    explanation: |
       - **Correct:** Averaging requires summing all values and dividing by count.
       - **Incorrect:** Sorting gives the median; others don’t produce a valid mean.
-  - question: >-
+  - question: |
       Consider the following code segment:
 
       ```plaintext
@@ -200,11 +200,11 @@ questions:
       - 0
       - Error
       - Nothing
-    explanation: >-
+    explanation: |
       - **Correct:** 10 MOD 4 = 2, so the condition evaluates to true.
       - **Incorrect:** Other answers misinterpret the use of modulus or assume syntax issues.
 
-  - question: >-
+  - question: |
       What does the following code segment output?
 
       ```plaintext
@@ -225,11 +225,11 @@ questions:
       - list
       - cba
       - abcabc
-    explanation: >-
+    explanation: |
       - **Correct:** Concatenates each string in the list: "a" + "b" + "c".
       - **Incorrect:** Doesn’t separate with spaces or reverse — no repetition occurs.
 
-  - question: >-
+  - question: |
       What type of error is produced by the following code?
 
       ```plaintext
@@ -244,11 +244,11 @@ questions:
       - Overflow error
       - No error
       - Type error
-    explanation: >-
+    explanation: |
       - **Correct:** Index 5 is out of bounds for a list of size 3 — runtime error.
       - **Incorrect:** Syntax is valid; no arithmetic overflow or type mismatch.
 
-  - question: >-
+  - question: |
       What can replace `[missing condition]` to complete the truth table?
 
       | A | B | [missing condition] |
@@ -270,11 +270,11 @@ questions:
       - A AND B
       - A
       - TRUE
-    explanation: >-
+    explanation: |
       - **Correct:** The output is TRUE when A is FALSE — matches the NOT A logic.
       - **Incorrect:** Others do not match the table logic or misinterpret conditions.
 
-  - question: >-
+  - question: |
       Which of the following is an example of **procedural abstraction**?
 
       Select **two** correct answers.
@@ -286,11 +286,11 @@ questions:
       - Storing input in a variable named `x`
       - Typing the same formula multiple times
       - Renaming variables to shorter names
-    explanation: >-
+    explanation: |
       - **Correct:** Abstraction groups logic into procedures for reuse and clarity.
       - **Incorrect:** Loops and variables don’t abstract behavior; repetition is the opposite of abstraction.
 
-  - question: >-
+  - question: |
       The following code is intended to simulate a 25% chance of displaying "YES":
 
       ```plaintext
@@ -310,11 +310,11 @@ questions:
       - x MOD 2 = 0
       - x = 4
       - x != 1
-    explanation: >-
+    explanation: |
       - **Correct:** RANDOM(1,4) gives 4 options. One option = 25%, so condition should trigger only for x = 1.
       - **Incorrect:** Other conditions trigger multiple values (e.g., x ≤ 2 = 50%).
 
-  - question: >-
+  - question: |
       What is MOST likely to be an **unintended effect** of using facial recognition in a public space?
     correct_options:
       - People may feel their privacy is being violated without their knowledge
@@ -324,11 +324,11 @@ questions:
       - The system always improves performance
       - It will reduce the need for electricity
       - The accuracy is guaranteed
-    explanation: >-
+    explanation: |
       - **Correct:** Use of sensitive data without consent can lead to ethical concerns.
       - **Incorrect:** Accuracy and performance are not guaranteed and may vary.
 
-  - question: >-
+  - question: |
       What is the final value of `total` after this code runs?
 
       ```plaintext
@@ -346,11 +346,11 @@ questions:
       - 5
       - 0
       - 1234
-    explanation: >-
+    explanation: |
       - **Correct:** Adds all numbers: 1+2+3+4 = 10.
       - **Incorrect:** Other answers represent partial addition, length, or concatenation.
 
-  - question: >-
+  - question: |
       A program is designed to recommend restaurants based on user preferences.  
       It uses a list of restaurants and filters them based on dietary needs.
 
@@ -362,11 +362,11 @@ questions:
       - Use the same restaurant for every user
       - Sort the list alphabetically without filtering
       - Ask the user to provide code for their own filter
-    explanation: >-
+    explanation: |
       - **Correct:** Filtering through a loop ensures the recommendation matches preferences.
       - **Incorrect:** Other approaches don’t personalize results.
 
-  - question: >-
+  - question: |
       What will be the output of the following Boolean logic circuit?
 
       ```mermaid
@@ -387,10 +387,10 @@ questions:
       - OR1
       - A2
       - Error
-    explanation: >-
+    explanation: |
       - **Correct:** TRUE OR FALSE = TRUE → TRUE AND TRUE = TRUE.
       - **Incorrect:** All other responses ignore proper logic flow or misinterpret values.
-  - question: >-
+  - question: |
       What is the value of `result` after this segment runs?
 
       ```plaintext
@@ -406,11 +406,11 @@ questions:
       - 12
       - 7
       - 20
-    explanation: >-
+    explanation: |
       - **Correct:** 5 * 3 + 4 = 15 + 4 = 19
       - **Incorrect:** Some confuse order of operations or skip multiplication.
 
-  - question: >-
+  - question: |
       Consider this list: `nums ← [8, 3, 9, 2, 5]`  
       Which expression correctly accesses the **last** item in the list?
     correct_options:
@@ -421,11 +421,11 @@ questions:
       - nums[-1]
       - nums[1]
       - nums["end"]
-    explanation: >-
+    explanation: |
       - **Correct:** Index 4 = 5th item. Lists start at index 0.
       - **Incorrect:** Index 5 is out of range; others are invalid or incorrect syntax.
 
-  - question: >-
+  - question: |
       What does the following code display?
 
       ```plaintext
@@ -441,11 +441,11 @@ questions:
       - Hello
       - Hello + Ava
       - HelloAva
-    explanation: >-
+    explanation: |
       - **Correct:** String concatenation produces “Hello, Ava”
       - **Incorrect:** Others reflect partial results or misinterpret variables.
 
-  - question: >-
+  - question: |
       What is the final value of `x`?
 
       ```plaintext
@@ -462,11 +462,11 @@ questions:
       - 4
       - 3
       - 8
-    explanation: >-
+    explanation: |
       - **Correct:** 2→4→7→6
       - **Incorrect:** Other values skip a step or apply incorrect arithmetic.
 
-  - question: >-
+  - question: |
       Which of the following is a **Boolean expression**?
 
       Select **two** correct answers.
@@ -478,11 +478,11 @@ questions:
       - "Hello"
       - RETURN x
       - PROCEDURE sum(x, y)
-    explanation: >-
+    explanation: |
       - **Correct:** Boolean expressions evaluate to true or false.
       - **Incorrect:** Others are strings, math expressions, or procedures.
 
-  - question: >-
+  - question: |
       A program uses this loop:
 
       ```plaintext
@@ -501,11 +501,11 @@ questions:
       - 2, 3
       - 1, 2, 3, 4
       - Nothing
-    explanation: >-
+    explanation: |
       - **Correct:** Loop runs until i > 3. Displays 1, 2, 3.
       - **Incorrect:** Some include 4, 0, or cut the loop early.
 
-  - question: >-
+  - question: |
       What does this procedure do?
 
       ```plaintext
@@ -525,11 +525,11 @@ questions:
       - Counts how many even numbers are in a list
       - Is equivalent to n + 2
       - Displays output directly to the screen
-    explanation: >-
+    explanation: |
       - **Correct:** MOD 2 = 0 checks if a number is even.
       - **Incorrect:** The procedure checks only one number, does not loop or display.
 
-  - question: >-
+  - question: |
       Which of the following are benefits of using **procedures**?
 
       Select **two** correct answers.
@@ -541,11 +541,11 @@ questions:
       - Replaces the need for loops
       - Prevents all errors
       - Eliminates memory usage
-    explanation: >-
+    explanation: |
       - **Correct:** Procedures help with modularity and code reuse.
       - **Incorrect:** They don’t guarantee speed, error-proofing, or memory reduction.
 
-  - question: >-
+  - question: |
       A student uses a **linear search** to find a value in a list of 20 elements.  
       What is the **maximum number of comparisons** the algorithm may perform?
     correct_options:
@@ -556,11 +556,11 @@ questions:
       - 19
       - 0
       - 21
-    explanation: >-
+    explanation: |
       - **Correct:** In the worst case, it checks all 20 elements.
       - **Incorrect:** These either underestimate or exceed the list length.
 
-  - question: >-
+  - question: |
       What is the main difference between **linear search** and **binary search**?
 
       Select **two** correct answers.
@@ -572,11 +572,11 @@ questions:
       - Binary search loops backward
       - Linear search needs recursion
       - Binary search sorts the list automatically
-    explanation: >-
+    explanation: |
       - **Correct:** Binary search divides the list in half; it needs sorted input.
       - **Incorrect:** Linear search doesn't care about order; binary doesn’t sort for you.
 
-  - question: >-
+  - question: |
       Which of the following problems is **undecidable**?
 
     correct_options:
@@ -587,11 +587,11 @@ questions:
       - Displaying the first 10 even numbers
       - Sorting a list alphabetically
       - Calculating a factorial
-    explanation: >-
+    explanation: |
       - **Correct:** Halting problem is a classic undecidable problem.
       - **Incorrect:** All other problems are solvable by known algorithms.
 
-  - question: >-
+  - question: |
       Two algorithms are tested on different input sizes. Algorithm A takes 10 steps for every input, while Algorithm B takes twice the input size in steps.  
 
       Which statement is true?
@@ -602,11 +602,11 @@ questions:
       - Both algorithms scale equally
       - Algorithm A uses more memory
       - Algorithm B always finishes faster
-    explanation: >-
+    explanation: |
       - **Correct:** Algorithm A has constant time; B is linear, so A scales better.
       - **Incorrect:** B is not constant; speed and memory aren’t guaranteed.
 
-  - question: >-
+  - question: |
       Consider the following code segment:
 
       ```plaintext
@@ -627,11 +627,11 @@ questions:
       - 3 3
       - x y
       - Error
-    explanation: >-
+    explanation: |
       - **Correct:** x becomes 4, y becomes 3 (swapped via z as a temporary variable).
       - **Incorrect:** Others ignore reassignment order or treat variables as undeclared.
 
-  - question: >-
+  - question: |
       The following procedure is missing one line:
 
       ```plaintext
@@ -651,11 +651,11 @@ questions:
       - total ← 0
       - item ← total + 1
       - total ← item + 1
-    explanation: >-
+    explanation: |
       - **Correct:** Adds each item to the total — classic accumulation pattern.
       - **Incorrect:** Others overwrite or incorrectly assign values.
 
-  - question: >-
+  - question: |
       A student writes this code to check if any value in a list is negative:
 
       ```plaintext
@@ -677,11 +677,11 @@ questions:
       - It modifies the original list
       - It adds all values to get a total
       - It displays the negative values
-    explanation: >-
+    explanation: |
       - **Correct:** The code returns early on negative values; otherwise, it finishes the loop and returns false.
       - **Incorrect:** No list modification or output occurs — it returns a Boolean only.
 
-  - question: >-
+  - question: |
       What is the output of this logic sequence?
 
       ```plaintext
@@ -703,11 +703,11 @@ questions:
       - Error
       - AB
       - Nothing
-    explanation: >-
+    explanation: |
       - **Correct:** x = 5 meets both conditions: less than 10 and greater than 3 → displays “A”.
       - **Incorrect:** B and C would display only if first or second condition failed.
 
-  - question: >-
+  - question: |
       A student writes this loop:
 
       ```plaintext
@@ -726,11 +726,11 @@ questions:
       - 0
       - 5
       - Error
-    explanation: >-
+    explanation: |
       - **Correct:** Loop runs while x ≠ 4. It displays 1, 2, 3 then exits.
       - **Incorrect:** 4 is the exit condition, not part of the display.
 
-  - question: >-
+  - question: |
       The following function is meant to return the **largest value** in a list but doesn’t work correctly:
 
       ```plaintext
@@ -752,11 +752,11 @@ questions:
       - It doesn’t return any value
       - It uses recursion instead of iteration
       - It skips the first item in the list
-    explanation: >-
+    explanation: |
       - **Correct:** Initializing max to 0 makes it fail if all list values are negative.
       - **Incorrect:** The loop works, and the list isn't changed.
 
-  - question: >-
+  - question: |
       A student creates this procedure:
 
       ```plaintext
@@ -778,11 +778,11 @@ questions:
       - Returns true if all values are divisible by 3
       - Returns the largest number in the list
       - Filters out values not divisible by 3
-    explanation: >-
+    explanation: |
       - **Correct:** A count is incremented for each value where MOD 3 = 0.
       - **Incorrect:** It neither sums, filters, nor compares all values.
 
-  - question: >-
+  - question: |
       What is the output of this conditional logic?
 
       ```plaintext
@@ -802,11 +802,11 @@ questions:
       - FALSE
       - A
       - Error
-    explanation: >-
+    explanation: |
       - **Correct:** NOT A = FALSE; FALSE OR FALSE = FALSE → ELSE executes → “Y”
       - **Incorrect:** Logic operation is misapplied in other choices.
 
-  - question: >-
+  - question: |
       A procedure takes a list of temperatures in Celsius and should return a new list of Fahrenheit values.  
       What line should go inside the loop?
 
@@ -826,10 +826,10 @@ questions:
       - APPEND celsiusList, temp
       - RETURN temp
       - DISPLAY(fahrenheitList)
-    explanation: >-
+    explanation: |
       - **Correct:** Correctly converts Celsius to Fahrenheit and appends.
       - **Incorrect:** Other lines modify the wrong list or fail to build the result list.
-  - question: >-
+  - question: |
       Consider the following list:  
       `nums ← [2, 4, 6, 8, 10]`
 
@@ -844,11 +844,11 @@ questions:
       - Sort the list before checking values
       - Use binary search with no condition
       - Return the first item in the list
-    explanation: >-
+    explanation: |
       - **Correct:** Linear search checks each element until it finds the target.
       - **Incorrect:** Binary search needs sorted lists, and jumping ahead breaks linear logic.
 
-  - question: >-
+  - question: |
       What is the **first step** of the binary search algorithm?
 
     correct_options:
@@ -859,11 +859,11 @@ questions:
       - Check the last element
       - Count the elements
       - Reverse the list
-    explanation: >-
+    explanation: |
       - **Correct:** Binary search begins at the midpoint.
       - **Incorrect:** Other actions are unnecessary or not part of binary logic.
 
-  - question: >-
+  - question: |
       A student wants to simulate dice rolls and count how often a 6 appears.  
       What’s the most appropriate code structure?
 
@@ -875,11 +875,11 @@ questions:
       - Ask the user to input results manually
       - Multiply all numbers together
       - Use REPEAT UNTIL RANDOM(1,6) = 6
-    explanation: >-
+    explanation: |
       - **Correct:** A loop simulates repeated trials; condition inside increments for matches.
       - **Incorrect:** Simulation fails without repetition and randomness.
 
-  - question: >-
+  - question: |
       What does this nested loop output?
 
       ```plaintext
@@ -896,12 +896,12 @@ questions:
       - 1, 4, 9
       - 3, 6
       - 1, 2, 3, 4, 5, 6
-    explanation: >-
+    explanation: |
       - **Correct:** First i=1 → 1×1, 1×2, 1×3 → 1,2,3  
         Then i=2 → 2×1, 2×2, 2×3 → 2,4,6
       - **Incorrect:** Others skip one loop or misinterpret order.
 
-  - question: >-
+  - question: |
       The following sorting procedure is intended to sort a list in increasing order, but is **not complete**:
 
       ```plaintext
@@ -924,11 +924,11 @@ questions:
       - Change the list to a string
       - Add a print statement only
       - Sort the list before calling the function
-    explanation: >-
+    explanation: |
       - **Correct:** Bubble sort requires repeated passes — the current loop doesn’t do enough iterations.
       - **Incorrect:** Sorting beforehand or ignoring the swap logic breaks the algorithm.
 
-  - question: >-
+  - question: |
       A program models how water spreads across a 2D field. Each step, water moves one space to the right if the space is empty.
 
       What structure would most effectively model this?
@@ -942,11 +942,11 @@ questions:
       - Sorting the list alphabetically
       - Using only one procedure with no loops
       - Ignoring empty spaces
-    explanation: >-
+    explanation: |
       - **Correct:** 2D movement requires a grid structure; loops update behavior over time.
       - **Incorrect:** Modeling with one value or static steps breaks simulation logic.
 
-  - question: >-
+  - question: |
       What is the **output** of this nested conditional?
 
       ```plaintext
@@ -969,11 +969,11 @@ questions:
       - TRUE
       - FALSE
       - Error
-    explanation: >-
+    explanation: |
       - **Correct:** x > 5 is TRUE → y < 3 is FALSE → ELSE → B
       - **Incorrect:** Others fail to trace nesting or assume early exit.
 
-  - question: >-
+  - question: |
       A simulation models how a plant grows in height every day, doubling in size until it reaches a limit.  
 
       What’s the best way to structure this simulation?
@@ -986,11 +986,11 @@ questions:
       - Replace the loop with a sorting function
       - Store heights as colors instead of numbers
       - Multiply the height by zero each time
-    explanation: >-
+    explanation: |
       - **Correct:** Doubling each step until a threshold is a classic use of REPEAT UNTIL.
       - **Incorrect:** Printing, sorting, or multiplying by 0 ruins simulation behavior.
 
-  - question: >-
+  - question: |
       Two students implement an algorithm to find the **largest even number** in a list of integers.
 
       - **Student A**: Sorts the list, reverses it, and finds the first even number  
@@ -1005,11 +1005,11 @@ questions:
       - Both approaches are equally efficient
       - Student A’s approach uses fewer comparisons
       - Student B’s algorithm only works on sorted lists
-    explanation: >-
+    explanation: |
       - **Correct:** Student B performs linear search with constant comparisons.
       - **Incorrect:** Sorting increases time complexity; B doesn’t require sorted input.
 
-  - question: >-
+  - question: |
       What does the following code display?
 
       ```plaintext
@@ -1029,11 +1029,11 @@ questions:
       - 0
       - 3
       - 2
-    explanation: >-
+    explanation: |
       - **Correct:** Only even numbers are 2 and 4 → sum = 6
       - **Incorrect:** Others include odd values or miscount.
 
-  - question: >-
+  - question: |
       Which of the following algorithms would be MOST efficient for checking if a name appears in a **sorted list of names**?
 
     correct_options:
@@ -1044,11 +1044,11 @@ questions:
       - Bubble sort
       - Reversing the list
       - Random sampling
-    explanation: >-
+    explanation: |
       - **Correct:** Binary search uses divide-and-conquer, O(log n)
       - **Incorrect:** Sorting is unnecessary; linear search is slower
 
-  - question: >-
+  - question: |
       A program sorts a list using selection sort. Another uses merge sort.  
       For a list with 10,000 elements, which will perform fewer comparisons?
 
@@ -1060,11 +1060,11 @@ questions:
       - Both perform the same
       - Depends on the data type
       - Cannot be determined
-    explanation: >-
+    explanation: |
       - **Correct:** Merge sort is O(n log n); selection sort is O(n²)
       - **Incorrect:** Bubble and selection sort scale poorly
 
-  - question: >-
+  - question: |
       Which of the following best describes **abstraction** in algorithm design?
 
       Select **two** correct answers.
@@ -1076,11 +1076,11 @@ questions:
       - Avoiding the use of variables
       - Removing comments to reduce distractions
       - Using recursion to reduce runtime
-    explanation: >-
+    explanation: |
       - **Correct:** Abstraction means hiding complexity and organizing logic
       - **Incorrect:** Removing structure or readability harms abstraction
 
-  - question: >-
+  - question: |
       What is the output of this trace?
 
       ```plaintext
@@ -1102,11 +1102,11 @@ questions:
       - 8
       - 15
       - 7
-    explanation: >-
+    explanation: |
       - **Correct:** Adds 1, 3, 5 → 9
       - **Incorrect:** Others count even numbers or sum all
 
-  - question: >-
+  - question: |
       A programmer writes the following algorithm:
 
       ```plaintext
@@ -1128,11 +1128,11 @@ questions:
       - 1, 2
       - 1, 2, 3, 4
       - None
-    explanation: >-
+    explanation: |
       - **Correct:** When x = 3, CONTINUE skips DISPLAY
       - **Incorrect:** CONTINUE does not terminate the loop
 
-  - question: >-
+  - question: |
       Which of the following pairs of programs would **produce the same result** for a given input?
 
       **Program A**:
@@ -1156,12 +1156,12 @@ questions:
       - Program B only
       - They produce the same result
       - Cannot be determined
-    explanation: >-
+    explanation: |
       - **Correct:**  
         - A: (3+1)×2 = 8  
         - B: (3×2)+2 = 8  
         - Wait… they **do** produce the same result! Update:
-  - question: >-
+  - question: |
       A student designs a program that simulates how quickly a virus spreads.  
       Each day, the number of infected people triples until it reaches 10,000 or more.  
       Which control structure is best?
@@ -1173,6 +1173,6 @@ questions:
       - Use a SWITCH statement
       - LOOP until infected < 10,000
       - DECLARE infected ← 10,000
-    explanation: >-
+    explanation: |
       - **Correct:** The stopping condition is based on a threshold, not a known count
       - **Incorrect:** A FOR loop with fixed steps isn’t ideal for exponential growth
