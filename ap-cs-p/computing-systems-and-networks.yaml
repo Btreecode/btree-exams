@@ -67,8 +67,8 @@ questions:
 
       Select **two** correct answers.
     correct_options:
-      - How many photos were taken at Walt Disney World
-      - Whether people take more photos on weekends
+      - Where the photo was taken
+      - When the photo was taken
     wrong_options:
       - Name of the person who took the photo
       - Resolution of the image
