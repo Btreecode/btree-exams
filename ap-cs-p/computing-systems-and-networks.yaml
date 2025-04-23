@@ -1,5 +1,5 @@
 questions:
-  - question: >-
+  - question: |
       When switching from IPv4 (32-bit) to IPv6 (128-bit), how many more unique addresses become available?
     correct_options:
       - 2^96
@@ -7,14 +7,31 @@ questions:
       - 96^2
       - 2 * 96
       - 128 / 32
-    explanation: >-
+    explanation: |
       - **Correct:** IPv6 has 128 bits vs IPv4’s 32 bits → 2^96 times more addresses.
       - **Incorrect:** Other options confuse bit arithmetic with basic math.
 
-  - question: >-
+  - question: |
       Which of the following best describes the **minimum number of cuts** needed to isolate Node A in the network diagram?
-
-      (Assume A is connected to three nodes via direct lines.)
+      ```mermaid
+        flowchart TD
+          A((A))
+          B((B))
+          C((C))
+          D((D))
+          E((E))
+          F((F))
+          A --- B
+          A --- C
+          A --- F
+          B --- D
+          B --- E
+          C --- E
+          F --- E
+          D --- E
+          C --- F
+          B --- C
+      ```
 
     correct_options:
       - 3 lines
@@ -22,11 +39,11 @@ questions:
       - 1 line
       - 2 lines
       - 4 lines
-    explanation: >-
+    explanation: |
       - **Correct:** A must be fully disconnected from all direct neighbors, which requires 3 cuts.
       - **Incorrect:** Fewer cuts would leave paths open; more is unnecessary.
 
-  - question: >-
+  - question: |
       In a **centralized** internet system, what is the minimum number of nodes needed to disable the entire system?
     correct_options:
       - 1
@@ -34,25 +51,11 @@ questions:
       - 7
       - 1000
       - All nodes
-    explanation: >-
+    explanation: |
       - **Correct:** Centralized systems depend on one hub — destroying it disables the system.
       - **Incorrect:** Distributed systems are resilient, but centralized systems are not.
 
-  - question: >-
-      Which of the following best describes how data travel across the internet?
-
-      Select steps in correct order.
-    correct_options:
-      - I → IV → III → II
-    wrong_options:
-      - I → II → III → IV
-      - IV → I → III → II
-      - I → III → IV → II
-    explanation: >-
-      - **Correct:** Data → packets (I) → ISP connection (IV) → routed (III) → reassembled (II)
-      - **Incorrect:** Other orders break actual protocol flow.
-
-  - question: >-
+  - question: |
       A smartphone logs metadata for every photo. The metadata includes:
 
       - Location  
@@ -70,11 +73,11 @@ questions:
       - Name of the person who took the photo
       - Resolution of the image
       - The device’s battery level at the time
-    explanation: >-
+    explanation: |
       - **Correct:** Timestamp and location reveal patterns.
       - **Incorrect:** Metadata listed doesn’t include personal identity or technical stats.
 
-  - question: >-
+  - question: |
       A computer performs the following 3 tasks using **one CPU**:
 
       | Task   | Time (s) |
@@ -92,11 +95,11 @@ questions:
       - 8 seconds
       - 10 seconds
       - 14 seconds
-    explanation: >-
+    explanation: |
       - **Correct:** With one CPU, tasks must run in sequence → total = 8 + 2 + 6 = 16.
       - **Incorrect:** Other options assume parallelism or omit one task.
 
-  - question: >-
+  - question: |
       What are the main **benefits** of redundancy in internet infrastructure?
 
       Select **two** correct answers.
@@ -108,11 +111,11 @@ questions:
       - Eliminates the need for IP addresses
       - Allows devices to operate without power
       - Replaces the need for ISPs
-    explanation: >-
+    explanation: |
       - **Correct:** Redundancy ensures the system keeps working if one route fails.
       - **Incorrect:** Redundancy doesn’t eliminate core infrastructure.
 
-  - question: >-
+  - question: |
       Which of the following transformations are **lossy**?
 
       Select **two** correct answers.
@@ -124,11 +127,11 @@ questions:
       - Encrypting data
       - Backing up a file to the cloud
       - Sampling an analog signal with no compression
-    explanation: >-
+    explanation: |
       - **Correct:** Resolution loss and grayscale conversion reduce detail.
       - **Incorrect:** Others retain all data or involve no change to representation.
 
-  - question: >-
+  - question: |
       A device on the internet uses **128-bit addressing** and must route a packet to another device.
 
       Which protocol helps this device determine the path?
@@ -141,11 +144,11 @@ questions:
       - HTML
       - FTP
       - CSS
-    explanation: >-
+    explanation: |
       - **Correct:** IP is responsible for addressing and routing packets.
       - **Incorrect:** TCP ensures delivery; DNS resolves domains; HTML/CSS/FTP are unrelated.
 
-  - question: >-
+  - question: |
       What trade-offs are involved when converting **analog audio** into **digital sound files**?
 
       Select **three** correct answers.
@@ -157,10 +160,10 @@ questions:
       - Audio files cannot be stored digitally
       - Sampling increases signal range
       - Digital sound cannot be edited
-    explanation: >-
+    explanation: |
       - **Correct:** Sampling introduces limitations; compression trades quality for size.
       - **Incorrect:** Digital audio is editable and widely used.
-  - question: >-
+  - question: |
       Which of the following **secure transmission methods** help protect data sent over the internet?
 
       Select **two** correct answers.
@@ -172,11 +175,11 @@ questions:
       - Sending the data via email attachments
       - Using a faster Wi-Fi connection
       - Disabling JavaScript
-    explanation: >-
+    explanation: |
       - **Correct:** HTTPS uses SSL/TLS to encrypt; encryption secures data at rest or in transit.
       - **Incorrect:** Compression or email lacks encryption; faster internet ≠ more secure.
 
-  - question: >-
+  - question: |
       A website uses **asymmetric encryption** to protect login credentials.  
       Which statement describes how asymmetric encryption works?
 
@@ -187,11 +190,11 @@ questions:
       - A password is hashed, not encrypted
       - The encryption only works if the Wi-Fi is private
       - It is less secure than symmetric encryption
-    explanation: >-
+    explanation: |
       - **Correct:** Asymmetric encryption uses a public-private key pair.
       - **Incorrect:** Symmetric uses one key; hashing is different; Wi-Fi privacy isn’t encryption.
 
-  - question: >-
+  - question: |
       Which of the following are **examples of authentication methods**?
 
       Select **three** correct answers.
@@ -203,11 +206,11 @@ questions:
       - Using cookies to remember a user
       - DNS lookups
       - Encrypting a message with AES
-    explanation: >-
+    explanation: |
       - **Correct:** Authentication confirms identity — biometric, password, multi-step.
       - **Incorrect:** Cookies and DNS don’t verify user identity; encryption ≠ authentication.
 
-  - question: >-
+  - question: |
       A hacker sets up a fake website that looks like a bank’s login page to trick users.  
       This is an example of:
 
@@ -219,11 +222,11 @@ questions:
       - Malware injection
       - Logic error
       - Data scraping
-    explanation: >-
+    explanation: |
       - **Correct:** Phishing deceives users into submitting sensitive data.
       - **Incorrect:** Spoofing impersonates IPs/domains; others are different threats.
 
-  - question: >-
+  - question: |
       Which of the following protocols are responsible for **accurate and complete delivery** of data?
 
     correct_options:
@@ -234,11 +237,11 @@ questions:
       - FTP
       - HTML
       - CSS
-    explanation: >-
+    explanation: |
       - **Correct:** TCP (Transmission Control Protocol) ensures ordered, complete delivery.
       - **Incorrect:** IP routes; DNS maps names; FTP/HTML/CSS are for content and styling.
 
-  - question: >-
+  - question: |
       Which of the following statements about **routing on the internet** are true?
 
       Select **two** correct answers.
@@ -250,11 +253,11 @@ questions:
       - Data packets must travel through only one ISP
       - All packets in a message follow the same route
       - Packets must go through a central server
-    explanation: >-
+    explanation: |
       - **Correct:** Routing is dynamic; redundancy allows different paths.
       - **Incorrect:** Packets don’t always follow the same path, and routing adapts in real time.
 
-  - question: >-
+  - question: |
       DNS (Domain Name System) plays which role in the internet’s communication model?
 
     correct_options:
@@ -265,11 +268,11 @@ questions:
       - Tracks user activity
       - Measures data transmission speed
       - Blocks unauthorized access
-    explanation: >-
+    explanation: |
       - **Correct:** DNS resolves domain names like "openai.com" into IP addresses.
       - **Incorrect:** Other tasks are handled by different components (TCP, firewalls, etc.).
 
-  - question: >-
+  - question: |
       A school installs a firewall that blocks certain IP addresses and restricts traffic to only trusted websites.  
       What **threat prevention** strategy is this?
 
@@ -281,11 +284,11 @@ questions:
       - Key exchange
       - Routing optimization
       - Denial of service
-    explanation: >-
+    explanation: |
       - **Correct:** Firewalls filter traffic to prevent unauthorized communication.
       - **Incorrect:** This is not authentication or encryption — it's access control.
 
-  - question: >-
+  - question: |
       Which of the following are **goals of cybersecurity**?
 
       Select **three** correct answers.
@@ -297,10 +300,10 @@ questions:
       - Increase the number of devices connected to a network
       - Guarantee 100% privacy under all conditions
       - Speed up download times
-    explanation: >-
+    explanation: |
       - **Correct:** Cybersecurity’s goals are often summarized as CIA: Confidentiality, Integrity, Availability.
       - **Incorrect:** Privacy isn’t absolute; performance is not a primary security goal.
-  - question: >-
+  - question: |
       A hospital's system is hit by ransomware. All patient records become encrypted and inaccessible until a payment is made. The hospital refuses to pay and calls in cybersecurity specialists.
 
       What are appropriate **initial response steps**?
@@ -314,11 +317,11 @@ questions:
       - Restart all machines without scanning
       - Announce publicly that the attack was the IT team's fault
       - Delete all encrypted files
-    explanation: >-
+    explanation: |
       - **Correct:** Isolation and recovery planning are top priorities.
       - **Incorrect:** Paying ransoms is discouraged; blaming or deleting data is harmful.
 
-  - question: >-
+  - question: |
       A university student gains unauthorized access to the gradebook and changes their own score from a B to an A. They claim they didn't "steal" anything and that it's a victimless crime.
 
       What **ethical and legal violations** are present?
@@ -332,11 +335,11 @@ questions:
       - It's allowed as long as no money is stolen
       - The system design flaw makes it ethical
       - The student used their own login credentials, so it’s not illegal
-    explanation: >-
+    explanation: |
       - **Correct:** Tampering with records is both unethical and illegal.
       - **Incorrect:** Intent or access method doesn’t justify the action.
 
-  - question: >-
+  - question: |
       An online shopping platform experiences a security breach in which encrypted credit card numbers are stolen. The company waits two months to notify customers.
 
       What **ethical principle** has most clearly been violated?
@@ -349,11 +352,11 @@ questions:
       - Data compression practices
       - IP address availability
       - Freedom of speech
-    explanation: >-
+    explanation: |
       - **Correct:** Users have the right to know when their private data is at risk.
       - **Incorrect:** Other rights are unrelated to breach disclosure.
 
-  - question: >-
+  - question: |
       After a new student portal is launched, IT notices that hundreds of login attempts are made per second from foreign IP addresses. These attempts use common usernames and passwords.
 
       What type of threat is occurring, and what’s the best **first response**?
@@ -365,11 +368,11 @@ questions:
       - Social engineering; require longer passwords
       - Man-in-the-middle; turn off HTTPS
       - Logic bomb; reboot the system
-    explanation: >-
+    explanation: |
       - **Correct:** Brute force attempts are systematic; IP blocking slows attackers.
       - **Incorrect:** These are not symptoms of DDoS or social engineering.
 
-  - question: >-
+  - question: |
       A ride-sharing company collects users’ location data in real time to improve driver matching and response time. Users were not informed clearly about this data collection.
 
       What trade-off is being made, and what ethical concern does it raise?
@@ -383,11 +386,11 @@ questions:
       - Location data isn't considered private
       - Collecting data is always legal for business use
       - User data was publicly shared, so no breach occurred
-    explanation: >-
+    explanation: |
       - **Correct:** Consent and transparency are key to ethical data collection.
       - **Incorrect:** Ethical guidelines apply regardless of complaints or legality.
 
-  - question: >-
+  - question: |
       A school district is hit by a phishing attack where teachers unknowingly provide their passwords. Attackers send fake emails to parents requesting personal data.
 
       What are the **best follow-up actions**?
@@ -401,11 +404,11 @@ questions:
       - Disable all teacher email accounts indefinitely
       - Keep the incident confidential to avoid panic
       - Stop using email altogether
-    explanation: >-
+    explanation: |
       - **Correct:** Transparency, password resets, and training help prevent recurrence.
       - **Incorrect:** Panic responses or secrecy make future attacks more likely.
 
-  - question: >-
+  - question: |
       A popular messaging app stores user messages in encrypted form but keeps the encryption key on the same server as the data.
 
       What vulnerability does this create?
@@ -417,10 +420,10 @@ questions:
       - Encryption is only useful for images and files
       - It violates TCP/IP standards
       - The app is not connected to the internet
-    explanation: >-
+    explanation: |
       - **Correct:** Storing keys and data together eliminates the benefit of encryption.
       - **Incorrect:** The issue isn’t size, format, or connection method.
-  - question: >-
+  - question: |
       A fitness tracking app collects users’ GPS locations, heart rates, and activity data.  
       Its terms of service mention data collection in vague language and do not mention third-party data sharing.
 
@@ -434,11 +437,11 @@ questions:
       - Multi-factor authentication
       - Software compatibility
       - User interface design
-    explanation: >-
+    explanation: |
       - **Correct:** Terms of service should clearly disclose how personal data is collected and shared.
       - **Incorrect:** Encryption, authentication, and UI are separate issues from consent.
 
-  - question: >-
+  - question: |
       Which of the following are **requirements under GDPR** (General Data Protection Regulation) in the European Union?
 
       Select **three** correct answers.
@@ -450,11 +453,11 @@ questions:
       - All data must be stored in the user's country
       - Companies must provide internet to users
       - Encryption must be optional
-    explanation: >-
+    explanation: |
       - **Correct:** GDPR enforces data access, breach notification, and explicit opt-in consent.
       - **Incorrect:** It doesn't dictate where data is stored geographically or provide internet.
 
-  - question: >-
+  - question: |
       A social media platform updates its terms of service to allow use of uploaded content in advertising. Users are not notified directly.
 
       What is the primary ethical issue?
@@ -466,11 +469,11 @@ questions:
       - The platform offered better ad recommendations
       - The platform is legally required to delete all photos after 90 days
       - Users can no longer log in
-    explanation: >-
+    explanation: |
       - **Correct:** Material changes to data use require user awareness and understanding.
       - **Incorrect:** Financial and login issues are unrelated.
 
-  - question: >-
+  - question: |
       Which of the following are examples of **ethical concerns in global computing**?
 
       Select **two** correct answers.
@@ -482,11 +485,11 @@ questions:
       - Lower prices for cloud services in some countries
       - Designing applications with local time zones
       - Hosting servers in different regions
-    explanation: >-
+    explanation: |
       - **Correct:** Cross-border technology can reinforce inequality or surveillance.
       - **Incorrect:** Localization and pricing aren't inherently unethical.
 
-  - question: >-
+  - question: |
       A company uses predictive analytics to identify students at risk of dropping out. However, the system incorrectly flags certain students due to biased historical data.
 
       What are the two main ethical concerns?
@@ -499,11 +502,11 @@ questions:
       - The predictions are kept confidential
       - The system is faster than human counselors
       - The school has too many servers
-    explanation: >-
+    explanation: |
       - **Correct:** Lack of transparency and algorithmic bias raise fairness issues.
       - **Incorrect:** Speed and infrastructure aren’t the problem here.
 
-  - question: >-
+  - question: |
       Which of the following would be a violation of **Children’s Online Privacy Protection Act (COPPA)** in the U.S.?
 
     correct_options:
@@ -514,11 +517,11 @@ questions:
       - Displaying child-friendly ads
       - Asking for age verification
       - Offering free games for students
-    explanation: >-
+    explanation: |
       - **Correct:** COPPA requires parental permission for data collection from children under 13.
       - **Incorrect:** Age-gated services and child-oriented design do not violate COPPA.
 
-  - question: >-
+  - question: |
       A mobile app tracks a user’s location even when it’s not open. The app’s settings do not clearly allow the user to disable tracking.
 
       What **privacy principle** is most likely being violated?
@@ -531,6 +534,6 @@ questions:
       - Device resolution
       - Bandwidth usage
       - Open-source licensing
-    explanation: >-
+    explanation: |
       - **Correct:** Ethical and legal guidelines expect users to control how and when data is collected.
       - **Incorrect:** Technical factors like syntax and bandwidth aren’t relevant to privacy control.
