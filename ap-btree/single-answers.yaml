@@ -2,6 +2,13 @@
 questions:
   - question: |
 
+      table
+      | Name       | Age | City        |
+      |------------|-----|-------------|
+      | Alice      | 28  | New York    |
+      | Bob        | 34  | Los Angeles |
+      | Charlie    | 25  | Chicago     |
+
       java code
       ```java
       public class Person {
