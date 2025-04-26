@@ -23,12 +23,12 @@ questions:
       System.out.println(s + t);
       ```
     correct_options:
-      - II and III only  
+      - II and III only
     wrong_options:
-      - I only  
-      - II only  
-      - III only  
-      - I and II only  
+      - I only
+      - II only
+      - III only
+      - I and II only
       - I and III only
   - question: |
       Refer to method `insert` described here. The `insert` method has two string parameters and one integer parameter. The method returns the string obtained by inserting the second string into the first starting at the position indicated by the integer parameter `pos`. For example, if `str1` contains `xy` and `str2` contains `cat`, then
@@ -52,19 +52,19 @@ questions:
       ```
       Which of the following is a correct replacement for /* more code */?
     correct_options:
-    - | 
-      first = str1.substring(0, pos);  
-      last = str1.substring(pos);
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos);
     wrong_options:
-  - |
-    first = str1.substring(0, pos - 1);  
-    last = str1.substring(pos);
-  - |
-    first = str1.substring(0, pos + 1);  
-    last = str1.substring(pos + 1);
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos + 1, str1.length());
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos, str1.length() + 1);
+      - |
+        first = str1.substring(0, pos - 1);  
+        last = str1.substring(pos);
+      - |
+        first = str1.substring(0, pos + 1);  
+        last = str1.substring(pos + 1);
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos + 1, str1.length());
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos, str1.length() + 1);
