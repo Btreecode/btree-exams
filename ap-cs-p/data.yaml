@@ -30,13 +30,13 @@ questions:
       - **Correct:** Lossless algorithms preserve all data for full reconstruction.
       - **Incorrect:** Lossy discards information; others are unrelated terms or incorrect descriptors.
 
-  - question: >-
-      Match each data concept with the best example:
+  - question: |
+      Match each data concept with the best example:  
 
-      A. Metadata  
-      B. Lossy Compression  
-      C. Abstraction  
-      D. Binary
+      - A. Metadata  
+      - B. Lossy Compression  
+      - C. Abstraction  
+      - D. Binary  
 
       1. A lower-quality JPEG image  
       2. A photo’s resolution and timestamp  
@@ -44,6 +44,7 @@ questions:
       4. Using a variable name like “temperature” to store numeric values
 
       Choose the correct match.
+
     correct_options:
       - A-2, B-1, C-4, D-3
     wrong_options:
