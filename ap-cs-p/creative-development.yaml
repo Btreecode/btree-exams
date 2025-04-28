@@ -15,7 +15,6 @@ questions:
       - **Correct:**
         - *Comments help other programmers understand how a code segment works*: This is a key reason for using comments — clarity and collaboration.
         - *Comments make it easier to maintain and update code over time*: Documenting logic and design decisions helps future debugging and refactoring.
-
       - **Incorrect:**
         - *Comments make the program run faster*: False — comments are ignored by the computer during execution and have no effect on speed.
         - *Comments are executed as part of the program logic*: Incorrect — comments are non-executable and meant for human readers.
@@ -34,14 +33,12 @@ questions:
     explanation: |
       - **Correct:**
         - *It allows developers to refine their programs based on feedback and testing*: This is central to iterative design — improving over time through repeated development cycles.
-
       - **Incorrect:**
         - *It guarantees that the program will not have bugs*: No process can completely eliminate bugs.
         - *It eliminates the need for documentation*: Documentation is still necessary regardless of the process.
         - *It ensures the program runs faster*: Performance is not inherently tied to the development process used.
         - *It makes programs easier to copy from other developers*: Copying code isn’t a development benefit or best practice.
         - *It allows developers to avoid collaboration*: Collaboration is often part of iterative development, not avoided by it.
-
   - question: |
       Which of the following are examples of user input to a program?
 
