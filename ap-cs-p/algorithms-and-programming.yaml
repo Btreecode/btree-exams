@@ -302,16 +302,17 @@ questions:
       ```
 
       What should replace `[missing condition]`?
+      Select **two** correct answers.
     correct_options:
       - x = 1
+      - x = 4
     wrong_options:
       - x > 1
       - x <= 2
       - x MOD 2 = 0
-      - x = 4
       - x != 1
     explanation: |
-      - **Correct:** RANDOM(1,4) gives 4 options. One option = 25%, so condition should trigger only for x = 1.
+      - **Correct:** RANDOM(1,4) gives 4 options. One option = 25%, so condition should trigger only for x = 1 or x = 4.
       - **Incorrect:** Other conditions trigger multiple values (e.g., x ≤ 2 = 50%).
 
   - question: |
@@ -371,11 +372,11 @@ questions:
 
       ```mermaid
       graph TD
-          A1[TRUE] --> OR1
-          A2[FALSE] --> OR1
-          OR1 --> AND1
-          A3[TRUE] --> AND1
-          AND1 --> ANSWER[Answer]
+          A1[TRUE] --> OR
+          A2[FALSE] --> OR
+          OR --> AND
+          A3[TRUE] --> AND
+          AND --> ANSWER[Answer]
       ```
 
       What does the final `ANSWER` node output?
@@ -383,8 +384,8 @@ questions:
       - TRUE
     wrong_options:
       - FALSE
-      - AND1
-      - OR1
+      - AND
+      - OR
       - A2
       - Error
     explanation: |
