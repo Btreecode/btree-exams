@@ -1188,3 +1188,22 @@ questions:
     explanation: |
       - **Correct:** Simulations reduce cost and offer control, but aren’t always more accurate.
       - **Incorrect:** Most benefits stem from flexibility and accessibility.
+  - question: |
+      What will be displayed when this code is executed?
+
+      ```plaintext
+      x ← 10  
+      y ← 5  
+      IF x < y THEN  
+          DISPLAY("x is smaller")  
+      ELSE  
+          DISPLAY("y is smaller or equal")
+      ```
+    correct_options:
+      - y is smaller or equal
+    wrong_options:
+      - x is smaller
+      - x
+      - y
+      - Error
+      - Nothing is displayed
