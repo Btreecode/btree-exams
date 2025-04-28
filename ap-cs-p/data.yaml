@@ -341,7 +341,7 @@ questions:
       - **Incorrect:** Pixel color and file size are content or storage characteristics, not embedded metadata.
 
   - question: |
-      Which of the following BEST explains how the word “blue” is represented in an image editor?
+      Which of the following BEST explains how the color blue is represented in an image editor?
 
       Select **two** correct answers.
     correct_options:
