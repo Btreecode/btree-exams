@@ -1173,3 +1173,18 @@ questions:
     explanation: |
       - **Correct:** The stopping condition is based on a threshold, not a known count
       - **Incorrect:** A FOR loop with fixed steps isn’t ideal for exponential growth
+  - question: |
+      Which of the following are NOT advantages of simulations?
+
+      Select **two** correct answers.
+    correct_options:
+      - They are more expensive than real-world experiments
+      - They are always more accurate than actual experiments
+    wrong_options:
+      - They allow rapid testing of different conditions
+      - They’re safer for testing dangerous situations
+      - They reduce physical resources used
+      - They can be adjusted more easily
+    explanation: |
+      - **Correct:** Simulations reduce cost and offer control, but aren’t always more accurate.
+      - **Incorrect:** Most benefits stem from flexibility and accessibility.
