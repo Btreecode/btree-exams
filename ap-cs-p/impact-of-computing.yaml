@@ -88,7 +88,6 @@ questions:
     explanation: |
       - **Correct:** 3ⁿ grows exponentially and becomes unreasonable quickly.
       - **Incorrect:** Polynomial and logarithmic growth are reasonable.
-
   - question: |
       Which of the following are **benefits of easy access to information**?
 
@@ -103,7 +102,6 @@ questions:
     explanation: |
       - **Correct:** Access helps support education and research.
       - **Incorrect:** Access ≠ accuracy, privacy, or objectivity.
-
   - question: |
       A health app gives fitness advice. The app’s recommendations change depending on age, gender, and prior input history.  
       Over time, users are funneled toward only certain options.
@@ -136,7 +134,6 @@ questions:
     explanation: |
       - **Correct:** Reusing copyrighted content without permission or attribution is a legal issue.
       - **Incorrect:** This isn't about security or software access.
-
   - question: |
       Which of the following are benefits of **open-source software**?
 
@@ -168,7 +165,6 @@ questions:
     explanation: |
       - **Correct:** Digital divide describes unequal access to technology and the internet.
       - **Incorrect:** Technical specs and formats aren’t the root of this access gap.
-
   - question: |
       Which of the following are **consequences of unequal access to computing resources**?
 
@@ -187,7 +183,6 @@ questions:
 
   - question: |
       Which of the following licenses allows others to freely use, share, and modify a work as long as credit is given?
-
     correct_options:
       - Creative Commons (Attribution)
     wrong_options:
@@ -221,7 +216,6 @@ questions:
       A popular online resource offers free, editable learning materials and allows users to improve or remix them.
 
       What term best describes this practice?
-
     correct_options:
       - Open access
     wrong_options:
@@ -233,7 +227,6 @@ questions:
     explanation: |
       - **Correct:** Open access allows anyone to use and improve materials freely.
       - **Incorrect:** Other terms relate to security or limitations.
-
   - question: |
       Which of the following statements are true about **open data**?
 
@@ -253,7 +246,6 @@ questions:
       A police department uses a predictive policing algorithm to identify areas with a high likelihood of crime. Over time, the same neighborhoods are repeatedly flagged and patrolled, even though the number of reported incidents there is declining.
 
       What is the **most likely ethical concern**?
-
     correct_options:
       - The algorithm reinforces bias present in its training data
     wrong_options:
@@ -264,7 +256,6 @@ questions:
     explanation: |
       - **Correct:** Predictive systems can create feedback loops if based on biased data.
       - **Incorrect:** Performance and security are not the issue here.
-
   - question: |
       A company uses AI to review job applications. Applicants with non-traditional education paths or gaps in employment are often ranked lower, even if qualified.
 
@@ -282,7 +273,6 @@ questions:
     explanation: |
       - **Correct:** Automated filters can overlook qualified individuals and reinforce existing biases.
       - **Incorrect:** AI does not eliminate bias — it can amplify it if unchecked.
-
   - question: |
       A school district uses a proprietary algorithm to place students in classes. Some students are consistently placed in remedial sections without explanation. The district refuses to share how placements are made.
 
@@ -298,12 +288,10 @@ questions:
     explanation: |
       - **Correct:** Decisions that impact students should be explainable and reviewable.
       - **Incorrect:** Speed, source code, or copyright are unrelated.
-
   - question: |
       An online platform shows different product prices to users based on location and device. Users in wealthier neighborhoods see higher prices than others.
 
       What is the **primary ethical concern**?
-
     correct_options:
       - Dynamic pricing may lead to unfair discrimination
     wrong_options:
@@ -314,12 +302,10 @@ questions:
     explanation: |
       - **Correct:** Pricing based on demographic profiling can be ethically problematic.
       - **Incorrect:** The issue is fairness, not performance or functionality.
-
   - question: |
       A content platform shows users only stories that match their prior reading history, eventually filtering out differing viewpoints.
 
       What **negative consequence** could this cause?
-
     correct_options:
       - Users may become trapped in an echo chamber
     wrong_options:
@@ -330,7 +316,6 @@ questions:
     explanation: |
       - **Correct:** Algorithmic filtering can reduce exposure to diverse ideas.
       - **Incorrect:** Technical or financial issues are not the concern here.
-
   - question: |
       A logistics company replaces many warehouse workers with automated robots.  
       What are potential **societal consequences** of this decision?
@@ -347,7 +332,6 @@ questions:
     explanation: |
       - **Correct:** Automation improves efficiency but may increase inequality and unemployment.
       - **Incorrect:** Sci-fi tropes or unrelated details aren't realistic impacts.
-
   - question: |
       A startup uses facial recognition to unlock phones. However, users with darker skin tones report higher failure rates.
 
@@ -368,7 +352,6 @@ questions:
   - question: |
       A website uses **asymmetric encryption** to protect login credentials.  
       Which statement describes how asymmetric encryption works?
-
     correct_options:
       - The public key encrypts the data, and the private key decrypts it
     wrong_options:
