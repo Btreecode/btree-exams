@@ -123,22 +123,6 @@ questions:
       - **Correct:** HTTPS uses SSL/TLS to encrypt; encryption secures data at rest or in transit.
       - **Incorrect:** Compression or email lacks encryption; faster internet ≠ more secure.
   - question: |
-      Which of the following are **examples of authentication methods**?
-
-      Select **three** correct answers.
-    correct_options:
-      - Fingerprint recognition
-      - Password entry
-      - Two-factor authentication
-    wrong_options:
-      - Using cookies to remember a user
-      - DNS lookups
-      - Encrypting a message with AES
-    explanation: |
-      - **Correct:** Authentication confirms identity — biometric, password, multi-step.
-      - **Incorrect:** Cookies and DNS don’t verify user identity; encryption ≠ authentication.
-
-  - question: |
       A hacker sets up a fake website that looks like a bank’s login page to trick users.  
       This is an example of:
 

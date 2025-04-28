@@ -379,3 +379,18 @@ questions:
     explanation: |
       - **Correct:** Asymmetric encryption uses a public-private key pair.
       - **Incorrect:** Symmetric uses one key; hashing is different; Wi-Fi privacy isn’t encryption.
+  - question: |
+      Which of the following are **examples of authentication methods**?
+
+      Select **three** correct answers.
+    correct_options:
+      - Fingerprint recognition
+      - Password entry
+      - Two-factor authentication
+    wrong_options:
+      - Using cookies to remember a user
+      - DNS lookups
+      - Encrypting a message with AES
+    explanation: |
+      - **Correct:** Authentication confirms identity — biometric, password, multi-step.
+      - **Incorrect:** Cookies and DNS don’t verify user identity; encryption ≠ authentication.
