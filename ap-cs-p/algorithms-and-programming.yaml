@@ -262,6 +262,7 @@ questions:
       | T | F | F                    |
 
       | T | T | F                    |
+
     correct_options:
       - NOT A
     wrong_options:
