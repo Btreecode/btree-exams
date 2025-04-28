@@ -395,10 +395,10 @@ questions:
   - question: |
       Match each development stage to its best description.
 
-      A. Prototyping  
-      B. Testing  
-      C. Designing  
-      D. Investigating  
+      - A. Prototyping  
+      - B. Testing  
+      - C. Designing  
+      - D. Investigating  
 
       1. Gathering user needs and constraints  
       2. Creating a simplified version of the product  
@@ -557,10 +557,10 @@ questions:
   - question: |
       Match the type of programming error with its description:
 
-      A. Syntax Error  
-      B. Runtime Error  
-      C. Logic Error  
-      D. Overflow Error  
+      - A. Syntax Error  
+      - B. Runtime Error  
+      - C. Logic Error  
+      - D. Overflow Error  
 
       1. The program compiles but outputs the wrong result  
       2. The program crashes when dividing by zero  
@@ -586,11 +586,11 @@ questions:
   - question: |
       Reorder the steps of a basic software development workflow:
 
-      a. Design the user interface  
-      b. Write initial code  
-      c. Test with sample inputs  
-      d. Fix discovered errors  
-      e. Share program with users for feedback  
+      - a. Design the user interface  
+      - b. Write initial code  
+      - c. Test with sample inputs  
+      - d. Fix discovered errors  
+      - e. Share program with users for feedback  
 
       What is the best order?
     correct_options:

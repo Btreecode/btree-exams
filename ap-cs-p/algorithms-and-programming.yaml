@@ -26,16 +26,16 @@ questions:
 
       Which of the following correctly accesses the third value in the list?
     correct_options:
-      - scores[2]
-    wrong_options:
       - scores[3]
+    wrong_options:
+      - scores[2]
       - scores[1]
       - scores(2)
-      - scores["third"]
+      - scores(3)
       - scores[4]
     explanation: |
-      - **Correct:** List indices start at 0, so the third value is at index 2.
-      - **Incorrect:** Index 3 gives the 4th value, and other syntax is invalid.
+      - **Correct:** List indices start at 1, so the third value is at index 3.
+      - **Incorrect:** Index 2 gives the 3rd value in non pseudocode languages.
 
   - question: |
       Fill in the blank:  
@@ -415,16 +415,16 @@ questions:
       Consider this list: `nums ← [8, 3, 9, 2, 5]`  
       Which expression correctly accesses the **last** item in the list?
     correct_options:
-      - nums[4]
-    wrong_options:
       - nums[5]
+    wrong_options:
+      - nums[4]
       - nums[0]
       - nums[-1]
       - nums[1]
       - nums["end"]
     explanation: |
-      - **Correct:** Index 4 = 5th item. Lists start at index 0.
-      - **Incorrect:** Index 5 is out of range; others are invalid or incorrect syntax.
+      - **Correct:** Index 5 = 5th item. Lists start at index 1 in pseudocode.
+      - **Incorrect:** Index 4 is the 5th item in non pseudocode languages
 
   - question: |
       What does the following code display?
