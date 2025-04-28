@@ -58,7 +58,6 @@ questions:
         - *Displaying a chart on screen* and *Printing a message to the console* are forms of output.
         - *Declaring a variable in code* is a programmer action during development, not runtime input.
         - *Saving data to a file* is an output/storage operation.
-
   - question: |
       Which of the following best describes a logic error?
     correct_options:
@@ -78,7 +77,6 @@ questions:
         - *Runs faster than expected* is not an error.
         - *Missing documentation* affects readability, not execution.
         - *Fails due to a virus* is a security issue, not a programming logic issue.
-
   - question: |
       Which of the following statements are true about event-driven programming?
 
@@ -124,7 +122,6 @@ questions:
         - The reverse conversion (C to F) uses a different formula.
         - Averaging, rounding, and external data adjustments are not shown in the code.
         - No strings are printed.
-
   - question: |
       A student writes a program with a "Submit" button, but nothing happens when the button is clicked. 
       Which of the following would MOST likely help debug the issue?
@@ -142,7 +139,6 @@ questions:
         - Changing UI appearance (font size, label name) doesn’t fix logic.
         - Removing the button defeats the purpose.
         - Rewriting or unrelated debugging is unnecessary.
-
   - question: |
       Fill in the blank:  
       A _______________ is best used to help others understand how different parts of a program function, 
@@ -161,7 +157,6 @@ questions:
         - Variables, loops, lists are functional parts of code.
         - Output is visible program behavior.
         - Errors are not intentionally used.
-
   - question: |
       A team of students is working together on a new mobile app. What strategies will MOST help them collaborate effectively?
 
@@ -179,7 +174,6 @@ questions:
         - Collaboration thrives on communication and coordinated division of tasks.
       - **Incorrect:**
         - Avoiding input, delaying integration, or concentrating power in one person limits team effectiveness.
-
   - question: |
       What will be displayed when this code is executed?
 
@@ -222,7 +216,6 @@ questions:
       - **Incorrect:**
         - Unrelated visuals or hidden buttons create confusion.
         - Requiring multiple taps or removing feedback reduces usability.
-
   - question: |
       A student runs a program and it crashes with an "index out of range" error when accessing a list.
       What is the MOST likely cause?
@@ -240,7 +233,6 @@ questions:
         - Syntax errors would prevent the code from running at all.
         - Semicolons are not related to this runtime error.
         - Loops or return statements could contribute, but they aren’t the *most likely cause* for this specific message.
-
   - question: |
       Which of the following inputs would be MOST useful when testing the following program?
 
@@ -305,7 +297,6 @@ questions:
         - Assuming ideal conditions or skipping real testing leads to fragile programs.
         - Comments help explain logic but don’t fix it.
         - Running once is insufficient for thorough testing.
-
   - question: |
       A program has the following code:
 
@@ -334,7 +325,6 @@ questions:
         - Changing to `=` would make it even more restrictive.
         - Rearranging or commenting doesn’t change the logic.
         - Increasing the threshold or adding DISPLAYs without logic adjustments doesn’t solve the issue.
-
   - question: |
       Which of the following examples BEST shows how abstraction is used in program design?
     correct_options:
@@ -349,7 +339,6 @@ questions:
       - **Correct:** Procedural abstraction encapsulates reusable logic under a clear, descriptive name.
       - **Incorrect:**
         - Poor variable naming, unnecessary loops, redundancy, and unused declarations all increase complexity, not reduce it.
-
   - question: |
       Which of the following statements about program documentation is TRUE?
 
@@ -368,7 +357,6 @@ questions:
         - Comments are never executed or tested directly.
         - They're useful throughout development, not just when things go wrong.
         - They do not affect runtime speed.
-
   - question: |
       Which of the following actions is MOST likely to help a collaborative team avoid bias in a computing innovation?
 
@@ -415,7 +403,6 @@ questions:
         - *Designing → 4*: plan structure  
         - *Investigating → 1*: gather information  
       - **Incorrect:** Other combinations confuse the purpose or order of each step.
-
   - question: |
       Which of the following is LEAST likely to help improve a program's usability?
     correct_options:
@@ -429,7 +416,6 @@ questions:
     explanation: |
       - **Correct:** Jargon confuses users, especially those unfamiliar with programming terms.
       - **Incorrect:** All other options improve clarity and usability.
-
   - question: |
       A student notices that their program does not respond when a key is pressed.
 
@@ -455,7 +441,6 @@ questions:
     explanation: |
       - **Correct:** The program never updates `keyPressed`, so the condition is never true.
       - **Incorrect:** Comments or naming don’t impact logic. A loop helps but doesn’t solve the missing input capture.
-
   - question: |
       Place the steps of the iterative development cycle in the correct order:
 
@@ -476,7 +461,6 @@ questions:
     explanation: |
       - **Correct:** You first *write*, then *test*, *get feedback*, and finally *revise* (iterate).
       - **Incorrect:** Other orders break the logical progression of development.
-
   - question: |
       Which of the following statements about collaboration are TRUE?
 
@@ -492,7 +476,6 @@ questions:
     explanation: |
       - **Correct:** Multiple viewpoints improve quality, catch issues, and support productivity with the right tools.
       - **Incorrect:** Syntax issues still occur, and siloing tasks or avoiding collaboration limits innovation.
-
   - question: |
       A student is debugging a program. They believe the error is a logic error. Which of the following clues would support that conclusion?
 
@@ -525,7 +508,6 @@ questions:
     explanation: |
       - **Correct:** Iterative development involves constant cycles of testing, feedback, and refinement.
       - **Incorrect:** Delaying feedback/testing or focusing solely on performance undermines iteration.
-
   - question: |
       A user reports that clicking a button in a program does nothing.  
       The programmer checks and sees this code:
@@ -547,7 +529,6 @@ questions:
     explanation: |
       - **Correct:** The condition never changes because input isn’t connected to the logic.
       - **Incorrect:** Naming, comments, or syntax formatting don't impact button behavior here.
-
   - question: |
       Match the type of programming error with its description:
 
@@ -576,7 +557,6 @@ questions:
         - C → Logic → wrong behavior  
         - D → Overflow → value too large  
       - **Incorrect:** Mismatches confuse types of failure.
-
   - question: |
       Reorder the steps of a basic software development workflow:
 
@@ -597,7 +577,6 @@ questions:
     explanation: |
       - **Correct:** UI design comes first, followed by implementation, testing, debugging, and feedback.
       - **Incorrect:** The other orders are inefficient or reverse key steps.
-
   - question: |
       Fill in the blank:
 
@@ -614,7 +593,6 @@ questions:
     explanation: |
       - **Correct:** Procedures abstract complexity and group logic.
       - **Incorrect:** Other terms describe parts of code but don’t provide abstraction.
-
   - question: |
       Which of the following would MOST likely be an output of a weather app?
 
@@ -630,7 +608,6 @@ questions:
     explanation: |
       - **Correct:** Outputs are shown to the user, such as forecasts or alerts.
       - **Incorrect:** Variables, code, and documentation are part of program logic, not user-facing output.
-
   - question: |
       A student writes a function that doesn’t behave as expected.  
       They test it with the following inputs:
@@ -651,7 +628,6 @@ questions:
     explanation: |
       - **Correct:** Negative input is producing a wrong response, indicating a logical oversight.
       - **Incorrect:** Code runs, so it’s not a syntax or runtime issue. Comments and types are unrelated.
-
   - question: |
       Which of the following is a benefit of documenting code during development?
 
