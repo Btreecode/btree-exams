@@ -99,7 +99,6 @@ questions:
     explanation: |
       - **Correct:**
         - *Triggered by user interactions* and *mouse clicks or key presses* accurately describe how event-driven programs respond to events.
-
       - **Incorrect:**
         - *Run in fixed sequence* describes sequential, not event-driven, programs.
         - *Only used in video games* is false; it's widely used in GUIs, apps, websites, etc.
