@@ -252,15 +252,10 @@ questions:
       What can replace `(missing condition)` to complete the truth table?
 
       | A | B | (missing condition) |
-
       |---|---|----------------------|
-
       | F | F | T                    |
-
       | F | T | T                    |
-
       | T | F | F                    |
-
       | T | T | F                    |
 
     correct_options:
