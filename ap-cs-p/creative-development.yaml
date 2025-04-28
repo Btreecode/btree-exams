@@ -106,7 +106,7 @@ questions:
         - *Cannot handle multiple inputs* — false; they often handle many simultaneous inputs.
         - *Only one type of input* is incorrect; event-driven programs can handle various types of input (e.g., touch, audio, network messages).
   - question: |
-      A student creates the following program to convert Fahrenheit to Celsius:
+      A student creates the following program to convert Fahrenheit to Celsius\:
 
       ```plaintext
       PROCEDURE convert(tempF)
