@@ -591,3 +591,24 @@ questions:
     explanation: |
       - **Correct:** Lossless keeps all data and allows perfect restoration.
       - **Incorrect:** Deletion and quality reduction apply to lossy methods; encryption and conversion are unrelated.
+  - question: |
+      A smartphone logs metadata for every photo. The metadata includes:
+
+      - Location  
+      - Timestamp  
+      - Number of photos at the location  
+      - Filename
+
+      Which of the following can be determined from the metadata?
+
+      Select **two** correct answers.
+    correct_options:
+      - Where the photo was taken
+      - When the photo was taken
+    wrong_options:
+      - Name of the person who took the photo
+      - Resolution of the image
+      - The device’s battery level at the time
+    explanation: |
+      - **Correct:** Timestamp and location reveal patterns.
+      - **Incorrect:** Metadata listed doesn’t include personal identity or technical stats.
