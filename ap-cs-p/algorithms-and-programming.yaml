@@ -249,9 +249,9 @@ questions:
       - **Incorrect:** Syntax is valid; no arithmetic overflow or type mismatch.
 
   - question: |
-      What can replace `[missing condition]` to complete the truth table?
+      What can replace `(missing condition)` to complete the truth table?
 
-      | A | B | [missing condition] |
+      | A | B | (missing condition) |
 
       |---|---|----------------------|
 
