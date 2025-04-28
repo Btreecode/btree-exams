@@ -626,3 +626,18 @@ questions:
     explanation: |
       - **Correct:** Timestamp and location reveal patterns.
       - **Incorrect:** Metadata listed doesn’t include personal identity or technical stats.
+  - question: |
+      What trade-offs are involved when converting **analog audio** into **digital sound files**?
+
+      Select **three** correct answers.
+    correct_options:
+      - Sound must be sampled into discrete intervals
+      - Higher sample rates produce better quality but require more storage
+      - Lossy compression may reduce fidelity to save space
+    wrong_options:
+      - Audio files cannot be stored digitally
+      - Sampling increases signal range
+      - Digital sound cannot be edited
+    explanation: |
+      - **Correct:** Sampling introduces limitations; compression trades quality for size.
+      - **Incorrect:** Digital audio is editable and widely used.
