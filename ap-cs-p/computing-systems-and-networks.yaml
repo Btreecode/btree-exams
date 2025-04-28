@@ -379,8 +379,7 @@ questions:
 
       Select **two** correct answers.
     correct_options:
-      - |
-        Trade-off: More precise service vs. user privacy
+      - "Trade-off: More precise service vs. user privacy"
       - |
         Concern: Data was collected without meaningful user consent
     wrong_options:
