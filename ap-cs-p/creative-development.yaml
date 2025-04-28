@@ -57,7 +57,6 @@ questions:
     explanation: |
       - **Correct:**
         - *Clicking a button on a website* and *Typing a value into a form field* are both user-generated actions that provide data to a program — key forms of input.
-
       - **Incorrect:**
         - *Displaying a chart on screen* and *Printing a message to the console* are forms of output.
         - *Declaring a variable in code* is a programmer action during development, not runtime input.
@@ -76,7 +75,6 @@ questions:
     explanation: |
       - **Correct:**
         - *The program runs but produces an incorrect or unintended output*: A logic error means the program runs, but the logic used leads to the wrong behavior.
-
       - **Incorrect:**
         - *Syntax mistake* is a syntax error, not logic.
         - *Divide by zero and crashes* is typically a runtime error.
