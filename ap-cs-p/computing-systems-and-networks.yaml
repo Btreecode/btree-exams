@@ -107,22 +107,6 @@ questions:
     explanation: |
       - **Correct:** IP is responsible for addressing and routing packets.
       - **Incorrect:** TCP ensures delivery; DNS resolves domains; HTML/CSS/FTP are unrelated.
-
-  - question: |
-      What trade-offs are involved when converting **analog audio** into **digital sound files**?
-
-      Select **three** correct answers.
-    correct_options:
-      - Sound must be sampled into discrete intervals
-      - Higher sample rates produce better quality but require more storage
-      - Lossy compression may reduce fidelity to save space
-    wrong_options:
-      - Audio files cannot be stored digitally
-      - Sampling increases signal range
-      - Digital sound cannot be edited
-    explanation: |
-      - **Correct:** Sampling introduces limitations; compression trades quality for size.
-      - **Incorrect:** Digital audio is editable and widely used.
   - question: |
       Which of the following **secure transmission methods** help protect data sent over the internet?
 
@@ -138,22 +122,6 @@ questions:
     explanation: |
       - **Correct:** HTTPS uses SSL/TLS to encrypt; encryption secures data at rest or in transit.
       - **Incorrect:** Compression or email lacks encryption; faster internet ≠ more secure.
-
-  - question: |
-      A website uses **asymmetric encryption** to protect login credentials.  
-      Which statement describes how asymmetric encryption works?
-
-    correct_options:
-      - The public key encrypts the data, and the private key decrypts it
-    wrong_options:
-      - Both sender and receiver use the same key to encrypt and decrypt
-      - A password is hashed, not encrypted
-      - The encryption only works if the Wi-Fi is private
-      - It is less secure than symmetric encryption
-    explanation: |
-      - **Correct:** Asymmetric encryption uses a public-private key pair.
-      - **Incorrect:** Symmetric uses one key; hashing is different; Wi-Fi privacy isn’t encryption.
-
   - question: |
       Which of the following are **examples of authentication methods**?
 

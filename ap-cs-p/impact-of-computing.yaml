@@ -365,3 +365,17 @@ questions:
     explanation: |
       - **Correct:** Biased training data creates discriminatory systems; review and retraining are essential.
       - **Incorrect:** Hardware or usage factors are not the root of the issue.
+  - question: |
+      A website uses **asymmetric encryption** to protect login credentials.  
+      Which statement describes how asymmetric encryption works?
+
+    correct_options:
+      - The public key encrypts the data, and the private key decrypts it
+    wrong_options:
+      - Both sender and receiver use the same key to encrypt and decrypt
+      - A password is hashed, not encrypted
+      - The encryption only works if the Wi-Fi is private
+      - It is less secure than symmetric encryption
+    explanation: |
+      - **Correct:** Asymmetric encryption uses a public-private key pair.
+      - **Incorrect:** Symmetric uses one key; hashing is different; Wi-Fi privacy isn’t encryption.
