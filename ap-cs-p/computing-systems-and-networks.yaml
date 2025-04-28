@@ -379,8 +379,10 @@ questions:
 
       Select **two** correct answers.
     correct_options:
-      - Trade-off: More precise service vs. user privacy
-      - Concern: Data was collected without meaningful user consent
+      - |
+        Trade-off: More precise service vs. user privacy
+      - |
+        Concern: Data was collected without meaningful user consent
     wrong_options:
       - There is no ethical issue if no one complains
       - Location data isn't considered private
