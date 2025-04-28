@@ -355,7 +355,21 @@ questions:
     explanation: |
       - **Correct:** Images store colors using RGB values; blue is (0,0,255) in RGB.
       - **Incorrect:** Text labels or random values are not used; #FF0000 is red.
+  - question: |
+      Which of the following transformations are **lossy**?
 
+      Select **two** correct answers.
+    correct_options:
+      - Compressing an image into lower resolution
+      - Converting an image into grayscale
+    wrong_options:
+      - Copying a file to another folder
+      - Encrypting data
+      - Backing up a file to the cloud
+      - Sampling an analog signal with no compression
+    explanation: |
+      - **Correct:** Resolution loss and grayscale conversion reduce detail.
+      - **Incorrect:** Others retain all data or involve no change to representation.
   - question: |
       A dataset includes photos of birds with the following metadata fields:
 

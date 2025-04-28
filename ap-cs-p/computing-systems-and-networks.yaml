@@ -91,23 +91,6 @@ questions:
     explanation: |
       - **Correct:** Redundancy ensures the system keeps working if one route fails.
       - **Incorrect:** Redundancy doesn’t eliminate core infrastructure.
-
-  - question: |
-      Which of the following transformations are **lossy**?
-
-      Select **two** correct answers.
-    correct_options:
-      - Compressing an image into lower resolution
-      - Converting an image into grayscale
-    wrong_options:
-      - Copying a file to another folder
-      - Encrypting data
-      - Backing up a file to the cloud
-      - Sampling an analog signal with no compression
-    explanation: |
-      - **Correct:** Resolution loss and grayscale conversion reduce detail.
-      - **Incorrect:** Others retain all data or involve no change to representation.
-
   - question: |
       A device on the internet uses **128-bit addressing** and must route a packet to another device.
 
