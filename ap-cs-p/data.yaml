@@ -78,10 +78,10 @@ questions:
   - question: |
       Reorder the steps for using a program to extract insight from a dataset:
 
-      a. Gather the data  
-      b. Clean and organize the data  
-      c. Use a program to process or filter the data  
-      d. Visualize or summarize the results
+      \ta. Gather the data  
+      \tb. Clean and organize the data  
+      \tc. Use a program to process or filter the data  
+      \td. Visualize or summarize the results
 
       What is the best order?
     correct_options:
@@ -460,10 +460,10 @@ questions:
   - question: |
       Reorder the steps below in the correct sequence for working with a large dataset:
 
-      a. Clean the data to remove inconsistencies  
-      b. Collect the raw data  
-      c. Visualize patterns in the data  
-      d. Use a program to filter or aggregate values
+      \ta. Clean the data to remove inconsistencies  
+      \tb. Collect the raw data  
+      \tc. Visualize patterns in the data  
+      \td. Use a program to filter or aggregate values
 
     correct_options:
       - b → a → d → c
