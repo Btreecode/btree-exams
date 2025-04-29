@@ -123,22 +123,6 @@ questions:
       - **Correct:** HTTPS uses SSL/TLS to encrypt; encryption secures data at rest or in transit.
       - **Incorrect:** Compression or email lacks encryption; faster internet ≠ more secure.
   - question: |
-      A hacker sets up a fake website that looks like a bank’s login page to trick users.  
-      This is an example of:
-
-    correct_options:
-      - Phishing
-    wrong_options:
-      - Spoofing
-      - DDoS
-      - Malware injection
-      - Logic error
-      - Data scraping
-    explanation: |
-      - **Correct:** Phishing deceives users into submitting sensitive data.
-      - **Incorrect:** Spoofing impersonates IPs/domains; others are different threats.
-
-  - question: |
       Which of the following protocols are responsible for **accurate and complete delivery** of data?
 
     correct_options:

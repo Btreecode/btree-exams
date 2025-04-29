@@ -377,3 +377,18 @@ questions:
     explanation: |
       - **Correct:** Authentication confirms identity — biometric, password, multi-step.
       - **Incorrect:** Cookies and DNS don’t verify user identity; encryption ≠ authentication.
+  - question: |
+      A hacker sets up a fake website that looks like a bank’s login page to trick users.  
+      This is an example of:
+
+    correct_options:
+      - Phishing
+    wrong_options:
+      - Spoofing
+      - DDoS
+      - Malware injection
+      - Logic error
+      - Data scraping
+    explanation: |
+      - **Correct:** Phishing deceives users into submitting sensitive data.
+      - **Incorrect:** Spoofing impersonates IPs/domains; others are different threats.
