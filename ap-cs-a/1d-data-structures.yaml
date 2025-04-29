@@ -536,16 +536,16 @@ questions:
       What preconditions are necessary to avoid an `IndexOutOfBoundsException`?
 
     correct_options:
-      - `i` and `j` must be valid indices between `0` and `nums.size() - 1` inclusive.
+      - i and j must be valid indices between 0 and nums.size() - 1 inclusive.
     wrong_options:
-      - `i` and `j` must both be 0.
-      - `i` must be less than `j`.
-      - `nums` must contain only positive numbers.
+      - i and j must both be 0.
+      - i must be less than j.
+      - nums must contain only positive numbers.
     explanation: |
-      `i` and `j` must be valid indices between `0` and `nums.size() - 1` inclusive: Correct. The method checks bounds to prevent errors.
-      `i` and `j` must both be 0: Incorrect. They can be any valid indices.
-      `i` must be less than `j`: Incorrect. No ordering between `i` and `j` is required.
-      `nums` must contain only positive numbers: Incorrect. Values don't matter for swapping — only valid indices.
+      i and j must be valid indices between 0 and nums.size() - 1 inclusive: Correct. The method checks bounds to prevent errors.
+      i and j must both be 0: Incorrect. They can be any valid indices.
+      i must be less than j: Incorrect. No ordering between i and j is required.
+      nums must contain only positive numbers: Incorrect. Values don't matter for swapping — only valid indices.
 
   - question: |
       Analyze the `swapFirstLast` method:
@@ -591,16 +591,16 @@ questions:
       What precondition is most important to ensure no runtime error?
 
     correct_options:
-      - Both `i` and `j` must be valid indices within the bounds of `list`.
+      - Both i and j must be valid indices within the bounds of list.
     wrong_options:
-      - The elements at `i` and `j` must be equal.
+      - The elements at i and j must be equal.
       - The list must not contain null elements.
-      - `i` must be greater than `j`.
+      - i must be greater than j.
     explanation: |
-      Both `i` and `j` must be valid indices within the bounds of `list`: Correct. Index errors must be avoided when calling `get(i)` and `get(j)`.
-      The elements at `i` and `j` must be equal: Incorrect. No need for equality — a swap happens based on compareTo.
-      The list must not contain null elements: Incorrect. `compareTo` might throw a `NullPointerException`, but that's not the immediate focus for index validity.
-      `i` must be greater than `j`: Incorrect. No specific relationship between `i` and `j` is required.
+      Both i and j must be valid indices within the bounds of list: Correct. Index errors must be avoided when calling get(i) and get(j).
+      The elements at i and j must be equal: Incorrect. No need for equality — a swap happens based on compareTo.
+      The list must not contain null elements: Incorrect. compareTo might throw a NullPointerException, but that's not the immediate focus for index validity.
+      i must be greater than j: Incorrect. No specific relationship between i and j is required.
 
   - question: |
       Look at the `swapIfNeeded` method:
@@ -677,11 +677,15 @@ questions:
       What preconditions are necessary to avoid an `IndexOutOfBoundsException`?
 
     correct_options:
-      - `i` and `j` must be valid indices between `0` and `nums.size() - 1` inclusive.
+      - |
+        `i` and `j` must be valid indices between `0` and `nums.size() - 1` inclusive.
     wrong_options:
-      - `i` and `j` must both be 0.
-      - `i` must be less than `j`.
-      - `nums` must contain only positive numbers.
+      - |
+        `i` and `j` must both be 0.
+      - |
+        `i` must be less than `j`.
+      - |
+        `nums` must contain only positive numbers.
     explanation: |
       `i` and `j` must be valid indices between `0` and `nums.size() - 1` inclusive: Correct. The method checks bounds to prevent errors.
       `i` and `j` must both be 0: Incorrect. They can be any valid indices.
@@ -736,7 +740,8 @@ questions:
     wrong_options:
       - The elements at `i` and `j` must be equal.
       - The list must not contain null elements.
-      - `i` must be greater than `j`.
+      - |
+        `i` must be greater than `j`.
     explanation: |
       Both `i` and `j` must be valid indices within the bounds of `list`: Correct. Index errors must be avoided when calling `get(i)` and `get(j)`.
       The elements at `i` and `j` must be equal: Incorrect. No need for equality — a swap happens based on compareTo.
@@ -790,11 +795,15 @@ questions:
       What precondition must be true before calling `swapNonAdjacent`?
 
     correct_options:
-      - `x` and `y` must be valid list indices.
+      - |
+        `x` and `y` must be valid list indices.
     wrong_options:
-      - `x` must be exactly 1 greater than `y`.
-      - `list` must contain only numeric strings.
-      - `list` must have an odd number of elements.
+      - |
+        `x` must be exactly 1 greater than `y`.
+      - |
+        `list` must contain only numeric strings.
+      - |
+        `list` must have an odd number of elements.
     explanation: |
       `x` and `y` must be valid list indices: Correct. Valid indices are necessary to safely access `list.get(x)` and `list.get(y)`.
       `x` must be exactly 1 greater than `y`: Incorrect. The method only requires that `x` and `y` are not adjacent (difference > 1).
@@ -894,7 +903,8 @@ questions:
       What kind of compile-time error would occur?
 
     correct_options:
-      - Incompatible types: possible lossy conversion from double to int
+      - |
+        Incompatible types: possible lossy conversion from double to int
     wrong_options:
       - ArrayIndexOutOfBoundsException
       - NullPointerException
@@ -990,11 +1000,15 @@ questions:
       In the original question, if arr = {1, 2, 3}, what will prod look like after applying Implementation 1 (with no initialization loop)?
 
     correct_options:
-      - {1, 2, 6}
+      - |
+        {1, 2, 6}
     wrong_options:
-      - {1, 3, 6}
-      - {1, 4, 12}
-      - {1, 2, 9}
+      - |
+        {1, 3, 6}
+      - |
+        {1, 4, 12}
+      - |
+        {1, 2, 9}
     explanation: |
       {1, 2, 6}: Correct. 1, 1×2=2, 2×3=6.
       {1, 3, 6}: Incorrect. No step results in 3 at index 1.
