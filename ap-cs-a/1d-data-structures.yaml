@@ -915,102 +915,33 @@ questions:
       NullPointerException: Incorrect. Not relevant; no object references are null here.
       ClassCastException: Incorrect. No illegal object casting is happening.
   - question: |
-      Consider the following alternative `partialProd` method:
+      Suppose `arr = {2, 0, 5}` is passed into the `fn` method using the following implementation:
 
       ```java
-      public static int[] partialProd(int[] arr) {
+      public static int[] fn(int[] arr) {
           int[] prod = new int[arr.length];
           prod[0] = arr[0];
           for (int j = 1; j < arr.length; j++) {
-              prod[j] = prod[j-1] * arr[j];
+              prod[j] = prod[j - 1] * arr[j];
           }
           return prod;
       }
       ```
 
-      What is true about this implementation?
-
-    correct_options:
-      - It works correctly and is more efficient than using a nested loop.
-    wrong_options:
-      - It does not work because prod[0] is never initialized.
-      - It does not work because it overwrites arr.
-      - It incorrectly multiplies arr[j-1] * arr[j].
-    explanation: |
-      It works correctly and is more efficient than using a nested loop: Correct. It uses cumulative multiplication and avoids O(n²) time.
-      It does not work because prod[0] is never initialized: Incorrect. prod[0] is initialized explicitly.
-      It does not work because it overwrites arr: Incorrect. It only writes into prod, not arr.
-      It incorrectly multiplies arr[j-1] * arr[j]: Incorrect. It multiplies the running product (prod[j-1]) with arr[j], which is correct.
-
-  - question: |
-      Why is Implementation 2 less efficient than Implementation 1 in the original `partialProd` question?
-
-    correct_options:
-      - It uses a nested loop causing O(n²) time complexity.
-    wrong_options:
-      - It modifies the original arr array.
-      - It only calculates the product once.
-      - It uses incorrect multiplication logic.
-    explanation: |
-      It uses a nested loop causing O(n²) time complexity: Correct. For each j, it loops through 0 to j.
-      It modifies the original arr array: Incorrect. Only prod is modified.
-      It only calculates the product once: Incorrect. It recalculates the product repeatedly.
-      It uses incorrect multiplication logic: Incorrect. The logic is correct but inefficient.
-
-  - question: |
-      Suppose in the original partialProd code, the initialization loop
-
-      ```java
-      for (int j = 0; j < arr.length; j++) {
-          prod[j] = 1;
-      }
-      ```
-
-      is **removed**. What issue could arise?
-
-    correct_options:
-      - Implementation 2 would not work correctly.
-    wrong_options:
-      - Implementation 1 would not work correctly.
-      - Both implementations would still work correctly.
-      - Implementation 2 would become faster.
-    explanation: |
-      Implementation 2 would not work correctly: Correct. Implementation 2 relies on prod[j] starting at 1 before multiplying.
-      Implementation 1 would not work correctly: Incorrect. Implementation 1 assigns directly without relying on initial values.
-      Both implementations would still work correctly: Incorrect. Implementation 2 would fail without initialization.
-      Implementation 2 would become faster: Incorrect. It would not become faster; it would just be wrong.
-
-  - question: |
-      Suppose instead of initializing all elements of `prod` to 1, we initialize them to 0.  
-      What would happen to the behavior of Implementation 2?
-
-    correct_options:
-      - All elements of prod would end up being 0.
-    wrong_options:
-      - prod would contain correct partial products.
-      - prod would contain only the last value correct.
-      - prod would not compile.
-    explanation: |
-      All elements of prod would end up being 0: Correct. Multiplying anything by 0 results in 0.
-      prod would contain correct partial products: Incorrect. The initial 0 would corrupt the products.
-      prod would contain only the last value correct: Incorrect. No intermediate value would be correct.
-      prod would not compile: Incorrect. Syntax-wise, the code is fine; the error is logical.
-
-  - question: |
-      In the original question, if arr = {1, 2, 3}, what will prod look like after applying Implementation 1 (with no initialization loop)?
+      What will the returned `prod` array be?
 
     correct_options:
       - |
-        {1, 2, 6}
+        {2, 0, 0}
     wrong_options:
       - |
-        {1, 3, 6}
+        {2, 2, 10}
       - |
-        {1, 4, 12}
+        {2, 0, 5}
       - |
-        {1, 2, 9}
-    explanation: |
-      {1, 2, 6}: Correct. 1, 1×2=2, 2×3=6.
-      {1, 3, 6}: Incorrect. No step results in 3 at index 1.
-      {1, 4, 12}: Incorrect. Incorrect cumulative multiplication.
-      {1, 2, 9}: Incorrect. 2×3 is 6, not 9.
+        {2, 0, 10}
+    explanations: |
+      {2, 0, 0}: Correct. 2 is the first value, then 2×0=0, and 0×5=0.
+      {2, 2, 10}: Incorrect. 2×0 should result in 0, not 2.
+      {2, 0, 5}: Incorrect. 0×5 = 0, not 5.
+      {2, 0, 10}: Incorrect. The third value should be 0 because of cumulative multiplication.
