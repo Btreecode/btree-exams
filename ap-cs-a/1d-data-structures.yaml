@@ -941,7 +941,7 @@ questions:
       - It modifies the original arr array.
       - It only calculates the product once.
       - It uses incorrect multiplication logic.
-    explanations: |
+    explanation: |
       It uses a nested loop causing O(n²) time complexity: Correct. For each j, it loops through 0 to j.
       It modifies the original arr array: Incorrect. Only prod is modified.
       It only calculates the product once: Incorrect. It recalculates the product repeatedly.
@@ -964,7 +964,7 @@ questions:
       - Implementation 1 would not work correctly.
       - Both implementations would still work correctly.
       - Implementation 2 would become faster.
-    explanations: |
+    explanation: |
       Implementation 2 would not work correctly: Correct. Implementation 2 relies on prod[j] starting at 1 before multiplying.
       Implementation 1 would not work correctly: Incorrect. Implementation 1 assigns directly without relying on initial values.
       Both implementations would still work correctly: Incorrect. Implementation 2 would fail without initialization.
@@ -980,7 +980,7 @@ questions:
       - prod would contain correct partial products.
       - prod would contain only the last value correct.
       - prod would not compile.
-    explanations: |
+    explanation: |
       All elements of prod would end up being 0: Correct. Multiplying anything by 0 results in 0.
       prod would contain correct partial products: Incorrect. The initial 0 would corrupt the products.
       prod would contain only the last value correct: Incorrect. No intermediate value would be correct.
@@ -995,7 +995,7 @@ questions:
       - {1, 3, 6}
       - {1, 4, 12}
       - {1, 2, 9}
-    explanations: |
+    explanation: |
       {1, 2, 6}: Correct. 1, 1×2=2, 2×3=6.
       {1, 3, 6}: Incorrect. No step results in 3 at index 1.
       {1, 4, 12}: Incorrect. Incorrect cumulative multiplication.
