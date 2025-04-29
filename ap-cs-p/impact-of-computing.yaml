@@ -537,3 +537,33 @@ questions:
     explanation: |
       - **Correct:** Material changes to data use require user awareness and understanding.
       - **Incorrect:** Financial and login issues are unrelated.
+  - question: |
+      Which of the following would be a violation of **Children’s Online Privacy Protection Act (COPPA)** in the U.S.?
+
+    correct_options:
+      - Collecting personal data from users under 13 without parental consent
+    wrong_options:
+      - Limiting content availability to children
+      - Hosting a kid-safe search engine
+      - Displaying child-friendly ads
+      - Asking for age verification
+      - Offering free games for students
+    explanation: |
+      - **Correct:** COPPA requires parental permission for data collection from children under 13.
+      - **Incorrect:** Age-gated services and child-oriented design do not violate COPPA.
+  - question: |
+      A mobile app tracks a user’s location even when it’s not open. The app’s settings do not clearly allow the user to disable tracking.
+
+      What **privacy principle** is most likely being violated?
+
+    correct_options:
+      - User control over data collection
+    wrong_options:
+      - Data redundancy
+      - Proper syntax usage
+      - Device resolution
+      - Bandwidth usage
+      - Open-source licensing
+    explanation: |
+      - **Correct:** Ethical and legal guidelines expect users to control how and when data is collected.
+      - **Incorrect:** Technical factors like syntax and bandwidth aren’t relevant to privacy control.
