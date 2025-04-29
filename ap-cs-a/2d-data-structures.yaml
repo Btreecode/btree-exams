@@ -40,7 +40,7 @@ questions:
         -3   2   7  
         4  -5  -6  
         1  -8  -9
-    explanations: |
+    explanation: |
       3   2  -7 
       4   5   6 
       1  -8   9 
@@ -98,7 +98,7 @@ questions:
         0  0  9  
         0  9  0  
         9  0  0
-    explanations: |
+    explanation: |
       9 0 0 
       0 9 0 
       0 0 9 
@@ -149,7 +149,7 @@ questions:
       - |
         0  0  0  
         0  0  0
-    explanations: |
+    explanation: |
       1 2 0
       4 5 0
       Correct. The last column of each row is set to 0.
@@ -198,7 +198,7 @@ questions:
       - |
         4  8  12  
         2  6  10
-    explanations: |
+    explanation: |
       4 8 12
       1 3 5
       Correct. Only the first row is modified, doubling its values.
@@ -254,7 +254,7 @@ questions:
         10  20  
         0   0  
         0   0
-    explanations: |
+    explanation: |
       10 20
       0  0
       50 60
@@ -305,7 +305,7 @@ questions:
       - The integers on the bottom side are mirrored to the top side.
       - The integers on the top right side are mirrored to the bottom left side.
       - The integers on the top left side are mirrored to the bottom right side.
-    explanations: |
+    explanation: |
       The integers on the left side are mirrored to the right side:
         This transformation mirrors each row across the vertical axis from left to right.
         It copies the left-hand side values into the right-hand side of the matrix.
@@ -348,7 +348,7 @@ questions:
       - The integers on the right side are mirrored to the left side.
       - The integers on the top right side are mirrored to the bottom left side.
       - The integers on the top left side are mirrored to the bottom right side.
-    explanations: |
+    explanation: |
       The integers on the bottom side are mirrored to the top side:
         This method copies the bottom rows to the top, effectively creating a mirror across the horizontal axis from bottom to top.
       The integers on the top side are mirrored to the bottom side:
@@ -383,7 +383,7 @@ questions:
       - The integers are swapped along the middle vertically.
       - The integers are swapped along the bottom-left to top-right diagonal.
       - The integers are swapped along the middle horizontally.
-    explanations: |
+    explanation: |
       The integers are swapped along the top-left to bottom-right diagonal:
         This swaps elements across the main diagonal (top-left to bottom-right), which is exactly what this method is doing.
       The integers are swapped along the bottom-left to top-right diagonal:
@@ -559,3 +559,149 @@ questions:
       - 10
     explanation: |
       The inner loop iterates in reverse, but only adds the first element of each row (when j == 0). Sum = 5 (first row) + 2 (second row) = 7.
+  - question: |
+      Consider the following code segment:
+
+      ```java
+      int[][] mat = {
+          {4, 1, 3},
+          {2, 7, 6}
+      };
+
+      int sum = 0;
+      for (int j = 0; j < mat[1].length; j++) {
+          sum += mat[1][j];
+      }
+      ```
+
+      What is the value of `sum` after the code executes?
+    correct_options:
+      - 15
+    wrong_options:
+      - 14
+      - 10
+      - 12
+      - 17
+      - 18
+    explanation: |
+      The code sums all elements in row index 1: 2 + 7 + 6 = 15.
+  - question: |
+      Consider the following code segment:
+
+      ```java
+      int[][] mat = {
+          {1, 2, 3},
+          {4, 5, 6},
+          {7, 8, 9}
+      };
+
+      int count = 0;
+      for (int[] row : mat) {
+          for (int val : row) {
+              if (val % 2 == 0) {
+                  count++;
+              }
+          }
+      }
+      ```
+
+      What is the value of `count` after the code executes?
+    correct_options:
+      - 4
+    wrong_options:
+      - 3
+      - 5
+      - 6
+      - 2
+      - 9
+    explanation: |
+      The even values are 2, 4, 6, 8. Count = 4.
+  - question: |
+      Consider the following code segment:
+
+      ```java
+      int[][] mat = {
+          {1, 2},
+          {3, 4}
+      };
+
+      for (int i = 0; i < mat.length; i++) {
+          for (int j = 0; j < mat[i].length; j++) {
+              mat[i][j] *= 2;
+          }
+      }
+
+      int sum = mat[0][0] + mat[0][1];
+      ```
+
+      What is the value of `sum` after the code executes?
+    correct_options:
+      - 6
+    wrong_options:
+      - 10
+      - 8
+      - 12
+      - 4
+      - 14
+    explanation: |
+      After doubling, the matrix becomes {{2, 4}, {6, 8}}. Sum = 2 + 4 = 6.
+  - question: |
+      Consider the following code segment:
+
+      ```java
+      int[][] mat = {
+          {5, 1},
+          {8, 3},
+          {2, 9}
+      };
+
+      int max = mat[0][1];
+      for (int i = 1; i < mat.length; i++) {
+          if (mat[i][1] > max) {
+              max = mat[i][1];
+          }
+      }
+      ```
+
+      What is the value of `max` after the code executes?
+    correct_options:
+      - 9
+    wrong_options:
+      - 3
+      - 1
+      - 5
+      - 8
+      - 2
+    explanation: |
+      The second column is [1, 3, 9]. The max is 9.
+  - question: |
+      Consider the following code segment:
+
+      ```java
+      int[][] mat = {
+          {1, 0, 1},
+          {0, 1, 0},
+          {1, 0, 1}
+      };
+
+      int count = 0;
+      for (int i = 0; i < mat.length; i++) {
+          for (int j = 0; j < mat[i].length; j++) {
+              if ((i + j) % 2 == 0 && mat[i][j] == 1) {
+                  count++;
+              }
+          }
+      }
+      ```
+
+      What is the value of `count` after the code executes?
+    correct_options:
+      - 5
+    wrong_options:
+      - 4
+      - 3
+      - 2
+      - 6
+      - 1
+    explanation: |
+      The code checks for 1s in positions where (i + j) is even. These positions include: (0,0), (0,2), (1,1), (2,0), (2,2), all of which are 1s. So count = 5.

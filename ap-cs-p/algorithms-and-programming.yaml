@@ -310,21 +310,6 @@ questions:
     explanation: |
       - **Correct:** RANDOM(1,4) gives 4 options. One option = 25%, so condition should trigger only for x = 1 or x = 4.
       - **Incorrect:** Other conditions trigger multiple values (e.g., x ≤ 2 = 50%).
-
-  - question: |
-      What is MOST likely to be an **unintended effect** of using facial recognition in a public space?
-    correct_options:
-      - People may feel their privacy is being violated without their knowledge
-    wrong_options:
-      - Facial recognition always increases safety
-      - People are more likely to smile at the camera
-      - The system always improves performance
-      - It will reduce the need for electricity
-      - The accuracy is guaranteed
-    explanation: |
-      - **Correct:** Use of sensitive data without consent can lead to ethical concerns.
-      - **Incorrect:** Accuracy and performance are not guaranteed and may vary.
-
   - question: |
       What is the final value of `total` after this code runs?
 

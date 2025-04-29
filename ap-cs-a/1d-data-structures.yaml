@@ -940,7 +940,7 @@ questions:
         {2, 0, 5}
       - |
         {2, 0, 10}
-    explanations: |
+    explanation: |
       {2, 0, 0}: Correct. 2 is the first value, then 2×0=0, and 0×5=0.
       {2, 2, 10}: Incorrect. 2×0 should result in 0, not 2.
       {2, 0, 5}: Incorrect. 0×5 = 0, not 5.
