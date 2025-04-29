@@ -899,7 +899,7 @@ questions:
       - ArrayIndexOutOfBoundsException
       - NullPointerException
       - ClassCastException
-    explanation:
+    explanation: |
       Incompatible types: possible lossy conversion from double to int: Correct. `Math.random()` returns `double`, so assigning without a cast to `int` causes a compile error.
       ArrayIndexOutOfBoundsException: Incorrect. This happens at runtime if invalid indices are used, not here.
       NullPointerException: Incorrect. Not relevant; no object references are null here.
@@ -926,7 +926,7 @@ questions:
       - It does not work because prod[0] is never initialized.
       - It does not work because it overwrites arr.
       - It incorrectly multiplies arr[j-1] * arr[j].
-    explanations: |
+    explanation: |
       It works correctly and is more efficient than using a nested loop: Correct. It uses cumulative multiplication and avoids O(n²) time.
       It does not work because prod[0] is never initialized: Incorrect. prod[0] is initialized explicitly.
       It does not work because it overwrites arr: Incorrect. It only writes into prod, not arr.
