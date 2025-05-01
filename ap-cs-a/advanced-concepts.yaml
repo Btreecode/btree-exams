@@ -18,7 +18,7 @@ questions:
       - NullPointerException
       - ArithmeticException
       - There is no error
-    explanations: |
+    explanation: |
       ArrayIndexOutOfBoundsException:
         This exception occurs because the loop iterates with `i <= arr.length`, meaning it attempts to access `arr[3]`, which is out of bounds.
       IndexOutOfBoundsException:
@@ -49,7 +49,7 @@ questions:
       - ConcurrentModificationException
       - ArithmeticException
       - There is no error
-    explanations: |
+    explanation: |
       NullPointerException:
         `list` is null, and calling a method on a null reference causes a NullPointerException.
       ArrayIndexOutOfBoundsException:
@@ -85,7 +85,7 @@ questions:
       - ArrayIndexOutOfBoundsException
       - ArithmeticException
       - There is no error
-    explanations: |
+    explanation: |
       IndexOutOfBoundsException:
         The list is modified during iteration, and since the index is incrementing, removing elements shifts indices and may skip or overrun elements.
       ConcurrentModificationException:
@@ -119,7 +119,7 @@ questions:
       - NullPointerException
       - IndexOutOfBoundsException
       - There is no error
-    explanations: |
+    explanation: |
       ArithmeticException:
         Dividing by zero (`100 / 0`) will throw an ArithmeticException at runtime.
       ArrayIndexOutOfBoundsException:
@@ -156,7 +156,7 @@ questions:
       - ArithmeticException
       - ArrayIndexOutOfBoundsException
       - There is no error
-    explanations: |
+    explanation: |
       ConcurrentModificationException:
         This occurs because the collection `names` is modified during a for-each iteration.
       IndexOutOfBoundsException:
