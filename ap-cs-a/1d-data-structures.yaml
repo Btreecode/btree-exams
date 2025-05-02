@@ -1,947 +1,947 @@
 questions:
-- question: |
-    Consider the following method intended to return the sum of the even elements in an array of integers.
-
-    ```java
-    public static int sumEvens(int[] nums)
-    {
-        int sum = 0;
-        for (int k = 0; k < nums.length; k++)
-        {
-            if (/* condition */)
-                sum += nums[k];
-        }
-        return sum;
-    }
-    ```
-
-    Which of the following replacements for `/* condition */` would correctly accumulate only the even numbers in the array?
-
-    I.   `nums[k] % 2 == 0`  
-    II.  `nums[k] / 2 == 0`  
-    III. `nums[k] % 2 != 1`
-
-  correct_options:
-  - I and III only
-  wrong_options:
-  - I only
-  - II only
-  - III only
-  - I and II only
-  - II and III only
-  explanation: |
-    I: Correct. This is the standard check for even numbers.
-    II: Incorrect. This returns true only when nums[k] is 0 or 1 (due to integer division).
-    III: Correct. This is logically equivalent to checking for even values since odd numbers leave remainder 1 when divided by 2.
-    I only: Incorrect. It omits another correct option (III).
-    II only: Incorrect. II does not correctly detect even numbers.
-    III only: Incorrect. It omits I, which is also correct.
-    I and II only: Incorrect. II is wrong.
-    II and III only: Incorrect. II is wrong.
-
-- question: |
-    Suppose you want to create a method that determines whether an array contains any duplicate values.
-
-    Which of the following would be valid approaches to determine if an array contains duplicates?
-
-    I.   Nested loops comparing every pair of elements  
-    II.  Use a Set to check if a duplicate is added  
-    III. Sorting the array and checking for consecutive duplicates
-
-  correct_options:
-  - I, II, and III
-  wrong_options:
-  - I only
-  - II only
-  - III only
-  - I and II only
-  - II and III only
-  explanation: |
-    I: Correct. Brute-force approach using nested loops works correctly but is inefficient.
-    II: Correct. Sets reject duplicates, so trying to add a duplicate will detect it.
-    III: Correct. Sorting brings duplicates together, making them easy to detect.
-    I only: Incorrect. Other correct approaches (II and III) are omitted.
-    II only: Incorrect. Omits I and III, which are also correct.
-    III only: Incorrect. Omits I and II.
-    I and II only: Incorrect. Omits III.
-    II and III only: Incorrect. Omits I.
-
-- question: |
-    What will the following method return when passed the array `{4, 3, 2, 1}`?
-
-    ```java
-    public static int mystery(int[] arr)
-    {
-        int result = arr[0];
-        for (int i = 1; i < arr.length; i++)
-        {
-            result -= arr[i];
-        }
-        return result;
-    }
-    ```
-
-    What is the returned value and what does the method appear to do?
-
-    I.   Returns `-2` and subtracts all elements from the first  
-    II.  Returns `2` and finds the difference between max and min  
-    III. Returns `-2` and is equivalent to `arr[0] - (arr[1] + arr[2] + arr[3])`
-
-  correct_options:
-  - I and III only
-  wrong_options:
-  - I only
-  - II only
-  - III only
-  - I and II only
-  - II and III only
-  explanation: |
-    I: Correct. It returns -2: 4 - 3 - 2 - 1 = -2.
-    II: Incorrect. The method doesn't find the difference between max and min.
-    III: Correct. That's exactly what the method does: subtracts the sum of the rest from the first.
-    I only: Incorrect. Omits III.
-    II only: Incorrect. Misrepresents what the method does.
-    III only: Incorrect. Omits I.
-    I and II only: Incorrect. II is wrong.
-    II and III only: Incorrect. II is wrong.
-
-- question: |
-    Which of the following statements about arrays in Java are true?
-
-    I.   Arrays can hold primitive types and object references  
-    II.  The size of an array can be changed after its creation  
-    III. Array indices start at 1 in Java
-
-  correct_options:
-  - I only
-  wrong_options:
-  - II only
-  - III only
-  - I and II only
-  - II and III only
-  - I and III only
-  explanation: |
-    I: Correct. Arrays can store primitives (like `int`) or references (like `String`).
-    II: Incorrect. Java arrays are fixed in size after creation.
-    III: Incorrect. Java uses 0-based indexing.
-    II only: Incorrect. II is false.
-    III only: Incorrect. III is false.
-    I and II only: Incorrect. II is false.
-    II and III only: Incorrect. Both are false.
-    I and III only: Incorrect. III is false.
-
-- question: |
-    Consider the following code snippet:
-
-    ```java
-    int[] nums = {10, 20, 30, 40};
-    int total = 0;
-    for (int i = nums.length - 1; i >= 0; i--)
-    {
-        total += nums[i];
-    }
-    ```
-
-    Which of the following statements are true?
-
-    I.   This loop sums the elements of the array in reverse order  
-    II.  The final value of `total` will be 100  
-    III. The loop throws an exception due to index out-of-bounds
-
-  correct_options:
-  - I and II only
-  wrong_options:
-  - I only
-  - II only
-  - III only
-  - I and III only
-  - II and III only
-  explanation: |
-    I: Correct. The loop starts at the last index and works backwards.
-    II: Correct. 40 + 30 + 20 + 10 = 100.
-    III: Incorrect. The loop bounds are valid, no out-of-bounds error occurs.
-    I only: Incorrect. Omits II.
-    II only: Incorrect. Omits I.
-    III only: Incorrect. No exception is thrown.
-    I and III only: Incorrect. III is incorrect.
-    II and III only: Incorrect. III is incorrect.
-- question: |
-    A programmer is writing a method that searches an array for the first element that matches a given condition.  
-    The problem specification does not specify what should happen if no such element exists.  
-    What is the best way to handle this situation?
-
-  correct_options:
-  - The specification should be revised to define behavior when no match is found.
-  wrong_options:
-  - Assume that the array will always contain a matching element.
-  - Return -1 without updating the specification.
-  - Throw an exception without mentioning it in the specification.
-  explanation: |
-    The specification should be revised to define behavior when no match is found: Correct. It’s best practice to clarify expected behavior in the specification so the method's behavior is predictable and documented.
-    Assume that the array will always contain a matching element: Incorrect. This introduces risk of bugs or unexpected behavior if assumptions are violated.
-    Return -1 without updating the specification: Incorrect. While returning -1 may be a good choice, it must be clearly stated in the specification.
-    Throw an exception without mentioning it in the specification: Incorrect. Exceptions should be documented in the specification to ensure the behavior is expected.
-
-- question: |
-    A student writes a method that calculates the average of an array of integers.  
-    The problem specification does not indicate whether the array might be empty.  
-    What is the best course of action?
-
-  correct_options:
-  - Modify the specification to state what should happen if the array is empty.
-  wrong_options:
-  - Assume the array will always contain at least one value.
-  - Return 0 if the array is empty without changing the specification.
-  - Ignore the possibility of an empty array, since it will likely never occur.
-  explanation: |
-    Modify the specification to state what should happen if the array is empty: Correct. This ensures that the method handles edge cases predictably and responsibly.
-    Assume the array will always contain at least one value: Incorrect. This assumption can lead to division-by-zero errors if violated.
-    Return 0 if the array is empty without changing the specification: Incorrect. Silent assumptions create ambiguity and can mislead others using the method.
-    Ignore the possibility of an empty array, since it will likely never occur: Incorrect. Defensive programming requires handling all realistic scenarios, including empty arrays.
-
-- question: |
-    A method is being developed to return the index of the last occurrence of a specific value in an array.  
-    The specification does not state what should happen if the value does not appear in the array.  
-    Which of the following is the best approach?
-
-  correct_options:
-  - Clarify the specification to state what should be returned when the value is not found.
-  wrong_options:
-  - Return the first index by default.
-  - Return index 0 to indicate "not found."
-  - Leave the return value unspecified and document that behavior may vary.
-  explanation: |
-    Clarify the specification to state what should be returned when the value is not found: Correct. It is essential to specify expected output clearly for all cases, especially edge ones.
-    Return the first index by default: Incorrect. This does not meet the goal of finding the last occurrence and is misleading.
-    Return index 0 to indicate "not found.": Incorrect. Index 0 may be a valid index of the target value, so this would create confusion.
-    Leave the return value unspecified and document that behavior may vary: Incorrect. Good specifications should never permit undefined behavior.
-
-- question: |
-    A method is designed to count the number of elements greater than a threshold in an array.  
-    The specification does not say whether the threshold itself should be counted.  
-    What should the programmer do?
-
-  correct_options:
-  - Update the specification to state whether values equal to the threshold should be included.
-  wrong_options:
-  - Include equal values without noting it in the specification.
-  - Exclude equal values without explanation.
-  - Leave the behavior up to whoever calls the method.
-  explanation: |
-    Update the specification to state whether values equal to the threshold should be included: Correct. This removes ambiguity and makes the method behavior clear to future users.
-    Include equal values without noting it in the specification: Incorrect. This leads to uncertainty about method behavior.
-    Exclude equal values without explanation: Incorrect. Behavior should be clearly stated in the specification.
-    Leave the behavior up to whoever calls the method: Incorrect. The method’s behavior should be consistent and predictable, which requires an explicit specification.
-
-- question: |
-    A method will be written to return the first prime number in an array.  
-    The specification does not mention whether negative numbers are allowed or whether 1 is considered prime.  
-    Which is the best approach?
-
-  correct_options:
-  - Revise the specification to clearly define what counts as a valid prime and valid input.
-  wrong_options:
-  - Assume all input is positive and define primes accordingly.
-  - Treat 1 as a prime number for simplicity.
-  - Return any value that passes a basic modulo test without further clarification.
-  explanation: |
-    Revise the specification to clearly define what counts as a valid prime and valid input: Correct. Clear definitions ensure that behavior is mathematically correct and unambiguous.
-    Assume all input is positive and define primes accordingly: Incorrect. Unstated assumptions can lead to incorrect results or confusion.
-    Treat 1 as a prime number for simplicity: Incorrect. By mathematical definition, 1 is not prime.
-    Return any value that passes a basic modulo test without further clarification: Incorrect. This can result in logically incorrect results if prime criteria are not clearly defined.
-- question: |
-    Examine the `insertMiddle` method:
-
-    ```java
-    public static void insertMiddle(ArrayList<Integer> list, int value)
-    {
-        int mid = list.size() / 2;
-        list.add(mid, value);
-    }
-    ```
-
-    What is the postcondition after calling `insertMiddle`?
-  correct_options:
-  - The `value` is inserted at the middle index, and all subsequent elements are shifted one position right.
-  wrong_options:
-  - The `value` replaces the element at the middle index.
-  - The `value` is added at the end of the list.
-  - Two copies of `value` are inserted into the list.
-  explanation: |
-    The `value` is inserted at the middle index, and all subsequent elements are shifted one position right: Correct. `add(index, value)` inserts, not replaces.
-    The `value` replaces the element at the middle index: Incorrect. `add` shifts elements; it does not replace.
-    The `value` is added at the end of the list: Incorrect. Insertion is at the middle, not the end.
-    Two copies of `value` are inserted into the list: Incorrect. Only one insertion occurs.
-
-- question: |
-    Analyze the following `removeAndReturn` method:
-
-    ```java
-    public static String removeAndReturn(ArrayList<String> list, int index)
-    {
-        return list.remove(index);
-    }
-    ```
-
-    Which best describes the postcondition for `removeAndReturn`?
-
-  correct_options:
-  - The element at `index` is removed from the list and returned.
-  wrong_options:
-  - The element at `index` is replaced with `null`.
-  - The list becomes empty.
-  - The entire list is shifted left by two positions.
-  explanation: |
-    The element at `index` is removed from the list and returned: Correct. `remove` deletes the element and shifts later elements left by one.
-    The element at `index` is replaced with `null`: Incorrect. `remove` eliminates the element, not replacing it with `null`.
-    The list becomes empty: Incorrect. Only one element is removed.
-    The entire list is shifted left by two positions: Incorrect. Only a single shift by one occurs after one removal.
-
-- question: |
-    Refer to the `replaceFirstLast` method:
-
-    ```java
-    public static void replaceFirstLast(ArrayList<Integer> list)
-    {
-        if (list.size() >= 2)
-        {
-            int temp = list.get(0);
-            list.set(0, list.get(list.size() - 1));
-            list.set(list.size() - 1, temp);
-        }
-    }
-    ```
-
-    Which best describes the postcondition of `replaceFirstLast`?
-
-  correct_options:
-  - The first and last elements are swapped if the list has at least two elements.
-  wrong_options:
-  - The list is cleared.
-  - A new element is appended to the list.
-  - The first element is replaced with 0.
-  explanation: |
-    The first and last elements are swapped if the list has at least two elements: Correct. The swap only happens if there are at least two elements.
-    The list is cleared: Incorrect. No clearing happens.
-    A new element is appended to the list: Incorrect. No new elements are added.
-    The first element is replaced with 0: Incorrect. The first element is replaced with the original last element, not 0.
-
-- question: |
-    Examine the `duplicateFront` method:
-
-    ```java
-    public static void duplicateFront(ArrayList<String> list)
-    {
-        if (list.size() > 0)
-        {
-            list.add(0, list.get(0));
-        }
-    }
-    ```
-
-    Which best describes the postcondition after calling `duplicateFront`?
-
-  correct_options:
-  - The first element is duplicated and inserted at the front, shifting the original elements right.
-  wrong_options:
-  - The first element is removed and duplicated at the end.
-  - All elements are shifted left by one position.
-  - A null value is inserted at the front of the list.
-  explanation: |
-    The first element is duplicated and inserted at the front, shifting the original elements right: Correct. `add(0, list.get(0))` inserts a copy at index 0.
-    The first element is removed and duplicated at the end: Incorrect. No removal occurs.
-    All elements are shifted left by one position: Incorrect. The list shifts right due to the insertion.
-    A null value is inserted at the front of the list: Incorrect. The inserted value is the existing first element, not `null`.
-
-- question: |
-    Analyze the following `clearHalf` method:
-
-    ```java
-    public static void clearHalf(ArrayList<Double> list)
-    {
-        int mid = list.size() / 2;
-        for (int i = list.size() - 1; i >= mid; i--)
-        {
-            list.remove(i);
-        }
-    }
-    ```
-
-    What is the postcondition after calling `clearHalf`?
-
-  correct_options:
-  - The list now contains only the first half of its original elements.
-  wrong_options:
-  - The entire list is emptied.
-  - The second half of the list is duplicated.
-  - The first half of the list is cleared, and the second half remains.
-  explanation: |
-    The list now contains only the first half of its original elements: Correct. Elements from the midpoint onward are removed.
-    The entire list is emptied: Incorrect. Only half the list is removed.
-    The second half of the list is duplicated: Incorrect. No duplication happens.
-    The first half of the list is cleared, and the second half remains: Incorrect. The opposite happens — the second half is cleared.
-- question: |
-    Refer to the `swapAdjacent` method below.
-
-    ```java
-    public static void swapAdjacent(ArrayList<Integer> list, int index)
-    {
-        int temp = list.get(index);
-        list.set(index, list.get(index + 1));
-        list.set(index + 1, temp);
-    }
-    ```
-
-    What is the postcondition of `swapAdjacent` assuming `index` is valid?
-
-  correct_options:
-  - The elements at `index` and `index + 1` are swapped.
-  wrong_options:
-  - The element at `index` is removed.
-  - The element at `index + 1` is set to null.
-  - A new element is inserted between `index` and `index + 1`.
-  explanation: |
-    The elements at `index` and `index + 1` are swapped: Correct. The code saves one value and swaps their positions.
-    The element at `index` is removed: Incorrect. No removal occurs; only values are exchanged.
-    The element at `index + 1` is set to null: Incorrect. The list is only modified by swapping, not by inserting nulls.
-    A new element is inserted between `index` and `index + 1`: Incorrect. No new elements are inserted.
-
-- question: |
-    Analyze the `reverseEnds` method below:
-
-    ```java
-    public static void reverseEnds(ArrayList<String> list)
-    {
-        String temp = list.get(0);
-        list.set(0, list.get(list.size() - 1));
-        list.set(list.size() - 1, temp);
-    }
-    ```
-
-    Which best describes the postcondition after executing `reverseEnds`?
-
-  correct_options:
-  - The first and last elements of `list` are swapped.
-  wrong_options:
-  - The list is reversed entirely.
-  - A new element is added to the list.
-  - Only the first element is changed.
-  explanation: |
-    The first and last elements of `list` are swapped: Correct. Only the two boundary elements are exchanged.
-    The list is reversed entirely: Incorrect. Only two elements are swapped, not the whole list.
-    A new element is added to the list: Incorrect. No elements are added; only existing ones are modified.
-    Only the first element is changed: Incorrect. Both the first and last elements are affected.
-
-- question: |
-    Examine the following `swapMiddle` method:
-
-    ```java
-    public static void swapMiddle(ArrayList<Double> list)
-    {
-        int mid1 = (list.size() - 1) / 2;
-        int mid2 = list.size() / 2;
-        double temp = list.get(mid1);
-        list.set(mid1, list.get(mid2));
-        list.set(mid2, temp);
-    }
-    ```
-
-    Assuming the list has at least two elements, what is the postcondition?
-
-  correct_options:
-  - The two middle elements are swapped.
-  wrong_options:
-  - The middle elements are removed.
-  - New elements are inserted into the list.
-  - Only the first element is modified.
-  explanation: |
-    The two middle elements are swapped: Correct. `mid1` and `mid2` compute the middle indices and swap their elements.
-    The middle elements are removed: Incorrect. No elements are removed; only swapping occurs.
-    New elements are inserted into the list: Incorrect. No insertion, just reassignment.
-    Only the first element is modified: Incorrect. The first element is unaffected unless it is in the middle.
-
-- question: |
-    Consider the following `swapEndsIfNeeded` method:
-
-    ```java
-    public static void swapEndsIfNeeded(ArrayList<Character> list)
-    {
-        if (!list.get(0).equals(list.get(list.size() - 1)))
-        {
-            char temp = list.get(0);
-            list.set(0, list.get(list.size() - 1));
-            list.set(list.size() - 1, temp);
-        }
-    }
-    ```
-
-    Which best describes the postcondition for `swapEndsIfNeeded`?
-
-  correct_options:
-  - The first and last elements are swapped only if they are different.
-  wrong_options:
-  - The list always becomes empty.
-  - The first and last elements are set to null.
-  - A copy of the list is created.
-  explanation: |
-    The first and last elements are swapped only if they are different: Correct. Swapping happens only if the elements are not equal.
-    The list always becomes empty: Incorrect. No elements are removed.
-    The first and last elements are set to null: Incorrect. They are swapped, not nulled.
-    A copy of the list is created: Incorrect. No new list is made.
-
-- question: |
-    Review the following `swapFirstSecond` method:
-
-    ```java
-    public static void swapFirstSecond(ArrayList<String> words)
-    {
-        if (words.size() >= 2)
-        {
-            String temp = words.get(0);
-            words.set(0, words.get(1));
-            words.set(1, temp);
-        }
-    }
-    ```
-
-    What best describes the postcondition after executing `swapFirstSecond`?
-
-  correct_options:
-  - The first and second elements of `words` are swapped if the list has at least two elements.
-  wrong_options:
-  - The entire list is reversed.
-  - A new word is added to the beginning of the list.
-  - The first word is deleted.
-  explanation: |
-    The first and second elements of `words` are swapped if the list has at least two elements: Correct. Swap occurs only if size is sufficient.
-    The entire list is reversed: Incorrect. Only two elements are exchanged, not the whole list.
-    A new word is added to the beginning of the list: Incorrect. No new elements are added.
-    The first word is deleted: Incorrect. No deletions are performed.
-
-- question: |
-    Refer to the `safeSwap` method below.
-
-    ```java
-    public static void safeSwap(ArrayList<Integer> nums, int i, int j)
-    {
-        if (i >= 0 && j >= 0 && i < nums.size() && j < nums.size())
-        {
-            int temp = nums.get(i);
-            nums.set(i, nums.get(j));
-            nums.set(j, temp);
-        }
-    }
-    ```
-
-    What preconditions are necessary to avoid an `IndexOutOfBoundsException`?
-
-  correct_options:
-  - i and j must be valid indices between 0 and nums.size() - 1 inclusive.
-  wrong_options:
-  - i and j must both be 0.
-  - i must be less than j.
-  - nums must contain only positive numbers.
-  explanation: |
-    i and j must be valid indices between 0 and nums.size() - 1 inclusive: Correct. The method checks bounds to prevent errors.
-    i and j must both be 0: Incorrect. They can be any valid indices.
-    i must be less than j: Incorrect. No ordering between i and j is required.
-    nums must contain only positive numbers: Incorrect. Values don't matter for swapping — only valid indices.
-
-- question: |
-    Analyze the `swapFirstLast` method:
-
-    ```java
-    public static void swapFirstLast(ArrayList<Double> values)
-    {
-        double temp = values.get(0);
-        values.set(0, values.get(values.size() - 1));
-        values.set(values.size() - 1, temp);
-    }
-    ```
-
-    What could cause an error when calling `swapFirstLast`?
-
-  correct_options:
-  - Calling the method with an empty list.
-  wrong_options:
-  - Calling the method with only positive numbers.
-  - Calling the method when the list has an even number of elements.
-  - Calling the method with duplicate elements.
-  explanation: |
-    Calling the method with an empty list: Correct. `get(0)` and `get(values.size() - 1)` would throw exceptions if the list is empty.
-    Calling the method with only positive numbers: Incorrect. Values themselves don't cause errors.
-    Calling the method when the list has an even number of elements: Incorrect. Size parity doesn't matter for swapping ends.
-    Calling the method with duplicate elements: Incorrect. Duplicate values are irrelevant for index operations.
-
-- question: |
-    Examine the `conditionalSwap` method:
-
-    ```java
-    public static void conditionalSwap(ArrayList<String> list, int i, int j)
-    {
-        if (list.get(i).compareTo(list.get(j)) > 0)
-        {
-            String temp = list.get(i);
-            list.set(i, list.get(j));
-            list.set(j, temp);
-        }
-    }
-    ```
-
-    What precondition is most important to ensure no runtime error?
-
-  correct_options:
-  - Both i and j must be valid indices within the bounds of list.
-  wrong_options:
-  - The elements at i and j must be equal.
-  - The list must not contain null elements.
-  - i must be greater than j.
-  explanation: |
-    Both i and j must be valid indices within the bounds of list: Correct. Index errors must be avoided when calling get(i) and get(j).
-    The elements at i and j must be equal: Incorrect. No need for equality — a swap happens based on compareTo.
-    The list must not contain null elements: Incorrect. compareTo might throw a NullPointerException, but that's not the immediate focus for index validity.
-    i must be greater than j: Incorrect. No specific relationship between i and j is required.
-
-- question: |
-    Look at the `swapIfNeeded` method:
-
-    ```java
-    public static void swapIfNeeded(ArrayList<Character> letters, int a, int b)
-    {
-        if (letters.size() > 0 && a >= 0 && b >= 0 && a < letters.size() && b < letters.size())
-        {
-            char temp = letters.get(a);
-            letters.set(a, letters.get(b));
-            letters.set(b, temp);
-        }
-    }
-    ```
-
-    Which situation would prevent an exception?
-
-  correct_options:
-  - Providing indices `a` and `b` that are within the bounds of `letters`.
-  wrong_options:
-  - Ensuring that `letters` contains only uppercase letters.
-  - Making sure `a` is smaller than `b`.
-  - Making sure `b` is twice as large as `a`.
-  explanation: |
-    Providing indices `a` and `b` that are within the bounds of `letters`: Correct. Valid indices prevent exceptions like `IndexOutOfBoundsException`.
-    Ensuring that `letters` contains only uppercase letters: Incorrect. Letter case has no impact on list operations.
-    Making sure `a` is smaller than `b`: Incorrect. Ordering doesn't prevent errors.
-    Making sure `b` is twice as large as `a`: Incorrect. Same — valid bounds are the real issue.
-
-- question: |
-    Analyze the `swapNonAdjacent` method:
-
-    ```java
-    public static void swapNonAdjacent(ArrayList<String> list, int x, int y)
-    {
-        if (Math.abs(x - y) > 1)
-        {
-            String temp = list.get(x);
-            list.set(x, list.get(y));
-            list.set(y, temp);
-        }
-    }
-    ```
-
-    What precondition must be true before calling `swapNonAdjacent`?
-
-  correct_options:
-  - x and y must be valid list indices.
-  wrong_options:
-  - x must be exactly 1 greater than y.
-  - list must contain only numeric strings.
-  - list must have an odd number of elements.
-  explanation: |
-    x and y must be valid list indices: Correct. Valid indices are necessary to safely access list.get(x) and list.get(y).
-    x must be exactly 1 greater than y: Incorrect. The method only requires that x and y are not adjacent (difference > 1).
-    list must contain only numeric strings: Incorrect. The content of the strings is irrelevant to swapping.
-    list must have an odd number of elements: Incorrect. List size parity doesn't affect swapping ability.
-- question: |
-    Refer to the `safeSwap` method below.
-
-    ```java
-    public static void safeSwap(ArrayList<Integer> nums, int i, int j)
-    {
-        if (i >= 0 && j >= 0 && i < nums.size() && j < nums.size())
-        {
-            int temp = nums.get(i);
-            nums.set(i, nums.get(j));
-            nums.set(j, temp);
-        }
-    }
-    ```
-
-    What preconditions are necessary to avoid an `IndexOutOfBoundsException`?
-
-  correct_options:
-  - |
-    `i` and `j` must be valid indices between `0` and `nums.size() - 1` inclusive.
-  wrong_options:
-  - |
-    `i` and `j` must both be 0.
-  - |
-    `i` must be less than `j`.
-  - |
-    `nums` must contain only positive numbers.
-  explanation: |
-    `i` and `j` must be valid indices between `0` and `nums.size() - 1` inclusive: Correct. The method checks bounds to prevent errors.
-    `i` and `j` must both be 0: Incorrect. They can be any valid indices.
-    `i` must be less than `j`: Incorrect. No ordering between `i` and `j` is required.
-    `nums` must contain only positive numbers: Incorrect. Values don't matter for swapping — only valid indices.
-
-- question: |
-    Analyze the `swapFirstLast` method:
-
-    ```java
-    public static void swapFirstLast(ArrayList<Double> values)
-    {
-        double temp = values.get(0);
-        values.set(0, values.get(values.size() - 1));
-        values.set(values.size() - 1, temp);
-    }
-    ```
-
-    What could cause an error when calling `swapFirstLast`?
-
-  correct_options:
-  - Calling the method with an empty list.
-  wrong_options:
-  - Calling the method with only positive numbers.
-  - Calling the method when the list has an even number of elements.
-  - Calling the method with duplicate elements.
-  explanation: |
-    Calling the method with an empty list: Correct. `get(0)` and `get(values.size() - 1)` would throw exceptions if the list is empty.
-    Calling the method with only positive numbers: Incorrect. Values themselves don't cause errors.
-    Calling the method when the list has an even number of elements: Incorrect. Size parity doesn't matter for swapping ends.
-    Calling the method with duplicate elements: Incorrect. Duplicate values are irrelevant for index operations.
-
-- question: |
-    Examine the `conditionalSwap` method:
-
-    ```java
-    public static void conditionalSwap(ArrayList<String> list, int i, int j)
-    {
-        if (list.get(i).compareTo(list.get(j)) > 0)
-        {
-            String temp = list.get(i);
-            list.set(i, list.get(j));
-            list.set(j, temp);
-        }
-    }
-    ```
-
-    What precondition is most important to ensure no runtime error?
-
-  correct_options:
-  - Both `i` and `j` must be valid indices within the bounds of `list`.
-  wrong_options:
-  - The elements at `i` and `j` must be equal.
-  - The list must not contain null elements.
-  - |
-    `i` must be greater than `j`.
-  explanation: |
-    Both `i` and `j` must be valid indices within the bounds of `list`: Correct. Index errors must be avoided when calling `get(i)` and `get(j)`.
-    The elements at `i` and `j` must be equal: Incorrect. No need for equality — a swap happens based on compareTo.
-    The list must not contain null elements: Incorrect. `compareTo` might throw a `NullPointerException`, but that's not the immediate focus for index validity.
-    `i` must be greater than `j`: Incorrect. No specific relationship between `i` and `j` is required.
-
-- question: |
-    Look at the `swapIfNeeded` method:
-
-    ```java
-    public static void swapIfNeeded(ArrayList<Character> letters, int a, int b)
-    {
-        if (letters.size() > 0 && a >= 0 && b >= 0 && a < letters.size() && b < letters.size())
-        {
-            char temp = letters.get(a);
-            letters.set(a, letters.get(b));
-            letters.set(b, temp);
-        }
-    }
-    ```
-
-    Which situation would prevent an exception?
-
-  correct_options:
-  - Providing indices `a` and `b` that are within the bounds of `letters`.
-  wrong_options:
-  - Ensuring that `letters` contains only uppercase letters.
-  - Making sure `a` is smaller than `b`.
-  - Making sure `b` is twice as large as `a`.
-  explanation: |
-    Providing indices `a` and `b` that are within the bounds of `letters`: Correct. Valid indices prevent exceptions like `IndexOutOfBoundsException`.
-    Ensuring that `letters` contains only uppercase letters: Incorrect. Letter case has no impact on list operations.
-    Making sure `a` is smaller than `b`: Incorrect. Ordering doesn't prevent errors.
-    Making sure `b` is twice as large as `a`: Incorrect. Same — valid bounds are the real issue.
-
-- question: |
-    Analyze the `swapNonAdjacent` method:
-
-    ```java
-    public static void swapNonAdjacent(ArrayList<String> list, int x, int y)
-    {
-        if (Math.abs(x - y) > 1)
-        {
-            String temp = list.get(x);
-            list.set(x, list.get(y));
-            list.set(y, temp);
-        }
-    }
-    ```
-
-    What precondition must be true before calling `swapNonAdjacent`?
-
-  correct_options:
-  - |
-    `x` and `y` must be valid list indices.
-  wrong_options:
-  - |
-    `x` must be exactly 1 greater than `y`.
-  - |
-    `list` must contain only numeric strings.
-  - |
-    `list` must have an odd number of elements.
-  explanation: |
-    `x` and `y` must be valid list indices: Correct. Valid indices are necessary to safely access `list.get(x)` and `list.get(y)`.
-    `x` must be exactly 1 greater than `y`: Incorrect. The method only requires that `x` and `y` are not adjacent (difference > 1).
-    `list` must contain only numeric strings: Incorrect. The content of the strings is irrelevant to swapping.
-    `list` must have an odd number of elements: Incorrect. List size parity doesn't affect swapping ability.
-
-- question: |
-    In the `getList` method below, what code should replace /* fill in here */ to correctly generate an array of random integers from 1 to 100 inclusive?
-
-    ```java
-    public int[] getList()
-    {
-        int[] list = new int[10];
-        for (int i = 0; i < list.length; i++)
-        {
-            list[i] = /* fill in here */;
-        }
-        return list;
-    }
-    ```
-
-  correct_options:
-  - (int) (Math.random() * 100) + 1
-  wrong_options:
-  - (int) (Math.random() * 101)
-  - (int) (Math.random() * 99) + 1
-  - Math.random() * 100
-  explanation: |
-    (int) (Math.random() * 100) + 1: Correct. Multiplies by 100 (range [0, 100)), adds 1 → gives [1,100] inclusive.
-    (int) (Math.random() * 101): Incorrect. This gives [0,100] inclusive, including 0 which is outside the requested range.
-    (int) (Math.random() * 99) + 1: Incorrect. Only gets up to 99, missing 100.
-    Math.random() * 100: Incorrect. This would produce a double, not an int.
-
-- question: |
-    Suppose you want `getList` to generate random numbers from 0 to 50 inclusive.  
-    Which code correctly fills in /* code to add integer to list */?
-
-    ```java
-    public int[] getList()
-    {
-        int[] list = new int[10];
-        for (int i = 0; i < list.length; i++)
-        {
-            list[i] = /* fill in here */;
-        }
-        return list;
-    }
-    ```
-  correct_options:
-  - list[i] = (int) (Math.random() * 51);
-  wrong_options:
-  - list[i] = (int) (Math.random() * 50);
-  - list[i] = (int) (Math.random() * 52);
-  - list[i] = (Math.random() * 51);
-  explanation: |
-    list[i] = (int) (Math.random() * 51): Correct. Multiplies by 51 → values 0–50 inclusive after casting.
-    list[i] = (int) (Math.random() * 50): Incorrect. Only generates up to 49.
-    list[i] = (int) (Math.random() * 52): Incorrect. Could generate values up to 51, which is too large.
-    list[i] = (Math.random() * 51): Incorrect. This would assign a `double`, causing a compile-time error.
-
-- question: |
-    Consider this alternate `getList` implementation.
-
-    ```java
-    public int[] getList()
-    {
-        int[] list = new int[5];
-        for (int i = 0; i < list.length; i++)
-        {
-            list[i] = (int) (Math.random() * 200) - 50;
-        }
-        return list;
-    }
-    ```
-
-    What is the range of possible values stored in `list`?
-
-  correct_options:
-  - From -50 to 149
-  wrong_options:
-  - From -50 to 150
-  - From 0 to 200
-  - From 0 to 149
-  explanation: |
-    From -50 to 149: Correct. (Math.random() * 200) gives [0, 200), subtracting 50 shifts to [-50, 149].
-    From -50 to 150: Incorrect. 150 is not included since Math.random() never reaches 1 exactly.
-    From 0 to 200: Incorrect. The subtraction moves the range downward, starting at -50.
-    From 0 to 149: Incorrect. The subtraction would make the minimum negative.
-
-- question: |
-    Suppose in `getList`, you mistakenly use:
-
-    ```java
-    list[i] = Math.random() * 100;
-    ```
-
-    What kind of compile-time error would occur?
-
-  correct_options:
-  - |
-    Incompatible types: possible lossy conversion from double to int
-  wrong_options:
-  - ArrayIndexOutOfBoundsException
-  - NullPointerException
-  - ClassCastException
-  explanation: |
-    Incompatible types: possible lossy conversion from double to int: Correct. `Math.random()` returns `double`, so assigning without a cast to `int` causes a compile error.
-    ArrayIndexOutOfBoundsException: Incorrect. This happens at runtime if invalid indices are used, not here.
-    NullPointerException: Incorrect. Not relevant; no object references are null here.
-    ClassCastException: Incorrect. No illegal object casting is happening.
-- question: |
-    Suppose `arr = {2, 0, 5}` is passed into the `fn` method using the following implementation:
-
-    ```java
-    public static int[] fn(int[] arr) {
-        int[] prod = new int[arr.length];
-        prod[0] = arr[0];
-        for (int j = 1; j < arr.length; j++) {
-            prod[j] = prod[j - 1] * arr[j];
-        }
-        return prod;
-    }
-    ```
-
-    What will the returned `prod` array be?
-
-  correct_options:
-  - |
-    {2, 0, 0}
-  wrong_options:
-  - |
-    {2, 2, 10}
-  - |
-    {2, 0, 5}
-  - |
-    {2, 0, 10}
-  explanation: |
-    {2, 0, 0}: Correct. 2 is the first value, then 2×0=0, and 0×5=0.
-    {2, 2, 10}: Incorrect. 2×0 should result in 0, not 2.
-    {2, 0, 5}: Incorrect. 0×5 = 0, not 5.
-    {2, 0, 10}: Incorrect. The third value should be 0 because of cumulative multiplication.
+  - question: |
+      Consider the following method intended to return the sum of the even elements in an array of integers.
+
+      ```java
+      public static int sumEvens(int[] nums)
+      {
+          int sum = 0;
+          for (int k = 0; k < nums.length; k++)
+          {
+              if (/* condition */)
+                  sum += nums[k];
+          }
+          return sum;
+      }
+      ```
+
+      Which of the following replacements for `/* condition */` would correctly accumulate only the even numbers in the array?
+
+      I.   `nums[k] % 2 == 0`  
+      II.  `nums[k] / 2 == 0`  
+      III. `nums[k] % 2 != 1`
+
+    correct_options:
+      - I and III only
+    wrong_options:
+      - I only
+      - II only
+      - III only
+      - I and II only
+      - II and III only
+    explanation: |
+      - I: Correct. This is the standard check for even numbers.
+      - II: Incorrect. This returns true only when nums[k] is 0 or 1 (due to integer division).
+      - III: Correct. This is logically equivalent to checking for even values since odd numbers leave remainder 1 when divided by 2.
+      - I only: Incorrect. It omits another correct option (III).
+      - II only: Incorrect. II does not correctly detect even numbers.
+      - III only: Incorrect. It omits I, which is also correct.
+      - I and II only: Incorrect. II is wrong.
+      - II and III only: Incorrect. II is wrong.
+
+  - question: |
+      Suppose you want to create a method that determines whether an array contains any duplicate values.
+
+      Which of the following would be valid approaches to determine if an array contains duplicates?
+
+      I.   Nested loops comparing every pair of elements  
+      II.  Use a Set to check if a duplicate is added  
+      III. Sorting the array and checking for consecutive duplicates
+
+    correct_options:
+      - I, II, and III
+    wrong_options:
+      - I only
+      - II only
+      - III only
+      - I and II only
+      - II and III only
+    explanation: |
+      - I: Correct. Brute-force approach using nested loops works correctly but is inefficient.
+      - II: Correct. Sets reject duplicates, so trying to add a duplicate will detect it.
+      - III: Correct. Sorting brings duplicates together, making them easy to detect.
+      - I only: Incorrect. Other correct approaches (II and III) are omitted.
+      - II only: Incorrect. Omits I and III, which are also correct.
+      - III only: Incorrect. Omits I and II.
+      - I and II only: Incorrect. Omits III.
+      - II and III only: Incorrect. Omits I.
+
+  - question: |
+      What will the following method return when passed the array `{4, 3, 2, 1}`?
+
+      ```java
+      public static int mystery(int[] arr)
+      {
+          int result = arr[0];
+          for (int i = 1; i < arr.length; i++)
+          {
+              result -= arr[i];
+          }
+          return result;
+      }
+      ```
+
+      What is the returned value and what does the method appear to do?
+
+      I.   Returns `-2` and subtracts all elements from the first  
+      II.  Returns `2` and finds the difference between max and min  
+      III. Returns `-2` and is equivalent to `arr[0] - (arr[1] + arr[2] + arr[3])`
+
+    correct_options:
+      - I and III only
+    wrong_options:
+      - I only
+      - II only
+      - III only
+      - I and II only
+      - II and III only
+    explanation: |
+      I: Correct. It returns -2: 4 - 3 - 2 - 1 = -2.
+      II: Incorrect. The method doesn't find the difference between max and min.
+      III: Correct. That's exactly what the method does: subtracts the sum of the rest from the first.
+      I only: Incorrect. Omits III.
+      II only: Incorrect. Misrepresents what the method does.
+      III only: Incorrect. Omits I.
+      I and II only: Incorrect. II is wrong.
+      II and III only: Incorrect. II is wrong.
+
+  - question: |
+      Which of the following statements about arrays in Java are true?
+
+      I.   Arrays can hold primitive types and object references  
+      II.  The size of an array can be changed after its creation  
+      III. Array indices start at 1 in Java
+
+    correct_options:
+      - I only
+    wrong_options:
+      - II only
+      - III only
+      - I and II only
+      - II and III only
+      - I and III only
+    explanation: |
+      I: Correct. Arrays can store primitives (like `int`) or references (like `String`).
+      II: Incorrect. Java arrays are fixed in size after creation.
+      III: Incorrect. Java uses 0-based indexing.
+      II only: Incorrect. II is false.
+      III only: Incorrect. III is false.
+      I and II only: Incorrect. II is false.
+      II and III only: Incorrect. Both are false.
+      I and III only: Incorrect. III is false.
+
+  - question: |
+      Consider the following code snippet:
+
+      ```java
+      int[] nums = {10, 20, 30, 40};
+      int total = 0;
+      for (int i = nums.length - 1; i >= 0; i--)
+      {
+          total += nums[i];
+      }
+      ```
+
+      Which of the following statements are true?
+
+      I.   This loop sums the elements of the array in reverse order  
+      II.  The final value of `total` will be 100  
+      III. The loop throws an exception due to index out-of-bounds
+
+    correct_options:
+      - I and II only
+    wrong_options:
+      - I only
+      - II only
+      - III only
+      - I and III only
+      - II and III only
+    explanation: |
+      I: Correct. The loop starts at the last index and works backwards.
+      II: Correct. 40 + 30 + 20 + 10 = 100.
+      III: Incorrect. The loop bounds are valid, no out-of-bounds error occurs.
+      I only: Incorrect. Omits II.
+      II only: Incorrect. Omits I.
+      III only: Incorrect. No exception is thrown.
+      I and III only: Incorrect. III is incorrect.
+      II and III only: Incorrect. III is incorrect.
+  - question: |
+      A programmer is writing a method that searches an array for the first element that matches a given condition.  
+      The problem specification does not specify what should happen if no such element exists.  
+      What is the best way to handle this situation?
+
+    correct_options:
+      - The specification should be revised to define behavior when no match is found.
+    wrong_options:
+      - Assume that the array will always contain a matching element.
+      - Return -1 without updating the specification.
+      - Throw an exception without mentioning it in the specification.
+    explanation: |
+      The specification should be revised to define behavior when no match is found: Correct. It’s best practice to clarify expected behavior in the specification so the method's behavior is predictable and documented.
+      Assume that the array will always contain a matching element: Incorrect. This introduces risk of bugs or unexpected behavior if assumptions are violated.
+      Return -1 without updating the specification: Incorrect. While returning -1 may be a good choice, it must be clearly stated in the specification.
+      Throw an exception without mentioning it in the specification: Incorrect. Exceptions should be documented in the specification to ensure the behavior is expected.
+
+  - question: |
+      A student writes a method that calculates the average of an array of integers.  
+      The problem specification does not indicate whether the array might be empty.  
+      What is the best course of action?
+
+    correct_options:
+      - Modify the specification to state what should happen if the array is empty.
+    wrong_options:
+      - Assume the array will always contain at least one value.
+      - Return 0 if the array is empty without changing the specification.
+      - Ignore the possibility of an empty array, since it will likely never occur.
+    explanation: |
+      Modify the specification to state what should happen if the array is empty: Correct. This ensures that the method handles edge cases predictably and responsibly.
+      Assume the array will always contain at least one value: Incorrect. This assumption can lead to division-by-zero errors if violated.
+      Return 0 if the array is empty without changing the specification: Incorrect. Silent assumptions create ambiguity and can mislead others using the method.
+      Ignore the possibility of an empty array, since it will likely never occur: Incorrect. Defensive programming requires handling all realistic scenarios, including empty arrays.
+
+  - question: |
+      A method is being developed to return the index of the last occurrence of a specific value in an array.  
+      The specification does not state what should happen if the value does not appear in the array.  
+      Which of the following is the best approach?
+
+    correct_options:
+      - Clarify the specification to state what should be returned when the value is not found.
+    wrong_options:
+      - Return the first index by default.
+      - Return index 0 to indicate "not found."
+      - Leave the return value unspecified and document that behavior may vary.
+    explanation: |
+      Clarify the specification to state what should be returned when the value is not found: Correct. It is essential to specify expected output clearly for all cases, especially edge ones.
+      Return the first index by default: Incorrect. This does not meet the goal of finding the last occurrence and is misleading.
+      Return index 0 to indicate "not found.": Incorrect. Index 0 may be a valid index of the target value, so this would create confusion.
+      Leave the return value unspecified and document that behavior may vary: Incorrect. Good specifications should never permit undefined behavior.
+
+  - question: |
+      A method is designed to count the number of elements greater than a threshold in an array.  
+      The specification does not say whether the threshold itself should be counted.  
+      What should the programmer do?
+
+    correct_options:
+      - Update the specification to state whether values equal to the threshold should be included.
+    wrong_options:
+      - Include equal values without noting it in the specification.
+      - Exclude equal values without explanation.
+      - Leave the behavior up to whoever calls the method.
+    explanation: |
+      Update the specification to state whether values equal to the threshold should be included: Correct. This removes ambiguity and makes the method behavior clear to future users.
+      Include equal values without noting it in the specification: Incorrect. This leads to uncertainty about method behavior.
+      Exclude equal values without explanation: Incorrect. Behavior should be clearly stated in the specification.
+      Leave the behavior up to whoever calls the method: Incorrect. The method’s behavior should be consistent and predictable, which requires an explicit specification.
+
+  - question: |
+      A method will be written to return the first prime number in an array.  
+      The specification does not mention whether negative numbers are allowed or whether 1 is considered prime.  
+      Which is the best approach?
+
+    correct_options:
+      - Revise the specification to clearly define what counts as a valid prime and valid input.
+    wrong_options:
+      - Assume all input is positive and define primes accordingly.
+      - Treat 1 as a prime number for simplicity.
+      - Return any value that passes a basic modulo test without further clarification.
+    explanation: |
+      Revise the specification to clearly define what counts as a valid prime and valid input: Correct. Clear definitions ensure that behavior is mathematically correct and unambiguous.
+      Assume all input is positive and define primes accordingly: Incorrect. Unstated assumptions can lead to incorrect results or confusion.
+      Treat 1 as a prime number for simplicity: Incorrect. By mathematical definition, 1 is not prime.
+      Return any value that passes a basic modulo test without further clarification: Incorrect. This can result in logically incorrect results if prime criteria are not clearly defined.
+  - question: |
+      Examine the `insertMiddle` method:
+
+      ```java
+      public static void insertMiddle(ArrayList<Integer> list, int value)
+      {
+          int mid = list.size() / 2;
+          list.add(mid, value);
+      }
+      ```
+
+      What is the postcondition after calling `insertMiddle`?
+    correct_options:
+      - The `value` is inserted at the middle index, and all subsequent elements are shifted one position right.
+    wrong_options:
+      - The `value` replaces the element at the middle index.
+      - The `value` is added at the end of the list.
+      - Two copies of `value` are inserted into the list.
+    explanation: |
+      The `value` is inserted at the middle index, and all subsequent elements are shifted one position right: Correct. `add(index, value)` inserts, not replaces.
+      The `value` replaces the element at the middle index: Incorrect. `add` shifts elements; it does not replace.
+      The `value` is added at the end of the list: Incorrect. Insertion is at the middle, not the end.
+      Two copies of `value` are inserted into the list: Incorrect. Only one insertion occurs.
+
+  - question: |
+      Analyze the following `removeAndReturn` method:
+
+      ```java
+      public static String removeAndReturn(ArrayList<String> list, int index)
+      {
+          return list.remove(index);
+      }
+      ```
+
+      Which best describes the postcondition for `removeAndReturn`?
+
+    correct_options:
+      - The element at `index` is removed from the list and returned.
+    wrong_options:
+      - The element at `index` is replaced with `null`.
+      - The list becomes empty.
+      - The entire list is shifted left by two positions.
+    explanation: |
+      The element at `index` is removed from the list and returned: Correct. `remove` deletes the element and shifts later elements left by one.
+      The element at `index` is replaced with `null`: Incorrect. `remove` eliminates the element, not replacing it with `null`.
+      The list becomes empty: Incorrect. Only one element is removed.
+      The entire list is shifted left by two positions: Incorrect. Only a single shift by one occurs after one removal.
+
+  - question: |
+      Refer to the `replaceFirstLast` method:
+
+      ```java
+      public static void replaceFirstLast(ArrayList<Integer> list)
+      {
+          if (list.size() >= 2)
+          {
+              int temp = list.get(0);
+              list.set(0, list.get(list.size() - 1));
+              list.set(list.size() - 1, temp);
+          }
+      }
+      ```
+
+      Which best describes the postcondition of `replaceFirstLast`?
+
+    correct_options:
+      - The first and last elements are swapped if the list has at least two elements.
+    wrong_options:
+      - The list is cleared.
+      - A new element is appended to the list.
+      - The first element is replaced with 0.
+    explanation: |
+      The first and last elements are swapped if the list has at least two elements: Correct. The swap only happens if there are at least two elements.
+      The list is cleared: Incorrect. No clearing happens.
+      A new element is appended to the list: Incorrect. No new elements are added.
+      The first element is replaced with 0: Incorrect. The first element is replaced with the original last element, not 0.
+
+  - question: |
+      Examine the `duplicateFront` method:
+
+      ```java
+      public static void duplicateFront(ArrayList<String> list)
+      {
+          if (list.size() > 0)
+          {
+              list.add(0, list.get(0));
+          }
+      }
+      ```
+
+      Which best describes the postcondition after calling `duplicateFront`?
+
+    correct_options:
+      - The first element is duplicated and inserted at the front, shifting the original elements right.
+    wrong_options:
+      - The first element is removed and duplicated at the end.
+      - All elements are shifted left by one position.
+      - A null value is inserted at the front of the list.
+    explanation: |
+      The first element is duplicated and inserted at the front, shifting the original elements right: Correct. `add(0, list.get(0))` inserts a copy at index 0.
+      The first element is removed and duplicated at the end: Incorrect. No removal occurs.
+      All elements are shifted left by one position: Incorrect. The list shifts right due to the insertion.
+      A null value is inserted at the front of the list: Incorrect. The inserted value is the existing first element, not `null`.
+
+  - question: |
+      Analyze the following `clearHalf` method:
+
+      ```java
+      public static void clearHalf(ArrayList<Double> list)
+      {
+          int mid = list.size() / 2;
+          for (int i = list.size() - 1; i >= mid; i--)
+          {
+              list.remove(i);
+          }
+      }
+      ```
+
+      What is the postcondition after calling `clearHalf`?
+
+    correct_options:
+      - The list now contains only the first half of its original elements.
+    wrong_options:
+      - The entire list is emptied.
+      - The second half of the list is duplicated.
+      - The first half of the list is cleared, and the second half remains.
+    explanation: |
+      The list now contains only the first half of its original elements: Correct. Elements from the midpoint onward are removed.
+      The entire list is emptied: Incorrect. Only half the list is removed.
+      The second half of the list is duplicated: Incorrect. No duplication happens.
+      The first half of the list is cleared, and the second half remains: Incorrect. The opposite happens — the second half is cleared.
+  - question: |
+      Refer to the `swapAdjacent` method below.
+
+      ```java
+      public static void swapAdjacent(ArrayList<Integer> list, int index)
+      {
+          int temp = list.get(index);
+          list.set(index, list.get(index + 1));
+          list.set(index + 1, temp);
+      }
+      ```
+
+      What is the postcondition of `swapAdjacent` assuming `index` is valid?
+
+    correct_options:
+      - The elements at `index` and `index + 1` are swapped.
+    wrong_options:
+      - The element at `index` is removed.
+      - The element at `index + 1` is set to null.
+      - A new element is inserted between `index` and `index + 1`.
+    explanation: |
+      The elements at `index` and `index + 1` are swapped: Correct. The code saves one value and swaps their positions.
+      The element at `index` is removed: Incorrect. No removal occurs; only values are exchanged.
+      The element at `index + 1` is set to null: Incorrect. The list is only modified by swapping, not by inserting nulls.
+      A new element is inserted between `index` and `index + 1`: Incorrect. No new elements are inserted.
+
+  - question: |
+      Analyze the `reverseEnds` method below:
+
+      ```java
+      public static void reverseEnds(ArrayList<String> list)
+      {
+          String temp = list.get(0);
+          list.set(0, list.get(list.size() - 1));
+          list.set(list.size() - 1, temp);
+      }
+      ```
+
+      Which best describes the postcondition after executing `reverseEnds`?
+
+    correct_options:
+      - The first and last elements of `list` are swapped.
+    wrong_options:
+      - The list is reversed entirely.
+      - A new element is added to the list.
+      - Only the first element is changed.
+    explanation: |
+      The first and last elements of `list` are swapped: Correct. Only the two boundary elements are exchanged.
+      The list is reversed entirely: Incorrect. Only two elements are swapped, not the whole list.
+      A new element is added to the list: Incorrect. No elements are added; only existing ones are modified.
+      Only the first element is changed: Incorrect. Both the first and last elements are affected.
+
+  - question: |
+      Examine the following `swapMiddle` method:
+
+      ```java
+      public static void swapMiddle(ArrayList<Double> list)
+      {
+          int mid1 = (list.size() - 1) / 2;
+          int mid2 = list.size() / 2;
+          double temp = list.get(mid1);
+          list.set(mid1, list.get(mid2));
+          list.set(mid2, temp);
+      }
+      ```
+
+      Assuming the list has at least two elements, what is the postcondition?
+
+    correct_options:
+      - The two middle elements are swapped.
+    wrong_options:
+      - The middle elements are removed.
+      - New elements are inserted into the list.
+      - Only the first element is modified.
+    explanation: |
+      The two middle elements are swapped: Correct. `mid1` and `mid2` compute the middle indices and swap their elements.
+      The middle elements are removed: Incorrect. No elements are removed; only swapping occurs.
+      New elements are inserted into the list: Incorrect. No insertion, just reassignment.
+      Only the first element is modified: Incorrect. The first element is unaffected unless it is in the middle.
+
+  - question: |
+      Consider the following `swapEndsIfNeeded` method:
+
+      ```java
+      public static void swapEndsIfNeeded(ArrayList<Character> list)
+      {
+          if (!list.get(0).equals(list.get(list.size() - 1)))
+          {
+              char temp = list.get(0);
+              list.set(0, list.get(list.size() - 1));
+              list.set(list.size() - 1, temp);
+          }
+      }
+      ```
+
+      Which best describes the postcondition for `swapEndsIfNeeded`?
+
+    correct_options:
+      - The first and last elements are swapped only if they are different.
+    wrong_options:
+      - The list always becomes empty.
+      - The first and last elements are set to null.
+      - A copy of the list is created.
+    explanation: |
+      The first and last elements are swapped only if they are different: Correct. Swapping happens only if the elements are not equal.
+      The list always becomes empty: Incorrect. No elements are removed.
+      The first and last elements are set to null: Incorrect. They are swapped, not nulled.
+      A copy of the list is created: Incorrect. No new list is made.
+
+  - question: |
+      Review the following `swapFirstSecond` method:
+
+      ```java
+      public static void swapFirstSecond(ArrayList<String> words)
+      {
+          if (words.size() >= 2)
+          {
+              String temp = words.get(0);
+              words.set(0, words.get(1));
+              words.set(1, temp);
+          }
+      }
+      ```
+
+      What best describes the postcondition after executing `swapFirstSecond`?
+
+    correct_options:
+      - The first and second elements of `words` are swapped if the list has at least two elements.
+    wrong_options:
+      - The entire list is reversed.
+      - A new word is added to the beginning of the list.
+      - The first word is deleted.
+    explanation: |
+      The first and second elements of `words` are swapped if the list has at least two elements: Correct. Swap occurs only if size is sufficient.
+      The entire list is reversed: Incorrect. Only two elements are exchanged, not the whole list.
+      A new word is added to the beginning of the list: Incorrect. No new elements are added.
+      The first word is deleted: Incorrect. No deletions are performed.
+
+  - question: |
+      Refer to the `safeSwap` method below.
+
+      ```java
+      public static void safeSwap(ArrayList<Integer> nums, int i, int j)
+      {
+          if (i >= 0 && j >= 0 && i < nums.size() && j < nums.size())
+          {
+              int temp = nums.get(i);
+              nums.set(i, nums.get(j));
+              nums.set(j, temp);
+          }
+      }
+      ```
+
+      What preconditions are necessary to avoid an `IndexOutOfBoundsException`?
+
+    correct_options:
+      - i and j must be valid indices between 0 and nums.size() - 1 inclusive.
+    wrong_options:
+      - i and j must both be 0.
+      - i must be less than j.
+      - nums must contain only positive numbers.
+    explanation: |
+      i and j must be valid indices between 0 and nums.size() - 1 inclusive: Correct. The method checks bounds to prevent errors.
+      i and j must both be 0: Incorrect. They can be any valid indices.
+      i must be less than j: Incorrect. No ordering between i and j is required.
+      nums must contain only positive numbers: Incorrect. Values don't matter for swapping — only valid indices.
+
+  - question: |
+      Analyze the `swapFirstLast` method:
+
+      ```java
+      public static void swapFirstLast(ArrayList<Double> values)
+      {
+          double temp = values.get(0);
+          values.set(0, values.get(values.size() - 1));
+          values.set(values.size() - 1, temp);
+      }
+      ```
+
+      What could cause an error when calling `swapFirstLast`?
+
+    correct_options:
+      - Calling the method with an empty list.
+    wrong_options:
+      - Calling the method with only positive numbers.
+      - Calling the method when the list has an even number of elements.
+      - Calling the method with duplicate elements.
+    explanation: |
+      Calling the method with an empty list: Correct. `get(0)` and `get(values.size() - 1)` would throw exceptions if the list is empty.
+      Calling the method with only positive numbers: Incorrect. Values themselves don't cause errors.
+      Calling the method when the list has an even number of elements: Incorrect. Size parity doesn't matter for swapping ends.
+      Calling the method with duplicate elements: Incorrect. Duplicate values are irrelevant for index operations.
+
+  - question: |
+      Examine the `conditionalSwap` method:
+
+      ```java
+      public static void conditionalSwap(ArrayList<String> list, int i, int j)
+      {
+          if (list.get(i).compareTo(list.get(j)) > 0)
+          {
+              String temp = list.get(i);
+              list.set(i, list.get(j));
+              list.set(j, temp);
+          }
+      }
+      ```
+
+      What precondition is most important to ensure no runtime error?
+
+    correct_options:
+      - Both i and j must be valid indices within the bounds of list.
+    wrong_options:
+      - The elements at i and j must be equal.
+      - The list must not contain null elements.
+      - i must be greater than j.
+    explanation: |
+      Both i and j must be valid indices within the bounds of list: Correct. Index errors must be avoided when calling get(i) and get(j).
+      The elements at i and j must be equal: Incorrect. No need for equality — a swap happens based on compareTo.
+      The list must not contain null elements: Incorrect. compareTo might throw a NullPointerException, but that's not the immediate focus for index validity.
+      i must be greater than j: Incorrect. No specific relationship between i and j is required.
+
+  - question: |
+      Look at the `swapIfNeeded` method:
+
+      ```java
+      public static void swapIfNeeded(ArrayList<Character> letters, int a, int b)
+      {
+          if (letters.size() > 0 && a >= 0 && b >= 0 && a < letters.size() && b < letters.size())
+          {
+              char temp = letters.get(a);
+              letters.set(a, letters.get(b));
+              letters.set(b, temp);
+          }
+      }
+      ```
+
+      Which situation would prevent an exception?
+
+    correct_options:
+      - Providing indices `a` and `b` that are within the bounds of `letters`.
+    wrong_options:
+      - Ensuring that `letters` contains only uppercase letters.
+      - Making sure `a` is smaller than `b`.
+      - Making sure `b` is twice as large as `a`.
+    explanation: |
+      Providing indices `a` and `b` that are within the bounds of `letters`: Correct. Valid indices prevent exceptions like `IndexOutOfBoundsException`.
+      Ensuring that `letters` contains only uppercase letters: Incorrect. Letter case has no impact on list operations.
+      Making sure `a` is smaller than `b`: Incorrect. Ordering doesn't prevent errors.
+      Making sure `b` is twice as large as `a`: Incorrect. Same — valid bounds are the real issue.
+
+  - question: |
+      Analyze the `swapNonAdjacent` method:
+
+      ```java
+      public static void swapNonAdjacent(ArrayList<String> list, int x, int y)
+      {
+          if (Math.abs(x - y) > 1)
+          {
+              String temp = list.get(x);
+              list.set(x, list.get(y));
+              list.set(y, temp);
+          }
+      }
+      ```
+
+      What precondition must be true before calling `swapNonAdjacent`?
+
+    correct_options:
+      - x and y must be valid list indices.
+    wrong_options:
+      - x must be exactly 1 greater than y.
+      - list must contain only numeric strings.
+      - list must have an odd number of elements.
+    explanation: |
+      x and y must be valid list indices: Correct. Valid indices are necessary to safely access list.get(x) and list.get(y).
+      x must be exactly 1 greater than y: Incorrect. The method only requires that x and y are not adjacent (difference > 1).
+      list must contain only numeric strings: Incorrect. The content of the strings is irrelevant to swapping.
+      list must have an odd number of elements: Incorrect. List size parity doesn't affect swapping ability.
+  - question: |
+      Refer to the `safeSwap` method below.
+
+      ```java
+      public static void safeSwap(ArrayList<Integer> nums, int i, int j)
+      {
+          if (i >= 0 && j >= 0 && i < nums.size() && j < nums.size())
+          {
+              int temp = nums.get(i);
+              nums.set(i, nums.get(j));
+              nums.set(j, temp);
+          }
+      }
+      ```
+
+      What preconditions are necessary to avoid an `IndexOutOfBoundsException`?
+
+    correct_options:
+      - |
+        `i` and `j` must be valid indices between `0` and `nums.size() - 1` inclusive.
+    wrong_options:
+      - |
+        `i` and `j` must both be 0.
+      - |
+        `i` must be less than `j`.
+      - |
+        `nums` must contain only positive numbers.
+    explanation: |
+      `i` and `j` must be valid indices between `0` and `nums.size() - 1` inclusive: Correct. The method checks bounds to prevent errors.
+      `i` and `j` must both be 0: Incorrect. They can be any valid indices.
+      `i` must be less than `j`: Incorrect. No ordering between `i` and `j` is required.
+      `nums` must contain only positive numbers: Incorrect. Values don't matter for swapping — only valid indices.
+
+  - question: |
+      Analyze the `swapFirstLast` method:
+
+      ```java
+      public static void swapFirstLast(ArrayList<Double> values)
+      {
+          double temp = values.get(0);
+          values.set(0, values.get(values.size() - 1));
+          values.set(values.size() - 1, temp);
+      }
+      ```
+
+      What could cause an error when calling `swapFirstLast`?
+
+    correct_options:
+      - Calling the method with an empty list.
+    wrong_options:
+      - Calling the method with only positive numbers.
+      - Calling the method when the list has an even number of elements.
+      - Calling the method with duplicate elements.
+    explanation: |
+      Calling the method with an empty list: Correct. `get(0)` and `get(values.size() - 1)` would throw exceptions if the list is empty.
+      Calling the method with only positive numbers: Incorrect. Values themselves don't cause errors.
+      Calling the method when the list has an even number of elements: Incorrect. Size parity doesn't matter for swapping ends.
+      Calling the method with duplicate elements: Incorrect. Duplicate values are irrelevant for index operations.
+
+  - question: |
+      Examine the `conditionalSwap` method:
+
+      ```java
+      public static void conditionalSwap(ArrayList<String> list, int i, int j)
+      {
+          if (list.get(i).compareTo(list.get(j)) > 0)
+          {
+              String temp = list.get(i);
+              list.set(i, list.get(j));
+              list.set(j, temp);
+          }
+      }
+      ```
+
+      What precondition is most important to ensure no runtime error?
+
+    correct_options:
+      - Both `i` and `j` must be valid indices within the bounds of `list`.
+    wrong_options:
+      - The elements at `i` and `j` must be equal.
+      - The list must not contain null elements.
+      - |
+        `i` must be greater than `j`.
+    explanation: |
+      Both `i` and `j` must be valid indices within the bounds of `list`: Correct. Index errors must be avoided when calling `get(i)` and `get(j)`.
+      The elements at `i` and `j` must be equal: Incorrect. No need for equality — a swap happens based on compareTo.
+      The list must not contain null elements: Incorrect. `compareTo` might throw a `NullPointerException`, but that's not the immediate focus for index validity.
+      `i` must be greater than `j`: Incorrect. No specific relationship between `i` and `j` is required.
+
+  - question: |
+      Look at the `swapIfNeeded` method:
+
+      ```java
+      public static void swapIfNeeded(ArrayList<Character> letters, int a, int b)
+      {
+          if (letters.size() > 0 && a >= 0 && b >= 0 && a < letters.size() && b < letters.size())
+          {
+              char temp = letters.get(a);
+              letters.set(a, letters.get(b));
+              letters.set(b, temp);
+          }
+      }
+      ```
+
+      Which situation would prevent an exception?
+
+    correct_options:
+      - Providing indices `a` and `b` that are within the bounds of `letters`.
+    wrong_options:
+      - Ensuring that `letters` contains only uppercase letters.
+      - Making sure `a` is smaller than `b`.
+      - Making sure `b` is twice as large as `a`.
+    explanation: |
+      Providing indices `a` and `b` that are within the bounds of `letters`: Correct. Valid indices prevent exceptions like `IndexOutOfBoundsException`.
+      Ensuring that `letters` contains only uppercase letters: Incorrect. Letter case has no impact on list operations.
+      Making sure `a` is smaller than `b`: Incorrect. Ordering doesn't prevent errors.
+      Making sure `b` is twice as large as `a`: Incorrect. Same — valid bounds are the real issue.
+
+  - question: |
+      Analyze the `swapNonAdjacent` method:
+
+      ```java
+      public static void swapNonAdjacent(ArrayList<String> list, int x, int y)
+      {
+          if (Math.abs(x - y) > 1)
+          {
+              String temp = list.get(x);
+              list.set(x, list.get(y));
+              list.set(y, temp);
+          }
+      }
+      ```
+
+      What precondition must be true before calling `swapNonAdjacent`?
+
+    correct_options:
+      - |
+        `x` and `y` must be valid list indices.
+    wrong_options:
+      - |
+        `x` must be exactly 1 greater than `y`.
+      - |
+        `list` must contain only numeric strings.
+      - |
+        `list` must have an odd number of elements.
+    explanation: |
+      `x` and `y` must be valid list indices: Correct. Valid indices are necessary to safely access `list.get(x)` and `list.get(y)`.
+      `x` must be exactly 1 greater than `y`: Incorrect. The method only requires that `x` and `y` are not adjacent (difference > 1).
+      `list` must contain only numeric strings: Incorrect. The content of the strings is irrelevant to swapping.
+      `list` must have an odd number of elements: Incorrect. List size parity doesn't affect swapping ability.
+
+  - question: |
+      In the `getList` method below, what code should replace /* fill in here */ to correctly generate an array of random integers from 1 to 100 inclusive?
+
+      ```java
+      public int[] getList()
+      {
+          int[] list = new int[10];
+          for (int i = 0; i < list.length; i++)
+          {
+              list[i] = /* fill in here */;
+          }
+          return list;
+      }
+      ```
+
+    correct_options:
+      - (int) (Math.random() * 100) + 1
+    wrong_options:
+      - (int) (Math.random() * 101)
+      - (int) (Math.random() * 99) + 1
+      - Math.random() * 100
+    explanation: |
+      (int) (Math.random() * 100) + 1: Correct. Multiplies by 100 (range [0, 100)), adds 1 → gives [1,100] inclusive.
+      (int) (Math.random() * 101): Incorrect. This gives [0,100] inclusive, including 0 which is outside the requested range.
+      (int) (Math.random() * 99) + 1: Incorrect. Only gets up to 99, missing 100.
+      Math.random() * 100: Incorrect. This would produce a double, not an int.
+
+  - question: |
+      Suppose you want `getList` to generate random numbers from 0 to 50 inclusive.  
+      Which code correctly fills in /* code to add integer to list */?
+
+      ```java
+      public int[] getList()
+      {
+          int[] list = new int[10];
+          for (int i = 0; i < list.length; i++)
+          {
+              list[i] = /* fill in here */;
+          }
+          return list;
+      }
+      ```
+    correct_options:
+      - list[i] = (int) (Math.random() * 51);
+    wrong_options:
+      - list[i] = (int) (Math.random() * 50);
+      - list[i] = (int) (Math.random() * 52);
+      - list[i] = (Math.random() * 51);
+    explanation: |
+      list[i] = (int) (Math.random() * 51): Correct. Multiplies by 51 → values 0–50 inclusive after casting.
+      list[i] = (int) (Math.random() * 50): Incorrect. Only generates up to 49.
+      list[i] = (int) (Math.random() * 52): Incorrect. Could generate values up to 51, which is too large.
+      list[i] = (Math.random() * 51): Incorrect. This would assign a `double`, causing a compile-time error.
+
+  - question: |
+      Consider this alternate `getList` implementation.
+
+      ```java
+      public int[] getList()
+      {
+          int[] list = new int[5];
+          for (int i = 0; i < list.length; i++)
+          {
+              list[i] = (int) (Math.random() * 200) - 50;
+          }
+          return list;
+      }
+      ```
+
+      What is the range of possible values stored in `list`?
+
+    correct_options:
+      - From -50 to 149
+    wrong_options:
+      - From -50 to 150
+      - From 0 to 200
+      - From 0 to 149
+    explanation: |
+      From -50 to 149: Correct. (Math.random() * 200) gives [0, 200), subtracting 50 shifts to [-50, 149].
+      From -50 to 150: Incorrect. 150 is not included since Math.random() never reaches 1 exactly.
+      From 0 to 200: Incorrect. The subtraction moves the range downward, starting at -50.
+      From 0 to 149: Incorrect. The subtraction would make the minimum negative.
+
+  - question: |
+      Suppose in `getList`, you mistakenly use:
+
+      ```java
+      list[i] = Math.random() * 100;
+      ```
+
+      What kind of compile-time error would occur?
+
+    correct_options:
+      - |
+        Incompatible types: possible lossy conversion from double to int
+    wrong_options:
+      - ArrayIndexOutOfBoundsException
+      - NullPointerException
+      - ClassCastException
+    explanation: |
+      Incompatible types: possible lossy conversion from double to int: Correct. `Math.random()` returns `double`, so assigning without a cast to `int` causes a compile error.
+      ArrayIndexOutOfBoundsException: Incorrect. This happens at runtime if invalid indices are used, not here.
+      NullPointerException: Incorrect. Not relevant; no object references are null here.
+      ClassCastException: Incorrect. No illegal object casting is happening.
+  - question: |
+      Suppose `arr = {2, 0, 5}` is passed into the `fn` method using the following implementation:
+
+      ```java
+      public static int[] fn(int[] arr) {
+          int[] prod = new int[arr.length];
+          prod[0] = arr[0];
+          for (int j = 1; j < arr.length; j++) {
+              prod[j] = prod[j - 1] * arr[j];
+          }
+          return prod;
+      }
+      ```
+
+      What will the returned `prod` array be?
+
+    correct_options:
+      - |
+        {2, 0, 0}
+    wrong_options:
+      - |
+        {2, 2, 10}
+      - |
+        {2, 0, 5}
+      - |
+        {2, 0, 10}
+    explanation: |
+      {2, 0, 0}: Correct. 2 is the first value, then 2×0=0, and 0×5=0.
+      {2, 2, 10}: Incorrect. 2×0 should result in 0, not 2.
+      {2, 0, 5}: Incorrect. 0×5 = 0, not 5.
+      {2, 0, 10}: Incorrect. The third value should be 0 because of cumulative multiplication.
