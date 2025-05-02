@@ -1,568 +1,220 @@
 questions:
   - question: |
-      ```java
-      public class Card
-      {
-          private String suit;
-          private int value;  // 0 to 12
+        Consider the following class that represents a Book with a title and a number of pages. What is the correct way to implement the constructor so that the parameters are assigned to the instance variables?
 
-          public Card(String cardSuit, int cardValue)
-          { /* implementation */ }
+        ```java
+        public class Book
+        {
+            private String title;
+            private int pages;
 
-          public String getSuit()
-          {
-              return suit;
-          }
+            public Book(String bookTitle, int numPages)
+            { /* implementation */ }
 
-          public int getValue()
-          {
-              return value;
-          }
-
-          public String toString()
-          {
-              String faceValue = "";
-              if (value == 11)
-                  faceValue = "J";
-              else if (value == 12)
-                  faceValue = "Q";
-              else if (value == 0)
-                  faceValue = "K";
-              else if (value == 1)
-                  faceValue = "A";
-
-              if (value >= 2 && value <= 10)
-                  return value + " of " + suit;
-              else
-                  return faceValue + " of " + suit;
-          }
-      }
-
-      public class Deck
-      {
-          private Card[] deck;
-          public final static int NUMCARDS = 52;
-
-          public Deck()
-          {
-              ...
-          }
-
-          /** Simulate shuffling the deck. */
-          public void shuffle()
-          {
-              ...
-          }
-          // Other methods are not shown.
-      }
-      ```
-      Which of the following represents correct `/* implementation */` code for the constructor in the `Card` class?
+            // other methods...
+        }
+        ```
     correct_options:
       - |
-        suit = cardSuit;  
-        value = cardValue;
+        title = bookTitle;  
+        pages = numPages;
     wrong_options:
       - |
-        cardSuit = suit;  
-        cardValue = value;
-      - Card = new Card(suit, value);
-      - Card = new Card(cardSuit, cardValue);
+        bookTitle = title;  
+        numPages = pages;
       - |
-        suit = getSuit();  
-        value = getValue();
+        Book = new Book(title, pages);
+      - |
+        Book = new Book(bookTitle, numPages);
+      - |
+        title = getTitle();  
+        pages = getPages();
+    explanation: |
+        - The constructor must assign the parameter values to the instance variables to initialize the object correctly.
+        - Reversing the assignment leaves instance variables uninitialized.
+        - Calling the constructor inside itself is not valid.
+        - Using getter methods does not help when the fields have not yet been initialized.
+
   - question: |
-      Which of the following statements about the `Point`, `Quadrilateral`, and `Rectangle` classes are false?
+        A `Player` class is defined with two instance variables: `name` and `score`. What is the correct constructor implementation to initialize these fields?
 
-      I. `Point` is a subclass of `Quadrilateral`.  
-      II. `Point` is a subclass of `Rectangle`.  
-      III. The `Rectangle` class inherits the constructor of `Quadrilateral`.
+        ```java
+        public class Player
+        {
+            private String name;
+            private int score;
 
-      ```java
-      public class Point
-      {
-          private int xCoord;
-          private int yCoord;
+            public Player(String playerName, int playerScore)
+            { /* implementation */ }
 
-          // constructor
-          public Point(int x, int y)
-          {
-              ...
-          }
-
-          // accessors
-          public int get_x()
-          {
-              ...
-          }
-
-          public int get_y()
-          {
-              ...
-          }
-
-          // Other methods are not shown.
-      }
-
-      public class Quadrilateral
-      {
-          private String labels;    // e.g., "ABCD"
-
-          // constructor
-          public Quadrilateral(String quadLabels)
-          {
-              labels = quadLabels;
-          }
-
-          public String getLabels()
-          {
-              return labels;
-          }
-
-          public int perimeter()
-          {
-              return 0;
-          }
-
-          public int area()
-          {
-              return 0;
-          }
-      }
-
-      public class Rectangle extends Quadrilateral
-      {
-          // coords of top left corner
-          private Point topLeft;
-
-          // coords of bottom right corner
-          private Point botRight;
-
-          // constructor
-          public Rectangle(String theLabels, Point theTopLeft, Point theBotRight)
-          {
-              /* implementation code */
-          }
-
-          public int perimeter()
-          {
-              /* implementation not shown */
-          }
-
-          public int area()
-          {
-              /* implementation not shown */
-          }
-
-          // Other methods are not shown.
-      }
-      ```
-    correct_options:
-      - I, II, and III  
-    wrong_options:
-      - I only  
-      - II only  
-      - III only  
-      - I and II only  
-      - II and II only
-  - question: |
-      Which represents correct `/* implementation code */` for the `Rectangle` constructor?
-
-      I. `super(theLabels);`  
-      II. `super(theLabels, theTopLeft, theBotRight);`  
-      III. `super(theLabels);  
-          topLeft = theTopLeft;  
-          botRight = theBotRight;`
-
-      ```java
-      public class Point
-      {
-          private int xCoord;
-          private int yCoord;
-
-          // constructor
-          public Point(int x, int y)
-          {
-              ...
-          }
-
-          // accessors
-          public int get_x()
-          {
-              ...
-          }
-
-          public int get_y()
-          {
-              ...
-          }
-
-          // Other methods are not shown.
-      }
-
-      public class Quadrilateral
-      {
-          private String labels;    // e.g., "ABCD"
-
-          // constructor
-          public Quadrilateral(String quadLabels)
-          {
-              labels = quadLabels;
-          }
-
-          public String getLabels()
-          {
-              return labels;
-          }
-
-          public int perimeter()
-          {
-              return 0;
-          }
-
-          public int area()
-          {
-              return 0;
-          }
-      }
-
-      public class Rectangle extends Quadrilateral
-      {
-          // coords of top left corner
-          private Point topLeft;
-
-          // coords of bottom right corner
-          private Point botRight;
-
-          // constructor
-          public Rectangle(String theLabels, Point theTopLeft, Point theBotRight)
-          {
-              /* implementation code */
-          }
-
-          public int perimeter()
-          {
-              /* implementation not shown */
-          }
-
-          public int area()
-          {
-              /* implementation not shown */
-          }
-
-          // Other methods are not shown.
-      }
-      ```
-    correct_options:
-      - III only  
-    wrong_options:
-      - I only  
-      - II only  
-      - I and II only  
-      - II and III only
-      - I II and III  
-  - question: |
-      Refer to the Parallelogram and Square classes below.
-
-      ```java
-      public class Parallelogram extends Quadrilateral
-      {
-          //Private instance variables and constructor are not shown.
-          ...
-
-          public int perimeter()
-          { /* implementation not shown */ }
-
-          public int area()
-          { /* implementation not shown */ }
-      }
-
-      public class Square extends Rectangle
-      {
-          //Private instance variables and constructor are not shown.
-          ...
-
-          public int perimeter()
-          { /* implementation not shown */ }
-
-          public int area()
-          { /* implementation not shown */ }
-      }
-      ```
-
-      Consider an `ArrayList<Quadrilateral> quadList` whose elements are of type `Rectangle`, `Parallelogram`, or `Square`.
-      Refer to the following method, `writeAreas`:
-      ```java
-      /** Precondition: quadList contains Rectangle, Parallelogram, or
-        * Square objects in an unspecified order.
-        */
-
-      public static void writeAreas(ArrayList<Quadrilateral> quadList)
-      {
-          for (Quadrilateral quad : quadList)
-              System.out.println("Area of " + quad.getLabels()
-                  + " is " + quad.area());
-      }
-      ```
-      What is the effect of executing this method?
-    correct_options:
-      - The area of each Quadrilateral in quadList will be printed.  
-    wrong_options:
-      - A value of 0 will be printed for each element of quadList.  
-      - A compile-time error will occur, stating that there is no getLabels method in classes Rectangle, Parallelogram, or Square.  
-      - A NullPointerException will be thrown.  
-      - A ConcurrentModificationException will occur.  
-  - question: |
-      Consider the `NegativeReal` class below, which defines a negative real number object.
-
-      ```java
-      public class NegativeReal
-      {
-          private Double negReal;
-
-          /** Constructor. Creates a NegativeReal object whose value is num.
-          *  @param num a negative real number
-          */
-          public NegativeReal(double num)
-          { /* implementation not shown */ }
-
-          /** @return the value of this NegativeReal */
-          public double getValue()
-          { /* implementation not shown */ }
-
-          /** @return this NegativeReal rounded to the nearest integer */
-          public int getRounded()
-          { /* implementation */ }
-      }
-      ```
-      | Negative real number | Rounded to nearest integer |
-      |----------------------|-----------------------------|
-      | -3.5                 | -4                          |
-      | -8.97                | -9                          |
-      | -5.0                 | -5                          |
-      | -2.487               | -2                          |
-      | -0.2                 | 0                           |
-      Which `/* implementation */` of `getRounded` produces the desired postcondition?
-    correct_options:
-      - return (int) (getValue() - 0.5);  
-    wrong_options:
-      - return (int) (getValue() + 0.5);
-      - return (int) getValue();
-      - return (double) (getValue() - 0.5);
-      - return (double) getValue();
-  - question: |
-      Refer to the definitions of `ClassOne` and `ClassTwo` below.
-
-      ```java
-      public class ClassOne
-      {
-          public void methodOne()
-          {
-              ...
-          }
-
-          // Other methods are not shown.
-      }
-
-      public class ClassTwo extends ClassOne
-      {
-          public void methodTwo()
-          {
-              ...
-          }
-
-          // Other methods are not shown.
-      }
-      ```
-      Consider the following declarations in a client class.
-      You may assume that ClassOne and ClassTwo have no-argument constructors.
-      ```java
-      ClassOne c1 = new ClassOne();
-      ClassOne c2 = new ClassTwo();
-      ```
-      Which of the following method calls will cause an error?
-      ```java
-      I. c1.methodTwo();
-      II. c2.methodTwo();
-      III. c2.methodOne();
-      ```
-    correct_options:
-      - I and II only  
-    wrong_options:
-      - None  
-      - I only  
-      - II only  
-      - III only  
-      - I and III only
-  - question: |
-      Refer to the following class containing the `mystery` method:
-
-      ```java
-      public class SomeClass
-      {
-          private int[] arr;
-
-          /** Constructor. Initializes arr to contain nonnegative
-          * integers k such that 0 <= k <= 9.
-          */
-          public SomeClass()
-          { /* implementation not shown */ }
-
-          public int mystery()
-          {
-              int value = arr[0];
-              for (int i = 1; i < arr.length; i++)
-                  value = value * 10 + arr[i];
-              return value;
-          }
-      }
-      ```
-      Which best describes what the `mystery` method does?
-    correct_options:
-      - It builds an integer of the form d₁d₂d₃...dₙ, where d₁ = arr[0], d₂ = arr[1], ..., dₙ = arr[arr.length - 1].  
-    wrong_options:
-      - It sums the elements of `arr`.  
-      - It sums the products 10 * arr[0] + 10 * arr[1] + ⋯ + 10 * arr[arr.length - 1].  
-      - It builds an integer of the form d₁d₂d₃...dₙ, where d₁ = arr[arr.length - 1], d₂ = arr[arr.length - 2], ..., dₙ = arr[0].  
-      - It converts the elements of arr to base-10.  
-  - question: |
-      A programmer plans to write a program that simulates a small bingo game (no more than six players). Each player will have a bingo card with 20 numbers from 0 to 90 (no duplicates). Someone will call out numbers one at a time, and each player will cross out a number in their card as it is called. The first player with all the numbers crossed out is the winner. In the simulation, the game is in progress, each player’s card is displayed on the screen.
-
-      The programmer envisions a short driver class whose main method has just two statements:
-      ```java
-      BingoGame b = new BingoGame();
-      b.playBingo();
-      ```
-      The BingoGame class will have several objects: a PlayerGroup, a Caller, and a PlayerGroup. The PlayerGroup will have a list of Players, and each Player will have a BingoCard.
-
-      The relationship between the PlayerGroup and Player classes is an example of
-    correct_options:
-      - composition  
-    wrong_options:
-      - procedural abstraction  
-      - data encapsulation  
-      - inheritance  
-      - independent classes  
-  - question: |
-      A word creation game uses a set of small letter tiles, all of which are initially in a tile bag. A partial implementation of a `TileBag` class is shown below.
-
-      ```java
-      public class TileBag
-      {
-          // tiles contains all the tiles in the bag
-          private ArrayList<Tile> tiles;
-
-          // size is the number of not-yet-used tiles
-          private int size;
-
-          // Constructors and other methods are not shown.
-      }
-      ```
-      Consider the following method in the `TileBag` class that allows a player to get a new tile from the `TileBag`.
-      ```java
-      public Tile getNewTile()
-      {
-          if (size == 0) // no tiles left
-              return null;
-
-          int index = (int)(Math.random() * size);
-          size--;
-          Tile temp = tiles.get(index);
-
-          /* code to swap tile at position size with tile at position index */
-
-          return temp;
-      }
-      ```
-      Which /* code to swap tile at position size with tile at position index */ performs the swap correctly?
+            // other methods...
+        }
+        ```
     correct_options:
       - |
-        tiles.set(index, tiles.get(size));  
-        tiles.set(size, temp);
+        name = playerName;  
+        score = playerScore;
     wrong_options:
       - |
-        tiles.set(size, temp);  
-        tiles.set(index, tiles.get(size));
-      - tiles.swap(index, size);
+        playerName = name;  
+        playerScore = score;
       - |
-        tiles.get(size, temp);  
-        tiles.get(index, tiles.set(size));
+        Player = new Player(name, score);
       - |
-        tiles.get(index, tiles.set(size));  
-        tiles.get(size, temp);
+        Player = new Player(playerName, playerScore);
+      - |
+        name = getName();  
+        score = getScore();
+    explanation: |
+        - Assigning the constructor parameters to instance variables is the proper way to initialize a new object.
+        - The reverse assignment does not change the instance variables.
+        - Recursive constructor calls are incorrect here.
+        - Getters cannot return values before initialization.
+
   - question: |
-      A word creation game uses a set of small letter tiles, all of which are initially in a tile bag. A partial implementation of a `TileBag` class is shown below.
-      ```java
-      public class TileBag
-      {
-          // tiles contains all the tiles in the bag
-          private ArrayList<Tile> tiles;
+        Suppose you are implementing a `Movie` class with fields for `genre` and `duration`. What is the correct way to initialize these fields in the constructor?
 
-          // size is the number of not-yet-used tiles
-          private int size;
+        ```java
+        public class Movie
+        {
+            private String genre;
+            private int duration;
 
-          // Constructors and other methods are not shown.
-      }
-      ```
-      Consider the following method in the `TileBag` class that allows a player to get a new tile from the `TileBag`.
-      ```java
-      public Tile getNewTile()
-      {
-          if (size == 0) // no tiles left
-              return null;
+            public Movie(String movieGenre, int movieDuration)
+            { /* implementation */ }
 
-          int index = (int)(Math.random() * size);
-          size--;
-          Tile temp = tiles.get(index);
-
-          /* code to swap tile at position size with tile at position index */
-
-          return temp;
-      }
-      ```
-      Which is true about the `getNewTile` algorithm?
+            // additional methods...
+        }
+        ```
     correct_options:
-      - The algorithm allows the program to keep track of both used and unused tiles.
+      - |
+        genre = movieGenre;  
+        duration = movieDuration;
     wrong_options:
-      - The tiles list becomes one element shorter when `getNewTile` is executed.
-      - The algorithm selects a random Tile from all tiles in the list.
-      - The tiles list has used tiles in the beginning and unused tiles at the end.
-      - The tiles list contains only tiles that have not been used.
+      - |
+        movieGenre = genre;  
+        movieDuration = duration;
+      - |
+        Movie = new Movie(genre, duration);
+      - |
+        Movie = new Movie(movieGenre, movieDuration);
+      - |
+        genre = getGenre();  
+        duration = getDuration();
+    explanation: |
+        - The constructor assigns the input values to the class fields to initialize the object.
+        - Assigning in the wrong direction does not modify the object state.
+        - Constructors cannot call themselves without causing recursion.
+        - Getter methods cannot be used for uninitialized variables.
   - question: |
-      Consider the following two classes.
+        Consider the following class containing the `mystery` method:
 
-      ```java
-      public class Bird {
-          public void act() {
-              System.out.print("fly ");
-              makeNoise();
-          }
+        ```java
+        public class ArrayToString
+        {
+            private int[] numbers;
 
-          public void makeNoise() {
-              System.out.print("chirp ");
-          }
-      }
+            /** Constructor. Initializes numbers to contain nonnegative
+            * integers k such that 0 <= k <= 9.
+            */
+            public ArrayToString()
+            { /* implementation not shown */ }
 
-      public class Dove extends Bird {
-          public void act() {
-              super.act();
-              System.out.print("waddle ");
-          }
+            public int mystery()
+            {
+                int result = numbers[0];
+                for (int i = 1; i < numbers.length; i++)
+                    result = result * 10 + numbers[i];
+                return result;
+            }
+        }
+        ```
+        What best describes the behavior of the `mystery` method in this context?
 
-          public void makeNoise() {
-              super.makeNoise();
-              System.out.print("coo ");
-          }
-      }
-      ```
-      Suppose the following declaration appears in a class other than Bird or Dove:
-      ```java
-      Bird pigeon = new Dove();
-      ```
-      What is printed as a result of the call pigeon.act()?
     correct_options:
-      - fly chirp coo waddle  
+      - It combines the digits from the `numbers` array into a single integer.
     wrong_options:
-      - fly  
-      - fly chirp  
-      - fly chirp waddle  
-      - fly chirp waddle coo  
+      - It combines the digits into a string.
+      - It builds an integer by summing the digits of the array.
+      - It multiplies the digits of the array together.
+      - It reverses the order of the digits before combining them.
+    explanation: |
+        - The method processes the array as a sequence of decimal digits and constructs an integer from them.
+        - The method works with integers, not strings.
+        - The method doesn't sum the digits, it concatenates them into a larger integer.
+        - The method doesn't multiply the digits together, it constructs the integer by appending each digit.
+        - The digits are added in the order they appear, not reversed.
+  - question: |
+        Consider the following class with a method `mystery`:
+
+        ```java
+        public class Concatenator
+        {
+            private int[] values;
+
+            /** Constructor. Initializes values to contain nonnegative
+            * integers k such that 0 <= k <= 9.
+            */
+            public Concatenator()
+            { /* implementation not shown */ }
+
+            public int mystery()
+            {
+                int value = values[0];
+                for (int i = 1; i < values.length; i++)
+                    value = value * 10 + values[i];
+                return value;
+            }
+        }
+        ```
+        What is the behavior of the `mystery` method?
+
+    correct_options:
+      - It concatenates the elements of the array into a single integer.
+    wrong_options:
+      - It sums the elements of the array.
+      - It subtracts each value in the array from the previous one.
+      - It combines the array elements into a single value by adding them to 10.
+      - It multiplies each array element by its index before constructing the number.
+    explanation: |
+        - The method treats each element as a decimal digit and combines them into a single integer.
+        - The method does not sum the elements, it concatenates them to form an integer.
+        - The method does not subtract the elements but combines them by multiplication and addition.
+        - The method does not add 10 to the elements, it shifts the result left by multiplying by 10 and appending digits.
+        - The method does not involve multiplying the elements by their indices, it simply constructs a number by appending the digits.
+  - question: |
+        Consider the following class and the `mystery` method:
+
+        ```java
+        public class NumberFormation
+        {
+            private int[] digits;
+
+            /** Constructor. Initializes digits with nonnegative integers from 0 to 9. */
+            public NumberFormation()
+            { /* implementation not shown */ }
+
+            public int mystery()
+            {
+                int result = digits[0];
+                for (int i = 1; i < digits.length; i++)
+                    result = result * 10 + digits[i];
+                return result;
+            }
+        }
+        ```
+        What is the purpose of the `mystery` method?
+
+    correct_options:
+      - It constructs an integer by appending digits from the `digits` array, starting with the leftmost element.
+    wrong_options:
+      - It builds a string from the digits.
+      - It calculates the sum of the digits in the array.
+      - It appends the elements to a result in reverse order.
+      - It divides each digit by 10 before adding it to the result.
+    explanation: |
+        - The method appends the digits in order, forming an integer with the digits placed left to right.
+        - The method works with integers, not strings.
+        - The method does not sum the digits; it builds an integer by placing the digits in sequence.
+        - The method does not reverse the order; it adds the digits in their given order.
+        - The method does not divide by 10; it multiplies the current result by 10 to shift digits.

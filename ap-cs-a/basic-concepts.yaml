@@ -1,236 +1,857 @@
 questions:
-  - question: |
-      Consider the following loop, where n is some positive integer:
+- question: |
+    Consider the following loop, where `n` is a positive integer:
 
-      ```java
-      for (int i = 0; i < n; i += 2)
-      {
-          if (/* test */)
-          {
-              /* perform some action */
-          }
-      }
-      ```
-      In terms of n, which Java expression represents the maximum number of times that
-      /* perform some action */ could be executed?
-    correct_options:
-      - (n + 1) / 2
-    wrong_options:
-      - n / 2  
-      - n  
-      - n - 1  
-      - (n - 1) / 2  
-      - n / 2 + 1
-  - question: |
-      The boolean expression `a[i] == max || !(max != a[i])` can be simplified to:
-    correct_options:
-      - a[i] == max  
-    wrong_options:
-      - a[i] != max  
-      - a[i] < max || a[i] > max
-      - a[i] <= max || a[i] >= max
-      - true  
-      - false
-  - question: |
-      Consider the code segment:
+    ```java
+    for (int i = 1; i <= n; i *= 2)
+    {
+        // perform some action
+    }
+    ```
+    In terms of `n`, what is the **maximum** number of times `// perform some action` could be executed?
+  correct_options:
+  - (int)(Math.log(n) / Math.log(2)) + 1
+  wrong_options:
+  - n
+  - n / 2
+  - n - 1
+  - (int)(Math.log(n) / Math.log(2))
+  - (int)Math.sqrt(n)
+  explanation: |
+    - This is a logarithmic loop doubling i, so executes ⌊log₂(n)⌋ + 1 times.
+    - Other expressions either overestimate or underestimate the iterations.
 
-      ```java
-      if (n == 1)
-        k++;
-      else if (n == 4)
-        k = 4;
-      ```
-      Suppose that the given segment is rewritten in the form:
-      ```java
-      if (/* condition */)
-        /* assignment statement */;
-      ```
-      Given that `n` and `k` are integers and that the rewritten code performs the same task as the original code,
-      which of the following could be used as (1) condition and (2) assignment statement?
-    correct_options:
-      - |
-        (1) n == 1 || n == 4
-        (2) k += n  
-    wrong_options:
-      - |
-        (1) n == 1 && n == 4
-        (2) k = n  
-      - |
-        (1) n == 1 && n == 4
-        (2) k += 4  
-      - |
-        (1) n == 1 || n == 4
-        (2) k += 4  
-      - |
-        (1) n == 1 || n == 4
-        (2) k = n - k  
-      - |
-        (1) n == 1 && n == 4
-        (2) k += n
-  - question: |
-      Consider method `findSomething` below.
+- question: |
+    Suppose `n` is a positive integer. How many times does the following loop execute?
 
-      ```java
-      /** Precondition: a.length is equal to b.length. */
-      public static boolean findSomething(int[] a, int[] b)
-      {
-          for (int aValue : a)
-          {
-              boolean found = false;
-              for (int bValue : b)
-              {
-                  if (bValue == aValue)
-                      found = true;
-              }
-              if (!found)
-                  return false;
-          }
-          return true;
-      }
-      ```
-      Which best describes what method `findSomething` does?
-      Method `findSomething` returns `true` only if
-    correct_options:
-      - every element of array a is also in b.  
-    wrong_options:
-      - arrays a and b contain identical elements in the same order.  
-      - arrays a and b contain identical elements in reverse order.  
-      - arrays a and b are permutations of each other.  
-      - array a contains at least one element that is also in b.  
-  - question: |
-      What output will be produced by invoking `firstTestMethod` for a `Tester` object?
+    ```java
+    for (int i = 0; i < n; i++)
+    {
+        if (i % 3 == 0)
+        {
+            // do something
+        }
+    }
+    ```
+  correct_options:
+  - (n + 2) / 3
+  wrong_options:
+  - n / 3
+  - n / 2
+  - n
+  - n - 3
+  - (n - 1) / 3
+  explanation: |
+    - Every third number from 0 to n-1 will satisfy i % 3 == 0.
+    - These either miscount or miss the inclusive lower bound at i = 0.
 
-      ```java
-      public class Tester
-      {
-          private int[] testArray;
+- question: |
+    Consider the following loop, where `n` is a positive integer:
 
-          public Tester()
-          {
-              testArray = new int[3];
-              testArray[0] = 3;
-              testArray[1] = 4;
-              testArray[2] = 5;
-          }
+    ```java
+    for (int i = n; i > 0; i /= 2)
+    {
+        // perform operation
+    }
+    ```
+    What expression best describes the **maximum** number of iterations of this loop?
+  correct_options:
+  - (int)(Math.log(n) / Math.log(2)) + 1
+  wrong_options:
+  - n
+  - n / 2
+  - (int)(Math.sqrt(n))
+  - (int)(Math.log(n))
+  - n - 1
+  explanation: |
+    - Loop halves `i` until it reaches 0, giving logarithmic number of steps.
+    - These misrepresent the behavior of dividing `i` each iteration.
 
-          /** @param n an int to be incremented by 1 */
-          public void increment(int n)
-          {
-              n++;
-          }
+- question: |
+    Suppose `n` is a positive integer. What is the **maximum** number of times the following loop executes?
 
-          public void firstTestMethod()
-          {
-              for (int i = 0; i < testArray.length; i++)
-              {
-                  increment(testArray[i]);
-                  System.out.print(testArray[i] + " ");
-              }
-          }
+    ```java
+    for (int i = 0; i < n; i++)
+    {
+        if (i % 2 != 0)
+        {
+            // do something
+        }
+    }
+    ```
+  correct_options:
+  - n / 2
+  wrong_options:
+  - (n + 1) / 2
+  - n
+  - (n - 1) / 2
+  - n - 1
+  - 2 * n
+  explanation: |
+    - Only odd values (half of 0 to n-1) trigger the if condition.
+    - Some round incorrectly or misinterpret even/odd distributions.
 
-          public void secondTestMethod()
-          {
-              for (int element : testArray)
-              {
-                  increment(element);
-                  System.out.print(element + " ");
-              }
-          }
-      }
-      ```
-    correct_options:
-      - 3 4 5  
-    wrong_options:
-      - 4 5 6  
-      - 5 6 7  
-      - 0 0 0  
-      - No output will be produced. An ArrayIndexOutOfBoundsException will be thrown.
-  - question: |
-      What output will be produced by invoking `secondTestMethod` for a `Tester` object, assuming that `testArray` contains 3, 4, 5?
+- question: |
+    The following method is used to count how many elements in an `n`-element array are at even indexes:
 
-      ```java
-      public class Tester
-      {
-          private int[] testArray;
+    ```java
+    public int countEvenIndexed(int[] arr)
+    {
+        int count = 0;
+        for (int i = 0; i < arr.length; i += 2)
+        {
+            count++;
+        }
+        return count;
+    }
+    ```
+    What is the **value returned** by `countEvenIndexed` if the array has `n` elements?
+  correct_options:
+  - (n + 1) / 2
+  wrong_options:
+  - n / 2
+  - n
+  - n - 1
+  - (n - 1) / 2
+  - 2 * n
+  explanation: |
+    - Every other index (starting from 0) is counted; this rounds up for odd `n`.
+    - These miscount or assume the loop stops before the last element.
 
-          public Tester()
-          {
-              testArray = new int[3];
-              testArray[0] = 3;
-              testArray[1] = 4;
-              testArray[2] = 5;
-          }
+- question: |
+    What is the simplified form of the boolean expression  
+    `!(x < 10) && (x >= 10)` ?
+  correct_options:
+  - x >= 10
+  wrong_options:
+  - x > 10
+  - x <= 10
+  - x == 10
+  - x < 10
+  - true
+  explanation: |
+    - `!(x < 10)` is `x >= 10`, so the expression is `x >= 10 && x >= 10`, which is just `x >= 10`.
+    - These are either too restrictive or incorrect logical opposites.
 
-          /** @param n an int to be incremented by 1 */
-          public void increment(int n)
-          {
-              n++;
-          }
+- question: |
+    Consider the following boolean expression:
+    `!(isReady || !isDone)`  
+    Which of the following is an equivalent expression?
+  correct_options:
+  - |
+    !isReady && isDone
+  wrong_options:
+  - |
+    !isReady || isDone
+  - |
+    isReady && isDone
+  - |
+    !(isReady && isDone)
+  - |
+    isDone || isReady
+  - true
+  explanation: |
+    - Apply De Morgan’s Law: `!(A || B)` becomes `!A && !B`;  
+      here: `!(isReady || !isDone)` → `!isReady && isDone`
+    - Common mistakes when misapplying De Morgan’s Law.
 
-          public void firstTestMethod()
-          {
-              for (int i = 0; i < testArray.length; i++)
-              {
-                  increment(testArray[i]);
-                  System.out.print(testArray[i] + " ");
-              }
-          }
+- question: |
+    Given the boolean expression `!(x != y)`, what is the simplest equivalent expression?
+  correct_options:
+  - x == y
+  wrong_options:
+  - x != y
+  - x >= y
+  - x > y
+  - x <= y
+  - x < y
+  explanation: |
+    - `!(x != y)` directly means `x == y`
+    - Misinterpreting negation of inequality.
 
-          public void secondTestMethod()
-          {
-              for (int element : testArray)
-              {
-                  increment(element);
-                  System.out.print(element + " ");
-              }
-          }
-      }
-      ```
-    correct_options:
-      - 3 4 5  
-    wrong_options:
-      - 4 5 6  
-      - 5 6 7  
-      - 0 0 0  
-      - No output will be produced. An ArrayIndexOutOfBoundsException will be thrown.  
-  - question:
-      Consider the following `RandomList` class.
+- question: |
+    Which of the following expressions is logically equivalent to  
+    `!(a < b || a > b)` ?
+  correct_options:
+  - a == b
+  wrong_options:
+  - a != b
+  - a >= b && a <= b
+  - a < b && a > b
+  - true
+  - false
+  explanation: |
+    - The negation of `a < b || a > b` excludes all values except when a equals b.
+    - Misinterpret the negation or incorrectly apply range comparisons.
 
-      ```java
-      public class RandomList
-      {
-          private int[] ranList;
+- question: |
+    What is the result of simplifying the boolean expression:  
+    `x == 5 && (x != 5 || y > 2)` ?
+  correct_options:
+  - x == 5 && y > 2
+  wrong_options:
+  - x == 5 || y > 2
+  - x != 5 && y > 2
+  - x == 5
+  - y > 2
+  - x == 5 && x != 5
+  explanation: |
+    - The subexpression `x != 5 || y > 2` is false if x == 5 and y <= 2. So full expression is true only if x == 5 and y > 2.
+    - These ignore how logical short-circuiting and contradictions work.
 
-          public RandomList()
-          { 
-              ranList = getList(); 
-          }
+- question: |
+    Consider the following code segment:
 
-          /** @return array with random Integers from 0 to 100 inclusive */
-          public int[] getList()
-          {
-              System.out.println("How many integers? ");
-              int listLength = ...; // read user input
-              int[] list = new int[listLength];
-              for (int i = 0; i < listLength; i++)
-              {
-                  /* code to add integer to list */
-              }
-              return list;
-          }
+    ```java
+    if (x == 3)
+        y--;
+    else if (x == 5)
+        y = 10;
+    ```
+    Suppose the segment is rewritten using a single `if` block that performs the same task.  
+    Which of the following could be used as (1) condition and (2) assignment statement?
+  correct_options:
+  - |
+    (1) x == 3 || x == 5
+    (2) if (x == 3) y--; else y = 10;
+  wrong_options:
+  - |
+    (1) x == 3 && x == 5
+    (2) y += x;
+  - |
+    (1) x == 3 || x == 5
+    (2) y = x;
+  - |
+    (1) x == 3 || x == 5
+    (2) y = 10;
+  - |
+    (1) x == 3
+    (2) y--;
+  - |
+    (1) x == 3 && x == 5
+    (2) y = x;
+  explanation: |
+    - This condition checks for both relevant values of `x`, then applies the same logic: decrement `y` if `x` is 3, otherwise assign 10.
+    - `x == 3 && x == 5` is impossible and always false.
+    - Assigning `y = x` or `y = 10` unconditionally would not match both branches of logic.
+    - Using `x == 3` and `y--` only covers part of the original behavior.
 
-          /** Print all elements of this list. */
-          public void printList()
-          {
-              ...
-          }
-      }
-      ```
-      Which represents correct /* code to add integer to list */?
-    correct_options:
-      - list[i] = (int) (Math.random() * 101);  
-    wrong_options:
-      - list.add((int) (Math.random() * 101));  
-      - list[i] = (int) (Math.random() * 100);  
-      - list.add(new Integer(Math.random() * 100));  
-      - list[i] = (int) (Math.random() * 100) + 1;  
+- question: |
+    Consider the following code segment:
+
+    ```java
+    if (n == 7)
+        count += 5;
+    else if (n == 9)
+        count = 10;
+    ```
+    Which of the following is a logically equivalent rewrite using a single `if` block?
+  correct_options:
+  - |
+    (1) n == 7 || n == 9
+    (2) if (n == 7) count += 5; else count = 10;
+  wrong_options:
+  - |
+    (1) n == 7 || n == 9
+    (2) count += 5;
+  - |
+    (1) n == 9
+    (2) count += 5;
+  - |
+    (1) n == 7
+    (2) count = 10;
+  - |
+    (1) n == 7 && n == 9
+    (2) count = 0;
+  - |
+    (1) n == 7 || n == 9
+    (2) count = 0;
+  explanation: |
+    - This version handles both valid values of `n` and applies the correct assignment for each.
+    - Some options ignore one of the branches or assign the wrong value.
+    - `n == 7 && n == 9` is logically impossible.
+
+- question: |
+    Consider the following code:
+
+    ```java
+    if (i == 2)
+        z = 3;
+    else if (i == 3)
+        z = 5;
+    ```
+    Which of the following rewrites preserves the same logic using a single `if` block?
+  correct_options:
+  - |
+    (1) i == 2 || i == 3
+    (2) if (i == 2) z = 3; else z = 5;
+  wrong_options:
+  - |
+    (1) i == 2 || i == 3
+    (2) z = 5;
+  - |
+    (1) i == 2
+    (2) z = 5;
+  - |
+    (1) i == 2 || i == 3
+    (2) z = i;
+  - |
+    (1) i == 3
+    (2) z = 3;
+  - |
+    (1) i == 2 && i == 3
+    (2) z = 3;
+  explanation: |
+    - The combined condition allows entry into the block, and the nested logic correctly sets `z` based on the value of `i`.
+    - Several wrong options ignore one case or flip the assignments.
+    - `z = i` or fixed values like `z = 5` oversimplify the original logic.
+
+- question: |
+    Consider the following code:
+
+    ```java
+    if (flag)
+        total = total + 1;
+    else
+        total = 0;
+    ```
+    Which of the following is an equivalent rewrite using a single `if` block?
+  correct_options:
+  - |
+    (1) true
+    (2) if (flag) total++; else total = 0;
+  wrong_options:
+  - |
+    (1) true
+    (2) if (flag) total = 0; else total++;
+  - |
+    (1) flag
+    (2) total = 1;
+  - |
+    (1) flag
+    (2) total++;
+  - |
+    (1) !flag
+    (2) total++;
+  - |
+    (1) flag && !flag
+    (2) total++;
+  explanation: |
+    - The correct rewrite keeps the full behavior: increment if true, zero otherwise.
+    - Reversing the logic or only partially replicating it omits key functionality.
+    - `flag && !flag` is always false.
+
+- question: |
+    Consider the following code segment:
+
+    ```java
+    if (score > 90)
+        grade = 'A';
+    else if (score >= 80)
+        grade = 'B';
+    ```
+    Which of the following is an equivalent rewrite using a single outer `if` and a nested `if`?
+  correct_options:
+  - |
+    (1) score > 90 || score >= 80
+    (2) if (score > 90) grade = 'A'; else grade = 'B';
+  wrong_options:
+  - |
+    (1) score > 90 || score >= 80
+    (2) grade = 'B';
+  - |
+    (1) score >= 80
+    (2) grade = 'A';
+  - |
+    (1) score > 90 && score >= 80
+    (2) grade = 'A';
+  - |
+    (1) score > 90
+    (2) grade = 'B'; else grade = 'A';
+  - |
+    (1) score > 90 || score >= 80
+    (2) grade = 'C';
+  explanation: |
+    - The logic matches the original: check for either range, then determine the grade in a nested `if`.
+    - Many wrong answers flip grade labels or simplify conditions incorrectly.
+    - Some conditions are redundant or logically flawed.
+
+- question: |
+    Consider method `containsAllValues` below.
+
+    ```java
+    /** Precondition: list1.length is equal to list2.length. */
+    public static boolean containsAllValues(int[] list1, int[] list2)
+    {
+        for (int val1 : list1)
+        {
+            boolean match = false;
+            for (int val2 : list2)
+            {
+                if (val2 == val1)
+                    match = true;
+            }
+            if (!match)
+                return false;
+        }
+        return true;
+    }
+    ```
+    Which best describes what method `containsAllValues` does?
+    Method `containsAllValues` returns `true` only if
+  correct_options:
+  - every element of list1 is also in list2.
+  wrong_options:
+  - list1 and list2 are identical in both length and content.
+  - list2 contains only the last element of list1.
+  - list1 and list2 contain the same elements in reverse order.
+  - at least one element of list1 is found in list2.
+  explanation: |
+    - The method checks for each element in `list1` to see if it appears *anywhere* in `list2`. It does not require order or duplicates to match, only that all elements from `list1` are present.
+    - Identical content and order is not required—only inclusion.
+    - The method checks all elements, not just the last one.
+    - Reverse order is irrelevant as order is not checked.
+    - "At least one" is not sufficient—the method requires *all*.
+
+- question: |
+    Consider method `allIncluded` below.
+
+    ```java
+    /** Precondition: x.length == y.length */
+    public static boolean allIncluded(int[] x, int[] y)
+    {
+        for (int i : x)
+        {
+            boolean present = false;
+            for (int j : y)
+            {
+                if (j == i)
+                    present = true;
+            }
+            if (!present)
+                return false;
+        }
+        return true;
+    }
+    ```
+    Which best describes what method `allIncluded` does?
+    Method `allIncluded` returns `true` only if
+  correct_options:
+  - each value in array x is also found in array y.
+  wrong_options:
+  - array x and array y have the same values in the same positions.
+  - all values in x are greater than those in y.
+  - at least one value in x appears in y.
+  - array x and y are completely disjoint.
+  explanation: |
+    - The outer loop checks each value in `x`, and the inner loop confirms it exists in `y`. The method requires every value from `x` to appear somewhere in `y`.
+    - Matching positions are never checked—just inclusion.
+    - Value magnitude is never compared.
+    - One match is not enough; *all* must be present.
+    - If arrays were disjoint, the method would return false.
+
+- question: |
+    Consider method `isSubset` below.
+
+    ```java
+    /** Precondition: data1.length == data2.length */
+    public static boolean isSubset(int[] data1, int[] data2)
+    {
+        for (int num : data1)
+        {
+            boolean exists = false;
+            for (int val : data2)
+            {
+                if (val == num)
+                    exists = true;
+            }
+            if (!exists)
+                return false;
+        }
+        return true;
+    }
+    ```
+    Which best describes what method `isSubset` does?
+    Method `isSubset` returns `true` only if
+  correct_options:
+  - every item in data1 exists somewhere in data2.
+  wrong_options:
+  - data1 and data2 are the same array.
+  - data2 contains more unique elements than data1.
+  - only the last item in data1 is present in data2.
+  - data1 and data2 contain the same elements in different order.
+  explanation: |
+    - This is a classic subset check: for each element in `data1`, the method looks for a match in `data2`. It does not check order or duplicates.
+    - The method does not test for identity or reference equality.
+    - Unique counts or element frequencies are not checked.
+    - Every element must be present—not just the last.
+    - Element order is irrelevant to this method.
+
+- question: |
+    Consider method `checkPresence` below.
+
+    ```java
+    /** Precondition: arr1.length == arr2.length */
+    public static boolean checkPresence(int[] arr1, int[] arr2)
+    {
+        for (int element : arr1)
+        {
+            boolean found = false;
+            for (int candidate : arr2)
+            {
+                if (element == candidate)
+                    found = true;
+            }
+            if (!found)
+                return false;
+        }
+        return true;
+    }
+    ```
+    Which best describes what method `checkPresence` does?
+    Method `checkPresence` returns `true` only if
+  correct_options:
+  - all values in arr1 can be found somewhere in arr2.
+  wrong_options:
+  - arr1 and arr2 contain only unique elements.
+  - arr1 and arr2 are sorted the same way.
+  - arr2 contains all values from arr1 in reverse order.
+  - arr1 contains values not found in arr2.
+  explanation: |
+    - The function confirms that each element in `arr1` appears at least once in `arr2`, regardless of order or duplicates.
+    - The method does not check for uniqueness.
+    - It does not compare the ordering of elements.
+    - Reverse order is not relevant—just inclusion.
+    - If `arr1` contains unmatched elements, the method returns false—not true.
+
+- question: |
+    Consider method `includesAll` below.
+
+    ```java
+    /** Precondition: set1.length == set2.length */
+    public static boolean includesAll(int[] set1, int[] set2)
+    {
+        for (int val : set1)
+        {
+            boolean located = false;
+            for (int other : set2)
+            {
+                if (val == other)
+                    located = true;
+            }
+            if (!located)
+                return false;
+        }
+        return true;
+    }
+    ```
+    Which best describes what method `includesAll` does?
+    Method `includesAll` returns `true` only if
+  correct_options:
+  - all elements of set1 appear in set2.
+  wrong_options:
+  - set1 and set2 contain the same number of even integers.
+  - at least one number in set1 is not in set2.
+  - set2 includes no duplicate values.
+  - set1 and set2 have the same sum.
+  explanation: |
+    - This method verifies that *each* element from `set1` is found *somewhere* in `set2`. No assumptions are made about frequency or order.
+    - Even/odd count is never checked by the method.
+    - If any value from `set1` is missing in `set2`, it returns false.
+    - The method does not analyze duplicates at all.
+    - It does not compute or compare the sum of elements.
+
+- question: |
+    What output will be produced by invoking `runTest` for a `Checker` object?
+
+    ```java
+    public class Checker
+    {
+        private int[] numbers;
+
+        public Checker()
+        {
+            numbers = new int[3];
+            numbers[0] = 7;
+            numbers[1] = 8;
+            numbers[2] = 9;
+        }
+
+        public void addOne(int x)
+        {
+            x++;
+        }
+
+        public void runTest()
+        {
+            for (int i = 0; i < numbers.length; i++)
+            {
+                addOne(numbers[i]);
+                System.out.print(numbers[i] + " ");
+            }
+        }
+    }
+    ```
+  correct_options:
+  - 7 8 9
+  wrong_options:
+  - 8 9 10
+  - 0 0 0
+  - 9 10 11
+  - No output due to a runtime exception.
+  explanation: |
+    - The method `addOne` increments a copy of each array element. Since primitives are passed by value, the original array is unchanged.
+    - `8 9 10` and `9 10 11` incorrectly assume the array is modified.
+    - `0 0 0` is incorrect because the array is initialized to non-zero values.
+    - No runtime error occurs; the method runs correctly.
+
+- question: |
+    What output will be produced by invoking `demoTest` for a `Demo` object?
+
+    ```java
+    public class Demo
+    {
+        private int[] values = {1, 2, 3};
+
+        public void increase(int value)
+        {
+            value++;
+        }
+
+        public void demoTest()
+        {
+            for (int index = 0; index < values.length; index++)
+            {
+                increase(values[index]);
+                System.out.print(values[index] + " ");
+            }
+        }
+    }
+    ```
+  correct_options:
+  - 1 2 3
+  wrong_options:
+  - 2 3 4
+  - 3 2 1
+  - 0 0 0
+  - Compilation error due to return type mismatch.
+  explanation: |
+    - Java passes primitive values by copy. The method `increase` modifies only the local parameter, not the original array.
+    - `2 3 4` and `3 2 1` falsely assume the values are modified.
+    - `0 0 0` does not reflect the initialized values.
+    - There is no compilation issue in the code.
+
+- question: |
+    What output will be produced by invoking `printOriginals` for a `NumberPrinter` object?
+
+    ```java
+    public class NumberPrinter
+    {
+        private int[] data = {10, 20, 30};
+
+        public void modify(int n)
+        {
+            n += 5;
+        }
+
+        public void printOriginals()
+        {
+            for (int i = 0; i < data.length; i++)
+            {
+                modify(data[i]);
+                System.out.print(data[i] + " ");
+            }
+        }
+    }
+    ```
+  correct_options:
+  - 10 20 30
+  wrong_options:
+  - 15 25 35
+  - 0 0 0
+  - 5 5 5
+  - The method throws an exception at runtime.
+  explanation: |
+    - Each call to `modify` changes only the local copy of the integer. The array values remain unchanged.
+    - `15 25 35` incorrectly assumes values are doubled.
+    - `0 0 0` does not reflect the initialized array.
+    - `5 5 5` assumes a repeated constant, which is never assigned.
+    - No exception is thrown.
+
+- question: |
+    What output will be produced by invoking `checkNumbers` for a `ValueTester` object?
+
+    ```java
+    public class ValueTester
+    {
+        private int[] arr = {100, 200, 300};
+
+        public void adjust(int num)
+        {
+            num--;
+        }
+
+        public void checkNumbers()
+        {
+            for (int i = 0; i < arr.length; i++)
+            {
+                adjust(arr[i]);
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
+    ```
+  correct_options:
+  - 100 200 300
+  wrong_options:
+  - 99 199 299
+  - 0 0 0
+  - 101 201 301
+  - No output due to logic error in the constructor.
+  explanation: |
+    - Integer arguments are passed by value. The call to `adjust` does not modify the actual array contents.
+    - `99 199 299` and `101 201 301` suggest modification that doesn't happen.
+    - `0 0 0` ignores the initial assignments.
+    - The constructor initializes correctly; no logic error prevents output.
+
+- question: |
+    What output will be produced by invoking `showValues` for a `TestArray` object?
+
+    ```java
+    public class TestArray
+    {
+        private int[] data = {2, 4, 6};
+
+        public void doubleValue(int val)
+        {
+            val = val * 2;
+        }
+
+        public void showValues()
+        {
+            for (int i = 0; i < data.length; i++)
+            {
+                doubleValue(data[i]);
+                System.out.print(data[i] + " ");
+            }
+        }
+    }
+    ```
+  correct_options:
+  - 2 4 6
+  wrong_options:
+  - 4 8 12
+  - 0 0 0
+  - 6 4 2
+  - ArrayIndexOutOfBoundsException is thrown.
+  explanation: |
+    - Doubling happens to a copy of the value, so the original array stays the same.
+    - `4 8 12` assumes the array was modified.
+    - `0 0 0` ignores the initialization.
+    - `6 4 2` reflects reversed but unmodified values, which is not what the code does.
+    - No indexing error occurs, so no exception is thrown.
+
+- question: |
+    Consider the following `RandomList` class.
+
+    ```java
+    public class RandomList
+    {
+        private int[] ranList;
+
+        public RandomList()
+        { 
+            ranList = getList(); 
+        }
+
+        /** @return array with random Integers from 0 to 100 inclusive */
+        public int[] getList()
+        {
+            System.out.println("How many integers? ");
+            int listLength = ...; // read user input
+            int[] list = new int[listLength];
+            for (int i = 0; i < listLength; i++)
+            {
+                // FILL IN CODE HERE
+            }
+            return list;
+        }
+    }
+    ```
+    Which statement correctly fills in the comment to generate random numbers from 0 to 100 inclusive?
+  correct_options:
+  - list[i] = (int) (Math.random() * 101);
+  wrong_options:
+  - list[i] = Math.random() * 100;
+  - list[i] = (int) (Math.random() * 100) + 1;
+  - list.add((int)(Math.random() * 101));
+  - list[i] = new Integer((int)(Math.random() * 100));
+  explanation: |
+    - This properly casts a random value between 0 and 100 (inclusive) into an int.
+    - `Math.random() * 100` does not include 100.
+    - `+ 1` makes the minimum value 1, so 0 is never included.
+    - `list.add(...)` is invalid because `list` is an array, not an ArrayList.
+    - `new Integer(...)` is unnecessary and inefficient, and `list[i]` expects a primitive int.
+
+- question: |
+    In the `RandomList` class, what is the correct line to fill in to assign a random integer between 0 and 100 inclusive to each element of the array?
+  correct_options:
+  - list[i] = (int) (Math.random() * 101);
+  wrong_options:
+  - list.add(i, Math.random());
+  - list[i] = (int) Math.random() * 101;
+  - list[i] = Math.round(Math.random() * 100);
+  - list[i] = Integer.parseInt(Math.random());
+  explanation: |
+    - `(int)(Math.random() * 101)` generates integers from 0 to 100, inclusive.
+    - `list.add(i, ...)` is invalid because `list` is not a List.
+    - Casting after multiplication leads to wrong value due to operator precedence.
+    - `Math.round` returns a long, and 101 is not included.
+    - `Integer.parseInt(Math.random())` fails because `Math.random()` returns a double.
+
+- question: |
+    In `RandomList.getList`, which line correctly assigns a random integer between 0 and 100 inclusive to each array slot?
+  correct_options:
+  - list[i] = (int) (Math.random() * 101);
+  wrong_options:
+  - list[i] = (int) Math.random() + 100;
+  - list.add((int) (Math.random() * 101));
+  - list[i] = (int) Math.random();
+  - list[i] = (int) (Math.random() * 100 + 2);
+  explanation: |
+    - The code casts the result of `Math.random() * 101`, which gives 0–100, correctly.
+    - `Math.random() + 100` shifts the range to 100–101.
+    - `list.add(...)` cannot be used with an array.
+    - Casting `Math.random()` directly results in 0 every time.
+    - `+ 2` shifts the range from 2 to 101, excluding 0 and 1.
+
+- question: |
+    Suppose you want to fill an array with values from 0 to 100 inclusive using `Math.random`. Which of the following lines accomplishes this inside the for-loop?
+  correct_options:
+  - list[i] = (int)(Math.random() * 101);
+  wrong_options:
+  - list[i] = Math.random();
+  - list.add((int)(Math.random() * 101));
+  - list[i] = (int)(Math.random() * 99);
+  - list[i] = Integer.valueOf(Math.random());
+  explanation: |
+    - `Math.random() * 101` generates numbers in range [0,101), casting gives 0–100.
+    - `Math.random()` returns a double, not an int.
+    - `list.add` is invalid for arrays.
+    - `Math.random() * 99` gives range 0–98.
+    - `Integer.valueOf()` can't take a double without casting.
+
+- question: |
+    In method `getList`, what line correctly fills the array with random numbers between 0 and 100 (inclusive)?
+  correct_options:
+  - list[i] = (int)(Math.random() * 101);
+  wrong_options:
+  - list[i] = Math.random() * 100;
+  - list[i] = (Math.random() * 101);
+  - list.add(new Integer((int)(Math.random() * 100)));
+  - list[i] = (int)(Math.random() * 100) + 2;
+  explanation: |
+    - This is the correct way to generate a random int from 0 to 100.
+    - Leaving it uncast or using floating-point math won’t match type or range.
+    - `list.add` is an ArrayList method, not for arrays.
+    - Adding 2 skips 0 and 1, which are within the desired range.

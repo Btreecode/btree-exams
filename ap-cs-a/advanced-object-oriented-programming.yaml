@@ -1,107 +1,1633 @@
 questions:
   - question: |
-      Which of the following is a false statement about the classes shown?
+        Suppose you have the following class structure:
 
-      ```mermaid
-      classDiagram
-          Book <|-- Novel
-          Book <|-- Textbook
-      ```
+        ```java
+        public class Animal {
+            public void speak() {
+                System.out.println("Some sound");
+            }
+        }
+
+        public class Dog extends Animal {
+            public void speak() {
+                System.out.println("Bark");
+            }
+        }
+
+        public class Cat extends Animal {
+            public void speak() {
+                System.out.println("Meow");
+            }
+        }
+        ```
+
+        What will be printed when the following code is run?
+
+        ```java
+        Animal pet = new Dog();
+        pet.speak();
+        ```
+
     correct_options:
-      - Both Novel and Textbook inherit the constructors in Book.
+      - Bark
     wrong_options:
-      - Each of the classes Book, Novel, and Textbook can have a method computeShelfLife, whose code is different from the code in Textbook.
-      - If the Book class has private instance variables title and author, then Novel and Textbook cannot directly access them.
-      - If the Book class has a private method called readFile, this method may not be accessed in either the Novel or Textbook classes.
+      - Meow
+      - Some sound
+      - Dog
+    explanation: |
+        - The actual object is a `Dog`, so the `Dog` version of `speak()` is executed due to dynamic method dispatch.
+        - `Meow` is from the `Cat` class, which is not used.
+        - `Some sound` would only be printed if `Animal`’s version was used and not overridden.
+        - `Dog` is not printed because that’s not the output of any method.
+
   - question: |
-      A programmer is designing a program to catalog all books in a library. She plans to have a `Book` class that stores features of each book: `author`, `title`, `isOnShelf`, and so on, with operations like `getAuthor`, `getTitle`, `getShelfInfo`, and `setShelfInfo`. Another class, `LibraryList`, will store an array of `Book` objects. The `LibraryList` class will include operations such as `listAllBooks`, `addBook`, `removeBook`, and `searchForBook`. What is the relationship between the `LibraryList` and `Book` classes?
+        Which of the following are true about abstract classes in Java?
     correct_options:
-      - Composition  
+      - An abstract class cannot be instantiated.
+      - An abstract class can contain implemented methods.
     wrong_options:
-      - Inheritance  
-      - Independent classes  
-      - Polymorphism  
+      - An abstract class must have only abstract methods.
+      - Abstract classes cannot have instance variables.
+      - All subclasses of an abstract class must themselves be abstract.
+      - An abstract class cannot be used as a reference type.
+    explanation: |
+        - Abstract classes cannot be directly instantiated.
+        - They can include a mix of abstract and non-abstract (implemented) methods.
+        - Abstract classes **can** have non-abstract methods.
+        - Instance variables are allowed in abstract classes.
+        - Subclasses may implement all abstract methods and be concrete.
+        - Abstract classes can absolutely be used as reference types.
+
   - question: |
-      Consider the implementation of a `writeDeck` method that is added to the `Deck` class:
+        Consider the following code:
 
-      ```java
-      public class Card
-      {
-          private String suit;
-          private int value;  // 0 to 12
+        ```java
+        public class A {
+            public void print() {
+                System.out.print("A ");
+            }
+        }
 
-          public Card(String cardSuit, int cardValue)
-          { /* implementation */ }
+        public class B extends A {
+            public void print() {
+                System.out.print("B ");
+            }
+        }
 
-          public String getSuit()
-          {
-              return suit;
-          }
+        public class Tester {
+            public static void main(String[] args) {
+                A obj1 = new A();
+                A obj2 = new B();
+                obj1.print();
+                obj2.print();
+            }
+        }
+        ```
 
-          public int getValue()
-          {
-              return value;
-          }
-
-          public String toString()
-          {
-              String faceValue = "";
-              if (value == 11)
-                  faceValue = "J";
-              else if (value == 12)
-                  faceValue = "Q";
-              else if (value == 0)
-                  faceValue = "K";
-              else if (value == 1)
-                  faceValue = "A";
-
-              if (value >= 2 && value <= 10)
-                  return value + " of " + suit;
-              else
-                  return faceValue + " of " + suit;
-          }
-      }
-
-      public class Deck
-      {
-          private Card[] deck;
-          public final static int NUMCARDS = 52;
-
-          public Deck()
-          {
-              ...
-          }
-
-          /** Simulate shuffling the deck. */
-          public void shuffle()
-          {
-              ...
-          }
-          // Other methods are not shown.
-      }
-      ```
-      ```java
-      /** Write the cards in deck, one per line. */
-      public void writeDeck()
-      {
-          /* implementation code */
-      }
-      ```
-      Which of the following is correct implementation code?
-      ```java
-      I.   System.out.println(deck);
-
-      II.  for (Card card : deck)
-              System.out.println(card);
-
-      III. for (Card card : deck)
-              System.out.println((String) card);
-      ```
+        What is the output of this program?
     correct_options:
-      - II only  
+      - A B
     wrong_options:
-      - I only  
-      - III only  
-      - I and III only  
+      - B A
+      - A A
+      - B B
+    explanation: |
+        - `obj1.print()` calls the `A` version, and `obj2.print()` calls the overridden `B` version, resulting in "A B".
+        - `B A`, `A A`, and `B B` do not reflect the actual dynamic method dispatch behavior.
+
+  - question: |
+        A superclass `Shape` has a protected variable `color`. Subclass `Rectangle` extends `Shape`. Which of the following are valid?
+    correct_options:
+      - Rectangle can access the `color` variable directly.
+      - Rectangle can assign a new value to `color`.
+    wrong_options:
+      - Only public members of Shape can be accessed in Rectangle.
+      - Protected variables are treated the same as private ones in subclasses.
+      - The `color` variable must be re-declared in Rectangle to use it.
+      - Accessing `color` requires a getter method in Shape.
+    explanation: |
+        - Protected members are visible to subclasses, so Rectangle can access and modify `color`.
+        - Subclasses can access more than just public members.
+        - Protected is more permissive than private.
+        - No re-declaration is needed—protected means it's inherited.
+        - A getter isn’t required because the field is already accessible.
+
+  - question: |
+        Which of the following would cause a compile-time error in Java?
+    correct_options:
+      - Trying to override a private method in a subclass.
+    wrong_options:
+      - Overriding a public method with the same signature.
+      - Calling `super()` in a subclass constructor.
+      - Declaring an abstract method in an abstract class.
+    explanation: |
+        - Private methods are not inherited, so "overriding" one actually creates a new, unrelated method, which may cause confusion or unintended behavior.
+        - Overriding public methods is a common and legal practice.
+        - Calling `super()` is required if the superclass doesn’t have a no-arg constructor.
+        - Abstract methods are valid in abstract classes.
+
+  - question: |
+        A `SavingsAccount` class extends the `BankAccount` class and overrides the `withdraw` method to limit monthly withdrawals.
+
+        What is the relationship between `SavingsAccount` and `BankAccount`?
+    correct_options:
+      - Inheritance
+    wrong_options:
+      - Composition
+      - Polymorphism
+      - Independent classes
+    explanation: |
+        - `SavingsAccount` is a more specific type of `BankAccount`, meaning it inherits from it.
+        - Composition would mean `SavingsAccount` contains a `BankAccount`, not inherits from it.
+        - Polymorphism describes method behavior, but this question asks about the structural relationship.
+        - Independent classes are unrelated classes; that is not the case here.
+
+  - question: |
+        A `Computer` class contains a `CPU` and `Memory` as instance variables. These components are created when the `Computer` is constructed and are not shared with other objects.
+
+        What best describes the relationship between `Computer` and `CPU`?
+    correct_options:
+      - Composition
+    wrong_options:
+      - Inheritance
+      - Polymorphism
+      - Independent classes
+    explanation: |
+        - Composition applies when one class is made up of parts that are entirely owned and created by it.
+        - Inheritance is incorrect because `Computer` is not a type of `CPU`.
+        - Polymorphism is not relevant to ownership or containment of objects.
+        - CPU is not unrelated to Computer in this context, so "independent classes" is incorrect.
+
+  - question: |
+        A `Student` object contains a list of `Course` objects. The `Student` constructor creates new `Course` objects and assigns them to the student.
+
+        What is the relationship between `Student` and `Course`?
+    correct_options:
+      - Composition
+    wrong_options:
+      - Inheritance
+      - Polymorphism
+      - Independent classes
+    explanation: |
+        - The `Student` owns and creates the `Course` objects, which indicates composition.
+        - Inheritance would imply `Student` is a `Course` or vice versa, which is not the case.
+        - Polymorphism refers to method behavior, not containment.
+        - The classes are not unrelated, so "independent classes" does not apply.
+
+  - question: |
+        A `Bird` class and a `Fish` class are both subclasses of `Animal`, and each overrides the `move` method from `Animal` differently.
+
+        What concept allows a program to call `move()` on an `Animal` reference and get different behavior based on the object type?
+    correct_options:
+      - Polymorphism
+    wrong_options:
+      - Composition
+      - Inheritance
+      - Independent classes
+    explanation: |
+        - Polymorphism allows different behaviors for the same method depending on the object’s actual class.
+        - Composition is about one class containing another, not behavior substitution.
+        - Inheritance is involved here, but it does not explain the behavior difference.
+        - These are not independent classes — they are related via inheritance.
+
+  - question: |
+        A `Playlist` class stores an array of `Song` objects. The `Playlist` class creates and controls the `Song` objects internally and provides methods to play, add, and remove songs.
+
+        What kind of relationship exists between `Playlist` and `Song`?
+    correct_options:
+      - Composition
+    wrong_options:
+      - Inheritance
+      - Polymorphism
+      - Independent classes
+    explanation: |
+        - The `Playlist` creates and manages the `Song` objects, so this is composition.
+        - Inheritance would mean `Playlist` is a type of `Song`, which is incorrect.
+        - Polymorphism is not about object ownership.
+        - The two classes are not independent — they interact closely.
+
+  - question: |
+        Consider the following `Student` class and a method to print student names:
+
+        ```java
+        public class Student
+        {
+            private String name;
+            private int grade;
+
+            public Student(String n, int g)
+            {
+                name = n;
+                grade = g;
+            }
+
+            public String getName() { return name; }
+            public int getGrade() { return grade; }
+
+            public String toString() { return name + ": " + grade; }
+        }
+
+        public class Roster
+        {
+            private Student[] students;
+
+            public void printAll()
+            {
+                /* implementation here */
+            }
+        }
+        ```
+
+        Which of the following would correctly print each student?
+
+        ```java
+        I.   for (Student s : students)
+                 System.out.println(s);
+
+        II.  System.out.println(students);
+
+        III. for (Student s : students)
+                 System.out.println(s.getName());
+        ```
+
+    correct_options:
+      - I and III only
+    wrong_options:
+      - I only
+      - II only
+      - III only
       - I and II only
-      - II and III only  
+      - I, II, and III
+    explanation: |
+        - I uses toString implicitly; III prints names directly.
+        - II prints a memory reference, not useful output.
+
+  - question: |
+        A `Movie` class stores title and rating. A `StreamingService` class has an array of `Movie` objects called `library`.
+
+        ```java
+        public class Movie
+        {
+            private String title;
+            private int rating; // 1–5
+
+            public String toString() { return title + " (" + rating + " stars)"; }
+            public int getRating() { return rating; }
+        }
+
+        public class StreamingService
+        {
+            private Movie[] library;
+
+            public void printFiveStarMovies()
+            {
+                /* implementation code */
+            }
+        }
+        ```
+
+        Which implementation would correctly print only 5-star movies?
+
+        ```java
+        I.   for (Movie m : library)
+                 if (m.getRating() == 5)
+                     System.out.println(m);
+
+        II.  for (Movie m : library)
+                 if (m.rating == 5)
+                     System.out.println(m);
+
+        III. for (Movie m : library)
+                 if (m.getRating() >= 4)
+                     System.out.println(m.toString());
+        ```
+
+    correct_options:
+      - I only
+    wrong_options:
+      - II only
+      - III only
+      - I and III only
+      - II and III only
+      - I, II, and III
+    explanation: |
+        - I is correct: uses public accessor to check rating.
+        - II incorrectly accesses private variable directly.
+        - III prints more than just 5-star movies.
+
+  - question: |
+        A `Zoo` class stores an array of `Animal` objects. The `Animal` class has a method `getSpecies()`.
+
+        The `Zoo` class has a method `countLions()` to return how many lions are in the zoo.
+
+        Which code segment is correct?
+
+        ```java
+        I.   int count = 0;
+             for (Animal a : animals)
+                 if (a.getSpecies().equals("lion"))
+                     count++;
+             return count;
+
+        II.  return animals.length;
+
+        III. int count = 0;
+             for (Animal a : animals)
+                 if (a.getSpecies() == "lion")
+                     count++;
+             return count;
+        ```
+
+    correct_options:
+      - I only
+    wrong_options:
+      - II only
+      - III only
+      - I and II only
+      - I and III only
+      - I, II, and III
+    explanation: |
+        - I correctly uses `.equals()` to compare Strings.
+        - II just returns the total number of animals.
+        - III uses `==` for String comparison, which compares references.
+
+  - question: |
+        A `Song` class stores title and duration (in seconds). A `Playlist` class stores an array of `Song` objects.
+
+        Which method correctly prints all songs longer than 3 minutes?
+
+        ```java
+        I.   for (Song s : songs)
+                 if (s.getDuration() > 180)
+                     System.out.println(s);
+
+        II.  for (Song s : songs)
+                 if (s.duration > 180)
+                     System.out.println(s.title);
+
+        III. for (Song s : songs)
+                 System.out.println(s);
+        ```
+
+    correct_options:
+      - I only
+    wrong_options:
+      - II only
+      - III only
+      - I and II only
+      - I and III only
+      - II and III only
+    explanation: |
+        - I uses the correct accessor to compare duration.
+        - II improperly accesses private fields.
+        - III prints all songs, not just the ones > 3 minutes.
+
+  - question: |
+        A `Rectangle` class has private fields `width` and `height` and public methods `getArea()` and `toString()`.
+
+        A `Canvas` class stores an array of `Rectangle` objects and has a method `printAreas()`.
+
+        Which of the following is a correct implementation?
+
+        ```java
+        I.   for (Rectangle r : shapes)
+                 System.out.println(r.getArea());
+
+        II.  for (Rectangle r : shapes)
+                 System.out.println(r);
+
+        III. for (Rectangle r : shapes)
+                 System.out.println(r.width * r.height);
+        ```
+
+    correct_options:
+      - I and II only
+    wrong_options:
+      - I only
+      - II only
+      - III only
+      - I and III only
+      - I, II, and III
+    explanation: |
+        - I uses the method to print area; II calls toString() implicitly.
+        - III tries to access private variables directly, which is not allowed.
+  - question: |
+        Which of the following statements about the `Employee`, `Person`, and `Manager` classes are false?
+
+        I. `Employee` is a subclass of `Person`.  
+        II. `Manager` is a subclass of `Employee`.  
+        III. The `Manager` class automatically inherits the constructor from `Employee`.
+
+        ```java
+        public class Person
+        {
+            private String name;
+
+            public Person(String personName)
+            {
+                name = personName;
+            }
+
+            public String getName()
+            {
+                return name;
+            }
+        }
+
+        public class Employee extends Person
+        {
+            private int id;
+
+            public Employee(String personName, int empId)
+            {
+                super(personName);
+                id = empId;
+            }
+
+            public int getId()
+            {
+                return id;
+            }
+        }
+
+        public class Manager extends Employee
+        {
+            private int teamSize;
+
+            public Manager(String personName, int empId, int team)
+            {
+                super(personName, empId);
+                teamSize = team;
+            }
+
+            public int getTeamSize()
+            {
+                return teamSize;
+            }
+        }
+        ```
+    correct_options:
+      - III only
+    wrong_options:
+      - I only
+      - II only
+      - I and II only
+      - I and III only
+      - I, II, and III
+    explanation: |
+        - I is true: `Employee` extends `Person`.
+        - II is true: `Manager` extends `Employee`.
+        - III is false because constructors are not inherited in Java; even though `Manager` extends `Employee`, it must call the constructor explicitly using `super`.
+  - question: |
+        Which of the following statements about the `Shape`, `Circle`, and `Square` classes are false?
+
+        I. `Circle` is a subclass of `Shape`.  
+        II. `Square` inherits the `area` method from `Shape`.  
+        III. `Shape` inherits the constructor of `Circle`.
+
+        ```java
+        public class Shape
+        {
+            private String color;
+
+            public Shape(String color)
+            {
+                this.color = color;
+            }
+
+            public double area()
+            {
+                return 0.0;
+            }
+
+            public String getColor()
+            {
+                return color;
+            }
+        }
+
+        public class Circle extends Shape
+        {
+            private double radius;
+
+            public Circle(String color, double r)
+            {
+                super(color);
+                radius = r;
+            }
+
+            public double area()
+            {
+                return Math.PI * radius * radius;
+            }
+        }
+
+        public class Square extends Shape
+        {
+            private double side;
+
+            public Square(String color, double s)
+            {
+                super(color);
+                side = s;
+            }
+
+            public double area()
+            {
+                return side * side;
+            }
+        }
+        ```
+    correct_options:
+      - III only
+    wrong_options:
+      - I only
+      - II only
+      - I and II only
+      - I and III only
+      - I, II, and III
+    explanation: |
+        - I is true: `Circle` extends `Shape`.
+        - II is true: Although `Square` overrides `area`, it would still inherit it if it didn’t.
+        - III is false because constructors are not inherited in Java; the `Shape` class cannot inherit from `Circle`.
+
+  - question: |
+        Which of the following statements about the `Animal`, `Dog`, and `Cat` classes are false?
+
+        I. The `Dog` class overrides a method from `Animal`.  
+        II. `Animal` is a subclass of `Dog`.  
+        III. The `Cat` class can call methods from the `Animal` class using `super`.
+
+        ```java
+        public class Animal
+        {
+            public void speak()
+            {
+                System.out.println("Some sound");
+            }
+        }
+
+        public class Dog extends Animal
+        {
+            public void speak()
+            {
+                System.out.println("Woof");
+            }
+        }
+
+        public class Cat extends Animal
+        {
+            public void speak()
+            {
+                super.speak();
+            }
+        }
+        ```
+    correct_options:
+      - II only
+    wrong_options:
+      - I only
+      - III only
+      - I and II only
+      - I and III only
+      - I, II, and III
+    explanation: |
+        - I is true: `Dog` overrides `speak` from `Animal`.
+        - II is false because `Animal` is the superclass, not the subclass of `Dog`.
+        - III is true: `Cat` correctly uses `super.speak()`.
+
+  - question: |
+        Which of the following statements about the `Vehicle`, `Car`, and `Bike` classes are false?
+
+        I. `Car` and `Bike` can both be declared as instances of type `Vehicle`.  
+        II. The `Vehicle` class must be abstract because its method is not implemented.  
+        III. `Car` inherits all methods from `Vehicle`, including private ones.
+
+        ```java
+        public class Vehicle
+        {
+            public void start()
+            {
+                System.out.println("Vehicle starting");
+            }
+
+            private void service()
+            {
+                System.out.println("Service required");
+            }
+        }
+
+        public class Car extends Vehicle
+        {
+            public void start()
+            {
+                System.out.println("Car starting");
+            }
+        }
+
+        public class Bike extends Vehicle
+        {
+        }
+        ```
+    correct_options:
+      - II and III
+    wrong_options:
+      - I only
+      - II only
+      - III only
+      - I and II only
+      - I, II, and III
+    explanation: |
+        - I is true: Polymorphism allows `Vehicle v = new Car();` or `new Bike();`.
+        - II is false: `Vehicle` does implement its method, so it doesn't need to be abstract.
+        - III is false: Private methods like `service()` are not inherited by subclasses.
+
+  - question: |
+        Which of the following statements about the `Account`, `CheckingAccount`, and `SavingsAccount` classes are false?
+
+        I. `Account` is the superclass of both `CheckingAccount` and `SavingsAccount`.  
+        II. A `CheckingAccount` object can be assigned to an `Account` variable.  
+        III. `SavingsAccount` automatically overrides all methods from `Account`.
+
+        ```java
+        public class Account
+        {
+            private double balance;
+
+            public Account(double b)
+            {
+                balance = b;
+            }
+
+            public double getBalance()
+            {
+                return balance;
+            }
+
+            public void deposit(double amount)
+            {
+                balance += amount;
+            }
+        }
+
+        public class CheckingAccount extends Account
+        {
+            public CheckingAccount(double b)
+            {
+                super(b);
+            }
+        }
+
+        public class SavingsAccount extends Account
+        {
+            public SavingsAccount(double b)
+            {
+                super(b);
+            }
+        }
+        ```
+    correct_options:
+      - III only
+    wrong_options:
+      - I only
+      - II only
+      - I and II only
+      - I and III only
+      - I, II, and III
+    explanation: |
+        - I is true: Both subclasses extend `Account`.
+        - II is true: `Account acc = new CheckingAccount(100.0);` is valid due to polymorphism.
+        - III is false because a subclass only overrides methods it explicitly redefines, not automatically.
+  - question: |
+        Which statements represent correct `/* implementation code */` for the `Manager` constructor?
+
+        I. `super(name);`  
+        II. `this.name = name; super();`  
+        III. `super(name); department = dept;`  
+        IV. `super(name); this.department = dept;`
+
+        ```java
+        public class Employee
+        {
+            private String name;
+
+            public Employee(String name)
+            {
+                this.name = name;
+            }
+        }
+
+        public class Manager extends Employee
+        {
+            private String department;
+
+            public Manager(String name, String dept)
+            {
+                /* implementation code */
+            }
+        }
+        ```
+    correct_options:
+      - III and IV only
+    wrong_options:
+      - I only
+      - II only
+      - I and II only
+      - I, II, and III
+      - All of the above
+    explanation: |
+        - III and IV both correctly call the superclass constructor and assign the subclass field.
+        - I only calls the superclass constructor, missing assignment to `department`.
+        - II tries to use `this.name` before calling `super()`, which is illegal in Java.
+        - I and II only is missing the needed subclass field assignment.
+        - Including II makes any combo invalid due to its illegal order.
+
+  - question: |
+        Which statements are valid implementations of the `Smartphone` constructor?
+
+        I. `super(brand); this.os = os;`  
+        II. `super(brand, os);`  
+        III. `super(); this.brand = brand; this.os = os;`  
+        IV. `super(brand); os = os;`
+
+        ```java
+        public class Device
+        {
+            private String brand;
+
+            public Device(String brand)
+            {
+                this.brand = brand;
+            }
+        }
+
+        public class Smartphone extends Device
+        {
+            private String os;
+
+            public Smartphone(String brand, String os)
+            {
+                /* implementation code */
+            }
+        }
+        ```
+    correct_options:
+      - I only
+    wrong_options:
+      - II only
+      - III only
+      - IV only
+      - I and II only
+      - I and IV only
+    explanation: |
+        - I correctly calls the one-arg constructor in the superclass and initializes the subclass field.
+        - II assumes a two-parameter constructor exists in `Device`, which it doesn't.
+        - III uses `super()` without a matching no-arg constructor and attempts illegal field access.
+        - IV uses `os = os;`, which does not assign the parameter correctly.
+
+  - question: |
+        Which statements provide a valid `/* implementation code */` for the `Professor` constructor?
+
+        I. `super(id);`  
+        II. `this.department = dept; super(id);`  
+        III. `super(id); this.department = dept;`  
+        IV. `super(); this.id = id; this.department = dept;`
+
+        ```java
+        public class Person
+        {
+            private int id;
+
+            public Person(int id)
+            {
+                this.id = id;
+            }
+        }
+
+        public class Professor extends Person
+        {
+            private String department;
+
+            public Professor(int id, String dept)
+            {
+                /* implementation code */
+            }
+        }
+        ```
+    correct_options:
+      - III only
+    wrong_options:
+      - I only
+      - II only
+      - IV only
+      - I and II only
+      - II and III only
+    explanation: |
+        - III correctly calls the superclass constructor and initializes the subclass field.
+        - I misses the `department` assignment.
+        - II is invalid due to calling `super` after field assignment.
+        - IV incorrectly calls `super()` and tries to access a private field (`id`) directly.
+
+  - question: |
+        Which of the following would be valid `/* implementation code */` for the `Circle` constructor?
+
+        I. `super("circle"); radius = r;`  
+        II. `super(); this.shapeType = "circle"; radius = r;`  
+        III. `super("circle"); this.radius = r;`  
+        IV. `this.radius = r; super("circle");`
+
+        ```java
+        public class Shape
+        {
+            private String shapeType;
+
+            public Shape(String shapeType)
+            {
+                this.shapeType = shapeType;
+            }
+        }
+
+        public class Circle extends Shape
+        {
+            private double radius;
+
+            public Circle(double r)
+            {
+                /* implementation code */
+            }
+        }
+        ```
+    correct_options:
+      - I and III only
+    wrong_options:
+      - II only
+      - IV only
+      - II and IV only
+      - All of the above
+      - I and II only
+    explanation: |
+        - I and III correctly call the superclass constructor and initialize the subclass field.
+        - II tries to call a nonexistent no-arg constructor and improperly assigns to `shapeType`.
+        - IV has illegal ordering — `super` must be the first statement.
+
+  - question: |
+        Which statements would correctly implement the `DeliveryTruck` constructor?
+
+        I. `super();`  
+        II. `super(id);`  
+        III. `super(id); capacity = cap;`  
+        IV. `super(id); this.capacity = cap;`
+
+        ```java
+        public class Vehicle
+        {
+            private int id;
+
+            public Vehicle(int id)
+            {
+                this.id = id;
+            }
+        }
+
+        public class DeliveryTruck extends Vehicle
+        {
+            private int capacity;
+
+            public DeliveryTruck(int id, int cap)
+            {
+                /* implementation code */
+            }
+        }
+        ```
+    correct_options:
+      - III and IV only
+    wrong_options:
+      - I only
+      - II only
+      - I and II only
+      - II and III only
+      - All of the above
+    explanation: |
+        - III and IV both correctly call the superclass constructor and assign the subclass field.
+        - I assumes a no-arg constructor exists in the superclass, which it does not.
+        - II omits setting the subclass field.
+  - question: |
+        Consider the following class hierarchy:
+
+        ```java
+        public class Shape {
+            public String getName() {
+                return "Shape";
+            }
+
+            public double area() {
+                return 0.0;
+            }
+        }
+
+        public class Circle extends Shape {
+            private double radius;
+
+            public Circle(double r) {
+                radius = r;
+            }
+
+            @Override
+            public double area() {
+                return Math.PI * radius * radius;
+            }
+
+            @Override
+            public String getName() {
+                return "Circle";
+            }
+        }
+
+        public class Square extends Shape {
+            private double side;
+
+            public Square(double s) {
+                side = s;
+            }
+
+            @Override
+            public double area() {
+                return side * side;
+            }
+
+            @Override
+            public String getName() {
+                return "Square";
+            }
+        }
+        ```
+
+        Given the following method:
+
+        ```java
+        public static void printAreas(ArrayList<Shape> shapes) {
+            for (Shape s : shapes) {
+                System.out.println(s.getName() + " area: " + s.area());
+            }
+        }
+        ```
+
+        What will be the output when `printAreas` is called with an `ArrayList` containing `Circle` and `Square` objects?
+
+    correct_options:
+      - |
+        The method will print the actual area for each shape, using the overridden `area` methods in `Circle` and `Square`.
+    wrong_options:
+      - |
+        The method will print 0.0 for each shape, since it uses the `Shape` class's `area` method.
+      - |
+        A compile-time error will occur because `area` is not defined in the `Shape` class.
+      - |
+        A runtime error will occur due to incorrect method overriding.
+      - |
+        The method will print the names but not the areas of the shapes.
+    explanation: |
+        - The `area` method is overridden in both `Circle` and `Square`. Due to polymorphism, the overridden methods are called at runtime based on the actual object type, resulting in the correct area being printed for each shape.
+        - The `Shape` class defines the `area` method, so it will compile and run without errors.
+        - Method overriding ensures that the correct `area` method is called at runtime, so 0.0 will not be printed unless the `Shape` class's method is invoked directly.
+        - There is no error in method overriding; the code is correctly structured.
+        - The method prints both the name and area of each shape using the `getName` and `area` methods.
+
+  - question: |
+        Consider the following classes:
+
+        ```java
+        public class Animal {
+            public String speak() {
+                return "Some sound";
+            }
+        }
+
+        public class Dog extends Animal {
+            @Override
+            public String speak() {
+                return "Bark";
+            }
+        }
+
+        public class Cat extends Animal {
+            @Override
+            public String speak() {
+                return "Meow";
+            }
+        }
+        ```
+
+        Given the following method:
+
+        ```java
+        public static void makeAnimalsSpeak(ArrayList<Animal> animals) {
+            for (Animal a : animals) {
+                System.out.println(a.speak());
+            }
+        }
+        ```
+
+        What will be the output when `makeAnimalsSpeak` is called with an `ArrayList` containing `Dog` and `Cat` objects?
+
+    correct_options:
+      - |
+        The method will print "Bark" and "Meow" by invoking the overridden `speak` methods in `Dog` and `Cat`.
+    wrong_options:
+      - |
+        The method will print "Some sound" for each animal, using the `Animal` class's `speak` method.
+      - |
+        A compile-time error will occur because `speak` is not defined in the `Animal` class.
+      - |
+        A runtime error will occur due to incorrect method overriding.
+      - |
+        The method will not compile because `ArrayList<Animal>` cannot contain `Dog` and `Cat` objects.
+    explanation: |
+        - The `speak` method is overridden in both `Dog` and `Cat`. Due to polymorphism, the overridden methods are called at runtime based on the actual object type, resulting in "Bark" and "Meow" being printed.
+        - The `Animal` class defines the `speak` method, so it will compile and run without errors.
+        - Method overriding ensures that the correct `speak` method is called at runtime, so "Some sound" will not be printed unless the `Animal` class's method is invoked directly.
+        - There is no error in method overriding; the code is correctly structured.
+        - In Java, an `ArrayList<Animal>` can contain objects of any subclass of `Animal`, including `Dog` and `Cat`.
+
+  - question: |
+        Consider the following classes:
+
+        ```java
+        public class Vehicle {
+            public String move() {
+                return "Moving";
+            }
+        }
+
+        public class Car extends Vehicle {
+            @Override
+            public String move() {
+                return "Driving";
+            }
+        }
+
+        public class Bicycle extends Vehicle {
+            @Override
+            public String move() {
+                return "Pedaling";
+            }
+        }
+        ```
+
+        Given the following method:
+
+        ```java
+        public static void testVehicles(ArrayList<Vehicle> vehicles) {
+            for (Vehicle v : vehicles) {
+                System.out.println(v.move());
+            }
+        }
+        ```
+
+        What will be the output when `testVehicles` is called with an `ArrayList` containing `Car` and `Bicycle` objects?
+
+    correct_options:
+      - |
+        The method will print "Driving" and "Pedaling" by invoking the overridden `move` methods in `Car` and `Bicycle`.
+    wrong_options:
+      - |
+        The method will print "Moving" for each vehicle, using the `Vehicle` class's `move` method.
+      - |
+        A compile-time error will occur because `move` is not defined in the `Vehicle` class.
+      - |
+        A runtime error will occur due to incorrect method overriding.
+      - |
+        The method will not compile because `ArrayList<Vehicle>` cannot contain `Car` and `Bicycle` objects.
+    explanation: |
+        - The `move` method is overridden in both `Car` and `Bicycle`. Due to polymorphism, the overridden methods are called at runtime based on the actual object type, resulting in "Driving" and "Pedaling" being printed.
+        - The `Vehicle` class defines the `move` method, so it will compile and run without errors.
+        - Method overriding ensures that the correct `move` method is called at runtime, so "Moving" will not be printed unless the `Vehicle` class's method is invoked directly.
+        - There is no error in method overriding; the code is correctly structured.
+        - In Java, an `ArrayList<Vehicle>` can contain objects of any subclass of `Vehicle`, including `Car` and `Bicycle`.
+
+  - question: |
+        Consider the following classes:
+
+        ```java
+        public class Employee {
+            public String getRole() {
+                return "Employee";
+            }
+        }
+
+        public class Manager extends Employee {
+            @Override
+            public String getRole() {
+                return "Manager";
+            }
+        }
+
+        public class Developer extends Employee {
+            @Override
+            public String getRole() {
+                return "Developer";
+            }
+        }
+        ```
+
+        Given the following method:
+
+        ```java
+        public static void printRoles(ArrayList<Employee> employees) {
+            for (Employee e : employees) {
+                System.out.println(e.getRole());
+            }
+        }
+        ```
+
+        What will be the output when `printRoles` is called with an `ArrayList` containing `Manager` and `Developer` objects?
+
+    correct_options:
+      - |
+        The method will print "Manager" and "Developer" by invoking the overridden `getRole` methods in `Manager` and `Developer`.
+    wrong_options:
+      - |
+        The method will print "Employee" for each employee, using the `Employee` class's `getRole` method.
+      - |
+        A compile-time error will occur because `getRole` is not defined in the `Employee` class.
+      - |
+        A runtime error will occur due to incorrect method overriding.
+      - |
+        The method will not compile because `ArrayList<Employee>` cannot contain `Manager` and `Developer` objects.
+    explanation: |
+        - The `getRole` method is overridden in both `Manager` and `Developer`. Due to polymorphism, the overridden methods are called at runtime based on the actual object type, resulting in "Manager" and "Developer" being printed.
+        - The `Employee` class defines the `getRole` method, so it will compile and run without errors.
+        - Method overriding ensures that the correct `getRole` method is called at runtime, so "Employee" will not be printed unless the `Employee` class's method is invoked directly.
+        - There is no error in method overriding; the code is correctly structured.
+        - In Java, an `ArrayList<Employee>` can contain objects of any subclass of `Employee`, including `Manager` and `Developer`.
+  - question: |
+        Refer to the definitions of `Shape` and `Circle` classes below.
+
+        ```java
+        public class Shape
+        {
+            public void draw()
+            {
+                ...
+            }
+
+            // Other methods are not shown.
+        }
+
+        public class Circle extends Shape
+        {
+            public void resize()
+            {
+                ...
+            }
+
+            // Other methods are not shown.
+        }
+        ```
+        Consider the following declarations in a client class.
+        You may assume that `Shape` and `Circle` have no-argument constructors.
+        ```java
+        Shape s1 = new Shape();
+        Shape s2 = new Circle();
+        ```
+        Which of the following method calls will cause an error?
+        ```java
+        I. s1.resize();
+        II. s2.resize();
+        III. s2.draw();
+        IV. s1.draw();
+        ```
+    correct_options:
+      - I only
+    wrong_options:
+      - II only
+      - None
+      - I and II only
+      - I and III only
+    explanation: |
+        - `s1` is an object of type `Shape`, which does not have a `resize()` method, so calling `s1.resize()` will result in an error.
+        - `s2.resize()` works as `s2` is a `Circle`, which has the `resize()` method.
+        - `s2.draw()` works as `s2` is a `Circle` and `Circle` inherits `draw()` from `Shape`.
+        - `s1.draw()` works because `Shape` has a `draw()` method.
+  - question: |
+        Refer to the definitions of `Vehicle` and `Car` classes below.
+
+        ```java
+        public class Vehicle
+        {
+            private void start()
+            {
+                ...
+            }
+
+            // Other methods are not shown.
+        }
+
+        public class Car extends Vehicle
+        {
+            public void drive()
+            {
+                ...
+            }
+
+            // Other methods are not shown.
+        }
+        ```
+        Consider the following declarations in a client class.
+        You may assume that `Vehicle` and `Car` have no-argument constructors.
+        ```java
+        Vehicle v1 = new Vehicle();
+        Vehicle v2 = new Car();
+        ```
+        Which of the following method calls will cause an error?
+        ```java
+        I. v1.start();
+        II. v2.start();
+        III. v2.drive();
+        IV. v1.drive();
+        ```
+    correct_options:
+      - IV only
+    wrong_options:
+      - None
+      - I and II only
+      - II only
+      - I and III only
+    explanation: |
+        - `v1` references a `Vehicle`, and `Vehicle` has a `start()` method with `private` visibility, so it cannot be accessed from outside the `Vehicle` class. However, `v1.drive()` is not valid because `Vehicle` does not have a `drive()` method.
+        - `v2.start()` works because `start()` is inherited, but it's inaccessible due to its `private` modifier.
+        - `v2.drive()` works because `drive()` is declared in `Car`, and `Car` is referenced by `v2`.
+
+  - question: |
+        Refer to the definitions of `Appliance` and `WashingMachine` classes below.
+
+        ```java
+        public class Appliance
+        {
+            public void powerOn()
+            {
+                ...
+            }
+
+            // Other methods are not shown.
+        }
+
+        public class WashingMachine extends Appliance
+        {
+            public void startWashCycle()
+            {
+                ...
+            }
+
+            // Other methods are not shown.
+        }
+        ```
+        Consider the following declarations in a client class.
+        You may assume that `Appliance` and `WashingMachine` have no-argument constructors.
+        ```java
+        Appliance app1 = new Appliance();
+        Appliance app2 = new WashingMachine();
+        ```
+        Which of the following method calls will cause an error?
+        ```java
+        I. app1.startWashCycle();
+        II. app2.startWashCycle();
+        III. app2.powerOn();
+        IV. app1.powerOn();
+        ```
+    correct_options:
+      - I only
+    wrong_options:
+      - None
+      - II only
+      - I and II only
+      - I and IV only
+    explanation: |
+        - `app1` references an `Appliance`, which does not have a `startWashCycle()` method, so calling `app1.startWashCycle()` will result in an error.
+        - `app2.startWashCycle()` works because `app2` references a `WashingMachine`, which has a `startWashCycle()` method.
+        - `app2.powerOn()` works because `powerOn()` is inherited from `Appliance`.
+        - `app1.powerOn()` works because `app1` is an instance of `Appliance`, and `powerOn()` is defined in `Appliance`.
+  - question: |
+        Refer to the definitions of `Employee` and `Manager` classes below.
+
+        ```java
+        public class Employee
+        {
+            protected void work()
+            {
+                ...
+            }
+
+            // Other methods are not shown.
+        }
+
+        public class Manager extends Employee
+        {
+            public void manage()
+            {
+                ...
+            }
+
+            // Other methods are not shown.
+        }
+        ```
+        Consider the following declarations in a client class.
+        You may assume that `Employee` and `Manager` have no-argument constructors.
+        ```java
+        Employee emp1 = new Employee();
+        Employee emp2 = new Manager();
+        ```
+        Which of the following method calls will cause an error?
+        ```java
+        I. emp1.manage();
+        II. emp2.manage();
+        III. emp2.work();
+        IV. emp1.work();
+        ```
+    correct_options:
+      - I only
+    wrong_options:
+      - None
+      - II only
+      - III only
+      - I and IV only
+    explanation: |
+        - `emp1` references an `Employee` and does not have a `manage()` method, so `emp1.manage()` will cause an error.
+        - `emp2.manage()` works because `emp2` references a `Manager`, which has a `manage()` method.
+        - `emp2.work()` works because `Manager` inherits the `work()` method from `Employee`, and it has `protected` visibility.
+        - `emp1.work()` works because `work()` is `protected` and is accessible within the same package or subclasses.
+  - question: |
+        Refer to the definitions of `Device` and `Phone` classes below.
+
+        ```java
+        public class Device
+        {
+            public void turnOn()
+            {
+                ...
+            }
+
+            // Other methods are not shown.
+        }
+
+        public class Phone extends Device
+        {
+            public void call()
+            {
+                ...
+            }
+
+            // Other methods are not shown.
+        }
+        ```
+        Consider the following declarations in a client class.
+        You may assume that `Device` and `Phone` have no-argument constructors.
+        ```java
+        Device d1 = new Device();
+        Device d2 = new Phone();
+        ```
+        Which of the following method calls will cause an error?
+        ```java
+        I. d1.call();
+        II. d2.call();
+        III. d2.turnOn();
+        IV. d1.turnOn();
+        ```
+    correct_options:
+      - I only
+    wrong_options:
+      - None
+      - II only
+      - III only
+      - I and III only
+    explanation: |
+        - `d1` is a `Device`, and `Device` does not have a `call()` method, so calling `d1.call()` will result in an error.
+        - `d2.call()` works because `d2` references a `Phone`, which has a `call()` method.
+        - `d2.turnOn()` works because `Phone` inherits the `turnOn()` method from `Device`.
+        - `d1.turnOn()` works because `d1` is a `Device`, and `turnOn()` is defined in `Device`.
+  - question: |
+        Consider the following two classes:
+
+        ```java
+        public class Animal {
+            public void action() {
+                System.out.print("run ");
+                makeSound();
+            }
+
+            public void makeSound() {
+                System.out.print("growl ");
+            }
+        }
+
+        public class Dog extends Animal {
+            public void action() {
+                super.action();
+                System.out.print("bark ");
+            }
+
+            public void makeSound() {
+                super.makeSound();
+                System.out.print("woof ");
+            }
+        }
+        ```
+        Suppose the following declaration appears in a class other than Animal or Dog:
+        ```java
+        Animal pet = new Dog();
+        ```
+        What is printed as a result of the call `pet.action()`?
+
+    correct_options:
+      - run growl woof bark
+    wrong_options:
+      - run growl
+      - run woof bark
+      - run growl woof
+      - bark woof growl run
+
+    explanation: |
+        - The `action()` method in `Dog` calls `super.action()` which prints "run growl", then adds "woof" and "bark".
+        - The output isn't complete because additional print statements occur from the subclass.
+        - The sequence of method calls results in more print output.
+  - question: |
+        Consider the following two classes:
+
+        ```java
+        public class Vehicle {
+            public void move() {
+                System.out.print("drive ");
+                makeNoise();
+            }
+
+            public void makeNoise() {
+                System.out.print("vroom ");
+            }
+        }
+
+        public class Car extends Vehicle {
+            public void move() {
+                super.move();
+                System.out.print("honk ");
+            }
+
+            public void makeNoise() {
+                super.makeNoise();
+                System.out.print("beep ");
+            }
+        }
+        ```
+        Suppose the following declaration appears in a class other than Vehicle or Car:
+        ```java
+        Vehicle myCar = new Car();
+        ```
+        What is printed as a result of the call `myCar.move()`?
+
+    correct_options:
+      - drive vroom beep honk
+    wrong_options:
+      - drive vroom
+      - vroom beep honk
+      - drive vroom honk beep
+      - drive beep vroom honk
+
+    explanation: |
+        - The `move()` method in `Car` first calls `super.move()` which prints "drive vroom", then adds "beep" and "honk".
+        - The output sequence is impacted by the order of method calls.
+        - Each subclass method call adds more information.
+  - question: |
+        Consider the following two classes:
+
+        ```java
+        public class Character {
+            public void performAction() {
+                System.out.print("walk ");
+                makeSound();
+            }
+
+            public void makeSound() {
+                System.out.print("grumble ");
+            }
+        }
+
+        public class Hero extends Character {
+            public void performAction() {
+                super.performAction();
+                System.out.print("attack ");
+            }
+
+            public void makeSound() {
+                super.makeSound();
+                System.out.print("yell ");
+            }
+        }
+        ```
+        Suppose the following declaration appears in a class other than Character or Hero:
+        ```java
+        Character protagonist = new Hero();
+        ```
+        What is printed as a result of the call `protagonist.performAction()`?
+
+    correct_options:
+      - walk grumble yell attack
+    wrong_options:
+      - walk attack
+      - walk grumble attack
+      - attack walk grumble yell
+      - walk attack grumble yell
+
+    explanation: |
+        - The `performAction()` method in `Hero` calls `super.performAction()` which prints "walk grumble", then adds "yell" and "attack".
+        - The sequence of method calls generates more output.
+        - The print statements are in a specific order based on method invocation.
+  - question: |
+        Consider the following two classes:
+
+        ```java
+        public class Robot {
+            public void operate() {
+                System.out.print("move ");
+                makeSound();
+            }
+
+            public void makeSound() {
+                System.out.print("beep ");
+            }
+        }
+
+        public class Humanoid extends Robot {
+            public void operate() {
+                super.operate();
+                System.out.print("wave ");
+            }
+
+            public void makeSound() {
+                super.makeSound();
+                System.out.print("whistle ");
+            }
+        }
+        ```
+        Suppose the following declaration appears in a class other than Robot or Humanoid:
+        ```java
+        Robot myRobot = new Humanoid();
+        ```
+        What is printed as a result of the call `myRobot.operate()`?
+
+    correct_options:
+      - move beep whistle wave
+    wrong_options:
+      - beep wave move whistle
+      - move beep wave whistle
+      - move wave beep whistle
+      - move beep wave
+
+    explanation: |
+        - The `operate()` method in `Humanoid` first calls `super.operate()` which prints "move beep", then adds "whistle" and "wave".
+        - The order of method calls determines the sequence of printed values.
+        - Subclass method calls add more output to the sequence.
+  - question: |
+        Consider the following two classes:
+
+        ```java
+        public class Pet {
+            public void action() {
+                System.out.print("sit ");
+                makeSound();
+            }
+
+            public void makeSound() {
+                System.out.print("meow ");
+            }
+        }
+
+        public class Cat extends Pet {
+            public void action() {
+                super.action();
+                System.out.print("purr ");
+            }
+
+            public void makeSound() {
+                super.makeSound();
+                System.out.print("hiss ");
+            }
+        }
+        ```
+        Suppose the following declaration appears in a class other than Pet or Cat:
+        ```java
+        Pet feline = new Cat();
+        ```
+        What is printed as a result of the call `feline.action()`?
+
+    correct_options:
+      - sit meow hiss purr
+    wrong_options:
+      - hiss sit meow
+      - meow hiss sit purr
+      - sit meow purr hiss
+      - meow sit hiss purr
+
+    explanation: |
+        - The `action()` method in `Cat` calls `super.action()` which prints "sit meow", then adds "hiss" and "purr".
+        - The output sequence is based on the order of method calls.
+        - The method doesn't terminate after the first statement and continues to call subclass methods.
