@@ -170,11 +170,6 @@ questions:
       - Working independently and combining code only at the end
       - Only discussing design after coding is complete
     explanation: |
-      - **Correct:**
-        - Collaboration thrives on communication and coordinated division of tasks.
-      - **Incorrect:**
-        - Avoiding input, delaying integration, or concentrating power in one person limits team effectiveness.
-    explanation: |
       - **Correct:** Since 10 < 5 is false, the ELSE block executes.
       - **Incorrect:**
         - The IF condition is not met, so "x is smaller" won’t display.
