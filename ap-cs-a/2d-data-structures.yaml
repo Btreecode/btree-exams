@@ -306,18 +306,18 @@ questions:
       - The integers on the top right side are mirrored to the bottom left side.
       - The integers on the top left side are mirrored to the bottom right side.
     explanation: |
-      The integers on the left side are mirrored to the right side:
+      - The integers on the left side are mirrored to the right side:
         This transformation mirrors each row across the vertical axis from left to right.
         It copies the left-hand side values into the right-hand side of the matrix.
-      The integers on the right side are mirrored to the left side:
+      - The integers on the right side are mirrored to the left side:
         This would copy the right-hand values to the left-hand side, which is the reverse of what this method does.
-      The integers on the top side are mirrored to the bottom side:
+      - The integers on the top side are mirrored to the bottom side:
         This would reflect rows from top to bottom, but this method works within rows, not between them.
-      The integers on the bottom side are mirrored to the top side:
+      - The integers on the bottom side are mirrored to the top side:
         This reflects bottom rows into top ones, which is unrelated to this method’s row-level column copying.
-      The integers on the top right side are mirrored to the bottom left side:
+      - The integers on the top right side are mirrored to the bottom left side:
         Diagonal reflection swaps values across the right-to-left diagonal (bottom-left to top-right), not what’s happening here.
-      The integers on the top left side are mirrored to the bottom right side:
+      - The integers on the top left side are mirrored to the bottom right side:
         This reflects across the main diagonal (top-left to bottom-right), not applicable here.
 
   - question: |
@@ -349,17 +349,17 @@ questions:
       - The integers on the top right side are mirrored to the bottom left side.
       - The integers on the top left side are mirrored to the bottom right side.
     explanation: |
-      The integers on the bottom side are mirrored to the top side:
+      - The integers on the bottom side are mirrored to the top side:
         This method copies the bottom rows to the top, effectively creating a mirror across the horizontal axis from bottom to top.
-      The integers on the top side are mirrored to the bottom side:
+      - The integers on the top side are mirrored to the bottom side:
         This would involve copying the top rows downward, which this method does not do.
-      The integers on the left side are mirrored to the right side:
+      - The integers on the left side are mirrored to the right side:
         This applies transformations across columns, not rows, and isn’t performed here.
-      The integers on the right side are mirrored to the left side:
+      - The integers on the right side are mirrored to the left side:
         Not applicable, as there’s no column-wise transformation in this method.
-      The integers on the top right side are mirrored to the bottom left side:
+      - The integers on the top right side are mirrored to the bottom left side:
         There’s no diagonal logic present; the method operates row-wise only.
-      The integers on the top left side are mirrored to the bottom right side:
+      - The integers on the top left side are mirrored to the bottom right side:
         Also incorrect because no values are being swapped or copied diagonally.
 
   - question: |
@@ -384,34 +384,10 @@ questions:
       - The integers are swapped along the bottom-left to top-right diagonal.
       - The integers are swapped along the middle horizontally.
     explanation: |
-      The integers are swapped along the top-left to bottom-right diagonal:
+      - The integers are swapped along the top-left to bottom-right diagonal:
         This swaps elements across the main diagonal (top-left to bottom-right), which is exactly what this method is doing.
-      The integers are swapped along the bottom-left to top-right diagonal:
+      - The integers are swapped along the bottom-left to top-right diagonal:
         That would involve the anti-diagonal (top-right to bottom-left), which this code does not address.
-  - question: |
-      Consider the following code segment.
-
-      ```java
-      int[][] mat = {{3, 4, 5},
-                    {6, 7, 8}};
-
-      int sum = 0;
-      for (int[] arr : mat) {
-          for (int n = 0; n < mat.length; n++) {
-              sum += arr[n];
-          }
-      }
-      ```
-
-      What would the value of sum be at the end of this code?
-    correct_options:
-      - 20
-    wrong_options:
-      - 9
-      - 11
-      - 13
-      - 21
-      - 33
   - question: |
       Consider the following code segment:
 
