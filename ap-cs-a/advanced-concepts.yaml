@@ -1,1338 +1,1338 @@
 questions:
-- question: |
-    Consider the following code segment:
+  - question: |
+      Consider the following code segment:
 
-    ```java
-    int[] arr = {1, 2, 3};
-    for (int i = 0; i <= arr.length; i++) {
-        System.out.println(arr[i]);
-    }
-    ```
+      ```java
+      int[] arr = {1, 2, 3};
+      for (int i = 0; i <= arr.length; i++) {
+          System.out.println(arr[i]);
+      }
+      ```
 
-    What exception would this code throw at runtime?
-  correct_options:
-  - ArrayIndexOutOfBoundsException
-  wrong_options:
-  - IndexOutOfBoundsException
-  - ConcurrentModificationException
-  - NullPointerException
-  - ArithmeticException
-  - There is no error
-  explanation: |
-    ArrayIndexOutOfBoundsException:
-      This exception occurs because the loop iterates with `i <= arr.length`, meaning it attempts to access `arr[3]`, which is out of bounds.
-    IndexOutOfBoundsException:
-      This is a generic superclass for out-of-bounds errors but is not the specific exception thrown by arrays.
-    ConcurrentModificationException:
-      This relates to modifying collections during iteration, not arrays.
-    NullPointerException:
-      The array is not null, so this exception won't occur.
-    ArithmeticException:
-      No arithmetic operations like division by zero are present.
-    There is no error:
-      There is a runtime error due to accessing beyond the array bounds.
+      What exception would this code throw at runtime?
+    correct_options:
+      - ArrayIndexOutOfBoundsException
+    wrong_options:
+      - IndexOutOfBoundsException
+      - ConcurrentModificationException
+      - NullPointerException
+      - ArithmeticException
+      - There is no error
+    explanation: |
+      ArrayIndexOutOfBoundsException:
+        This exception occurs because the loop iterates with `i <= arr.length`, meaning it attempts to access `arr[3]`, which is out of bounds.
+      IndexOutOfBoundsException:
+        This is a generic superclass for out-of-bounds errors but is not the specific exception thrown by arrays.
+      ConcurrentModificationException:
+        This relates to modifying collections during iteration, not arrays.
+      NullPointerException:
+        The array is not null, so this exception won't occur.
+      ArithmeticException:
+        No arithmetic operations like division by zero are present.
+      There is no error:
+        There is a runtime error due to accessing beyond the array bounds.
 
-- question: |
-    Consider the following code segment:
+  - question: |
+      Consider the following code segment:
 
-    ```java
-    ArrayList<String> list = null;
-    list.add("hello");
-    ```
+      ```java
+      ArrayList<String> list = null;
+      list.add("hello");
+      ```
 
-    What kind of exception would this code segment throw?
-  correct_options:
-  - NullPointerException
-  wrong_options:
-  - ArrayIndexOutOfBoundsException
-  - IndexOutOfBoundsException
-  - ConcurrentModificationException
-  - ArithmeticException
-  - There is no error
-  explanation: |
-    NullPointerException:
-      `list` is null, and calling a method on a null reference causes a NullPointerException.
-    ArrayIndexOutOfBoundsException:
-      This applies to arrays, not ArrayLists, and the error is not about indexing.
-    IndexOutOfBoundsException:
-      This could happen if accessing an invalid index, but the issue is that the list is null.
-    ConcurrentModificationException:
-      This only happens when modifying a collection during iteration.
-    ArithmeticException:
-      No arithmetic operations are involved.
-    There is no error:
-      An error will occur due to the method call on a null reference.
+      What kind of exception would this code segment throw?
+    correct_options:
+      - NullPointerException
+    wrong_options:
+      - ArrayIndexOutOfBoundsException
+      - IndexOutOfBoundsException
+      - ConcurrentModificationException
+      - ArithmeticException
+      - There is no error
+    explanation: |
+      NullPointerException:
+        `list` is null, and calling a method on a null reference causes a NullPointerException.
+      ArrayIndexOutOfBoundsException:
+        This applies to arrays, not ArrayLists, and the error is not about indexing.
+      IndexOutOfBoundsException:
+        This could happen if accessing an invalid index, but the issue is that the list is null.
+      ConcurrentModificationException:
+        This only happens when modifying a collection during iteration.
+      ArithmeticException:
+        No arithmetic operations are involved.
+      There is no error:
+        An error will occur due to the method call on a null reference.
 
-- question: |
-    Consider the following code:
+  - question: |
+      Consider the following code:
 
-    ```java
-    ArrayList<Integer> list = new ArrayList<Integer>();
-    list.add(5);
-    list.add(10);
-    for (int i = 0; i < list.size(); i++) {
-        if (list.get(i) > 0)
-            list.remove(i);
-    }
-    ```
+      ```java
+      ArrayList<Integer> list = new ArrayList<Integer>();
+      list.add(5);
+      list.add(10);
+      for (int i = 0; i < list.size(); i++) {
+          if (list.get(i) > 0)
+              list.remove(i);
+      }
+      ```
 
-    What kind of exception or issue might result from this code?
-  correct_options:
-  - IndexOutOfBoundsException
-  wrong_options:
-  - ConcurrentModificationException
-  - NullPointerException
-  - ArrayIndexOutOfBoundsException
-  - ArithmeticException
-  - There is no error
-  explanation: |
-    IndexOutOfBoundsException:
-      The list is modified during iteration, and since the index is incrementing, removing elements shifts indices and may skip or overrun elements.
-    ConcurrentModificationException:
-      This does not apply because the list is modified by index rather than a for-each loop or iterator.
-    NullPointerException:
-      The list and its contents are initialized properly.
-    ArrayIndexOutOfBoundsException:
-      This exception applies only to arrays.
-    ArithmeticException:
-      No arithmetic calculations are present.
-    There is no error:
-      An IndexOutOfBoundsException may result if indexing goes beyond the reduced list size.
+      What kind of exception or issue might result from this code?
+    correct_options:
+      - IndexOutOfBoundsException
+    wrong_options:
+      - ConcurrentModificationException
+      - NullPointerException
+      - ArrayIndexOutOfBoundsException
+      - ArithmeticException
+      - There is no error
+    explanation: |
+      IndexOutOfBoundsException:
+        The list is modified during iteration, and since the index is incrementing, removing elements shifts indices and may skip or overrun elements.
+      ConcurrentModificationException:
+        This does not apply because the list is modified by index rather than a for-each loop or iterator.
+      NullPointerException:
+        The list and its contents are initialized properly.
+      ArrayIndexOutOfBoundsException:
+        This exception applies only to arrays.
+      ArithmeticException:
+        No arithmetic calculations are present.
+      There is no error:
+        An IndexOutOfBoundsException may result if indexing goes beyond the reduced list size.
 
-- question: |
-    Consider this code that attempts to divide elements:
+  - question: |
+      Consider this code that attempts to divide elements:
 
-    ```java
-    int[] nums = {10, 0, 5};
-    for (int i = 0; i < nums.length; i++) {
-        int result = 100 / nums[i];
-        System.out.println(result);
-    }
-    ```
+      ```java
+      int[] nums = {10, 0, 5};
+      for (int i = 0; i < nums.length; i++) {
+          int result = 100 / nums[i];
+          System.out.println(result);
+      }
+      ```
 
-    What kind of exception will occur?
-  correct_options:
-  - ArithmeticException
-  wrong_options:
-  - ArrayIndexOutOfBoundsException
-  - ConcurrentModificationException
-  - NullPointerException
-  - IndexOutOfBoundsException
-  - There is no error
-  explanation: |
-    ArithmeticException:
-      Dividing by zero (`100 / 0`) will throw an ArithmeticException at runtime.
-    ArrayIndexOutOfBoundsException:
-      All array accesses are within bounds.
-    ConcurrentModificationException:
-      This code doesn’t involve modifying a collection during iteration.
-    NullPointerException:
-      The array and its values are valid.
-    IndexOutOfBoundsException:
-      The code is using arrays, not collections, and no out-of-bounds index is accessed.
-    There is no error:
-      There will be a runtime error when attempting division by zero.
+      What kind of exception will occur?
+    correct_options:
+      - ArithmeticException
+    wrong_options:
+      - ArrayIndexOutOfBoundsException
+      - ConcurrentModificationException
+      - NullPointerException
+      - IndexOutOfBoundsException
+      - There is no error
+    explanation: |
+      ArithmeticException:
+        Dividing by zero (`100 / 0`) will throw an ArithmeticException at runtime.
+      ArrayIndexOutOfBoundsException:
+        All array accesses are within bounds.
+      ConcurrentModificationException:
+        This code doesn’t involve modifying a collection during iteration.
+      NullPointerException:
+        The array and its values are valid.
+      IndexOutOfBoundsException:
+        The code is using arrays, not collections, and no out-of-bounds index is accessed.
+      There is no error:
+        There will be a runtime error when attempting division by zero.
 
-- question: |
-    What will happen when the following code runs?
+  - question: |
+      What will happen when the following code runs?
 
-    ```java
-    ArrayList<String> names = new ArrayList<String>();
-    names.add("Alice");
-    names.add("Bob");
+      ```java
+      ArrayList<String> names = new ArrayList<String>();
+      names.add("Alice");
+      names.add("Bob");
 
-    for (String name : names) {
-        if (name.length() > 2)
-            names.add("Charlie");
-    }
-    ```
+      for (String name : names) {
+          if (name.length() > 2)
+              names.add("Charlie");
+      }
+      ```
 
-    What exception is most likely to be thrown?
-  correct_options:
-  - ConcurrentModificationException
-  wrong_options:
-  - IndexOutOfBoundsException
-  - NullPointerException
-  - ArithmeticException
-  - ArrayIndexOutOfBoundsException
-  - There is no error
-  explanation: |
-    ConcurrentModificationException:
-      This occurs because the collection `names` is modified during a for-each iteration.
-    IndexOutOfBoundsException:
-      Indexing is not used explicitly, so this won’t be thrown.
-    NullPointerException:
-      All references are initialized and non-null.
-    ArithmeticException:
-      No mathematical operations are performed.
-    ArrayIndexOutOfBoundsException:
-      Arrays are not used, and bounds are not exceeded.
-    There is no error:
-      A ConcurrentModificationException will occur because the list is altered during iteration.
+      What exception is most likely to be thrown?
+    correct_options:
+      - ConcurrentModificationException
+    wrong_options:
+      - IndexOutOfBoundsException
+      - NullPointerException
+      - ArithmeticException
+      - ArrayIndexOutOfBoundsException
+      - There is no error
+    explanation: |
+      ConcurrentModificationException:
+        This occurs because the collection `names` is modified during a for-each iteration.
+      IndexOutOfBoundsException:
+        Indexing is not used explicitly, so this won’t be thrown.
+      NullPointerException:
+        All references are initialized and non-null.
+      ArithmeticException:
+        No mathematical operations are performed.
+      ArrayIndexOutOfBoundsException:
+        Arrays are not used, and bounds are not exceeded.
+      There is no error:
+        A ConcurrentModificationException will occur because the list is altered during iteration.
 
-- question: |
-    Consider the following recursive method:
+  - question: |
+      Consider the following recursive method:
 
-    ```java
-    public static int countDown(int n) {
-        if (n == 0)
-            return 0;
-        else
-            return countDown(n - 1);
-    }
-    ```
+      ```java
+      public static int countDown(int n) {
+          if (n == 0)
+              return 0;
+          else
+              return countDown(n - 1);
+      }
+      ```
 
-    Under what condition will this method cause a stack overflow?
-  correct_options:
-  - Only when n is negative
-  wrong_options:
-  - Only when n is zero
-  - Only when n is positive
-  - Only when n equals 1
-  - For all values of n
-  - The method will never cause a stack overflow
-  explanation: |
-    If `n` is negative, `countDown(n - 1)` continues indefinitely without ever reaching the base case (`n == 0`), leading to a stack overflow. For positive `n`, the recursion eventually terminates.
+      Under what condition will this method cause a stack overflow?
+    correct_options:
+      - Only when n is negative
+    wrong_options:
+      - Only when n is zero
+      - Only when n is positive
+      - Only when n equals 1
+      - For all values of n
+      - The method will never cause a stack overflow
+    explanation: |
+      If `n` is negative, `countDown(n - 1)` continues indefinitely without ever reaching the base case (`n == 0`), leading to a stack overflow. For positive `n`, the recursion eventually terminates.
 
-- question: |
-    Analyze the behavior of the following method:
+  - question: |
+      Analyze the behavior of the following method:
 
-    ```java
-    public static int recurseForever(int n) {
-        return recurseForever(n + 1);
-    }
-    ```
+      ```java
+      public static int recurseForever(int n) {
+          return recurseForever(n + 1);
+      }
+      ```
 
-    What will happen when this method is called with any integer value?
-  correct_options:
-  - It will eventually cause a stack overflow
-  wrong_options:
-  - It will return n
-  - It will return 0
-  - It will loop infinitely without error
-  - It will throw a NullPointerException
-  - It will compile but not run
-  explanation: |
-    The method calls itself with a larger argument every time, with no base case to stop recursion. This leads to a stack overflow after too many recursive calls.
+      What will happen when this method is called with any integer value?
+    correct_options:
+      - It will eventually cause a stack overflow
+    wrong_options:
+      - It will return n
+      - It will return 0
+      - It will loop infinitely without error
+      - It will throw a NullPointerException
+      - It will compile but not run
+    explanation: |
+      The method calls itself with a larger argument every time, with no base case to stop recursion. This leads to a stack overflow after too many recursive calls.
 
-- question: |
-    Consider the method below:
+  - question: |
+      Consider the method below:
 
-    ```java
-    public static int baseCaseFirst(int n) {
-        if (n == 1)
-            return 1;
-        return baseCaseFirst(n);
-    }
-    ```
+      ```java
+      public static int baseCaseFirst(int n) {
+          if (n == 1)
+              return 1;
+          return baseCaseFirst(n);
+      }
+      ```
 
-    When will this method cause a stack overflow?
-  correct_options:
-  - For all values of n except 1
-  wrong_options:
-  - Only when n is greater than 1
-  - Only when n is less than 1
-  - Only when n equals 1
-  - It will never cause a stack overflow
-  - Only when n is even
-  explanation: |
-    If `n != 1`, the method keeps calling itself with the same value, causing infinite recursion and a stack overflow. Only when `n == 1` does it terminate normally.
+      When will this method cause a stack overflow?
+    correct_options:
+      - For all values of n except 1
+    wrong_options:
+      - Only when n is greater than 1
+      - Only when n is less than 1
+      - Only when n equals 1
+      - It will never cause a stack overflow
+      - Only when n is even
+    explanation: |
+      If `n != 1`, the method keeps calling itself with the same value, causing infinite recursion and a stack overflow. Only when `n == 1` does it terminate normally.
 
-- question: |
-    Consider this recursive method:
+  - question: |
+      Consider this recursive method:
 
-    ```java
-    public static void printOdd(int x) {
-        if (x % 2 == 1)
-            System.out.println(x);
-        else
-            printOdd(x + 2);
-    }
-    ```
+      ```java
+      public static void printOdd(int x) {
+          if (x % 2 == 1)
+              System.out.println(x);
+          else
+              printOdd(x + 2);
+      }
+      ```
 
-    What is the potential risk when calling `printOdd(2)`?
-  correct_options:
-  - The method causes a stack overflow due to infinite recursion
-  wrong_options:
-  - The method prints 2 and exits
-  - The method prints nothing and returns
-  - The method enters an infinite loop but avoids stack overflow
-  - The method throws a NullPointerException
-  - The method will return 0
-  explanation: |
-    Starting at 2, `x` is even, so the method keeps adding 2 and calling itself (2, 4, 6, ...), never reaching an odd number or a stopping condition—eventually exhausting the call stack.
+      What is the potential risk when calling `printOdd(2)`?
+    correct_options:
+      - The method causes a stack overflow due to infinite recursion
+    wrong_options:
+      - The method prints 2 and exits
+      - The method prints nothing and returns
+      - The method enters an infinite loop but avoids stack overflow
+      - The method throws a NullPointerException
+      - The method will return 0
+    explanation: |
+      Starting at 2, `x` is even, so the method keeps adding 2 and calling itself (2, 4, 6, ...), never reaching an odd number or a stopping condition—eventually exhausting the call stack.
 
-- question: |
-    Evaluate the recursive method below:
+  - question: |
+      Evaluate the recursive method below:
 
-    ```java
-    public static int trickyRec(int x) {
-        if (x <= 0)
-            return 0;
-        return trickyRec(x - 2) + trickyRec(x - 1);
-    }
-    ```
+      ```java
+      public static int trickyRec(int x) {
+          if (x <= 0)
+              return 0;
+          return trickyRec(x - 2) + trickyRec(x - 1);
+      }
+      ```
 
-    When is the method most likely to cause a stack overflow?
-  correct_options:
-  - For large values of x
-  wrong_options:
-  - For x = 0
-  - Only for even values of x
-  - Only for odd values of x
-  - Only for x < 0
-  - The method will never cause a stack overflow
-  explanation: |
-    This is similar to computing the Fibonacci sequence and results in exponential recursive calls. As `x` grows, the number of recursive calls grows rapidly, leading to a stack overflow.
+      When is the method most likely to cause a stack overflow?
+    correct_options:
+      - For large values of x
+    wrong_options:
+      - For x = 0
+      - Only for even values of x
+      - Only for odd values of x
+      - Only for x < 0
+      - The method will never cause a stack overflow
+    explanation: |
+      This is similar to computing the Fibonacci sequence and results in exponential recursive calls. As `x` grows, the number of recursive calls grows rapidly, leading to a stack overflow.
 
-- question: |
-    Consider the `Balloon` class that includes a no-argument constructor. Suppose `ArrayList<Balloon> balloons` is declared but not initialized.  
-    Which of the following will cause a `NullPointerException` to be thrown?
-  correct_options:
-  - balloons.add(new Balloon());
-  wrong_options:
-  - balloons = new ArrayList<Balloon>();
-  - balloons.size();
-  - new Balloon();
-  - balloons = null;
-  explanation: |
-    The `add` method is called before the `ArrayList` has been initialized, which means `balloons` is `null` when the method is invoked. 
-    This results in a `NullPointerException` because you're calling an instance method on a `null` reference. 
-    Assigning `null` itself does not throw an error. Simply instantiating `new Balloon()` is valid, and `balloons.size()` would only throw if executed on a null list, which is not shown here.
+  - question: |
+      Consider the `Balloon` class that includes a no-argument constructor. Suppose `ArrayList<Balloon> balloons` is declared but not initialized.  
+      Which of the following will cause a `NullPointerException` to be thrown?
+    correct_options:
+      - balloons.add(new Balloon());
+    wrong_options:
+      - balloons = new ArrayList<Balloon>();
+      - balloons.size();
+      - new Balloon();
+      - balloons = null;
+    explanation: |
+      The `add` method is called before the `ArrayList` has been initialized, which means `balloons` is `null` when the method is invoked. 
+      This results in a `NullPointerException` because you're calling an instance method on a `null` reference. 
+      Assigning `null` itself does not throw an error. Simply instantiating `new Balloon()` is valid, and `balloons.size()` would only throw if executed on a null list, which is not shown here.
 
-- question: |
-    Suppose `ArrayList<Toy> toys = new ArrayList<Toy>();` is initialized properly.  
-    Which of the following operations will compile and execute without throwing any exceptions?
-  correct_options:
-  - toys.add(0, new Toy());
-  wrong_options:
-  - toys.get(0);
-  - toys.set(1, new Toy());
-  - toys.remove(5);
-  - toys.add(-1, new Toy());
-  explanation: |
-    Adding an element at index 0 is valid when the list is empty. 
-    The other operations can all throw `IndexOutOfBoundsException`:
-    `get(0)` on an empty list fails, `set(1, ...)` fails unless index 1 exists,
-    `remove(5)` fails if the list has fewer than 6 elements, and `add(-1, ...)` fails because negative indices are invalid.
+  - question: |
+      Suppose `ArrayList<Toy> toys = new ArrayList<Toy>();` is initialized properly.  
+      Which of the following operations will compile and execute without throwing any exceptions?
+    correct_options:
+      - toys.add(0, new Toy());
+    wrong_options:
+      - toys.get(0);
+      - toys.set(1, new Toy());
+      - toys.remove(5);
+      - toys.add(-1, new Toy());
+    explanation: |
+      Adding an element at index 0 is valid when the list is empty. 
+      The other operations can all throw `IndexOutOfBoundsException`:
+      `get(0)` on an empty list fails, `set(1, ...)` fails unless index 1 exists,
+      `remove(5)` fails if the list has fewer than 6 elements, and `add(-1, ...)` fails because negative indices are invalid.
 
-- question: |
-    Consider a properly initialized `ArrayList<Dog> kennel = new ArrayList<Dog>();`.  
-    Which of the following code segments will throw an `IndexOutOfBoundsException`?
-  correct_options:
-  - kennel.add(2, new Dog());
-  wrong_options:
-  - kennel.add(new Dog());
-  - kennel.add(0, new Dog());
-  - kennel.size();
-  - kennel.isEmpty();
-  explanation: |
-    Attempting to insert at index 2 in an empty list will throw `IndexOutOfBoundsException` because valid indices for insertion are 0 through the list size.
-    `add(new Dog())` appends and is valid. 
-    `add(0, new Dog())` is also valid in an empty list. 
-    Calling `size()` and `isEmpty()` does not throw any exception—they just return information.
+  - question: |
+      Consider a properly initialized `ArrayList<Dog> kennel = new ArrayList<Dog>();`.  
+      Which of the following code segments will throw an `IndexOutOfBoundsException`?
+    correct_options:
+      - kennel.add(2, new Dog());
+    wrong_options:
+      - kennel.add(new Dog());
+      - kennel.add(0, new Dog());
+      - kennel.size();
+      - kennel.isEmpty();
+    explanation: |
+      Attempting to insert at index 2 in an empty list will throw `IndexOutOfBoundsException` because valid indices for insertion are 0 through the list size.
+      `add(new Dog())` appends and is valid. 
+      `add(0, new Dog())` is also valid in an empty list. 
+      Calling `size()` and `isEmpty()` does not throw any exception—they just return information.
 
-- question: |
-    Assume `ArrayList<Pencil> case1 = new ArrayList<>();`.  
-    Which of the following statements is both syntactically and logically valid?
-  correct_options:
-  - case1.add(new Pencil());
-  wrong_options:
-  - case1.set(0, new Pencil());
-  - case1.get(1);
-  - case1.remove(-1);
-  - Pencil p = case1.get(0);
-  explanation: |
-    `case1.add(new Pencil())` works because `add()` appends to the list.
-    The `set(0, ...)` call is invalid if index 0 doesn’t yet exist.
-    `get(1)` throws if the list has fewer than 2 items.
-    `remove(-1)` throws because negative indices are invalid.
-    `get(0)` throws if the list is empty.
+  - question: |
+      Assume `ArrayList<Pencil> case1 = new ArrayList<>();`.  
+      Which of the following statements is both syntactically and logically valid?
+    correct_options:
+      - case1.add(new Pencil());
+    wrong_options:
+      - case1.set(0, new Pencil());
+      - case1.get(1);
+      - case1.remove(-1);
+      - Pencil p = case1.get(0);
+    explanation: |
+      `case1.add(new Pencil())` works because `add()` appends to the list.
+      The `set(0, ...)` call is invalid if index 0 doesn’t yet exist.
+      `get(1)` throws if the list has fewer than 2 items.
+      `remove(-1)` throws because negative indices are invalid.
+      `get(0)` throws if the list is empty.
 
-- question: |
-    Suppose a class `Rabbit` has a no-argument constructor.  
-    Which of the following will initialize a list of 10 rabbits correctly?
-  correct_options:
-  - |
-    ArrayList<Rabbit> pen = new ArrayList<Rabbit>();
-    for (int i = 0; i < 10; i++) {
-        pen.add(new Rabbit());
-    }
-  wrong_options:
-  - ArrayList<Rabbit> pen = new ArrayList<Rabbit>(10);
-  - ArrayList<Rabbit> pen = new ArrayList<>(); pen.set(9, new Rabbit());
-  - Rabbit[] pen = new Rabbit[10]; pen[0] = new Rabbit();
-  - pen.add(10, new Rabbit());
-  explanation: |
-    The `add` loop builds a list of exactly 10 `Rabbit` objects. 
-    `new ArrayList<>(10)` only sets capacity, not actual elements.
-    `set(9, ...)` fails unless indices 0–8 are already populated.
-    The `Rabbit[]` syntax is for arrays, not lists.
-    `add(10, ...)` is out-of-bounds for an empty list.
-
-- question: |
-    ```java
-    public static void mystery(int n) {
-        if (n > 0) {
-            System.out.print(n % 2);
-            mystery(n / 2);
+  - question: |
+      Suppose a class `Rabbit` has a no-argument constructor.  
+      Which of the following will initialize a list of 10 rabbits correctly?
+    correct_options:
+      - |
+        ArrayList<Rabbit> pen = new ArrayList<Rabbit>();
+        for (int i = 0; i < 10; i++) {
+            pen.add(new Rabbit());
         }
-    }
-    ```
-    What will be printed as a result of the call `mystery(5)`?
-  correct_options:
-  - 101
-  wrong_options:
-  - 10
-  - 110
-  - 100
-  - 11
-  - 1
-  explanation: |
-    101: This is the binary representation of 5 generated in reverse order since digits are printed before the recursive call.
-    010: Incorrect because leading 0s do not match binary construction; also the digits are printed before recursion.
-    110: Incorrect binary representation and wrong order.
-    100: This would be correct if digits were printed *after* the recursive call.
-    11: This truncates part of the output.
-    1: Only prints the final digit, not the full trace.
-
-- question: |
-    ```java
-    public static void showDigits(int n) {
-        if (n >= 10)
-            showDigits(n / 10);
-        System.out.print(n % 10 + " ");
-    }
-    ```
-    What is printed by the call `showDigits(205)`?
-  correct_options:
-  - "2 0 5 "
-  wrong_options:
-  - "5 0 2 "
-  - "205"
-  - "2 5 0 "
-  - "0 2 5 "
-  explanation: |
-    "2 0 5 ": The recursive call ensures digits are printed in left-to-right order.
-    "5 0 2 ": This reverses the digit order, which would require printing before recursion.
-    "205": There are spaces after each digit, not a combined number.
-    "2 5 0 ": Wrong digit order.
-    "0 2 5 ": Incorrect sequence; 0 is not the most significant digit.
-
-- question: |
-    ```java
-    public static void recurse(int n) {
-        if (n == 0) return;
-        recurse(n - 1);
-        System.out.print(n + " ");
-    }
-    ```
-    What is the output of `recurse(3)`?
-  correct_options:
-  - "1 2 3 "
-  wrong_options:
-  - "3 2 1 "
-  - "1 2 3"
-  - "1 3 2 "
-  - "2 1 3 "
-  - "123"
-  explanation: |
-    "1 2 3 ": Recursion unwinds and prints values in increasing order with a space.
-    "3 2 1 ": Would happen if print was before recursive call.
-    "1 2 3": Missing trailing space.
-    "1 3 2 ": Incorrect order.
-    "2 1 3 ": Incorrect order.
-    "123": No spacing.
-
-- question: |
-    ```java
-    public static void mystery2(int x) {
-        if (x < 10)
-            System.out.print(x);
-        else {
-            System.out.print(x % 10);
-            mystery2(x / 10);
-        }
-    }
-    ```
-    What is printed by `mystery2(123)`?
-  correct_options:
-  - 321
-  wrong_options:
-  - 123
-  - 312
-  - 231
-  - 13
-  explanation: |
-    321: The digits are printed before the recursive call, so they appear in reverse.
-    123: This would happen if digits were printed *after* recursion.
-    312: Incorrect order of digits.
-    231: Incorrect order.
-    13: Skips a digit.
-
-- question: |
-    ```java
-    public static void strange(int n) {
-        if (n <= 0) return;
-        strange(n - 2);
-        System.out.print(n + " ");
-    }
-    ```
-    What is printed when `strange(5)` is called?
-  correct_options:
-  - "1 3 5 "
-  wrong_options:
-  - "5 3 1 "
-  - "2 4 "
-  - "1 2 3 4 5 "
-  - "5 1 3 "
-  - "135"
-  explanation: |
-    -"1 3 5 ": Only odd numbers get printed due to decrementing by 2 and printing after recursion.
-    -"5 3 1 ": Would occur if print was before recursive call.
-    -"2 4 ": These values aren't reached with step -2 from 5.
-    -"1 2 3 4 5 ": This would require looping or step of -1.
-    -"5 1 3 ": Wrong order and values.
-    -"135": Missing spaces.
-- question: |
-    You are tasked with sorting a list of numbers using bubble sort.  
-    Which of the following statements is accurate about bubble sort's behavior?
-  correct_options:
-  - The number of comparisons depends on the size of the list, but the number of swaps can be reduced if the list is already partially sorted.
-  wrong_options:
-  - The number of comparisons remains the same, regardless of the list's initial order.
-  - Bubble sort requires fewer swaps than selection sort when the list is nearly sorted.
-  - The number of comparisons is constant, no matter how the list is arranged.
-  - Data movements in bubble sort do not depend on the initial order of the list.
-  - Bubble sort outperforms selection sort for large datasets in terms of comparisons.
-  explanation: |
-    - Bubble sort compares adjacent elements and swaps them when necessary. The number of swaps can be reduced if the list is partially sorted.
-    - The number of comparisons in bubble sort is influenced by the list's order, not constant.
-    - Although bubble sort can perform fewer swaps in partially sorted lists, it may still require more passes than selection sort.
-    - Bubble sort compares elements multiple times, so the number of comparisons can change depending on the list's order.
-    - The list’s initial order affects the number of swaps, as bubble sort depends on adjacent elements being swapped.
-    - Selection sort typically outperforms bubble sort for large lists, as it makes fewer passes.
-
-- question: |
-    When sorting a list of numbers with insertion sort, which of the following is true?
-  correct_options:
-  - The number of data movements in insertion sort depends on the initial order of the elements.
-  wrong_options:
-  - The number of comparisons in insertion sort is not affected by the initial arrangement of elements.
-  - If the list is sorted in ascending order to start, insertion sort will need more swaps than bubble sort.
-  - Insertion sort requires more comparisons than bubble sort for nearly sorted lists.
-  - The number of comparisons in insertion sort is determined only by the size of the list, not the initial order of elements.
-  - Insertion sort is the most efficient sorting method for large datasets.
-  explanation: |
-    - Insertion sort's performance is highly dependent on the list's initial arrangement, particularly in terms of how many elements need to be shifted.
-    - Insertion sort's comparison count is affected by the list's order, so it's not constant.
-    - Insertion sort performs fewer swaps than bubble sort if the list is already sorted.
-    - Bubble sort generally performs fewer comparisons than insertion sort in nearly sorted lists.
-    - The number of comparisons is influenced by how sorted the list is, not just the list's size.
-    - For large datasets, algorithms like quicksort or merge sort tend to outperform insertion sort.
-
-- question: |
-    Consider the merge sort algorithm for sorting a list of integers.  
-    Which of the following statements is correct?
-  correct_options:
-  - The number of comparisons made by merge sort grows with the size of the list.
-  wrong_options:
-  - Merge sort does not require any swaps or data movements while sorting the list.
-  - Merge sort outperforms quicksort on small datasets.
-  - The number of comparisons performed by merge sort is constant, regardless of the list size.
-  - Merge sort is an in-place sorting algorithm that doesn’t need extra memory.
-  - Merge sort is always more memory-efficient than quicksort.
-  explanation: |
-    - Merge sort divides the list and compares elements during the merge phase, so the number of comparisons increases as the list size increases.
-    - Merge sort requires data movements when merging sublists, so it's not a no-data-movement algorithm.
-    - Quicksort typically performs better than merge sort for small lists due to its lower overhead.
-    - The number of comparisons increases with the size of the list since merge sort splits and merges in multiple passes.
-    - Merge sort requires additional memory for the merging process, so it's not in-place.
-    - Merge sort may require more memory than quicksort, particularly for large lists.
-
-- question: |
-    When using quicksort to sort a list, which of the following is true about its performance?
-  correct_options:
-  - The performance of quicksort is significantly influenced by the pivot selection method.
-  wrong_options:
-  - Quicksort performs a fixed number of comparisons, regardless of the input list.
-  - Quicksort always makes fewer swaps than bubble sort.
-  - The number of swaps in quicksort does not depend on how the pivot is chosen.
-  - Quicksort is the fastest algorithm in all cases.
-  - Quicksort is unsuitable for sorting large lists.
-  explanation: |
-    - The pivot selection has a major impact on quicksort’s efficiency; poor pivot choices lead to inefficient sorting.
-    - Quicksort’s comparison count varies based on the input list and pivot choice.
-    - Quicksort can make more swaps than bubble sort, especially when the pivot selection is poor.
-    - The number of swaps is directly affected by the pivot choice since the partitioning process depends on it.
-    - Quicksort is not always the fastest; its performance can degrade with poor pivot selection or for already sorted lists.
-    - Quicksort is generally efficient for large lists, but its performance depends on pivot selection.
-
-- question: |
-    Which of the following is accurate about the selection sort algorithm?
-  correct_options:
-  - The number of comparisons made by selection sort is unaffected by the initial order of the elements.
-  wrong_options:
-  - The number of data movements in selection sort is heavily dependent on the initial arrangement of elements.
-  - Selection sort is faster than quicksort for large datasets.
-  - Selection sort always makes fewer comparisons than insertion sort.
-  - The number of comparisons in selection sort increases as the list gets closer to being sorted.
-  - Selection sort is a stable algorithm.
-  explanation: |
-    - Selection sort always compares each element with every other element, regardless of the list’s initial order.
-    - Selection sort performs the same number of swaps regardless of the list’s order.
-    - Quicksort is generally more efficient for large datasets due to its divide-and-conquer nature.
-    - Selection sort may perform more comparisons than insertion sort, especially with partially sorted lists.
-    - The number of comparisons remains constant since selection sort always scans the entire remaining list.
-    - Selection sort is not stable because equal elements can be swapped, potentially changing their relative order.
-
-- question: |
-    A method is implemented to calculate the distance between two points in a 2D plane:
-
-    ```java
-    // Returns the Euclidean distance between points (x1, y1) and (x2, y2)
-    public static double distance(double x1, double y1, double x2, double y2) {
-        return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-    }
-    ```
-
-    What will be the result of calling `distance(1, 2, 4, 6)`?
-  correct_options:
-  - 5.0
-  wrong_options:
-  - 6.0
-  - 7.0
-  - 4.0
-  - 8.0
-  - 5.5
-  explanation: |
-    - The Euclidean distance formula calculates the straight-line distance between two points. The result for `(1, 2)` and `(4, 6)` is 5.0.
-    - 6.0: This is not the correct distance.
-    - 7.0: Incorrect based on the Euclidean formula.
-    - 4.0: Doesn't match the correct calculation.
-    - 8.0: Larger than the actual distance.
-    - 5.5: This is close but incorrect based on the formula.
-
-- question: |
-    Consider the method below that checks whether a point lies inside a circle:
-
-    ```java
-    // Returns true if the point (x, y) is inside the circle centered at (cx, cy) with radius r
-    public static boolean isInsideCircle(double x, double y, double cx, double cy, double r) {
-        return (Math.pow(x - cx, 2) + Math.pow(y - cy, 2)) <= Math.pow(r, 2);
-    }
-    ```
-
-    What is the result of calling `isInsideCircle(3, 4, 0, 0, 5)`?
-  correct_options:
-  - true
-  wrong_options:
-  - false
-  - Error due to incorrect arguments
-  - false due to incorrect method logic
-  - true, but the radius should be checked differently
-  - Error because the circle's radius cannot be negative
-  explanation: |
-    - The point (3, 4) lies inside the circle with radius 5 centered at (0, 0). The method correctly calculates the distance and returns true.
-    - false: Incorrect because the point is actually inside the circle.
-    - Error due to incorrect arguments: The method arguments are correct and will not cause an error.
-    - false due to incorrect method logic: The method logic is correct.
-    - true, but the radius should be checked differently: The method is correct and no further checks are needed.
-    - Error because the circle's radius cannot be negative: The radius is positive in this case, so there’s no error.
-
-- question: |
-    A right triangle has legs of lengths 3 and 4. What is the length of the hypotenuse using the Pythagorean theorem?
-
-  correct_options:
-  - 5.0
-  wrong_options:
-  - 7.0
-  - 6.0
-  - 4.0
-  - 3.0
-  - 8.0
-  explanation: |
-    - According to the Pythagorean theorem, \(c = \sqrt{a^2 + b^2}\). For legs 3 and 4, the hypotenuse is \( \sqrt{3^2 + 4^2} = 5.0 \).
-    - 7.0: Incorrect, does not match the Pythagorean theorem calculation.
-    - 6.0: Not the correct result.
-    - 4.0: The hypotenuse should be longer than either leg.
-    - 3.0: This is one of the legs, not the hypotenuse.
-    - 8.0: Larger than the actual hypotenuse.
-
-- question: |
-    The area of a circle is calculated using the formula \(A = \pi r^2\). Given the radius is 3, what is the area of the circle?
-
-  correct_options:
-  - 28.27
-  wrong_options:
-  - 30.00
-  - 9.42
-  - 27.00
-  - 25.13
-  - 31.42
-  explanation: |
-    - Using the formula \(A = \pi r^2\), when \(r = 3\), the area is approximately \(28.27\) (since \(\pi \approx 3.1416\)).
-    - 30.00: Incorrect based on the correct formula.
-    - 9.42: The square of the radius is not calculated correctly.
-    - 27.00: This is close but doesn't match the actual calculation.
-    - 25.13: Incorrect based on the formula.
-    - 31.42: Larger than the actual area.
-
-- question: |
-    In a rectangle, the length is 8 and the width is 5. What is the perimeter of the rectangle?
-
-  correct_options:
-  - 26
-  wrong_options:
-  - 40
-  - 15
-  - 30
-  - 20
-  - 25
-  explanation: |
-    - The perimeter of a rectangle is calculated as \(P = 2 \times (length + width)\). For length 8 and width 5, \(P = 2 \times (8 + 5) = 26\).
-    - 40: Incorrect, as this would be the area of a square with side length 10.
-    - 15: Incorrect perimeter calculation.
-    - 30: Incorrect result.
-    - 20: This would be the perimeter if the dimensions were 7 and 3.
-    - 25: Incorrect based on the formula.
-- question: |
-    A method is written to check if three numbers form a *right triangle*. The method uses the following code:
-
-    ```java
-    // Checks if a * a + b * b == c * c
-    public static boolean isRightTriangle(double a, double b, double c) {
-        double sum = Math.sqrt(a * a + b * b);
-        return sum == c;
-    }
-    ```
-
-    What is the most likely issue with this method when used to check for right triangles?
-  correct_options:
-  - Precision errors in floating-point calculations may cause the comparison to fail
-  wrong_options:
-  - The method is incompatible with the `boolean` data type.
-  - The method will overflow with large numbers.
-  - Casting `sum` and `c` to integers will fix the issue.
-  - The input values for `a`, `b`, and `c` are invalid.
-  explanation: |
-    - Floating-point arithmetic can introduce small errors, especially with operations like square roots, leading to incorrect comparisons.
-    - Java handles the `boolean` type properly, so this isn't the issue.
-    - Overflow would only occur if the numbers were excessively large, which isn't typical for a right triangle check.
-    - Casting to integers would lose precision and cause incorrect results.
-    - The issue isn't the input values; it's how floating-point numbers are compared.
-
-- question: |
-    A method is used to check if the sides of a triangle satisfy the *triangle inequality theorem*. The code is:
-
-    ```java
-    // Returns true if the sum of the lengths of any two sides is greater than the third side
-    public static boolean isValidTriangle(double a, double b, double c) {
-        return (a + b > c) && (a + c > b) && (b + c > a);
-    }
-    ```
-
-    Which of the following statements is true regarding the correctness of this method?
-  correct_options:
-  - The method correctly checks the triangle inequality theorem for any given set of sides
-  wrong_options:
-  - The method only works for equilateral triangles.
-  - The method doesn't account for degenerate triangles (where one side is the sum of the other two).
-  - The method uses the wrong formula for the triangle inequality theorem.
-  - The method should use `&&` instead of `||` to check for the triangle inequality theorem.
-  explanation: |
-    - The method correctly applies the triangle inequality theorem, ensuring the sum of any two sides is greater than the third.
-    - This method works for all triangles, not just equilateral.
-    - It does check for degenerate triangles as well, which would fail the conditions.
-    - The formula is correct for the triangle inequality theorem.
-    - The method correctly uses `&&` to check all three conditions.
-
-- question: |
-    A method is used to determine if a given triangle is *isosceles*. The method checks if two sides are equal:
-
-    ```java
-    // Returns true if two sides are equal, indicating an isosceles triangle
-    public static boolean isIsosceles(double a, double b, double c) {
-        return (a == b) || (b == c) || (a == c);
-    }
-    ```
-
-    What is a possible issue with this method when identifying an isosceles triangle?
-  correct_options:
-  - The method will incorrectly classify an equilateral triangle as isosceles
-  wrong_options:
-  - The method will not work if the sides are given as integers.
-  - The method will fail for triangles with non-equal sides.
-  - The method incorrectly uses `&&` instead of `||`.
-  - The method uses the wrong formula for checking isosceles triangles.
-  explanation: |
-    - An equilateral triangle (where all sides are equal) will also be incorrectly classified as isosceles by this method.
-    - The method works with floating-point numbers as well, not just integers.
-    - The method works even if the sides are non-equal, as it checks for equality between pairs of sides.
-    - `||` is the correct operator to check if any two sides are equal.
-    - The formula is correct for identifying an isosceles triangle.
-
-- question: |
-    A method is written to check if a given quadrilateral is a *parallelogram* based on the lengths of opposite sides:
-
-    ```java
-    // Returns true if opposite sides are equal
-    public static boolean isParallelogram(double a, double b, double c, double d) {
-        return (a == c) && (b == d);
-    }
-    ```
-
-    Which of the following is a valid critique of this method?
-  correct_options:
-  - The method assumes the sides are labeled correctly, which may not always be the case.
-  wrong_options:
-  - The method only works for rectangles, not parallelograms.
-  - The method doesn't account for the angles of the quadrilateral.
-  - The method will incorrectly identify non-parallelograms as valid parallelograms.
-  - The method will fail for quadrilaterals with non-integer sides.
-  explanation: |
-    - The method assumes a specific labeling of the sides (e.g., `a` and `c` are opposite), which might not always hold.
-    - The method works for any parallelogram, not just rectangles.
-    - The method does not need to account for angles to determine if a quadrilateral is a parallelogram.
-    - The method is valid for any quadrilateral with sides labeled correctly, regardless of shape.
-    - The method works with both integer and non-integer side lengths.
-
-- question: |
-    A method is written to determine if a given *circle* has a radius greater than a specified value:
-
-    ```java
-    // Returns true if the radius is greater than the given threshold
-    public static boolean isLargeCircle(double radius, double threshold) {
-        return radius > threshold;
-    }
-    ```
-
-    What is a limitation of this method when dealing with circles?
-  correct_options:
-  - The method assumes that the radius is always positive
-  wrong_options:
-  - The method only works for circles with integer radii.
-  - The method will fail if the threshold is negative.
-  - The method does not account for the circumference or area of the circle.
-  - The method will only work for circles with a radius greater than 1.
-  explanation: |
-    - The method assumes that the radius is positive, but in reality, a circle with a negative radius isn't physically meaningful.
-    - The method works for both integer and floating-point radii.
-    - The threshold can be any value, including negative, and the method will still function correctly.
-    - The method only checks the radius, not the area or circumference, but this doesn't affect its functionality.
-    - The method works for any radius, not just those greater than 1.
-- question: |
-    Consider a binary search algorithm that operates on a sorted array. Given the following method signature:
-
-    ```java
-    public int binarySearch(int[] arr, int key) {
-        int low = 0, high = arr.length - 1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (arr[mid] == key)
-                return mid;
-            else if (arr[mid] < key)
-                low = mid + 1;
-            else
-                high = mid - 1;
-        }
-        return -1;
-    }
-    ```
-
-    What condition holds true right before the `while` loop begins each iteration?
-  correct_options:
-  - arr[low] ≤ key ≤ arr[high] or key is not in arr
-  wrong_options:
-  - arr[low] < key < arr[high]
-  - arr[low] ≤ key ≤ arr[high]
-  - arr[low] < key < arr[high] or key is not in arr
-  - arr[low] ≥ key ≥ arr[high] or key is not in arr
-  - key ≤ arr[low] or key ≥ arr[high] or key is not in arr
-  explanation: |
-    - The `while` loop condition guarantees that `low` and `high` represent indices where the value of `key` must lie if it exists in the array. If `key` is not found, this condition will still hold true until the search ends.
-    - arr[low] < key < arr[high]: Not necessarily true because the array may have the key at `low` or `high`.
-    - arr[low] ≤ key ≤ arr[high]: This is true, but it doesn't fully capture the condition when the key is absent.
-    - arr[low] < key < arr[high] or key is not in arr: Doesn't account for the possibility of key being at the boundaries.
-    - arr[low] ≥ key ≥ arr[high] or key is not in arr: Incorrect because binary search assumes the array is sorted in ascending order.
-    - key ≤ arr[low] or key ≥ arr[high] or key is not in arr: This is not accurate for the search bounds.
-
-- question: |
-    A method performs a binary search on a sorted array and returns the index of the found element. Which of the following best describes the array condition just before the search stops?
-
-    ```java
-    public int binarySearch(int[] arr, int target) {
-        int left = 0, right = arr.length - 1;
-        while (left <= right) {
-            int middle = (left + right) / 2;
-            if (arr[middle] == target)
-                return middle;
-            else if (arr[middle] < target)
-                left = middle + 1;
-            else
-                right = middle - 1;
-        }
-        return -1;
-    }
-    ```
-
-  correct_options:
-  - arr[left] ≤ target ≤ arr[right] or target is not in arr
-  wrong_options:
-  - arr[left] < target < arr[right]
-  - arr[left] ≤ target ≤ arr[right]
-  - arr[left] < target < arr[right] or target is not in arr
-  - arr[left] ≥ target ≥ arr[right] or target is not in arr
-  - target ≤ arr[left] or target ≥ arr[right] or target is not in arr
-  explanation: |
-    - The loop condition ensures that `target` lies within the bounds of `arr[left]` and `arr[right]`, or if it's not in the array, the search will end with the condition `left > right`.
-    - arr[left] < target < arr[right]: This may not always be true as the target could be found exactly at `arr[left]` or `arr[right]`.
-    - arr[left] ≤ target ≤ arr[right]: This is a valid condition but doesn't account for cases where the search concludes without finding the target.
-    - arr[left] < target < arr[right] or target is not in arr: The boundaries may include the target, and this doesn't fully account for boundary cases.
-    - arr[left] ≥ target ≥ arr[right] or target is not in arr: Incorrect as the array is sorted in ascending order.
-    - target ≤ arr[left] or target ≥ arr[right] or target is not in arr: This is an incorrect description of the array bounds.
-
-- question: |
-    You are given an array sorted in ascending order and need to perform a binary search for a specific number. Which of the following is a valid assertion right before each iteration of the `while` loop?
-
-    ```java
-    public int binarySearch(int[] arr, int num) {
-        int low = 0, high = arr.length - 1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (arr[mid] == num)
-                return mid;
-            else if (arr[mid] < num)
-                low = mid + 1;
-            else
-                high = mid - 1;
-        }
-        return -1;
-    }
-    ```
-
-  correct_options:
-  - arr[low] ≤ num ≤ arr[high] or num is not in arr
-  wrong_options:
-  - arr[low] < num < arr[high]
-  - arr[low] ≤ num ≤ arr[high]
-  - arr[low] < num < arr[high] or num is not in arr
-  - arr[low] ≥ num ≥ arr[high] or num is not in arr
-  - num ≤ arr[low] or num ≥ arr[high] or num is not in arr
-  explanation: |
-    - The `low` and `high` pointers ensure the search is limited to a subset of the array where the `num` could exist, or the search finishes when they cross, indicating `num` is not in the array.
-    - arr[low] < num < arr[high]: This isn’t guaranteed because the search can stop at any index, not just strictly within `low` and `high`.
-    - arr[low] ≤ num ≤ arr[high]: This is generally true, but it doesn’t fully describe the situation where `num` is absent.
-    - arr[low] < num < arr[high] or num is not in arr: Not always valid due to the nature of how the binary search loop works.
-    - arr[low] ≥ num ≥ arr[high] or num is not in arr: Incorrect because binary search assumes an ascending order.
-    - num ≤ arr[low] or num ≥ arr[high] or num is not in arr: Not an accurate description of the search bounds.
-
-- question: |
-    Given the following method for binary search, what can be stated about the array segment being searched before each iteration?
-
-    ```java
-    public int binarySearch(int[] arr, int key) {
-        int low = 0, high = arr.length - 1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (arr[mid] == key)
-                return mid;
-            else if (arr[mid] < key)
-                low = mid + 1;
-            else
-                high = mid - 1;
-        }
-        return -1;
-    }
-    ```
-
-  correct_options:
-  - arr[low] ≤ key ≤ arr[high] or key is not in arr
-  wrong_options:
-  - arr[low] < key < arr[high]
-  - arr[low] ≤ key ≤ arr[high]
-  - arr[low] < key < arr[high] or key is not in arr
-  - arr[low] ≥ key ≥ arr[high] or key is not in arr
-  - key ≤ arr[low] or key ≥ arr[high] or key is not in arr
-  explanation: |
-    - The binary search algorithm maintains the condition that the target value must lie between `arr[low]` and `arr[high]` if it's within the array, or the search ends when `low` exceeds `high`.
-    - arr[low] < key < arr[high]: This is not true because the target can also be at the boundaries of the current search range.
-    - arr[low] ≤ key ≤ arr[high]: This is correct but does not fully capture the case where the search terminates if the target is absent.
-    - arr[low] < key < arr[high] or key is not in arr: Inaccurate because the key can be at the boundaries.
-    - arr[low] ≥ key ≥ arr[high] or key is not in arr: Incorrect as binary search assumes ascending order.
-    - key ≤ arr[low] or key ≥ arr[high] or key is not in arr: This is not a valid statement for binary search.
-- question: |
-    Consider a class that implements a binary search on an integer array, which is guaranteed to be sorted in ascending order. The method signature is as follows:
-
-    ```java
-    public int binarySearch(int[] arr, int key) {
-        int left = 0, right = arr.length - 1;
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            if (arr[mid] == key)
-                return mid;
-            else if (arr[mid] < key)
-                left = mid + 1;
-            else
-                right = mid - 1;
-        }
-        return -1;
-    }
-    ```
-
-    What is the time complexity of this binary search algorithm?
-  correct_options:
-  - O(log n)
-  wrong_options:
-  - O(n)
-  - O(n log n)
-  - O(log n) for worst-case
-  - O(1)
-  explanation: |
-    - The binary search algorithm halves the search space with each iteration, making its time complexity logarithmic, or O(log n).
-    - O(n): Incorrect because binary search cuts the search space in half at each step.
-    - O(n log n): This is not the time complexity of binary search; that would be typical of sorting algorithms like merge sort.
-    - O(log n) for worst-case: Binary search has a time complexity of O(log n) in both best and worst cases, so it's not specifically limited to the worst case.
-    - O(1): Incorrect because binary search doesn't directly find the solution in constant time.
-
-- question: |
-    A programmer writes a method to search for a target number in a sorted array using binary search. What could happen if the array is not sorted?
-
-  correct_options:
-  - The search will not work correctly, and the result may be unpredictable.
-  wrong_options:
-  - The algorithm will still work but might take longer.
-  - The algorithm will return the target’s index correctly even if the array is unsorted.
-  - The algorithm will sort the array automatically before searching.
-  - The algorithm will crash.
-  explanation: |
-    - Binary search assumes that the array is sorted, and without this assumption, the search results may be incorrect or unpredictable.
-    - The algorithm will still work but might take longer: Binary search requires a sorted array; it won't work as expected on unsorted data.
-    - The algorithm will return the target’s index correctly: This is false because binary search depends on sorted order.
-    - The algorithm will sort the array automatically: This is incorrect. Binary search does not include sorting; it expects the data to be pre-sorted.
-    - The algorithm will crash: The algorithm doesn't crash; it will return incorrect results or fail to find the target.
-
-- question: |
-    What is the correct return value of a binary search algorithm if the target element is not found in a sorted array?
-
-    ```java
-    public int binarySearch(int[] arr, int key) {
-        int left = 0, right = arr.length - 1;
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            if (arr[mid] == key)
-                return mid;
-            else if (arr[mid] < key)
-                left = mid + 1;
-            else
-                right = mid - 1;
-        }
-        return -1;
-    }
-    ```
-  correct_options:
-  - -1
-  wrong_options:
-  - 0
-  - arr.length - 1
-  - null
-  - mid
-  explanation: |
-    - The correct return value is -1, which indicates that the target was not found in the array.
-    - 0: Incorrect, this would imply the target is always found at index 0.
-    - arr.length - 1: This is incorrect because it’s the last index and doesn't indicate a missed search result.
-    - null: Binary search returns an index, not `null` unless working with an object array (but not the case here).
-    - mid: Incorrect, as `mid` is a temporary variable and not the return value for a failed search.
-
-- question: |
-    What will be the result if a binary search algorithm is applied to an array with duplicate values, and the target value appears multiple times?
-
-    ```java
-    public int binarySearch(int[] arr, int key) {
-        int left = 0, right = arr.length - 1;
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            if (arr[mid] == key)
-                return mid;
-            else if (arr[mid] < key)
-                left = mid + 1;
-            else
-                right = mid - 1;
-        }
-        return -1;
-    }
-    ```
-  correct_options:
-  - The algorithm will return the index of one occurrence of the target value, but not necessarily the first or last occurrence.
-  wrong_options:
-  - The algorithm will return all occurrences of the target value.
-  - The algorithm will return the first occurrence of the target value.
-  - The algorithm will return the last occurrence of the target value.
-  - The algorithm will fail to find any occurrence of the target value.
-  explanation: |
-    - The binary search will return one occurrence of the target value, but it is not guaranteed to be the first or last occurrence.
-    - The algorithm will return all occurrences: Binary search finds only one index where the value is located.
-    - The algorithm will return the first occurrence: Binary search does not guarantee finding the first occurrence, especially if duplicates are present.
-    - The algorithm will return the last occurrence: Similarly, binary search doesn't guarantee the last occurrence.
-    - The algorithm will fail to find any occurrence: Binary search will find one occurrence if the target is present.
-
-- question: |
-    A binary search algorithm is being used to search for a target value. What is the primary reason for using binary search over linear search in a sorted array?
-
-  correct_options:
-  - Binary search is much faster, with a time complexity of O(log n), compared to the O(n) time complexity of linear search.
-  wrong_options:
-  - Binary search works on unsorted arrays, while linear search only works on sorted arrays.
-  - Binary search is guaranteed to find the target value, while linear search may fail.
-  - Binary search does not require any additional memory, while linear search does.
-  - Binary search performs fewer comparisons than linear search in all cases.
-  explanation: |
-    - Binary search efficiently reduces the search space by half with each iteration, resulting in a much faster search time of O(log n) in a sorted array.
-    - Binary search works on unsorted arrays: This is false because binary search requires the array to be sorted.
-    - Binary search is guaranteed to find the target: Binary search may not find the target if it's not in the array, unlike linear search which checks every element.
-    - Binary search does not require additional memory: Both binary search and linear search can be implemented with constant extra memory (O(1)).
-    - Binary search performs fewer comparisons: While binary search is faster, it doesn’t always perform fewer comparisons in every case, especially with small datasets.
-- question: |
-    A teacher writes the following class to represent a deck of flashcards, but encounters a `NullPointerException` when trying to add cards.
-
-    ```java
-    public class FlashcardDeck {
-        private ArrayList<String> cards;
-
-        public FlashcardDeck() {
-            fillDeck();
-        }
-
-        private void fillDeck() {
-            cards.add("Question 1");
-            cards.add("Question 2");
-        }
-    }
-    ```
-
-    What is the cause of the `NullPointerException`?
-  correct_options:
-  - The `cards` list was never initialized with `new ArrayList<>()` before calling `add()`.
-  wrong_options:
-  - The constructor should not call another method.
-  - The method `fillDeck` must be declared `static`.
-  - The string values must be declared as new objects using `new String()`.
-  - The `cards` list should be declared `public` instead of `private`.
-  explanation: |
-    - Since `cards` is never assigned a new ArrayList object, calling `add()` on it results in a `NullPointerException`.
-    - The constructor can call methods; this is legal in Java.
-    - `fillDeck` doesn’t need to be static—it’s being used from an instance context.
-    - Java automatically creates new string literals; no need to use `new String()`.
-    - Visibility modifiers like `private` or `public` don’t affect runtime null errors.
-
-- question: |
-    A student builds a `GameBoard` class but sees a `NullPointerException` during gameplay:
-
-    ```java
-    public class GameBoard {
-        private String[][] board;
-
-        public GameBoard(int size) {
-            board = new String[size][];
-            for (int i = 0; i < size; i++) {
-                board[i][0] = "-";
-            }
-        }
-    }
-    ```
-
-    What is the most likely cause of the `NullPointerException`?
-  correct_options:
-  - The inner arrays were not initialized, so `board[i]` is null when trying to assign a value.
-  wrong_options:
-  - The array must be a 1D array to be initialized properly.
-  - The index `0` is out of bounds during the loop.
-  - Java does not allow arrays of arrays.
-  - The constructor needs a return type to work.
-  explanation: |
-    - `board[i]` is null until explicitly initialized (e.g., `board[i] = new String[length]`), so accessing index 0 throws a `NullPointerException`.
-    - A 2D array is valid here; the issue is with the inner array initialization.
-    - Index 0 is valid; the outer array has the specified size.
-    - Java allows arrays of arrays (2D arrays).
-    - Constructors do not have return types in Java.
-
-- question: |
-    Examine the following incomplete constructor:
-
-    ```java
-    public class Playlist {
-        private ArrayList<String> songs;
-
-        public Playlist(String[] titles) {
-            for (String title : titles) {
-                songs.add(title);
-            }
-        }
-    }
-    ```
-
-    A `NullPointerException` occurs when creating a new `Playlist`. Why?
-  correct_options:
-  - The `songs` list was never initialized before calling `add`.
-  wrong_options:
-  - |
-    `titles` must be an `ArrayList`, not an array.
-  - |
-    `add` cannot be used inside a constructor.
-  - The `Playlist` class should implement the `List` interface.
-  - Strings cannot be added to an `ArrayList<String>`.
-  explanation: |
-    - `songs` is declared but not initialized, so attempting to use `add()` on a null object causes the error.
-    - Arrays like `String[]` can be iterated in enhanced for-loops.
-    - `add()` is valid in constructors when used correctly.
-    - The class does not need to implement `List` to hold an `ArrayList`.
-    - `ArrayList<String>` is designed to store Strings, so this is not the issue.
-
-- question: |
-    A class is supposed to store quiz scores but throws a `NullPointerException` when running:
-
-    ```java
-    public class QuizTracker {
-        private ArrayList<Double> scores;
-
-        public void addScore(double s) {
-            scores.add(s);
-        }
-    }
-    ```
-
-    Which of the following best explains the error?
-  correct_options:
-  - The `scores` list was never initialized with `new ArrayList<Double>()`.
-  wrong_options:
-  - A method cannot be called on a private variable.
-  - Primitive types like double cannot be added to lists.
-  - The parameter `s` must be cast to a Double first.
-  - The constructor was declared but never used.
-  explanation: |
-    - `scores` is null because it lacks initialization, so `add()` fails with a `NullPointerException`.
-    - Java allows method calls on private instance variables within the class.
-    - `double` can be autoboxed to `Double` when added to a list.
-    - Java auto-converts `double` to `Double` with no need to cast.
-    - The class has no constructor; the error is due to lack of initialization, not constructor usage.
-
-- question: |
-    Why might the following code throw a `NullPointerException` when `reset()` is called?
-
-    ```java
-    public class Inventory {
-        private ArrayList<String> items;
-
-        public void reset() {
-            items.clear();
-        }
-    }
-    ```
-
-    Assume the programmer forgot to initialize `items` elsewhere in the class.
-  correct_options:
-  - The list `items` is null because it was never assigned a new `ArrayList` before calling `clear()`.
-  wrong_options:
-  - The `clear()` method is not supported for string-based lists.
-  - |
-    `reset()` must be declared `static` to work.
-  - |
-    `items` should have been an array, not a list.
-  - The `Inventory` class must implement `Serializable`.
-  explanation: |
-    - Calling `clear()` on a null reference causes a `NullPointerException` since `items` hasn’t been initialized.
-    - `clear()` works for any initialized `ArrayList`, including those of Strings.
-    - `reset()` does not need to be static; this has no bearing on the error.
-    - Lists are appropriate here; arrays are not required.
-    - Implementing `Serializable` is irrelevant for list manipulation.
-- question: |
-    A sorted array contains 16 elements, indexed from 0 to 15.  
-    A binary search is used to find the value 77.  
-    At each iteration, the search checks the middle of the remaining portion of the array.  
-    Assuming the value exists and is at index 14, how many comparisons will be made before it is found?
-  correct_options:
-  - 4
-  wrong_options:
-  - 3
-  - 5
-  - 2
-  explanation:
-  - Binary search reduces the search range by half each time. The path to index 14 involves comparisons at midpoints 7, 11, 13, and finally 14 (4 comparisons).
-  - 3 is too few to reach index 14.
-  - 5 is more than necessary.
-  - 2 would only reach about index 11 or 12 in this scenario.
-
-- question: |
-    Suppose a binary search algorithm is applied to a sorted array of 31 elements.  
-    What is the maximum number of iterations the `while` loop can perform in the worst case?
-  correct_options:
-  - 5
-  wrong_options:
-  - 4
-  - 6
-  - 31
-  explanation: |
-    - The worst-case number of comparisons in binary search is ⌊log₂(n)⌋ + 1. For 31 elements: ⌊log₂(31)⌋ + 1 = 4 + 1 = 5.
-    - 4 is one less than the maximum; not worst case.
-    - 6 would be correct for arrays larger than 31 (e.g., 63).
-    - 31 is linear search behavior, not binary search.
-
-- question: |
-    Consider the following code:
-
-    ```java
-    int[] a = {3, 9, 12, 18, 22, 27, 30, 33, 37};
-    ```
-
-    Using binary search to find the value 22, what is the sequence of middle indices checked?
-  correct_options:
-  - 4, 1, 2
-  wrong_options:
-  - 4, 5
-  - 0, 4, 2
-  - 4, 3
-  explanation: |
-    - First midpoint: (0+8)/2 = 4 (a[4] = 22 → match, return immediately).
-    - 4, 5: would happen only if a[4] ≠ 22 and value is greater.
-    - 0, 4, 2: 0 would never be midpoint of full range; logic error.
-    - 4, 3: unnecessary, as 22 is found at index 4 immediately.
-
-- question: |
-    Which of the following conditions guarantees that the binary search algorithm will terminate in all cases?
-  correct_options:
-  - The search range is reduced by adjusting either `first` or `last` on each iteration.
-  wrong_options:
-  - The key is guaranteed to be in the array.
-  - The array size is a power of 2.
-  - The loop runs a fixed number of times.
-  explanation: |
-    - Binary search will terminate if the range is reduced every time, eventually causing `first > last`.
-    - Key presence doesn’t prevent infinite loops; logic is what matters.
-    - Powers of 2 affect balance, not termination.
-    - Binary search doesn’t use a fixed iteration count; it's dynamic.
-
-- question: |
-    A student mistakenly rewrites binary search with this loop condition:
-
-    ```java
-    while (first < last)
-    ```
-
-    Instead of the original condition:
-
-    ```java
-    while (first <= last)
-    ```
-
-    What is a likely result of this change?
-  correct_options:
-  - The method may fail to find a key located at the final possible index.
-  wrong_options:
-  - The loop will enter an infinite cycle.
-  - The search will always return -1, even if the key exists.
-  - The method becomes linear rather than logarithmic.
-  explanation: |
-    - Changing `<=` to `<` means the final element will never be considered, possibly missing valid keys at that position.
-    - It won’t loop infinitely; it still progresses.
-    - It won’t always return -1, only in edge cases.
-    - The loop logic is still logarithmic, just incomplete.
+    wrong_options:
+      - ArrayList<Rabbit> pen = new ArrayList<Rabbit>(10);
+      - ArrayList<Rabbit> pen = new ArrayList<>(); pen.set(9, new Rabbit());
+      - Rabbit[] pen = new Rabbit[10]; pen[0] = new Rabbit();
+      - pen.add(10, new Rabbit());
+    explanation: |
+      The `add` loop builds a list of exactly 10 `Rabbit` objects. 
+      `new ArrayList<>(10)` only sets capacity, not actual elements.
+      `set(9, ...)` fails unless indices 0–8 are already populated.
+      The `Rabbit[]` syntax is for arrays, not lists.
+      `add(10, ...)` is out-of-bounds for an empty list.
+
+  - question: |
+      ```java
+      public static void mystery(int n) {
+          if (n > 0) {
+              System.out.print(n % 2);
+              mystery(n / 2);
+          }
+      }
+      ```
+      What will be printed as a result of the call `mystery(5)`?
+    correct_options:
+      - 101
+    wrong_options:
+      - 10
+      - 110
+      - 100
+      - 11
+      - 1
+    explanation: |
+      101: This is the binary representation of 5 generated in reverse order since digits are printed before the recursive call.
+      010: Incorrect because leading 0s do not match binary construction; also the digits are printed before recursion.
+      110: Incorrect binary representation and wrong order.
+      100: This would be correct if digits were printed *after* the recursive call.
+      11: This truncates part of the output.
+      1: Only prints the final digit, not the full trace.
+
+  - question: |
+      ```java
+      public static void showDigits(int n) {
+          if (n >= 10)
+              showDigits(n / 10);
+          System.out.print(n % 10 + " ");
+      }
+      ```
+      What is printed by the call `showDigits(205)`?
+    correct_options:
+      - "2 0 5 "
+    wrong_options:
+      - "5 0 2 "
+      - "205"
+      - "2 5 0 "
+      - "0 2 5 "
+    explanation: |
+      "2 0 5 ": The recursive call ensures digits are printed in left-to-right order.
+      "5 0 2 ": This reverses the digit order, which would require printing before recursion.
+      "205": There are spaces after each digit, not a combined number.
+      "2 5 0 ": Wrong digit order.
+      "0 2 5 ": Incorrect sequence; 0 is not the most significant digit.
+
+  - question: |
+      ```java
+      public static void recurse(int n) {
+          if (n == 0) return;
+          recurse(n - 1);
+          System.out.print(n + " ");
+      }
+      ```
+      What is the output of `recurse(3)`?
+    correct_options:
+      - "1 2 3 "
+    wrong_options:
+      - "3 2 1 "
+      - "1 2 3"
+      - "1 3 2 "
+      - "2 1 3 "
+      - "123"
+    explanation: |
+      "1 2 3 ": Recursion unwinds and prints values in increasing order with a space.
+      "3 2 1 ": Would happen if print was before recursive call.
+      "1 2 3": Missing trailing space.
+      "1 3 2 ": Incorrect order.
+      "2 1 3 ": Incorrect order.
+      "123": No spacing.
+
+  - question: |
+      ```java
+      public static void mystery2(int x) {
+          if (x < 10)
+              System.out.print(x);
+          else {
+              System.out.print(x % 10);
+              mystery2(x / 10);
+          }
+      }
+      ```
+      What is printed by `mystery2(123)`?
+    correct_options:
+      - 321
+    wrong_options:
+      - 123
+      - 312
+      - 231
+      - 13
+    explanation: |
+      321: The digits are printed before the recursive call, so they appear in reverse.
+      123: This would happen if digits were printed *after* recursion.
+      312: Incorrect order of digits.
+      231: Incorrect order.
+      13: Skips a digit.
+
+  - question: |
+      ```java
+      public static void strange(int n) {
+          if (n <= 0) return;
+          strange(n - 2);
+          System.out.print(n + " ");
+      }
+      ```
+      What is printed when `strange(5)` is called?
+    correct_options:
+      - "1 3 5 "
+    wrong_options:
+      - "5 3 1 "
+      - "2 4 "
+      - "1 2 3 4 5 "
+      - "5 1 3 "
+      - "135"
+    explanation: |
+      -"1 3 5 ": Only odd numbers get printed due to decrementing by 2 and printing after recursion.
+      -"5 3 1 ": Would occur if print was before recursive call.
+      -"2 4 ": These values aren't reached with step -2 from 5.
+      -"1 2 3 4 5 ": This would require looping or step of -1.
+      -"5 1 3 ": Wrong order and values.
+      -"135": Missing spaces.
+  - question: |
+      You are tasked with sorting a list of numbers using bubble sort.  
+      Which of the following statements is accurate about bubble sort's behavior?
+    correct_options:
+      - The number of comparisons depends on the size of the list, but the number of swaps can be reduced if the list is already partially sorted.
+    wrong_options:
+      - The number of comparisons remains the same, regardless of the list's initial order.
+      - Bubble sort requires fewer swaps than selection sort when the list is nearly sorted.
+      - The number of comparisons is constant, no matter how the list is arranged.
+      - Data movements in bubble sort do not depend on the initial order of the list.
+      - Bubble sort outperforms selection sort for large datasets in terms of comparisons.
+    explanation: |
+      - Bubble sort compares adjacent elements and swaps them when necessary. The number of swaps can be reduced if the list is partially sorted.
+      - The number of comparisons in bubble sort is influenced by the list's order, not constant.
+      - Although bubble sort can perform fewer swaps in partially sorted lists, it may still require more passes than selection sort.
+      - Bubble sort compares elements multiple times, so the number of comparisons can change depending on the list's order.
+      - The list’s initial order affects the number of swaps, as bubble sort depends on adjacent elements being swapped.
+      - Selection sort typically outperforms bubble sort for large lists, as it makes fewer passes.
+
+  - question: |
+      When sorting a list of numbers with insertion sort, which of the following is true?
+    correct_options:
+      - The number of data movements in insertion sort depends on the initial order of the elements.
+    wrong_options:
+      - The number of comparisons in insertion sort is not affected by the initial arrangement of elements.
+      - If the list is sorted in ascending order to start, insertion sort will need more swaps than bubble sort.
+      - Insertion sort requires more comparisons than bubble sort for nearly sorted lists.
+      - The number of comparisons in insertion sort is determined only by the size of the list, not the initial order of elements.
+      - Insertion sort is the most efficient sorting method for large datasets.
+    explanation: |
+      - Insertion sort's performance is highly dependent on the list's initial arrangement, particularly in terms of how many elements need to be shifted.
+      - Insertion sort's comparison count is affected by the list's order, so it's not constant.
+      - Insertion sort performs fewer swaps than bubble sort if the list is already sorted.
+      - Bubble sort generally performs fewer comparisons than insertion sort in nearly sorted lists.
+      - The number of comparisons is influenced by how sorted the list is, not just the list's size.
+      - For large datasets, algorithms like quicksort or merge sort tend to outperform insertion sort.
+
+  - question: |
+      Consider the merge sort algorithm for sorting a list of integers.  
+      Which of the following statements is correct?
+    correct_options:
+      - The number of comparisons made by merge sort grows with the size of the list.
+    wrong_options:
+      - Merge sort does not require any swaps or data movements while sorting the list.
+      - Merge sort outperforms quicksort on small datasets.
+      - The number of comparisons performed by merge sort is constant, regardless of the list size.
+      - Merge sort is an in-place sorting algorithm that doesn’t need extra memory.
+      - Merge sort is always more memory-efficient than quicksort.
+    explanation: |
+      - Merge sort divides the list and compares elements during the merge phase, so the number of comparisons increases as the list size increases.
+      - Merge sort requires data movements when merging sublists, so it's not a no-data-movement algorithm.
+      - Quicksort typically performs better than merge sort for small lists due to its lower overhead.
+      - The number of comparisons increases with the size of the list since merge sort splits and merges in multiple passes.
+      - Merge sort requires additional memory for the merging process, so it's not in-place.
+      - Merge sort may require more memory than quicksort, particularly for large lists.
+
+  - question: |
+      When using quicksort to sort a list, which of the following is true about its performance?
+    correct_options:
+      - The performance of quicksort is significantly influenced by the pivot selection method.
+    wrong_options:
+      - Quicksort performs a fixed number of comparisons, regardless of the input list.
+      - Quicksort always makes fewer swaps than bubble sort.
+      - The number of swaps in quicksort does not depend on how the pivot is chosen.
+      - Quicksort is the fastest algorithm in all cases.
+      - Quicksort is unsuitable for sorting large lists.
+    explanation: |
+      - The pivot selection has a major impact on quicksort’s efficiency; poor pivot choices lead to inefficient sorting.
+      - Quicksort’s comparison count varies based on the input list and pivot choice.
+      - Quicksort can make more swaps than bubble sort, especially when the pivot selection is poor.
+      - The number of swaps is directly affected by the pivot choice since the partitioning process depends on it.
+      - Quicksort is not always the fastest; its performance can degrade with poor pivot selection or for already sorted lists.
+      - Quicksort is generally efficient for large lists, but its performance depends on pivot selection.
+
+  - question: |
+      Which of the following is accurate about the selection sort algorithm?
+    correct_options:
+      - The number of comparisons made by selection sort is unaffected by the initial order of the elements.
+    wrong_options:
+      - The number of data movements in selection sort is heavily dependent on the initial arrangement of elements.
+      - Selection sort is faster than quicksort for large datasets.
+      - Selection sort always makes fewer comparisons than insertion sort.
+      - The number of comparisons in selection sort increases as the list gets closer to being sorted.
+      - Selection sort is a stable algorithm.
+    explanation: |
+      - Selection sort always compares each element with every other element, regardless of the list’s initial order.
+      - Selection sort performs the same number of swaps regardless of the list’s order.
+      - Quicksort is generally more efficient for large datasets due to its divide-and-conquer nature.
+      - Selection sort may perform more comparisons than insertion sort, especially with partially sorted lists.
+      - The number of comparisons remains constant since selection sort always scans the entire remaining list.
+      - Selection sort is not stable because equal elements can be swapped, potentially changing their relative order.
+
+  - question: |
+      A method is implemented to calculate the distance between two points in a 2D plane:
+
+      ```java
+      // Returns the Euclidean distance between points (x1, y1) and (x2, y2)
+      public static double distance(double x1, double y1, double x2, double y2) {
+          return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+      }
+      ```
+
+      What will be the result of calling `distance(1, 2, 4, 6)`?
+    correct_options:
+      - 5.0
+    wrong_options:
+      - 6.0
+      - 7.0
+      - 4.0
+      - 8.0
+      - 5.5
+    explanation: |
+      - The Euclidean distance formula calculates the straight-line distance between two points. The result for `(1, 2)` and `(4, 6)` is 5.0.
+      - 6.0: This is not the correct distance.
+      - 7.0: Incorrect based on the Euclidean formula.
+      - 4.0: Doesn't match the correct calculation.
+      - 8.0: Larger than the actual distance.
+      - 5.5: This is close but incorrect based on the formula.
+
+  - question: |
+      Consider the method below that checks whether a point lies inside a circle:
+
+      ```java
+      // Returns true if the point (x, y) is inside the circle centered at (cx, cy) with radius r
+      public static boolean isInsideCircle(double x, double y, double cx, double cy, double r) {
+          return (Math.pow(x - cx, 2) + Math.pow(y - cy, 2)) <= Math.pow(r, 2);
+      }
+      ```
+
+      What is the result of calling `isInsideCircle(3, 4, 0, 0, 5)`?
+    correct_options:
+      - true
+    wrong_options:
+      - false
+      - Error due to incorrect arguments
+      - false due to incorrect method logic
+      - true, but the radius should be checked differently
+      - Error because the circle's radius cannot be negative
+    explanation: |
+      - The point (3, 4) lies inside the circle with radius 5 centered at (0, 0). The method correctly calculates the distance and returns true.
+      - false: Incorrect because the point is actually inside the circle.
+      - Error due to incorrect arguments: The method arguments are correct and will not cause an error.
+      - false due to incorrect method logic: The method logic is correct.
+      - true, but the radius should be checked differently: The method is correct and no further checks are needed.
+      - Error because the circle's radius cannot be negative: The radius is positive in this case, so there’s no error.
+
+  - question: |
+      A right triangle has legs of lengths 3 and 4. What is the length of the hypotenuse using the Pythagorean theorem?
+
+    correct_options:
+      - 5.0
+    wrong_options:
+      - 7.0
+      - 6.0
+      - 4.0
+      - 3.0
+      - 8.0
+    explanation: |
+      - According to the Pythagorean theorem, \(c = \sqrt{a^2 + b^2}\). For legs 3 and 4, the hypotenuse is \( \sqrt{3^2 + 4^2} = 5.0 \).
+      - 7.0: Incorrect, does not match the Pythagorean theorem calculation.
+      - 6.0: Not the correct result.
+      - 4.0: The hypotenuse should be longer than either leg.
+      - 3.0: This is one of the legs, not the hypotenuse.
+      - 8.0: Larger than the actual hypotenuse.
+
+  - question: |
+      The area of a circle is calculated using the formula \(A = \pi r^2\). Given the radius is 3, what is the area of the circle?
+
+    correct_options:
+      - 28.27
+    wrong_options:
+      - 30.00
+      - 9.42
+      - 27.00
+      - 25.13
+      - 31.42
+    explanation: |
+      - Using the formula \(A = \pi r^2\), when \(r = 3\), the area is approximately \(28.27\) (since \(\pi \approx 3.1416\)).
+      - 30.00: Incorrect based on the correct formula.
+      - 9.42: The square of the radius is not calculated correctly.
+      - 27.00: This is close but doesn't match the actual calculation.
+      - 25.13: Incorrect based on the formula.
+      - 31.42: Larger than the actual area.
+
+  - question: |
+      In a rectangle, the length is 8 and the width is 5. What is the perimeter of the rectangle?
+
+    correct_options:
+      - 26
+    wrong_options:
+      - 40
+      - 15
+      - 30
+      - 20
+      - 25
+    explanation: |
+      - The perimeter of a rectangle is calculated as \(P = 2 \times (length + width)\). For length 8 and width 5, \(P = 2 \times (8 + 5) = 26\).
+      - 40: Incorrect, as this would be the area of a square with side length 10.
+      - 15: Incorrect perimeter calculation.
+      - 30: Incorrect result.
+      - 20: This would be the perimeter if the dimensions were 7 and 3.
+      - 25: Incorrect based on the formula.
+  - question: |
+      A method is written to check if three numbers form a *right triangle*. The method uses the following code:
+
+      ```java
+      // Checks if a * a + b * b == c * c
+      public static boolean isRightTriangle(double a, double b, double c) {
+          double sum = Math.sqrt(a * a + b * b);
+          return sum == c;
+      }
+      ```
+
+      What is the most likely issue with this method when used to check for right triangles?
+    correct_options:
+      - Precision errors in floating-point calculations may cause the comparison to fail
+    wrong_options:
+      - The method is incompatible with the `boolean` data type.
+      - The method will overflow with large numbers.
+      - Casting `sum` and `c` to integers will fix the issue.
+      - The input values for `a`, `b`, and `c` are invalid.
+    explanation: |
+      - Floating-point arithmetic can introduce small errors, especially with operations like square roots, leading to incorrect comparisons.
+      - Java handles the `boolean` type properly, so this isn't the issue.
+      - Overflow would only occur if the numbers were excessively large, which isn't typical for a right triangle check.
+      - Casting to integers would lose precision and cause incorrect results.
+      - The issue isn't the input values; it's how floating-point numbers are compared.
+
+  - question: |
+      A method is used to check if the sides of a triangle satisfy the *triangle inequality theorem*. The code is:
+
+      ```java
+      // Returns true if the sum of the lengths of any two sides is greater than the third side
+      public static boolean isValidTriangle(double a, double b, double c) {
+          return (a + b > c) && (a + c > b) && (b + c > a);
+      }
+      ```
+
+      Which of the following statements is true regarding the correctness of this method?
+    correct_options:
+      - The method correctly checks the triangle inequality theorem for any given set of sides
+    wrong_options:
+      - The method only works for equilateral triangles.
+      - The method doesn't account for degenerate triangles (where one side is the sum of the other two).
+      - The method uses the wrong formula for the triangle inequality theorem.
+      - The method should use `&&` instead of `||` to check for the triangle inequality theorem.
+    explanation: |
+      - The method correctly applies the triangle inequality theorem, ensuring the sum of any two sides is greater than the third.
+      - This method works for all triangles, not just equilateral.
+      - It does check for degenerate triangles as well, which would fail the conditions.
+      - The formula is correct for the triangle inequality theorem.
+      - The method correctly uses `&&` to check all three conditions.
+
+  - question: |
+      A method is used to determine if a given triangle is *isosceles*. The method checks if two sides are equal:
+
+      ```java
+      // Returns true if two sides are equal, indicating an isosceles triangle
+      public static boolean isIsosceles(double a, double b, double c) {
+          return (a == b) || (b == c) || (a == c);
+      }
+      ```
+
+      What is a possible issue with this method when identifying an isosceles triangle?
+    correct_options:
+      - The method will incorrectly classify an equilateral triangle as isosceles
+    wrong_options:
+      - The method will not work if the sides are given as integers.
+      - The method will fail for triangles with non-equal sides.
+      - The method incorrectly uses `&&` instead of `||`.
+      - The method uses the wrong formula for checking isosceles triangles.
+    explanation: |
+      - An equilateral triangle (where all sides are equal) will also be incorrectly classified as isosceles by this method.
+      - The method works with floating-point numbers as well, not just integers.
+      - The method works even if the sides are non-equal, as it checks for equality between pairs of sides.
+      - `||` is the correct operator to check if any two sides are equal.
+      - The formula is correct for identifying an isosceles triangle.
+
+  - question: |
+      A method is written to check if a given quadrilateral is a *parallelogram* based on the lengths of opposite sides:
+
+      ```java
+      // Returns true if opposite sides are equal
+      public static boolean isParallelogram(double a, double b, double c, double d) {
+          return (a == c) && (b == d);
+      }
+      ```
+
+      Which of the following is a valid critique of this method?
+    correct_options:
+      - The method assumes the sides are labeled correctly, which may not always be the case.
+    wrong_options:
+      - The method only works for rectangles, not parallelograms.
+      - The method doesn't account for the angles of the quadrilateral.
+      - The method will incorrectly identify non-parallelograms as valid parallelograms.
+      - The method will fail for quadrilaterals with non-integer sides.
+    explanation: |
+      - The method assumes a specific labeling of the sides (e.g., `a` and `c` are opposite), which might not always hold.
+      - The method works for any parallelogram, not just rectangles.
+      - The method does not need to account for angles to determine if a quadrilateral is a parallelogram.
+      - The method is valid for any quadrilateral with sides labeled correctly, regardless of shape.
+      - The method works with both integer and non-integer side lengths.
+
+  - question: |
+      A method is written to determine if a given *circle* has a radius greater than a specified value:
+
+      ```java
+      // Returns true if the radius is greater than the given threshold
+      public static boolean isLargeCircle(double radius, double threshold) {
+          return radius > threshold;
+      }
+      ```
+
+      What is a limitation of this method when dealing with circles?
+    correct_options:
+      - The method assumes that the radius is always positive
+    wrong_options:
+      - The method only works for circles with integer radii.
+      - The method will fail if the threshold is negative.
+      - The method does not account for the circumference or area of the circle.
+      - The method will only work for circles with a radius greater than 1.
+    explanation: |
+      - The method assumes that the radius is positive, but in reality, a circle with a negative radius isn't physically meaningful.
+      - The method works for both integer and floating-point radii.
+      - The threshold can be any value, including negative, and the method will still function correctly.
+      - The method only checks the radius, not the area or circumference, but this doesn't affect its functionality.
+      - The method works for any radius, not just those greater than 1.
+  - question: |
+      Consider a binary search algorithm that operates on a sorted array. Given the following method signature:
+
+      ```java
+      public int binarySearch(int[] arr, int key) {
+          int low = 0, high = arr.length - 1;
+          while (low <= high) {
+              int mid = (low + high) / 2;
+              if (arr[mid] == key)
+                  return mid;
+              else if (arr[mid] < key)
+                  low = mid + 1;
+              else
+                  high = mid - 1;
+          }
+          return -1;
+      }
+      ```
+
+      What condition holds true right before the `while` loop begins each iteration?
+    correct_options:
+      - arr[low] ≤ key ≤ arr[high] or key is not in arr
+    wrong_options:
+      - arr[low] < key < arr[high]
+      - arr[low] ≤ key ≤ arr[high]
+      - arr[low] < key < arr[high] or key is not in arr
+      - arr[low] ≥ key ≥ arr[high] or key is not in arr
+      - key ≤ arr[low] or key ≥ arr[high] or key is not in arr
+    explanation: |
+      - The `while` loop condition guarantees that `low` and `high` represent indices where the value of `key` must lie if it exists in the array. If `key` is not found, this condition will still hold true until the search ends.
+      - arr[low] < key < arr[high]: Not necessarily true because the array may have the key at `low` or `high`.
+      - arr[low] ≤ key ≤ arr[high]: This is true, but it doesn't fully capture the condition when the key is absent.
+      - arr[low] < key < arr[high] or key is not in arr: Doesn't account for the possibility of key being at the boundaries.
+      - arr[low] ≥ key ≥ arr[high] or key is not in arr: Incorrect because binary search assumes the array is sorted in ascending order.
+      - key ≤ arr[low] or key ≥ arr[high] or key is not in arr: This is not accurate for the search bounds.
+
+  - question: |
+      A method performs a binary search on a sorted array and returns the index of the found element. Which of the following best describes the array condition just before the search stops?
+
+      ```java
+      public int binarySearch(int[] arr, int target) {
+          int left = 0, right = arr.length - 1;
+          while (left <= right) {
+              int middle = (left + right) / 2;
+              if (arr[middle] == target)
+                  return middle;
+              else if (arr[middle] < target)
+                  left = middle + 1;
+              else
+                  right = middle - 1;
+          }
+          return -1;
+      }
+      ```
+
+    correct_options:
+      - arr[left] ≤ target ≤ arr[right] or target is not in arr
+    wrong_options:
+      - arr[left] < target < arr[right]
+      - arr[left] ≤ target ≤ arr[right]
+      - arr[left] < target < arr[right] or target is not in arr
+      - arr[left] ≥ target ≥ arr[right] or target is not in arr
+      - target ≤ arr[left] or target ≥ arr[right] or target is not in arr
+    explanation: |
+      - The loop condition ensures that `target` lies within the bounds of `arr[left]` and `arr[right]`, or if it's not in the array, the search will end with the condition `left > right`.
+      - arr[left] < target < arr[right]: This may not always be true as the target could be found exactly at `arr[left]` or `arr[right]`.
+      - arr[left] ≤ target ≤ arr[right]: This is a valid condition but doesn't account for cases where the search concludes without finding the target.
+      - arr[left] < target < arr[right] or target is not in arr: The boundaries may include the target, and this doesn't fully account for boundary cases.
+      - arr[left] ≥ target ≥ arr[right] or target is not in arr: Incorrect as the array is sorted in ascending order.
+      - target ≤ arr[left] or target ≥ arr[right] or target is not in arr: This is an incorrect description of the array bounds.
+
+  - question: |
+      You are given an array sorted in ascending order and need to perform a binary search for a specific number. Which of the following is a valid assertion right before each iteration of the `while` loop?
+
+      ```java
+      public int binarySearch(int[] arr, int num) {
+          int low = 0, high = arr.length - 1;
+          while (low <= high) {
+              int mid = (low + high) / 2;
+              if (arr[mid] == num)
+                  return mid;
+              else if (arr[mid] < num)
+                  low = mid + 1;
+              else
+                  high = mid - 1;
+          }
+          return -1;
+      }
+      ```
+
+    correct_options:
+      - arr[low] ≤ num ≤ arr[high] or num is not in arr
+    wrong_options:
+      - arr[low] < num < arr[high]
+      - arr[low] ≤ num ≤ arr[high]
+      - arr[low] < num < arr[high] or num is not in arr
+      - arr[low] ≥ num ≥ arr[high] or num is not in arr
+      - num ≤ arr[low] or num ≥ arr[high] or num is not in arr
+    explanation: |
+      - The `low` and `high` pointers ensure the search is limited to a subset of the array where the `num` could exist, or the search finishes when they cross, indicating `num` is not in the array.
+      - arr[low] < num < arr[high]: This isn’t guaranteed because the search can stop at any index, not just strictly within `low` and `high`.
+      - arr[low] ≤ num ≤ arr[high]: This is generally true, but it doesn’t fully describe the situation where `num` is absent.
+      - arr[low] < num < arr[high] or num is not in arr: Not always valid due to the nature of how the binary search loop works.
+      - arr[low] ≥ num ≥ arr[high] or num is not in arr: Incorrect because binary search assumes an ascending order.
+      - num ≤ arr[low] or num ≥ arr[high] or num is not in arr: Not an accurate description of the search bounds.
+
+  - question: |
+      Given the following method for binary search, what can be stated about the array segment being searched before each iteration?
+
+      ```java
+      public int binarySearch(int[] arr, int key) {
+          int low = 0, high = arr.length - 1;
+          while (low <= high) {
+              int mid = (low + high) / 2;
+              if (arr[mid] == key)
+                  return mid;
+              else if (arr[mid] < key)
+                  low = mid + 1;
+              else
+                  high = mid - 1;
+          }
+          return -1;
+      }
+      ```
+
+    correct_options:
+      - arr[low] ≤ key ≤ arr[high] or key is not in arr
+    wrong_options:
+      - arr[low] < key < arr[high]
+      - arr[low] ≤ key ≤ arr[high]
+      - arr[low] < key < arr[high] or key is not in arr
+      - arr[low] ≥ key ≥ arr[high] or key is not in arr
+      - key ≤ arr[low] or key ≥ arr[high] or key is not in arr
+    explanation: |
+      - The binary search algorithm maintains the condition that the target value must lie between `arr[low]` and `arr[high]` if it's within the array, or the search ends when `low` exceeds `high`.
+      - arr[low] < key < arr[high]: This is not true because the target can also be at the boundaries of the current search range.
+      - arr[low] ≤ key ≤ arr[high]: This is correct but does not fully capture the case where the search terminates if the target is absent.
+      - arr[low] < key < arr[high] or key is not in arr: Inaccurate because the key can be at the boundaries.
+      - arr[low] ≥ key ≥ arr[high] or key is not in arr: Incorrect as binary search assumes ascending order.
+      - key ≤ arr[low] or key ≥ arr[high] or key is not in arr: This is not a valid statement for binary search.
+  - question: |
+      Consider a class that implements a binary search on an integer array, which is guaranteed to be sorted in ascending order. The method signature is as follows:
+
+      ```java
+      public int binarySearch(int[] arr, int key) {
+          int left = 0, right = arr.length - 1;
+          while (left <= right) {
+              int mid = (left + right) / 2;
+              if (arr[mid] == key)
+                  return mid;
+              else if (arr[mid] < key)
+                  left = mid + 1;
+              else
+                  right = mid - 1;
+          }
+          return -1;
+      }
+      ```
+
+      What is the time complexity of this binary search algorithm?
+    correct_options:
+      - O(log n)
+    wrong_options:
+      - O(n)
+      - O(n log n)
+      - O(log n) for worst-case
+      - O(1)
+    explanation: |
+      - The binary search algorithm halves the search space with each iteration, making its time complexity logarithmic, or O(log n).
+      - O(n): Incorrect because binary search cuts the search space in half at each step.
+      - O(n log n): This is not the time complexity of binary search; that would be typical of sorting algorithms like merge sort.
+      - O(log n) for worst-case: Binary search has a time complexity of O(log n) in both best and worst cases, so it's not specifically limited to the worst case.
+      - O(1): Incorrect because binary search doesn't directly find the solution in constant time.
+
+  - question: |
+      A programmer writes a method to search for a target number in a sorted array using binary search. What could happen if the array is not sorted?
+
+    correct_options:
+      - The search will not work correctly, and the result may be unpredictable.
+    wrong_options:
+      - The algorithm will still work but might take longer.
+      - The algorithm will return the target’s index correctly even if the array is unsorted.
+      - The algorithm will sort the array automatically before searching.
+      - The algorithm will crash.
+    explanation: |
+      - Binary search assumes that the array is sorted, and without this assumption, the search results may be incorrect or unpredictable.
+      - The algorithm will still work but might take longer: Binary search requires a sorted array; it won't work as expected on unsorted data.
+      - The algorithm will return the target’s index correctly: This is false because binary search depends on sorted order.
+      - The algorithm will sort the array automatically: This is incorrect. Binary search does not include sorting; it expects the data to be pre-sorted.
+      - The algorithm will crash: The algorithm doesn't crash; it will return incorrect results or fail to find the target.
+
+  - question: |
+      What is the correct return value of a binary search algorithm if the target element is not found in a sorted array?
+
+      ```java
+      public int binarySearch(int[] arr, int key) {
+          int left = 0, right = arr.length - 1;
+          while (left <= right) {
+              int mid = (left + right) / 2;
+              if (arr[mid] == key)
+                  return mid;
+              else if (arr[mid] < key)
+                  left = mid + 1;
+              else
+                  right = mid - 1;
+          }
+          return -1;
+      }
+      ```
+    correct_options:
+      - -1
+    wrong_options:
+      - 0
+      - arr.length - 1
+      - null
+      - mid
+    explanation: |
+      - The correct return value is -1, which indicates that the target was not found in the array.
+      - 0: Incorrect, this would imply the target is always found at index 0.
+      - arr.length - 1: This is incorrect because it’s the last index and doesn't indicate a missed search result.
+      - null: Binary search returns an index, not `null` unless working with an object array (but not the case here).
+      - mid: Incorrect, as `mid` is a temporary variable and not the return value for a failed search.
+
+  - question: |
+      What will be the result if a binary search algorithm is applied to an array with duplicate values, and the target value appears multiple times?
+
+      ```java
+      public int binarySearch(int[] arr, int key) {
+          int left = 0, right = arr.length - 1;
+          while (left <= right) {
+              int mid = (left + right) / 2;
+              if (arr[mid] == key)
+                  return mid;
+              else if (arr[mid] < key)
+                  left = mid + 1;
+              else
+                  right = mid - 1;
+          }
+          return -1;
+      }
+      ```
+    correct_options:
+      - The algorithm will return the index of one occurrence of the target value, but not necessarily the first or last occurrence.
+    wrong_options:
+      - The algorithm will return all occurrences of the target value.
+      - The algorithm will return the first occurrence of the target value.
+      - The algorithm will return the last occurrence of the target value.
+      - The algorithm will fail to find any occurrence of the target value.
+    explanation: |
+      - The binary search will return one occurrence of the target value, but it is not guaranteed to be the first or last occurrence.
+      - The algorithm will return all occurrences: Binary search finds only one index where the value is located.
+      - The algorithm will return the first occurrence: Binary search does not guarantee finding the first occurrence, especially if duplicates are present.
+      - The algorithm will return the last occurrence: Similarly, binary search doesn't guarantee the last occurrence.
+      - The algorithm will fail to find any occurrence: Binary search will find one occurrence if the target is present.
+
+  - question: |
+      A binary search algorithm is being used to search for a target value. What is the primary reason for using binary search over linear search in a sorted array?
+
+    correct_options:
+      - Binary search is much faster, with a time complexity of O(log n), compared to the O(n) time complexity of linear search.
+    wrong_options:
+      - Binary search works on unsorted arrays, while linear search only works on sorted arrays.
+      - Binary search is guaranteed to find the target value, while linear search may fail.
+      - Binary search does not require any additional memory, while linear search does.
+      - Binary search performs fewer comparisons than linear search in all cases.
+    explanation: |
+      - Binary search efficiently reduces the search space by half with each iteration, resulting in a much faster search time of O(log n) in a sorted array.
+      - Binary search works on unsorted arrays: This is false because binary search requires the array to be sorted.
+      - Binary search is guaranteed to find the target: Binary search may not find the target if it's not in the array, unlike linear search which checks every element.
+      - Binary search does not require additional memory: Both binary search and linear search can be implemented with constant extra memory (O(1)).
+      - Binary search performs fewer comparisons: While binary search is faster, it doesn’t always perform fewer comparisons in every case, especially with small datasets.
+  - question: |
+      A teacher writes the following class to represent a deck of flashcards, but encounters a `NullPointerException` when trying to add cards.
+
+      ```java
+      public class FlashcardDeck {
+          private ArrayList<String> cards;
+
+          public FlashcardDeck() {
+              fillDeck();
+          }
+
+          private void fillDeck() {
+              cards.add("Question 1");
+              cards.add("Question 2");
+          }
+      }
+      ```
+
+      What is the cause of the `NullPointerException`?
+    correct_options:
+      - The `cards` list was never initialized with `new ArrayList<>()` before calling `add()`.
+    wrong_options:
+      - The constructor should not call another method.
+      - The method `fillDeck` must be declared `static`.
+      - The string values must be declared as new objects using `new String()`.
+      - The `cards` list should be declared `public` instead of `private`.
+    explanation: |
+      - Since `cards` is never assigned a new ArrayList object, calling `add()` on it results in a `NullPointerException`.
+      - The constructor can call methods; this is legal in Java.
+      - `fillDeck` doesn’t need to be static—it’s being used from an instance context.
+      - Java automatically creates new string literals; no need to use `new String()`.
+      - Visibility modifiers like `private` or `public` don’t affect runtime null errors.
+
+  - question: |
+      A student builds a `GameBoard` class but sees a `NullPointerException` during gameplay:
+
+      ```java
+      public class GameBoard {
+          private String[][] board;
+
+          public GameBoard(int size) {
+              board = new String[size][];
+              for (int i = 0; i < size; i++) {
+                  board[i][0] = "-";
+              }
+          }
+      }
+      ```
+
+      What is the most likely cause of the `NullPointerException`?
+    correct_options:
+      - The inner arrays were not initialized, so `board[i]` is null when trying to assign a value.
+    wrong_options:
+      - The array must be a 1D array to be initialized properly.
+      - The index `0` is out of bounds during the loop.
+      - Java does not allow arrays of arrays.
+      - The constructor needs a return type to work.
+    explanation: |
+      - `board[i]` is null until explicitly initialized (e.g., `board[i] = new String[length]`), so accessing index 0 throws a `NullPointerException`.
+      - A 2D array is valid here; the issue is with the inner array initialization.
+      - Index 0 is valid; the outer array has the specified size.
+      - Java allows arrays of arrays (2D arrays).
+      - Constructors do not have return types in Java.
+
+  - question: |
+      Examine the following incomplete constructor:
+
+      ```java
+      public class Playlist {
+          private ArrayList<String> songs;
+
+          public Playlist(String[] titles) {
+              for (String title : titles) {
+                  songs.add(title);
+              }
+          }
+      }
+      ```
+
+      A `NullPointerException` occurs when creating a new `Playlist`. Why?
+    correct_options:
+      - The `songs` list was never initialized before calling `add`.
+    wrong_options:
+      - |
+        `titles` must be an `ArrayList`, not an array.
+      - |
+        `add` cannot be used inside a constructor.
+      - The `Playlist` class should implement the `List` interface.
+      - Strings cannot be added to an `ArrayList<String>`.
+    explanation: |
+      - `songs` is declared but not initialized, so attempting to use `add()` on a null object causes the error.
+      - Arrays like `String[]` can be iterated in enhanced for-loops.
+      - `add()` is valid in constructors when used correctly.
+      - The class does not need to implement `List` to hold an `ArrayList`.
+      - `ArrayList<String>` is designed to store Strings, so this is not the issue.
+
+  - question: |
+      A class is supposed to store quiz scores but throws a `NullPointerException` when running:
+
+      ```java
+      public class QuizTracker {
+          private ArrayList<Double> scores;
+
+          public void addScore(double s) {
+              scores.add(s);
+          }
+      }
+      ```
+
+      Which of the following best explains the error?
+    correct_options:
+      - The `scores` list was never initialized with `new ArrayList<Double>()`.
+    wrong_options:
+      - A method cannot be called on a private variable.
+      - Primitive types like double cannot be added to lists.
+      - The parameter `s` must be cast to a Double first.
+      - The constructor was declared but never used.
+    explanation: |
+      - `scores` is null because it lacks initialization, so `add()` fails with a `NullPointerException`.
+      - Java allows method calls on private instance variables within the class.
+      - `double` can be autoboxed to `Double` when added to a list.
+      - Java auto-converts `double` to `Double` with no need to cast.
+      - The class has no constructor; the error is due to lack of initialization, not constructor usage.
+
+  - question: |
+      Why might the following code throw a `NullPointerException` when `reset()` is called?
+
+      ```java
+      public class Inventory {
+          private ArrayList<String> items;
+
+          public void reset() {
+              items.clear();
+          }
+      }
+      ```
+
+      Assume the programmer forgot to initialize `items` elsewhere in the class.
+    correct_options:
+      - The list `items` is null because it was never assigned a new `ArrayList` before calling `clear()`.
+    wrong_options:
+      - The `clear()` method is not supported for string-based lists.
+      - |
+        `reset()` must be declared `static` to work.
+      - |
+        `items` should have been an array, not a list.
+      - The `Inventory` class must implement `Serializable`.
+    explanation: |
+      - Calling `clear()` on a null reference causes a `NullPointerException` since `items` hasn’t been initialized.
+      - `clear()` works for any initialized `ArrayList`, including those of Strings.
+      - `reset()` does not need to be static; this has no bearing on the error.
+      - Lists are appropriate here; arrays are not required.
+      - Implementing `Serializable` is irrelevant for list manipulation.
+  - question: |
+      A sorted array contains 16 elements, indexed from 0 to 15.  
+      A binary search is used to find the value 77.  
+      At each iteration, the search checks the middle of the remaining portion of the array.  
+      Assuming the value exists and is at index 14, how many comparisons will be made before it is found?
+    correct_options:
+      - 4
+    wrong_options:
+      - 3
+      - 5
+      - 2
+    explanation: |
+      - Binary search reduces the search range by half each time. The path to index 14 involves comparisons at midpoints 7, 11, 13, and finally 14 (4 comparisons).
+      - 3 is too few to reach index 14.
+      - 5 is more than necessary.
+      - 2 would only reach about index 11 or 12 in this scenario.
+
+  - question: |
+      Suppose a binary search algorithm is applied to a sorted array of 31 elements.  
+      What is the maximum number of iterations the `while` loop can perform in the worst case?
+    correct_options:
+      - 5
+    wrong_options:
+      - 4
+      - 6
+      - 31
+    explanation: |
+      - The worst-case number of comparisons in binary search is ⌊log₂(n)⌋ + 1. For 31 elements: ⌊log₂(31)⌋ + 1 = 4 + 1 = 5.
+      - 4 is one less than the maximum; not worst case.
+      - 6 would be correct for arrays larger than 31 (e.g., 63).
+      - 31 is linear search behavior, not binary search.
+
+  - question: |
+      Consider the following code:
+
+      ```java
+      int[] a = {3, 9, 12, 18, 22, 27, 30, 33, 37};
+      ```
+
+      Using binary search to find the value 22, what is the sequence of middle indices checked?
+    correct_options:
+      - 4, 1, 2
+    wrong_options:
+      - 4, 5
+      - 0, 4, 2
+      - 4, 3
+    explanation: |
+      - First midpoint: (0+8)/2 = 4 (a[4] = 22 → match, return immediately).
+      - 4, 5: would happen only if a[4] ≠ 22 and value is greater.
+      - 0, 4, 2: 0 would never be midpoint of full range; logic error.
+      - 4, 3: unnecessary, as 22 is found at index 4 immediately.
+
+  - question: |
+      Which of the following conditions guarantees that the binary search algorithm will terminate in all cases?
+    correct_options:
+      - The search range is reduced by adjusting either `first` or `last` on each iteration.
+    wrong_options:
+      - The key is guaranteed to be in the array.
+      - The array size is a power of 2.
+      - The loop runs a fixed number of times.
+    explanation: |
+      - Binary search will terminate if the range is reduced every time, eventually causing `first > last`.
+      - Key presence doesn’t prevent infinite loops; logic is what matters.
+      - Powers of 2 affect balance, not termination.
+      - Binary search doesn’t use a fixed iteration count; it's dynamic.
+
+  - question: |
+      A student mistakenly rewrites binary search with this loop condition:
+
+      ```java
+      while (first < last)
+      ```
+
+      Instead of the original condition:
+
+      ```java
+      while (first <= last)
+      ```
+
+      What is a likely result of this change?
+    correct_options:
+      - The method may fail to find a key located at the final possible index.
+    wrong_options:
+      - The loop will enter an infinite cycle.
+      - The search will always return -1, even if the key exists.
+      - The method becomes linear rather than logarithmic.
+    explanation: |
+      - Changing `<=` to `<` means the final element will never be considered, possibly missing valid keys at that position.
+      - It won’t loop infinitely; it still progresses.
+      - It won’t always return -1, only in edge cases.
+      - The loop logic is still logarithmic, just incomplete.

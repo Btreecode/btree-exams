@@ -1,346 +1,346 @@
 questions:
-- question: |
-    Which of the following will execute **without** throwing an exception?
+  - question: |
+      Which of the following will execute **without** throwing an exception?
 
-    **I.**
-    ```java
-    String s = null;
-    String t = "";
-    if (s.equals(t))
-        System.out.println("empty strings?");
-    ```
+      **I.**
+      ```java
+      String s = null;
+      String t = "";
+      if (s.equals(t))
+          System.out.println("empty strings?");
+      ```
 
-    **II.**
-    ```java
-    String s = "holy";
-    String t = "moly";
-    if (s.equals(t))
-        System.out.println("holy moly");
-    ```
+      **II.**
+      ```java
+      String s = "holy";
+      String t = "moly";
+      if (s.equals(t))
+          System.out.println("holy moly");
+      ```
 
-    **III.**
-    ```java
-    String s = "holy";
-    String t = s.substring(4);
-    System.out.println(s + t);
-    ```
+      **III.**
+      ```java
+      String s = "holy";
+      String t = s.substring(4);
+      System.out.println(s + t);
+      ```
 
-  correct_options:
-  - II and III only
-  wrong_options:
-  - I only
-  - II only
-  - III only
-  - I and II only
-  - I and III only
-  explanation: |
-    - I throws a NullPointerException because `s` is `null`.
-    - In II, the strings are not equal, so no exception occurs.
-    - In III, the substring method works fine because "s" has a length greater than or equal to 4.
+    correct_options:
+      - II and III only
+    wrong_options:
+      - I only
+      - II only
+      - III only
+      - I and II only
+      - I and III only
+    explanation: |
+      - I throws a NullPointerException because `s` is `null`.
+      - In II, the strings are not equal, so no exception occurs.
+      - In III, the substring method works fine because "s" has a length greater than or equal to 4.
 
-- question: |
-    Which of the following will execute **without** throwing an exception?
+  - question: |
+      Which of the following will execute **without** throwing an exception?
 
-    **I.**
-    ```java
-    String s = "apple";
-    String t = null;
-    if (s.equals(t))
-        System.out.println("empty string?");
-    ```
+      **I.**
+      ```java
+      String s = "apple";
+      String t = null;
+      if (s.equals(t))
+          System.out.println("empty string?");
+      ```
 
-    **II.**
-    ```java
-    String s = "car";
-    String t = "bike";
-    if (s.equals(t))
-        System.out.println("same vehicles");
-    ```
+      **II.**
+      ```java
+      String s = "car";
+      String t = "bike";
+      if (s.equals(t))
+          System.out.println("same vehicles");
+      ```
 
-    **III.**
-    ```java
-    String s = "hello";
-    String t = s.substring(2);
-    System.out.println(s + t);
-    ```
+      **III.**
+      ```java
+      String s = "hello";
+      String t = s.substring(2);
+      System.out.println(s + t);
+      ```
 
-  correct_options:
-  - II and III only
-  wrong_options:
-  - I only
-  - II only
-  - III only
-  - I and II only
-  - I and III only
-  explanation: |
-    - I throws a NullPointerException because `t` is null.
-    - II does not throw an exception, although it won't print anything.
-    - III works fine, `substring(2)` results in "llo" and prints "hellollo".
+    correct_options:
+      - II and III only
+    wrong_options:
+      - I only
+      - II only
+      - III only
+      - I and II only
+      - I and III only
+    explanation: |
+      - I throws a NullPointerException because `t` is null.
+      - II does not throw an exception, although it won't print anything.
+      - III works fine, `substring(2)` results in "llo" and prints "hellollo".
 
-- question: |
-    Which of the following will execute **without** throwing an exception?
+  - question: |
+      Which of the following will execute **without** throwing an exception?
 
-    **I.**
-    ```java
-    String s = "cat";
-    String t = null;
-    if (s.equals(t))
-        System.out.println("same string?");
-    ```
+      **I.**
+      ```java
+      String s = "cat";
+      String t = null;
+      if (s.equals(t))
+          System.out.println("same string?");
+      ```
 
-    **II.**
-    ```java
-    String s = "dog";
-    String t = "dog";
-    if (s.equals(t))
-        System.out.println("same dog");
-    ```
+      **II.**
+      ```java
+      String s = "dog";
+      String t = "dog";
+      if (s.equals(t))
+          System.out.println("same dog");
+      ```
 
-    **III.**
-    ```java
-    String s = "run";
-    String t = s.substring(3);
-    System.out.println(s + t);
-    ```
+      **III.**
+      ```java
+      String s = "run";
+      String t = s.substring(3);
+      System.out.println(s + t);
+      ```
 
-  correct_options:
-  - II only
-  wrong_options:
-  - I only
-  - II and III only
-  - III only
-  - I and III only
-  - I and II only
-  explanation: |
-    - I throws a NullPointerException because `t` is null.
-    - II works as expected because both strings are equal and no exception is thrown.
-    - III throws a StringIndexOutOfBoundsException as the substring method exceeds the string's bounds.
+    correct_options:
+      - II only
+    wrong_options:
+      - I only
+      - II and III only
+      - III only
+      - I and III only
+      - I and II only
+    explanation: |
+      - I throws a NullPointerException because `t` is null.
+      - II works as expected because both strings are equal and no exception is thrown.
+      - III throws a StringIndexOutOfBoundsException as the substring method exceeds the string's bounds.
 
-- question: |
-    Which of the following will execute **without** throwing an exception?
+  - question: |
+      Which of the following will execute **without** throwing an exception?
 
-    **I.**
-    ```java
-    String s = null;
-    String t = "empty";
-    if (s.equals(t))
-        System.out.println("strings are equal");
-    ```
+      **I.**
+      ```java
+      String s = null;
+      String t = "empty";
+      if (s.equals(t))
+          System.out.println("strings are equal");
+      ```
 
-    **II.**
-    ```java
-    String s = "water";
-    String t = "water";
-    if (s.equals(t))
-        System.out.println("liquid");
-    ```
+      **II.**
+      ```java
+      String s = "water";
+      String t = "water";
+      if (s.equals(t))
+          System.out.println("liquid");
+      ```
 
-    **III.**
-    ```java
-    String s = "moon";
-    String t = s.substring(3);
-    System.out.println(s + t);
-    ```
+      **III.**
+      ```java
+      String s = "moon";
+      String t = s.substring(3);
+      System.out.println(s + t);
+      ```
 
-  correct_options:
-  - II and III only
-  wrong_options:
-  - I only
-  - II only
-  - III only
-  - I and II only
-  - I and III only
-  explanation:
-  - I throws a NullPointerException because `s` is null.
-  - II compares two equal strings without issue.
-  - III uses substring(3) on a string of length 4, which is valid and results in "moonon".
+    correct_options:
+      - II and III only
+    wrong_options:
+      - I only
+      - II only
+      - III only
+      - I and II only
+      - I and III only
+    explanation:
+      - I throws a NullPointerException because `s` is null.
+      - II compares two equal strings without issue.
+      - III uses substring(3) on a string of length 4, which is valid and results in "moonon".
 
-- question: |
-    Which of the following will execute **without** throwing an exception?
+  - question: |
+      Which of the following will execute **without** throwing an exception?
 
-    **I.**
-    ```java
-    String s = null;
-    String t = "text";
-    if (s.equals(t))
-        System.out.println("string found");
-    ```
+      **I.**
+      ```java
+      String s = null;
+      String t = "text";
+      if (s.equals(t))
+          System.out.println("string found");
+      ```
 
-    **II.**
-    ```java
-    String s = "java";
-    String t = "java";
-    if (s.equals(t))
-        System.out.println("language");
-    ```
+      **II.**
+      ```java
+      String s = "java";
+      String t = "java";
+      if (s.equals(t))
+          System.out.println("language");
+      ```
 
-    **III.**
-    ```java
-    String s = "java";
-    String t = s.substring(4);
-    System.out.println(s + t);
-    ```
+      **III.**
+      ```java
+      String s = "java";
+      String t = s.substring(4);
+      System.out.println(s + t);
+      ```
 
-  correct_options:
-  - II only
-  wrong_options:
-  - I only
-  - II and III only
-  - III only
-  - I and II only
-  - I and III only
-  explanation: |
-    - I throws a NullPointerException because `s` is null.
-    - II executes successfully because the strings are equal.
-    - III throws a StringIndexOutOfBoundsException as the `substring` method tries to extract beyond the end of the string.
+    correct_options:
+      - II only
+    wrong_options:
+      - I only
+      - II and III only
+      - III only
+      - I and II only
+      - I and III only
+    explanation: |
+      - I throws a NullPointerException because `s` is null.
+      - II executes successfully because the strings are equal.
+      - III throws a StringIndexOutOfBoundsException as the `substring` method tries to extract beyond the end of the string.
 
-- question: |
-    You have a method `insertWord` that takes two strings and an integer parameter `pos`. The method inserts the second string at the position specified by `pos` in the first string. For example, if `str1` is `"I am learning"` and `str2` is `"Java"`, then:
-    ```java
-    insertWord(str1, str2, 0)  returns JavaI am learning  
-    insertWord(str1, str2, 2)  returns IJaam learning  
-    insertWord(str1, str2, 5)  returns I am Javalearning  
-    ```
-    The method `insertWord` is defined as:
-    ```java
-    public static String insertWord(String str1, String str2, int pos)
-    {
-        String first, last;
-        /* more code */
-        return first + str2 + last;
-    }
-    ```
-    Which of the following correctly replaces `/* more code */`?
-  correct_options:
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos);
-  wrong_options:
-  - |
-    first = str1.substring(0, pos - 1);  
-    last = str1.substring(pos);
-  - |
-    first = str1.substring(0, pos + 1);  
-    last = str1.substring(pos + 1);
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos + 1);
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos, str1.length() + 1);
-  explanation: |
-    - The method properly divides `str1` into two parts at `pos`, allowing for the insertion of `str2`.
-    - The other options involve incorrect substring indices, causing errors or unexpected output.
-- question: |
-    In the following code, the `combineStrings` method is designed to combine two strings by inserting the second string at a specified position in the first string. For example, if `str1` is `"hello"` and `str2` is `"world"`, then:
-    ```java
-    combineStrings(str1, str2, 0)  returns worldhello  
-    combineStrings(str1, str2, 2)  returns heworldllo  
-    combineStrings(str1, str2, 5)  returns helloworld  
-    ```
-    The `combineStrings` method is as follows:
-    ```java
-    public static String combineStrings(String str1, String str2, int pos)
-    {
-        String first, last;
-        /* more code */
-        return first + str2 + last;
-    }
-    ```
-    Which code correctly completes the method?
-  correct_options:
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos);
-  wrong_options:
-  - |
-    first = str1.substring(0, pos - 1);  
-    last = str1.substring(pos);
-  - |
-    first = str1.substring(0, pos + 1);  
-    last = str1.substring(pos + 1);
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos + 1);
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos, str1.length() + 1);
-  explanation: |
-    - The substring approach divides `str1` into two parts: the beginning before `pos` and the part after `pos`, so the second string can be inserted between.
-    - The wrong options all involve incorrect indices, leading to either out-of-bounds errors or incorrect results.
+  - question: |
+      You have a method `insertWord` that takes two strings and an integer parameter `pos`. The method inserts the second string at the position specified by `pos` in the first string. For example, if `str1` is `"I am learning"` and `str2` is `"Java"`, then:
+      ```java
+      insertWord(str1, str2, 0)  returns JavaI am learning  
+      insertWord(str1, str2, 2)  returns IJaam learning  
+      insertWord(str1, str2, 5)  returns I am Javalearning  
+      ```
+      The method `insertWord` is defined as:
+      ```java
+      public static String insertWord(String str1, String str2, int pos)
+      {
+          String first, last;
+          /* more code */
+          return first + str2 + last;
+      }
+      ```
+      Which of the following correctly replaces `/* more code */`?
+    correct_options:
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos);
+    wrong_options:
+      - |
+        first = str1.substring(0, pos - 1);  
+        last = str1.substring(pos);
+      - |
+        first = str1.substring(0, pos + 1);  
+        last = str1.substring(pos + 1);
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos + 1);
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos, str1.length() + 1);
+    explanation: |
+      - The method properly divides `str1` into two parts at `pos`, allowing for the insertion of `str2`.
+      - The other options involve incorrect substring indices, causing errors or unexpected output.
+  - question: |
+      In the following code, the `combineStrings` method is designed to combine two strings by inserting the second string at a specified position in the first string. For example, if `str1` is `"hello"` and `str2` is `"world"`, then:
+      ```java
+      combineStrings(str1, str2, 0)  returns worldhello  
+      combineStrings(str1, str2, 2)  returns heworldllo  
+      combineStrings(str1, str2, 5)  returns helloworld  
+      ```
+      The `combineStrings` method is as follows:
+      ```java
+      public static String combineStrings(String str1, String str2, int pos)
+      {
+          String first, last;
+          /* more code */
+          return first + str2 + last;
+      }
+      ```
+      Which code correctly completes the method?
+    correct_options:
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos);
+    wrong_options:
+      - |
+        first = str1.substring(0, pos - 1);  
+        last = str1.substring(pos);
+      - |
+        first = str1.substring(0, pos + 1);  
+        last = str1.substring(pos + 1);
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos + 1);
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos, str1.length() + 1);
+    explanation: |
+      - The substring approach divides `str1` into two parts: the beginning before `pos` and the part after `pos`, so the second string can be inserted between.
+      - The wrong options all involve incorrect indices, leading to either out-of-bounds errors or incorrect results.
 
-- question: |
-    The `insertAtPosition` method below inserts a string `str2` into `str1` at the position `pos`. For example, if `str1` is `"apple"` and `str2` is `"pie"`, then:
-    ```java
-    insertAtPosition(str1, str2, 0)  returns pieapple  
-    insertAtPosition(str1, str2, 3)  returns apiplee  
-    insertAtPosition(str1, str2, 5)  returns applepie  
-    ```
-    The `insertAtPosition` method is written as follows:
-    ```java
-    public static String insertAtPosition(String str1, String str2, int pos)
-    {
-        String first, last;
-        /* more code */
-        return first + str2 + last;
-    }
-    ```
-    Which of the following replaces `/* more code */` correctly?
-  correct_options:
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos);
-  wrong_options:
-  - |
-    first = str1.substring(0, pos - 1);  
-    last = str1.substring(pos);
-  - |
-    first = str1.substring(0, pos + 1);  
-    last = str1.substring(pos + 1);
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos + 1);
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos, str1.length() + 1);
-  explanation: |
-    - The code uses proper substring indices to break the first string into two parts and insert the second string at the correct position.
-    - Incorrect substring indices or out-of-bounds accesses lead to errors or unexpected results.
+  - question: |
+      The `insertAtPosition` method below inserts a string `str2` into `str1` at the position `pos`. For example, if `str1` is `"apple"` and `str2` is `"pie"`, then:
+      ```java
+      insertAtPosition(str1, str2, 0)  returns pieapple  
+      insertAtPosition(str1, str2, 3)  returns apiplee  
+      insertAtPosition(str1, str2, 5)  returns applepie  
+      ```
+      The `insertAtPosition` method is written as follows:
+      ```java
+      public static String insertAtPosition(String str1, String str2, int pos)
+      {
+          String first, last;
+          /* more code */
+          return first + str2 + last;
+      }
+      ```
+      Which of the following replaces `/* more code */` correctly?
+    correct_options:
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos);
+    wrong_options:
+      - |
+        first = str1.substring(0, pos - 1);  
+        last = str1.substring(pos);
+      - |
+        first = str1.substring(0, pos + 1);  
+        last = str1.substring(pos + 1);
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos + 1);
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos, str1.length() + 1);
+    explanation: |
+      - The code uses proper substring indices to break the first string into two parts and insert the second string at the correct position.
+      - Incorrect substring indices or out-of-bounds accesses lead to errors or unexpected results.
 
-- question: |
-    Given the method `insertText`, which inserts the second string `str2` into `str1` at a given position `pos`, what would be the result if `str1` is `"this is"` and `str2` is `"awesome"`? For example:
-    ```java
-    insertText(str1, str2, 0)  returns awesomethis is  
-    insertText(str1, str2, 4)  returns thisawesome is  
-    insertText(str1, str2, 7)  returns this isawesome  
-    ```
-    The `insertText` method is defined as:
-    ```java
-    public static String insertText(String str1, String str2, int pos)
-    {
-        String first, last;
-        /* more code */
-        return first + str2 + last;
-    }
-    ```
-    Which code correctly completes the method?
-  correct_options:
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos);
-  wrong_options:
-  - |
-    first = str1.substring(0, pos - 1);  
-    last = str1.substring(pos);
-  - |
-    first = str1.substring(0, pos + 1);  
-    last = str1.substring(pos + 1);
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos + 1);
-  - |
-    first = str1.substring(0, pos);  
-    last = str1.substring(pos, str1.length() + 1);
-  explanation: |
-    - The method works by splitting `str1` at the given position `pos` and inserting `str2` between the two substrings.
-    - The incorrect options involve faulty substring indices or invalid range values leading to unexpected behavior or errors.
+  - question: |
+      Given the method `insertText`, which inserts the second string `str2` into `str1` at a given position `pos`, what would be the result if `str1` is `"this is"` and `str2` is `"awesome"`? For example:
+      ```java
+      insertText(str1, str2, 0)  returns awesomethis is  
+      insertText(str1, str2, 4)  returns thisawesome is  
+      insertText(str1, str2, 7)  returns this isawesome  
+      ```
+      The `insertText` method is defined as:
+      ```java
+      public static String insertText(String str1, String str2, int pos)
+      {
+          String first, last;
+          /* more code */
+          return first + str2 + last;
+      }
+      ```
+      Which code correctly completes the method?
+    correct_options:
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos);
+    wrong_options:
+      - |
+        first = str1.substring(0, pos - 1);  
+        last = str1.substring(pos);
+      - |
+        first = str1.substring(0, pos + 1);  
+        last = str1.substring(pos + 1);
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos + 1);
+      - |
+        first = str1.substring(0, pos);  
+        last = str1.substring(pos, str1.length() + 1);
+    explanation: |
+      - The method works by splitting `str1` at the given position `pos` and inserting `str2` between the two substrings.
+      - The incorrect options involve faulty substring indices or invalid range values leading to unexpected behavior or errors.
