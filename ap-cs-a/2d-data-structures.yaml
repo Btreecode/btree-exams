@@ -150,19 +150,19 @@ questions:
         0  0  0  
         0  0  0
     explanation: |
-      1 2 0\n
-      4 5 0\n
-      Correct. The last column of each row is set to 0.\n
-      \n
-      1 0 3\n
-      4 0 6\n
-      Incorrect. This sets the middle column, not the last.\n
-      \n
-      1 2 3\n
-      4 5 6\n
-      Incorrect. That’s the original matrix; no change shown.\n
-      \n
-      All 0s: Incorrect. The method doesn’t affect all elements—only the last column.\n
+      1 2 0
+      4 5 0
+      Correct. The last column of each row is set to 0.
+
+      1 0 3
+      4 0 6
+      Incorrect. This sets the middle column, not the last.
+
+      1 2 3
+      4 5 6
+      Incorrect. That’s the original matrix; no change shown.
+
+      All 0s: Incorrect. The method doesn’t affect all elements—only the last column.
 
   - question: |
       A matrix is initialized with values:
