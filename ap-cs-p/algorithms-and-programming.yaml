@@ -1,7 +1,7 @@
 questions:
 - question: |
     The following procedure is intended to return the **count** of all odd numbers in a list.
-
+    ```
     PROCEDURE countOdds(numList) {
       count ← 0
       FOR EACH num IN numList {
@@ -11,6 +11,7 @@ questions:
       }
       RETURN (count)
     }
+    ```
 
     Which change will make the procedure work as intended?
   correct_options:
