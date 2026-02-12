@@ -1,275 +1,242 @@
-questions:
+- questions:
   - question: |
-      When switching from IPv4 (32-bit) to IPv6 (128-bit), how many more unique addresses become available?
+      Which of the following is true regarding the role of the **Internet Protocol (IP)**?
     correct_options:
-      - 2^96
+    - It is responsible for providing a unique address to each device on a network so packets can be routed.
     wrong_options:
-      - 96^2
-      - 2 * 96
-      - 128 / 32
+    - It ensures that packets are received in the correct order without any loss.
+    - It is the primary protocol used to translate domain names like "example.com" into numbers.
+    - It encrypts data so that it cannot be read by unauthorized parties during transmission.
     explanation: |
-      - **Correct:** IPv6 has 128 bits vs IPv4’s 32 bits → 2^96 times more addresses.
-      - **Incorrect:** Other options confuse bit arithmetic with basic math.
-
-  - question: |
-      Which of the following best describes the **minimum number of cuts** needed to isolate Node A in the network diagram?
-      ```mermaid
-        flowchart TD
-          A((A))
-          B((B))
-          C((C))
-          D((D))
-          E((E))
-          F((F))
-          A --- B
-          A --- C
-          A --- F
-          B --- D
-          B --- E
-          C --- E
-          F --- E
-          D --- E
-          C --- F
-          B --- C
-      ```
-
-    correct_options:
-      - 3 lines
-    wrong_options:
-      - 1 line
-      - 2 lines
-      - 4 lines
-    explanation: |
-      - **Correct:** A must be fully disconnected from all direct neighbors, which requires 3 cuts.
-      - **Incorrect:** Fewer cuts would leave paths open; more is unnecessary.
+      - IP (Internet Protocol) focuses on addressing and routing; it does not guarantee delivery or order (that is TCP's job).
 
   - question: |
-      In a **centralized** internet system, what is the minimum number of nodes needed to disable the entire system?
+      A user is downloading a large file. The file is broken into many small packets that travel through different paths across the Internet. Which protocol is responsible for reassembling these packets into the original file and requesting the retransmission of any missing packets?
     correct_options:
-      - 1
+    - TCP (Transmission Control Protocol)
     wrong_options:
-      - 7
-      - 1000
-      - All nodes
+    - IP (Internet Protocol)
+    - DNS (Domain Name System)
+    - HTTP (Hypertext Travel Protocol)
     explanation: |
-      - **Correct:** Centralized systems depend on one hub — destroying it disables the system.
-      - **Incorrect:** Distributed systems are resilient, but centralized systems are not.
-  - question: |
-      A computer performs the following 3 tasks using **one CPU**:
-
-      | Task   | Time (s) |
-      |--------|----------|
-      | Task A | 8        |
-      | Task B | 2        |
-      | Task C | 6        |
-
-      What is the **minimum time** required to complete all three tasks?
-
-    correct_options:
-      - 16 seconds
-    wrong_options:
-      - 6 seconds
-      - 8 seconds
-      - 10 seconds
-      - 14 seconds
-    explanation: |
-      - **Correct:** With one CPU, tasks must run in sequence → total = 8 + 2 + 6 = 16.
-      - **Incorrect:** Other options assume parallelism or omit one task.
+      - TCP handles the reliability, sequencing, and error-checking of data transmission.
 
   - question: |
-      What are the main **benefits** of redundancy in internet infrastructure?
-
-      Select **two** correct answers.
+      Which protocol is primarily used by a browser to request and receive the HTML, images, and other resources that make up a web page?
     correct_options:
-      - Increases fault tolerance
-      - Maintains connectivity when paths fail
+    - HTTP (Hypertext Transfer Protocol)
     wrong_options:
-      - Increases packet loss to reduce bandwidth
-      - Eliminates the need for IP addresses
-      - Allows devices to operate without power
-      - Replaces the need for ISPs
+    - TCP (Transmission Control Protocol)
+    - UDP (User Datagram Protocol)
+    - DNS (Domain Name System)
     explanation: |
-      - **Correct:** Redundancy ensures the system keeps working if one route fails.
-      - **Incorrect:** Redundancy doesn’t eliminate core infrastructure.
+      - HTTP is the protocol used specifically for web traffic between a client (browser) and a server.
   - question: |
-      A device on the internet uses **128-bit addressing** and must route a packet to another device.
-
-      Which protocol helps this device determine the path?
-
+      An environmental scientist uses a computer simulation to study the effects of rising ocean temperatures on coral reefs. Which of the following is a limitation of using a simulation for this purpose?
     correct_options:
-      - IP (Internet Protocol)
+    - The simulation's accuracy is limited by the assumptions and data used to create the model.
     wrong_options:
-      - TCP
-      - DNS
-      - HTML
-      - FTP
-      - CSS
+    - The simulation can only be run once because it consumes too much energy.
+    - The simulation cannot be used to test "what-if" scenarios with different variables.
+    - Using a simulation is more dangerous than conducting the same experiment in the actual ocean.
     explanation: |
-      - **Correct:** IP is responsible for addressing and routing packets.
-      - **Incorrect:** TCP ensures delivery; DNS resolves domains; HTML/CSS/FTP are unrelated.
-  - question: |
-      Which of the following **secure transmission methods** help protect data sent over the internet?
-
-      Select **two** correct answers.
-    correct_options:
-      - Using HTTPS instead of HTTP
-      - Encrypting data before transmission
-    wrong_options:
-      - Compressing the data to reduce file size
-      - Sending the data via email attachments
-      - Using a faster Wi-Fi connection
-      - Disabling JavaScript
-    explanation: |
-      - **Correct:** HTTPS uses SSL/TLS to encrypt; encryption secures data at rest or in transit.
-      - **Incorrect:** Compression or email lacks encryption; faster internet ≠ more secure.
-  - question: |
-      Which of the following protocols are responsible for **accurate and complete delivery** of data?
-
-    correct_options:
-      - TCP
-    wrong_options:
-      - IP
-      - DNS
-      - FTP
-      - HTML
-      - CSS
-    explanation: |
-      - **Correct:** TCP (Transmission Control Protocol) ensures ordered, complete delivery.
-      - **Incorrect:** IP routes; DNS maps names; FTP/HTML/CSS are for content and styling.
+      - Simulations are models of reality; if the underlying mathematical model or initial data is flawed, the results will not match real-world outcomes.
 
   - question: |
-      Which of the following statements about **routing on the internet** are true?
-
-      Select **two** correct answers.
+      A car manufacturer uses a computer simulation to test the safety of a new vehicle design in high-speed crashes. What is the primary advantage of this approach compared to physical crash testing?
     correct_options:
-      - Routers choose paths based on current traffic and availability
-      - Data can take different paths to the same destination
+    - It is safer and less expensive to run thousands of virtual tests than to destroy thousands of physical cars.
     wrong_options:
-      - Routers always use the shortest path
-      - Data packets must travel through only one ISP
-      - All packets in a message follow the same route
-      - Packets must go through a central server
+    - The simulation will provide 100% perfect predictions of how the real car will behave.
+    - The simulation does not require any knowledge of physics or mathematics to set up.
+    - Physical testing is no longer legal in most countries due to environmental concerns.
     explanation: |
-      - **Correct:** Routing is dynamic; redundancy allows different paths.
-      - **Incorrect:** Packets don’t always follow the same path, and routing adapts in real time.
+      - Simulations allow for rapid, cost-effective, and safe iteration during the design phase before moving to expensive physical prototypes.
 
   - question: |
-      DNS (Domain Name System) plays which role in the internet’s communication model?
-
+      Which of the following statements about computer simulations is TRUE?
     correct_options:
-      - Translates human-readable domains to IP addresses
+    - They are often used when real-world experiments are too slow, too expensive, or too dangerous.
     wrong_options:
-      - Encrypts messages before transmission
-      - Checks for packet delivery errors
-      - Tracks user activity
-      - Measures data transmission speed
-      - Blocks unauthorized access
+    - They are always faster than the real-world processes they are modeling.
+    - They never contain bias because they are based on computer code.
+    - They are only used for scientific research and not for business or entertainment.
     explanation: |
-      - **Correct:** DNS resolves domain names like "openai.com" into IP addresses.
-      - **Incorrect:** Other tasks are handled by different components (TCP, firewalls, etc.).
+      - The primary utility of a simulation is its ability to safely and cheaply model scenarios that would be impractical to test in reality.
+  - question: |
+      A sequential computer program takes 80 minutes to process a dataset. A computer scientist develops a parallel version of the program that can run on 4 processors. When tested, the parallel version takes 25 minutes. Which of the following best explains why the program did not achieve a 4x speedup (20 minutes)?
+    correct_options:
+    - Certain parts of the program are sequential and cannot be split among multiple processors.
+    wrong_options:
+    - The processors were not all running at the same clock speed.
+    - Parallel programs are mathematically incapable of running faster than sequential ones.
+    - The dataset was too small for the processors to handle efficiently.
+    explanation: |
+      - Amdahl's Law states that the speedup of a program is limited by the portion of the program that must remain sequential.
 
   - question: |
-      A school installs a firewall that blocks certain IP addresses and restricts traffic to only trusted websites.  
-      What **threat prevention** strategy is this?
-
+      A programmer is deciding whether to use a parallel solution for a data-processing task. In which of the following scenarios is a parallel solution LEAST likely to provide a significant improvement in execution time?
     correct_options:
-      - Network filtering
+    - The task involves a series of steps where each step depends on the output of the previous one.
     wrong_options:
-      - Authentication
-      - Encryption
-      - Key exchange
-      - Routing optimization
-      - Denial of service
+    - The task requires performing the same calculation on millions of independent data points.
+    - The task can be divided into several smaller, independent sub-tasks.
+    - The programmer has access to a multi-core processor or a distributed network of computers.
     explanation: |
-      - **Correct:** Firewalls filter traffic to prevent unauthorized communication.
-      - **Incorrect:** This is not authentication or encryption — it's access control.
+      - If tasks are interdependent (sequential), they cannot be run simultaneously, rendering parallelism ineffective.
 
   - question: |
-      Which of the following are **goals of cybersecurity**?
-
-      Select **three** correct answers.
+      Which of the following is a potential "overhead" cost associated with running a program in parallel?
     correct_options:
-      - Protect confidentiality of data
-      - Ensure data integrity during transmission
-      - Maintain availability of systems and services
+    - The time spent communicating and coordinating data between different processors.
     wrong_options:
-      - Increase the number of devices connected to a network
-      - Guarantee 100% privacy under all conditions
-      - Speed up download times
+    - The cost of upgrading the computer's monitor to display the results.
+    - The requirement that all parallel programs be written in a low-level language like Assembly.
+    - A decrease in the total amount of energy consumed by the hardware.
     explanation: |
-      - **Correct:** Cybersecurity’s goals are often summarized as CIA: Confidentiality, Integrity, Availability.
-      - **Incorrect:** Privacy isn’t absolute; performance is not a primary security goal.
+      - Parallelism requires extra work to split the data, send it to processors, and then recombine the results, which can take time.
   - question: |
-      A hospital's system is hit by ransomware. All patient records become encrypted and inaccessible until a payment is made. The hospital refuses to pay and calls in cybersecurity specialists.
-
-      What are appropriate **initial response steps**?
-
-      Select **two** correct answers.
+      When a user wants to visit a website, they type a human-readable address like `www.example.edu`. Which of the following best describes the role of the **Domain Name System (DNS)** in this process?
     correct_options:
-      - Disconnect affected systems from the network to prevent spread
-      - Investigate backups to determine recovery options
+    - It acts like a phone book, translating the domain name into the numeric IP address needed to locate the server.
     wrong_options:
-      - Pay the ransom immediately
-      - Restart all machines without scanning
-      - Announce publicly that the attack was the IT team's fault
-      - Delete all encrypted files
+    - It encrypts the connection between the user's computer and the website.
+    - It determines the fastest physical path for packets to travel across the network.
+    - It caches the website's images so the page loads faster on future visits.
     explanation: |
-      - **Correct:** Isolation and recovery planning are top priorities.
-      - **Incorrect:** Paying ransoms is discouraged; blaming or deleting data is harmful.
+      - DNS is a distributed database that maps domain names to IP addresses, allowing humans to use names instead of hard-to-remember numbers.
 
   - question: |
-      Which of the following are examples of **ethical concerns in global computing**?
-
-      Select **two** correct answers.
+      If the DNS servers were to go offline globally, what would be the most likely result for an average internet user?
     correct_options:
-      - Surveillance tools sold to countries with poor human rights records
-      - Biased algorithms deployed in hiring systems across cultures
+    - Users would be unable to access websites using their names (e.g., google.com) but could still access them if they knew the specific IP address.
     wrong_options:
-      - Using translation software to build multilingual websites
-      - Lower prices for cloud services in some countries
-      - Designing applications with local time zones
-      - Hosting servers in different regions
+    - All physical internet cables would stop transmitting data.
+    - Web browsers would automatically switch to using local files only.
+    - The internet would remain fully functional because browsers do not actually need IP addresses.
     explanation: |
-      - **Correct:** Cross-border technology can reinforce inequality or surveillance.
-      - **Incorrect:** Localization and pricing aren't inherently unethical.
+      - Without DNS, the "translation" service is gone. The underlying network (IP) still works, but the mapping from names to addresses is unavailable.
+  - question: |
+      A network is designed such that there are at least three different paths between any two routers. If one router fails, data can still be sent through an alternative route. This design feature is known as:
+    correct_options:
+    - Redundancy.
+    wrong_options:
+    - Compression.
+    - Decidability.
+    - Sequential processing.
+    explanation: |
+      - Redundancy is the inclusion of extra components (like additional paths) so that a system can continue to function even if individual parts fail, leading to fault tolerance.
 
   - question: |
-      A company uses predictive analytics to identify students at risk of dropping out. However, the system incorrectly flags certain students due to biased historical data.
-
-      What are the two main ethical concerns?
-
+      Which of the following is a primary reason the Internet is considered "fault-tolerant"?
     correct_options:
-      - The algorithm reinforces existing bias
-      - Students are being evaluated by a system they cannot explain or challenge
+    - It is a decentralized network with many redundant connections between routers.
     wrong_options:
-      - Students don’t have access to free internet
-      - The predictions are kept confidential
-      - The system is faster than human counselors
-      - The school has too many servers
+    - It uses a single, high-speed backbone cable that connects every computer in the world.
+    - All data packets are required to follow the exact same path from source to destination.
+    - It uses a centralized control system that can fix any broken connection instantly.
     explanation: |
-      - **Correct:** Lack of transparency and algorithmic bias raise fairness issues.
-      - **Incorrect:** Speed and infrastructure aren’t the problem here.
+      - Because the Internet is a "network of networks" with multiple paths, it can route around damage or traffic jams, making it highly resilient.
+
   - question: |
-      A computer has two identical processors. Processes 4 and 5 must run sequentially.  
-      Processes 1–3 can run in parallel.
-
-      | Process | Time (s) |
-      |---------|----------|
-      | One     | 3        |
-      | Two     | 2        |
-      | Three   | 5        |
-      | Four    | 4        |
-      | Five    | 4        |
-
-      What is the **minimum time** to complete all processes?
-
+      In a network diagram, what does it mean if the **reliability** of the system increases after adding a new connection between two existing routers?
     correct_options:
-      - 13 seconds
+    - The system has become more fault-tolerant because there are now more paths for data to travel.
     wrong_options:
-      - 9 seconds
-      - 18 seconds
-      - 7 seconds
-      - 11 seconds
+    - The speed of light inside the cables has increased.
+    - The network no longer requires IP addresses to function.
+    - Every packet is now guaranteed to arrive in less than one millisecond.
     explanation: |
-      - **Correct:** Max(5,3+2) = 5 seconds for P1–3 in parallel; then 4+4 = 8 → total = 13s.
-      - **Incorrect:** Others miscalculate parallel runtime or overlook dependency.
+      - Adding connections increases redundancy. If one path is blocked, the extra path ensures the network remains operational.
+  - question: |
+      Two computers in different cities are communicating over the Internet. A router along the path between them becomes congested with high traffic. How does the Internet handle this situation?
+    correct_options:
+    - Routers can dynamically reroute packets through different paths based on current network conditions.
+    wrong_options:
+    - The sender must manually choose a new path for every packet.
+    - The Internet shuts down that specific connection until the congestion is cleared by a human technician.
+    - All packets are held in a single queue until the congested router is ready to process them.
+    explanation: |
+      - The Internet's routing protocols are dynamic; they constantly evaluate the "best" path and can route packets around congestion or failures.
+
+  - question: |
+      Which statement correctly describes how packets travel from a source to a destination on the Internet?
+    correct_options:
+    - Different packets from the same message may take different routes and arrive out of order.
+    wrong_options:
+    - All packets in a single message are guaranteed to follow the exact same physical route.
+    - Packets are physically moved by a central server that controls all traffic worldwide.
+    - Packets are only allowed to travel through routers owned by the same company as the sender.
+    explanation: |
+      - Because the Internet is decentralized and uses packet switching, each packet is routed independently, which improves efficiency and resilience.
+  - question: |
+      Which of the following statements about the **Internet** is FALSE?
+    correct_options:
+    - The Internet is owned and controlled by a single international organization that sets all rules.
+    wrong_options:
+    - The Internet is a "network of networks" built on open protocols.
+    - Data on the Internet is sent in small chunks called packets.
+    - Protocols like TCP/IP allow different types of hardware to communicate with each other.
+    explanation: |
+      - No single entity owns the Internet. It is a decentralized collection of networks that cooperate using shared protocols (standards).
+  - question: |
+      Select TWO answers.
+      Which of the following are primary benefits of using **cloud computing** for a small business?
+    correct_options:
+    - It allows employees to access files and collaborative tools from any location with an Internet connection.
+    - It enables the business to scale its computing resources (like storage and processing power) up or down based on current needs.
+    wrong_options:
+    - It guarantees that data will never be lost or corrupted, even if the cloud provider's servers fail.
+    - It eliminates the need for any local networking hardware like routers or Wi-Fi access points.
+    explanation: |
+      - Cloud computing provides accessibility and scalability. While reliable, no system is "100% guaranteed" against all failure, and local hardware is still needed to connect to the Internet.
+
+  - question: |
+      Select TWO answers.
+      A company is moving its internal database to a cloud service. Which of the following are potential **security risks** or concerns they should consider?
+    correct_options:
+    - The possibility of unauthorized access if a cloud provider's infrastructure is breached.
+    - Increased reliance on the availability of a stable Internet connection to access critical business data.
+    wrong_options:
+    - Cloud servers are physically located in space, making them susceptible to cosmic radiation.
+    - Moving to the cloud will cause all local computers to become incompatible with the software.
+    explanation: |
+      - Security breaches at the provider level and the "single point of failure" (the Internet connection) are the main risks associated with cloud migration.
+  - question: |
+      The "MedConnect Portal" is a cloud-based innovation that allows patients to share their genetic data, wearable fitness tracker logs, and medical history with specialized AI diagnostic tools. The goal is to provide highly personalized treatment plans and predict potential health risks years in advance. The portal uses public-key encryption to protect data but requires users to opt-in to sharing their "anonymized" data with pharmaceutical researchers.
+
+      The MedConnect Portal uses **public-key encryption**. If a patient wants to upload their records securely so only the hospital's server can read them, what should happen?
+    correct_options:
+    - The patient's app encrypts the data using the hospital's public key.
+    wrong_options:
+    - The hospital sends its private key to the patient's phone.
+    - The patient encrypts the data with their own private key.
+    - The hospital and patient share a single password over an unencrypted email.
+    explanation: |
+      - To ensure only the recipient can read the data, it must be encrypted with the recipient's public key.
+
+  - question: |
+      The "EcoGrid" is a decentralized energy-sharing platform. Homeowners with solar panels can sell their excess electricity directly to their neighbors using a digital ledger. Smart meters track energy production and consumption in real-time. This reduces reliance on large power plants and lowers costs. However, the system's reliance on a continuous internet connection makes it vulnerable to cyberattacks that could disrupt local power.
+
+      Which of the following describes the **fault tolerance** of the EcoGrid compared to a traditional centralized power plant?
+    correct_options:
+    - If one house's solar panels fail, the rest of the neighborhood can still share energy among themselves.
+    wrong_options:
+    - The EcoGrid is impossible to hack because it is decentralized.
+    - The EcoGrid produces more electricity than a nuclear power plant.
+    - If the internet goes down, the EcoGrid can still communicate using binary code.
+    explanation: |
+      - Decentralization often provides fault tolerance; the failure of one "node" (house) doesn't bring down the entire local system.
+
+  - question: |
+      The "EcoGrid" is a decentralized energy-sharing platform. Homeowners with solar panels can sell their excess electricity directly to their neighbors using a digital ledger. Smart meters track energy production and consumption in real-time. This reduces reliance on large power plants and lowers costs. However, the system's reliance on a continuous internet connection makes it vulnerable to cyberattacks that could disrupt local power.
+
+      The EcoGrid uses a "digital ledger" to track transactions. This is an example of:
+    correct_options:
+    - Maintaining data integrity and transparency in a distributed system.
+    wrong_options:
+    - Lossy compression of electricity.
+    - A phishing attack on the power company.
+    - Reducing the digital divide by giving everyone free solar panels.
+    explanation: |
+      - A ledger ensures that all parties agree on who sent what, which is crucial for decentralized trust and data integrity.

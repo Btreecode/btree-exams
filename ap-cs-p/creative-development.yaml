@@ -1,621 +1,75 @@
-questions:
+- questions:
   - question: |
-      Why is it considered good practice to include comments in a program?
-
-      Select **two** correct answers.
+      A programmer is testing a new algorithm but finds it produces the wrong output for negative numbers. Which of the following is the most effective debugging strategy?
     correct_options:
-      - Comments help other programmers understand how a code segment works.
-      - Comments make it easier to maintain and update code over time.
+    - Use print statements to display the value of variables at different stages of the algorithm.
     wrong_options:
-      - Comments make the program run faster.
-      - Comments are executed as part of the program logic.
-      - Comments are required in all programming languages for a program to run.
-      - Comments prevent syntax errors in the program.
+    - Delete the entire code and rewrite it from memory.
+    - Only test the program with positive numbers to ensure it works correctly for those.
+    - Rename all the variables to make the code look more professional.
     explanation: |
-      - **Correct:**
-        - *Comments help other programmers understand how a code segment works*: This is a key reason for using comments — clarity and collaboration.
-        - *Comments make it easier to maintain and update code over time*: Documenting logic and design decisions helps future debugging and refactoring.
-      - **Incorrect:**
-        - *Comments make the program run faster*: False — comments are ignored by the computer during execution and have no effect on speed.
-        - *Comments are executed as part of the program logic*: Incorrect — comments are non-executable and meant for human readers.
-        - *Comments are required in all programming languages for a program to run*: Incorrect — comments are optional and non-functional.
-        - *Comments prevent syntax errors in the program*: False — comments themselves can contain mistakes, but they do not prevent errors in code logic or syntax.
-  - question: |
-      What is the primary benefit of using an iterative development process when creating programs?
-    correct_options:
-      - It allows developers to refine their programs based on feedback and testing.
-    wrong_options:
-      - It guarantees that the program will not have bugs.
-      - It eliminates the need for documentation.
-      - It ensures the program runs faster.
-      - It makes programs easier to copy from other developers.
-      - It allows developers to avoid collaboration.
-    explanation: |
-      - **Correct:**
-        - *It allows developers to refine their programs based on feedback and testing*: This is central to iterative design — improving over time through repeated development cycles.
-      - **Incorrect:**
-        - *It guarantees that the program will not have bugs*: No process can completely eliminate bugs.
-        - *It eliminates the need for documentation*: Documentation is still necessary regardless of the process.
-        - *It ensures the program runs faster*: Performance is not inherently tied to the development process used.
-        - *It makes programs easier to copy from other developers*: Copying code isn’t a development benefit or best practice.
-        - *It allows developers to avoid collaboration*: Collaboration is often part of iterative development, not avoided by it.
-  - question: |
-      Which of the following are examples of user input to a program?
-
-      Select **two** correct answers.
-    correct_options:
-      - Clicking a button on a website
-      - Typing a value into a form field
-    wrong_options:
-      - Displaying a chart on screen
-      - Declaring a variable in code
-      - Printing a message to the console
-      - Saving data to a file
-    explanation: |
-      - **Correct:**
-        - *Clicking a button on a website* and *Typing a value into a form field* are both user-generated actions that provide data to a program — key forms of input.
-      - **Incorrect:**
-        - *Displaying a chart on screen* and *Printing a message to the console* are forms of output.
-        - *Declaring a variable in code* is a programmer action during development, not runtime input.
-        - *Saving data to a file* is an output/storage operation.
-  - question: |
-      Which of the following best describes a logic error?
-    correct_options:
-      - The program runs but produces an incorrect or unintended output.
-    wrong_options:
-      - The program has a syntax mistake that prevents it from compiling.
-      - The program attempts to divide by zero and crashes.
-      - The program runs faster than expected.
-      - The program fails because it is missing documentation.
-      - The program fails due to a virus.
-    explanation: |
-      - **Correct:**
-        - *The program runs but produces an incorrect or unintended output*: A logic error means the program runs, but the logic used leads to the wrong behavior.
-      - **Incorrect:**
-        - *Syntax mistake* is a syntax error, not logic.
-        - *Divide by zero and crashes* is typically a runtime error.
-        - *Runs faster than expected* is not an error.
-        - *Missing documentation* affects readability, not execution.
-        - *Fails due to a virus* is a security issue, not a programming logic issue.
-  - question: |
-      Which of the following statements are true about event-driven programming?
-
-      Select **two** correct answers.
-    correct_options:
-      - Program actions are triggered by user interactions or external events.
-      - Inputs such as mouse clicks or key presses can trigger specific program behavior.
-    wrong_options:
-      - Event-driven programs run in a fixed sequence from start to finish.
-      - Event-driven programming is only used in video games.
-      - Event-driven programs cannot handle multiple inputs at once.
-      - Event-driven programs are written using only one type of input.
-    explanation: |
-      - **Correct:**
-        - *Triggered by user interactions* and *mouse clicks or key presses* accurately describe how event-driven programs respond to events.
-      - **Incorrect:**
-        - *Run in fixed sequence* describes sequential, not event-driven, programs.
-        - *Only used in video games* is false; it's widely used in GUIs, apps, websites, etc.
-        - *Cannot handle multiple inputs* — false; they often handle many simultaneous inputs.
-        - *Only one type of input* is incorrect; event-driven programs can handle various types of input (e.g., touch, audio, network messages).
-  - question: |
-      A student creates the following program to convert Fahrenheit to Celsius\:
-
-      ```plaintext
-      PROCEDURE convert(tempF)
-        RETURN (tempF - 32) * 5 / 9
-
-      DISPLAY(convert(212))
-      ```
-
-      What is the purpose of this program?
-    correct_options:
-      - To convert a temperature in Fahrenheit to Celsius and display the result
-    wrong_options:
-      - To convert Celsius to Fahrenheit and display the result
-      - To calculate the average of multiple temperatures
-      - To round a temperature to the nearest integer
-      - To print a static string about temperature
-      - To adjust the temperature based on climate change data
-    explanation: |
-      - **Correct:** The formula used is the standard Fahrenheit to Celsius conversion.
-      - **Incorrect:**
-        - The reverse conversion (C to F) uses a different formula.
-        - Averaging, rounding, and external data adjustments are not shown in the code.
-        - No strings are printed.
-  - question: |
-      A student writes a program with a "Submit" button, but nothing happens when the button is clicked. 
-      Which of the following would MOST likely help debug the issue?
-    correct_options:
-      - Check if the event handler for the button click is correctly attached.
-    wrong_options:
-      - Rewrite the entire program in a different language
-      - Increase the font size of the button
-      - Rename the variable storing the button label
-      - Print the value of unrelated variables
-      - Remove the button from the user interface
-    explanation: |
-      - **Correct:** If the button does nothing, the click event is likely not connected to any function.
-      - **Incorrect:**
-        - Changing UI appearance (font size, label name) doesn’t fix logic.
-        - Removing the button defeats the purpose.
-        - Rewriting or unrelated debugging is unnecessary.
-  - question: |
-      Fill in the blank:  
-      A _______________ is best used to help others understand how different parts of a program function, 
-      without affecting how the program runs.
-    correct_options:
-      - comment
-    wrong_options:
-      - variable
-      - loop
-      - output
-      - syntax error
-      - list
-    explanation: |
-      - **Correct:** Comments are written by developers to explain code; they don’t affect execution.
-      - **Incorrect:**
-        - Variables, loops, lists are functional parts of code.
-        - Output is visible program behavior.
-        - Errors are not intentionally used.
-  - question: |
-      A team of students is working together on a new mobile app. What strategies will MOST help them collaborate effectively?
-
-      Select **two** correct answers.
-    correct_options:
-      - Using shared online tools for version control and communication
-      - Dividing the work into components and regularly reviewing each other's code
-    wrong_options:
-      - Having one student write all the code and others test it later
-      - Avoiding disagreements by having only one person make decisions
-      - Working independently and combining code only at the end
-      - Only discussing design after coding is complete
-    explanation: |
-      - **Correct:** Since 10 < 5 is false, the ELSE block executes.
-      - **Incorrect:**
-        - The IF condition is not met, so "x is smaller" won’t display.
-        - Displaying variable names or showing no output is not what the code does.
-  - question: |
-      A student designs a quiz app. The app asks a question, provides four buttons for answers, 
-      and gives feedback after a choice is made.
-
-      Which design decision would BEST improve the user interface?
-    correct_options:
-      - Ensuring each button clearly displays a possible answer and is easy to press
-    wrong_options:
-      - Adding unrelated animations to make the app more exciting
-      - Making all the answer buttons the same color as the background
-      - Requiring the user to press two buttons to submit an answer
-      - Displaying all questions and answers in a single long scroll view
-      - Disabling feedback to reduce distractions
-    explanation: |
-      - **Correct:** Clear, accessible buttons with clear labels improve usability.
-      - **Incorrect:**
-        - Unrelated visuals or hidden buttons create confusion.
-        - Requiring multiple taps or removing feedback reduces usability.
-  - question: |
-      A student runs a program and it crashes with an "index out of range" error when accessing a list.
-      What is the MOST likely cause?
-    correct_options:
-      - Trying to access a list index that does not exist
-    wrong_options:
-      - Using a variable instead of a constant
-      - Incorrect use of a while loop
-      - A syntax error at the top of the program
-      - Forgetting to use a return statement
-      - A missing semicolon
-    explanation: |
-      - **Correct:** “Index out of range” means accessing an element at an index beyond the list’s length.
-      - **Incorrect:**
-        - Syntax errors would prevent the code from running at all.
-        - Semicolons are not related to this runtime error.
-        - Loops or return statements could contribute, but they aren’t the *most likely cause* for this specific message.
-  - question: |
-      Which of the following inputs would be MOST useful when testing the following program?
-
-      ```plaintext
-      PROCEDURE divide(x, y)
-        RETURN x / y
-      ```
-    correct_options:
-      - (10, 0)
-    wrong_options:
-      - (4, 2)
-      - (10, 5)
-      - (7, 1)
-      - (100, 10)
-      - (0, 3)
-    explanation: |
-      - **Correct:** (10, 0) tests a critical edge case — division by zero, which typically causes a runtime error.
-      - **Incorrect:**
-        - Other inputs are valid and don't test failure behavior.
+      - "Trace" or "Print" debugging allows a programmer to see where logic fails by checking intermediate values during execution.
 
   - question: |
-      A student uses the following test inputs for a program that calculates discounts based on age:
-
-      - Input: age = 10 → Output: "Child Discount"
-      - Input: age = 30 → Output: "No Discount"
-      - Input: age = 65 → Output: "Senior Discount"
-
-      What BEST describes this testing approach?
+      Which of the following is a benefit of using a collaborative version control system, such as Git, for a group project?
     correct_options:
-      - It includes only typical inputs
+    - It allows multiple people to work on the same code simultaneously and merge their changes later.
     wrong_options:
-      - It includes typical and edge case inputs
-      - It includes only edge case inputs
-      - It ignores the program’s main condition
-      - It is too random to be useful
-      - It only checks if the code runs without crashing
+    - It automatically identifies and fixes all syntax errors in the code.
+    - It prevents anyone from seeing the code history to maintain security.
+    - It translates the code into multiple programming languages automatically.
     explanation: |
-      - **Correct:** These inputs test a variety of relevant values — young, middle-aged, and senior — including possible boundary cases.
-      - **Incorrect:**
-        - These aren’t invalid or random.
-        - No testing guarantees 100% correctness.
-        - The main condition (age-based logic) is directly tested.
+      - Version control systems are designed for collaboration, allowing for branching, merging, and tracking the history of changes made by different team members.
   - question: |
-      A student writes a program that crashes when given a certain input. 
-      They review their code and notice that they forgot to account for that kind of input.
-
-      What should the student do to improve their development process in the future?
-
-      Select **two** correct answers.
+      A programmer is working on a complex procedure and notices it does not produce the expected output. Which of the following debugging strategies would be MOST effective for identifying the logic error?
     correct_options:
-      - Use defined test cases that include both expected and unexpected inputs
-      - Modify the program to check for invalid inputs before processing
+    - Inserting temporary "display" statements to check the values of variables at different points in the program.
     wrong_options:
-      - Assume users will always input the correct data type
-      - Only test cases where the program is known to succeed
-      - Add extra comments instead of changing the logic
-      - Run the program only once before turning it in
+    - Deleting the entire procedure and rewriting it from memory.
+    - Removing all comments from the code to make it run faster.
+    - Changing the variable names to be shorter and more cryptic.
     explanation: |
-      - **Correct:**
-        - Designing test cases that include edge cases and validating input helps prevent future crashes.
-      - **Incorrect:**
-        - Assuming ideal conditions or skipping real testing leads to fragile programs.
-        - Comments help explain logic but don’t fix it.
-        - Running once is insufficient for thorough testing.
+      - Tracing variable values during execution is a fundamental way to see exactly where the logic diverges from the intended behavior.
+
   - question: |
-      A program has the following code:
-
-      ```plaintext
-      score ← 85
-      IF score ≥ 90 THEN
-          DISPLAY("Excellent")
-      ELSE
-          DISPLAY("Keep Going")
-      ```
-
-      The student intended for scores of 85 and above to show “Excellent”.
-
-      Which of the following changes would fix the logic error?
+      A student is collaborating with a classmate on a program. They decide to use "Pair Programming." Which of the following describes a typical benefit of this approach?
     correct_options:
-      - Change the condition to `score ≥ 85`
+    - It leads to fewer errors because one person writes the code while the other reviews it in real-time.
     wrong_options:
-      - Replace “≥” with “=”
-      - Move the ELSE statement above the IF
-      - Replace `85` with `95`
-      - Add a comment explaining the condition
-      - Add another DISPLAY after the IF block
+    - It allows the program to run twice as fast because two people are working on it.
+    - It eliminates the need for any documentation or comments in the code.
+    - It ensures that the program will be compatible with all operating systems.
     explanation: |
-      - **Correct:** The condition is too restrictive. Widening it to `≥ 85` fixes the logic error.
-      - **Incorrect:**
-        - Changing to `=` would make it even more restrictive.
-        - Rearranging or commenting doesn’t change the logic.
-        - Increasing the threshold or adding DISPLAYs without logic adjustments doesn’t solve the issue.
+      - Pair programming involves a "driver" and a "navigator," which helps catch bugs early and improves the overall design of the code.
+
   - question: |
-      Which of the following examples BEST shows how abstraction is used in program design?
+      A programmer encounters a "Runtime Error" while their program is running. What does this usually mean?
     correct_options:
-      - Using a procedure named `calculateArea` instead of repeating the same formula multiple times
+    - The program's instructions were valid, but an impossible operation occurred during execution (like dividing by zero).
     wrong_options:
-      - Naming all variables with one-letter names
-      - Using only one loop for all operations
-      - Printing the same message five times in a row
-      - Writing code without any comments
-      - Declaring variables but never using them
+    - The programmer forgot a semicolon or a closing parenthesis in the source code.
+    - The computer's monitor is not compatible with the software.
+    - The program was written in a language the computer does not understand.
     explanation: |
-      - **Correct:** Procedural abstraction encapsulates reusable logic under a clear, descriptive name.
-      - **Incorrect:**
-        - Poor variable naming, unnecessary loops, redundancy, and unused declarations all increase complexity, not reduce it.
+      - Runtime errors happen *while* the program is running, often due to unexpected data or logic that leads to an illegal operation.
   - question: |
-      Which of the following statements about program documentation is TRUE?
-
-      Select **two** correct answers.
+      A group of developers is using a **Version Control System** (such as Git) for their project. Which of the following is a primary advantage of this system?
     correct_options:
-      - Comments can describe the intended function of a code segment
-      - Documentation helps others understand and maintain code
+    - It allows multiple people to work on the same files simultaneously and provides a history of all changes made.
     wrong_options:
-      - Comments are ignored during testing
-      - Documentation is only helpful when programs crash
-      - Comments increase runtime performance
-      - Documentation should only be added after the code is complete
+    - It automatically translates Python code into JavaScript for web compatibility.
+    - It prevents any bugs from being introduced into the main branch of the code.
+    - It eliminates the need for programmers to write comments or documentation.
     explanation: |
-      - **Correct:** Comments and documentation are tools for clarity and collaboration throughout development.
-      - **Incorrect:**
-        - Comments are never executed or tested directly.
-        - They're useful throughout development, not just when things go wrong.
-        - They do not affect runtime speed.
+      - Version control manages "merging" changes from different people and allows teams to "roll back" to previous versions if a new update breaks the program.
+
   - question: |
-      Which of the following actions is MOST likely to help a collaborative team avoid bias in a computing innovation?
-
-      Select **two** correct answers.
+      In the context of software development, what is the purpose of a **README** file or documentation?
     correct_options:
-      - Gathering feedback from a diverse group of users
-      - Including people with different backgrounds during the design phase
+    - To provide instructions on how to set up, use, and contribute to the project.
     wrong_options:
-      - Only using historical data to train the program
-      - Having a single programmer make all decisions
-      - Limiting communication to avoid disagreement
-      - Focusing only on technical performance of the program
+    - To store the binary data for the program's executable file.
+    - To act as a firewall that prevents unauthorized access to the source code.
+    - To replace the need for writing actual code by describing the program's intent.
     explanation: |
-      - **Correct:** Incorporating diverse perspectives helps identify blind spots and reduce bias.
-      - **Incorrect:**
-        - Relying on historical data can reinforce bias.
-        - Centralizing decisions or suppressing input leads to one-sided outcomes.
-  - question: |
-      Match each development stage to its best description.
-
-      - A. Prototyping  
-      - B. Testing  
-      - C. Designing  
-      - D. Investigating  
-
-      1. Gathering user needs and constraints  
-      2. Creating a simplified version of the product  
-      3. Verifying correctness and identifying issues  
-      4. Outlining how the program should work
-
-      Which matches are correct?
-    correct_options:
-      - A-2, B-3, C-4, D-1
-    wrong_options:
-      - A-3, B-2, C-1, D-4
-      - A-1, B-4, C-3, D-2
-      - A-4, B-1, C-2, D-3
-      - A-2, B-1, C-4, D-3
-      - A-3, B-1, C-2, D-4
-    explanation: |
-      - **Correct:**  
-        - *Prototyping → 2*: build a working model  
-        - *Testing → 3*: validate functionality  
-        - *Designing → 4*: plan structure  
-        - *Investigating → 1*: gather information  
-      - **Incorrect:** Other combinations confuse the purpose or order of each step.
-  - question: |
-      Which of the following is LEAST likely to help improve a program's usability?
-    correct_options:
-      - Using technical jargon in user prompts
-    wrong_options:
-      - Providing clear button labels
-      - Making the interface consistent across screens
-      - Using color contrast for readability
-      - Adding brief instructions where needed
-      - Grouping related controls logically
-    explanation: |
-      - **Correct:** Jargon confuses users, especially those unfamiliar with programming terms.
-      - **Incorrect:** All other options improve clarity and usability.
-  - question: |
-      A student notices that their program does not respond when a key is pressed.
-
-      Here's the code snippet:
-      ```plaintext
-      PROCEDURE setup()
-          keyPressed ← FALSE
-
-      PROCEDURE checkInput()
-          IF keyPressed THEN
-              DISPLAY("Key detected")
-      ```
-
-      What is MOST likely missing from this program?
-    correct_options:
-      - An event handler that sets keyPressed to TRUE when a key is pressed
-    wrong_options:
-      - A comment explaining the display message
-      - A loop that runs the checkInput function once
-      - A variable declaration for the display
-      - An IF condition inside the setup procedure
-      - Changing the variable name to capital letters
-    explanation: |
-      - **Correct:** The program never updates `keyPressed`, so the condition is never true.
-      - **Incorrect:** Comments or naming don’t impact logic. A loop helps but doesn’t solve the missing input capture.
-  - question: |
-      Place the steps of the iterative development cycle in the correct order:
-
-      a. Get feedback  
-      b. Test the program  
-      c. Make changes  
-      d. Write initial version  
-
-      Choose the correct sequence.
-    correct_options:
-      - d → b → a → c
-    wrong_options:
-      - a → d → b → c
-      - b → d → c → a
-      - d → c → b → a
-      - c → b → a → d
-      - b → a → d → c
-    explanation: |
-      - **Correct:** You first *write*, then *test*, *get feedback*, and finally *revise* (iterate).
-      - **Incorrect:** Other orders break the logical progression of development.
-  - question: |
-      Which of the following statements about collaboration are TRUE?
-
-      Select **three** correct answers.
-    correct_options:
-      - Collaboration allows developers to see different approaches to solving problems
-      - Diverse teams are more likely to identify usability issues
-      - Online tools can make collaborative coding more efficient
-    wrong_options:
-      - Collaboration guarantees fewer syntax errors
-      - It’s best to assign one person to do all the coding to avoid confusion
-      - Collaboration is unnecessary if everyone agrees on the design
-    explanation: |
-      - **Correct:** Multiple viewpoints improve quality, catch issues, and support productivity with the right tools.
-      - **Incorrect:** Syntax issues still occur, and siloing tasks or avoiding collaboration limits innovation.
-  - question: |
-      A student is debugging a program. They believe the error is a logic error. Which of the following clues would support that conclusion?
-
-      Select **two** correct answers.
-    correct_options:
-      - The program runs without crashing but gives incorrect results
-      - The output differs from what is expected, even though the syntax is correct
-    wrong_options:
-      - The program refuses to run at all
-      - There is a red underline under a variable name in the IDE
-      - The error message says “type mismatch”
-      - The code editor highlights a missing semicolon
-    explanation: |
-      - **Correct:** Logic errors produce wrong output despite clean syntax.
-      - **Incorrect:** Compile-time issues (type mismatch, syntax, etc.) are not logic-related.
-  - question: |
-      A team is developing a budgeting app. They want to improve their development process.
-
-      Which of the following practices are part of an iterative development cycle?
-
-      Select **three** correct answers.
-    correct_options:
-      - Gathering feedback after each new feature is added
-      - Revising the program after testing reveals a problem
-      - Testing frequently throughout development
-    wrong_options:
-      - Waiting until the end to test the entire program
-      - Only collecting user feedback once
-      - Focusing only on making the program run faster
-    explanation: |
-      - **Correct:** Iterative development involves constant cycles of testing, feedback, and refinement.
-      - **Incorrect:** Delaying feedback/testing or focusing solely on performance undermines iteration.
-  - question: |
-      A user reports that clicking a button in a program does nothing.  
-      The programmer checks and sees this code:
-
-      ```plaintext
-      PROCEDURE setup()
-        clicked ← FALSE
-      ```
-
-      What is the MOST likely reason the program fails to respond?
-    correct_options:
-      - There is no event handler updating `clicked` to TRUE when the button is pressed
-    wrong_options:
-      - The variable name is too short
-      - The setup procedure is missing a return statement
-      - The variable should be global
-      - The DISPLAY statement is missing a newline character
-      - A comment is needed before the procedure
-    explanation: |
-      - **Correct:** The condition never changes because input isn’t connected to the logic.
-      - **Incorrect:** Naming, comments, or syntax formatting don't impact button behavior here.
-  - question: |
-      Match the type of programming error with its description:
-
-      - A. Syntax Error  
-      - B. Runtime Error  
-      - C. Logic Error  
-      - D. Overflow Error  
-
-      1. The program compiles but outputs the wrong result  
-      2. The program crashes when dividing by zero  
-      3. The code uses invalid punctuation or spacing  
-      4. The result of a calculation exceeds what the system can store
-
-      What is the correct match?
-    correct_options:
-      - A-3, B-2, C-1, D-4
-    wrong_options:
-      - A-2, B-1, C-3, D-4
-      - A-4, B-3, C-2, D-1
-      - A-1, B-2, C-4, D-3
-      - A-3, B-1, C-2, D-4
-    explanation: |
-      - **Correct:**  
-        - A → Syntax → invalid structure  
-        - B → Runtime → crash during execution  
-        - C → Logic → wrong behavior  
-        - D → Overflow → value too large  
-      - **Incorrect:** Mismatches confuse types of failure.
-  - question: |
-      Reorder the steps of a basic software development workflow:
-
-      - a. Design the user interface  
-      - b. Write initial code  
-      - c. Test with sample inputs  
-      - d. Fix discovered errors  
-      - e. Share program with users for feedback  
-
-      What is the best order?
-    correct_options:
-      - a → b → c → d → e
-    wrong_options:
-      - b → a → c → e → d
-      - d → b → a → e → c
-      - a → c → b → d → e
-      - a → e → c → b → d
-    explanation: |
-      - **Correct:** UI design comes first, followed by implementation, testing, debugging, and feedback.
-      - **Incorrect:** The other orders are inefficient or reverse key steps.
-  - question: |
-      Fill in the blank:
-
-      A _____________________ is used in a program to simplify complexity by giving a reusable name 
-      to a group of related instructions.
-    correct_options:
-      - procedure
-    wrong_options:
-      - comment
-      - list
-      - event
-      - condition
-      - return value
-    explanation: |
-      - **Correct:** Procedures abstract complexity and group logic.
-      - **Incorrect:** Other terms describe parts of code but don’t provide abstraction.
-  - question: |
-      Which of the following would MOST likely be an output of a weather app?
-
-      Select **two** correct answers.
-    correct_options:
-      - A weekly forecast displayed on the screen
-      - A message alerting the user to bring an umbrella
-    wrong_options:
-      - The user's GPS location
-      - A variable that stores "rainy"
-      - The program's documentation
-      - The code that calculates temperature changes
-    explanation: |
-      - **Correct:** Outputs are shown to the user, such as forecasts or alerts.
-      - **Incorrect:** Variables, code, and documentation are part of program logic, not user-facing output.
-  - question: |
-      A student writes a function that doesn’t behave as expected.  
-      They test it with the following inputs:
-
-      - Input: 0 → Output: “Off”  
-      - Input: 1 → Output: “On”  
-      - Input: -1 → Output: “On”
-
-      What does this suggest?
-    correct_options:
-      - The logic does not account for negative inputs correctly
-    wrong_options:
-      - The syntax of the code is incorrect
-      - The program cannot handle input 1
-      - The function has a runtime error
-      - The comments in the code are missing
-      - The function is using the wrong data type
-    explanation: |
-      - **Correct:** Negative input is producing a wrong response, indicating a logical oversight.
-      - **Incorrect:** Code runs, so it’s not a syntax or runtime issue. Comments and types are unrelated.
-  - question: |
-      Which of the following is a benefit of documenting code during development?
-
-      Select **two** correct answers.
-    correct_options:
-      - It helps other programmers understand how the code works
-      - It makes it easier to fix bugs later
-    wrong_options:
-      - It allows the program to run faster
-      - It replaces the need for testing
-      - It ensures the program compiles correctly
-      - It prevents runtime errors
-    explanation: |
-      - **Correct:** Documentation supports clarity and maintenance.
-      - **Incorrect:** Documentation doesn’t impact program performance or prevent technical errors.
+      - Documentation is essential for collaboration, ensuring that other developers (and the original creator) understand how the code is intended to function.

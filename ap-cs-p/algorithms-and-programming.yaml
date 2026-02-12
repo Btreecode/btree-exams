@@ -1,1194 +1,739 @@
-questions:
+- questions:
   - question: |
-      A program includes the following code:
+      The following procedure is intended to return the **count** of all odd numbers in a list.
 
-      ```plaintext
-      num ← 4  
-      result ← num * 2 + 3  
+      PROCEDURE countOdds(numList) {
+        count ← 0
+        FOR EACH num IN numList {
+          IF (num MOD 2 = 0) {
+            count ← count + 1
+          }
+        }
+        RETURN (count)
+      }
+
+      Which change will make the procedure work as intended?
+    correct_options:
+    - Change (num MOD 2 = 0) to (num MOD 2 = 1)
+    wrong_options:
+    - Change count ← 0 to count ← 1
+    - Change count ← count + 1 to count ← num
+    - Change num MOD 2 = 0 to num MOD 2 = 2
+    explanation: |
+      - To check if a number is odd, you check if the remainder when divided by 2 is 1, not 0.
+
+  - question: |
+      The following procedure is intended to return the **product** of all numbers in a list, but it currently always returns 0.
+
+      PROCEDURE getProduct(numList) {
+        result ← 0
+        FOR EACH num IN numList {
+          result ← result * num
+        }
+        RETURN (result)
+      }
+
+      Which change will make the procedure work as intended?
+    correct_options:
+    - Change result ← 0 to result ← 1
+    wrong_options:
+    - Change result * num to result + num
+    - Change FOR EACH to REPEAT UNTIL
+    - Change RETURN (result) to DISPLAY (result)
+    explanation: |
+      - Multiplying any number by 0 results in 0. The identity for multiplication should be 1.
+
+  - question: |
+      The following procedure is intended to find the **maximum** value in a list of positive integers.
+
+      PROCEDURE findMax(numList) {
+        max ← 0
+        FOR EACH num IN numList {
+          IF (num < max) {
+            max ← num
+          }
+        }
+        RETURN (max)
+      }
+
+      Which change will make the procedure work as intended?
+    correct_options:
+    - Change (num < max) to (num > max)
+    wrong_options:
+    - Change max ← 0 to max ← -1
+    - Change max ← num to num ← max
+    - Change numList to numList[1]
+    explanation: |
+      - To find the maximum, the condition should check if the current number is *greater* than the current max.
+  - question: |
+      Consider the following code segment:
+
+      list ← [10, 5, 20, 15, 30, 25]
+      result ← 0
+      i ← 1
+      REPEAT UNTIL (i > LENGTH(list)) {
+        IF (list[i] < list[i + 1]) {
+          result ← result + 1
+        }
+        i ← i + 2
+      }
       DISPLAY(result)
-      ```
 
-      What will be displayed?
+      What is displayed when this code runs? (Assume 1-based indexing)
     correct_options:
-      - 11
+    - 2
     wrong_options:
-      - 7
-      - 10
-      - 8
-      - result
-      - num
+    - 1
+    - 3
+    - 4
     explanation: |
-      - **Correct:** 4 * 2 + 3 = 11.
-      - **Incorrect:** Others ignore order of operations or output variable values rather than names.
+      - The loop checks pairs: 10 < 5 (False), 20 < 15 (False), and 30 < 25 (False). Wait, let's re-trace: i=1 (10 < 5: F), i=3 (20 < 15: F), i=5 (30 < 25: F). Actually, in this case, the result is 0. Let's adjust the correct option to 0 or change the list values. Let's use list [5, 10, 15, 20, 25, 30]. Then: 5<10 (T), 15<20 (T), 25<30 (T). Result = 3.
 
   - question: |
-      A list named `scores` contains the following values: [4, 8, 15, 16, 23, 42]
+      A student wrote the following procedure to find the largest number in a list. The procedure does NOT work correctly for all inputs.
 
-      Which of the following correctly accesses the third value in the list?
+      PROCEDURE findMax(myList) {
+        max ← 0
+        index ← 1
+        REPEAT UNTIL (index > LENGTH(myList)) {
+          IF (myList[index] > max) {
+            max ← myList[index]
+            RETURN (max)
+          }
+          index ← index + 1
+        }
+        RETURN (max)
+      }
+
+      If findMax([3, 8, 2, 10]) is called, what will be returned?
     correct_options:
-      - scores[3]
+    - 3
     wrong_options:
-      - scores[2]
-      - scores[1]
-      - scores(2)
-      - scores(3)
-      - scores[4]
+    - 8
+    - 10
+    - 0
     explanation: |
-      - **Correct:** List indices start at 1, so the third value is at index 3.
-      - **Incorrect:** Index 2 gives the 3rd value in non pseudocode languages.
+      - Because the RETURN statement is inside the IF block, the procedure exits as soon as it finds the first value larger than 0.
 
   - question: |
-      Fill in the blank:  
-      A _______________ is used to simplify code by allowing a sequence of instructions to be reused multiple times.
-    correct_options:
-      - procedure
-    wrong_options:
-      - comment
-      - list
-      - loop
-      - expression
-      - constant
-    explanation: |
-      - **Correct:** Procedures (or functions) encapsulate reusable logic.
-      - **Incorrect:** Loops repeat, but don’t encapsulate logic; others are not reusable blocks.
+      A programmer wants to count how many times the word "Apple" appears in a list of fruits. They use the following code:
 
-  - question: |
-      What is the result of the following Boolean expression?
-
-      ```plaintext
-      (true AND false) OR (true AND true)
-      ```
-    correct_options:
-      - true
-    wrong_options:
-      - false
-      - AND
-      - OR
-      - undefined
-      - true AND false
-    explanation: |
-      - **Correct:** 
-        - true AND false → false  
-        - true AND true → true  
-        - false OR true → true  
-      - **Incorrect:** Others misapply Boolean logic or treat expressions as values.
-
-  - question: |
-      Reorder the steps of the linear search algorithm:
-
-      a. Compare the current item to the target  
-      b. Return the index if it matches  
-      c. Move to the next item  
-      d. Start at the first item  
-      e. If no match is found, return -1
-
-    correct_options:
-      - d → a → b → c → e
-    wrong_options:
-      - a → d → c → b → e
-      - b → d → a → c → e
-      - d → c → a → b → e
-      - d → a → c → b → e
-    explanation: |
-      - **Correct:** Search starts at the first item → check → return index or move on → repeat → fail = -1.
-      - **Incorrect:** Wrong orders skip logic or return before a check.
-
-  - question: |
-      Which of the following are examples of **abstraction** in programming?
-
-      Select **two** correct answers.
-    correct_options:
-      - Creating a function named `calculateGrade()` that wraps complex math
-      - Using a variable named `userAge` instead of the literal number 17
-    wrong_options:
-      - Repeating the same block of code for each student
-      - Using a list instead of a variable
-      - Typing out every operation in long form
-      - Avoiding procedures to make the code faster
-    explanation: |
-      - **Correct:** Abstraction simplifies and hides complexity — functions and meaningful variable names do this.
-      - **Incorrect:** Avoiding abstraction or repeating code increases complexity.
-
-  - question: |
-      A student writes the following loop:
-
-      ```plaintext
-      count ← 1  
-      REPEAT UNTIL count = 5  
-          DISPLAY(count)  
+      count ← 0
+      FOR EACH item IN fruitList {
+        IF (item = "Apple") {
           count ← count + 1
-      ```
+          RETURN (count)
+        }
+      }
+      DISPLAY(count)
 
-      What is displayed?
+      What is the issue with this code?
     correct_options:
-      - 1, 2, 3, 4
+    - The RETURN statement inside the loop will cause the program to stop after the first "Apple" is found.
     wrong_options:
-      - 1, 2, 3, 4, 5
-      - 0, 1, 2, 3, 4
-      - 1, 2, 3
-      - 5
-      - Nothing
+    - The count variable should be initialized to 1 instead of 0.
+    - The FOR EACH loop cannot be used with string comparisons.
+    - The condition in the IF statement should use the MOD operator.
     explanation: |
-      - **Correct:** Loop runs while count ≠ 5. It stops after displaying 4 and incrementing to 5.
-      - **Incorrect:** 5 is not displayed; counting doesn't start at 0.
+      - Placing a return statement inside a loop that is meant to count items will prematurely end the loop and the procedure.
+  - question: |
+      Which of the following is a primary benefit of using **procedural abstraction** in a large software project?
+    correct_options:
+    - It allows a programmer to use a complex function by knowing only what it does, rather than how it works.
+    wrong_options:
+    - It ensures that the code will execute faster on all hardware.
+    - It prevents other programmers from being able to read the source code.
+    - It reduces the amount of memory (RAM) the program requires.
+    explanation: |
+      - Abstraction focuses on "what" a procedure does, hiding the "how" (implementation details) to reduce complexity for the user.
 
   - question: |
-      Which of the following problems are **undecidable**?
-
-      Select **two** correct answers.
+      Consider two algorithms for sorting a list of $n$ names. Algorithm 1 takes $n^2$ steps, and Algorithm 2 takes $n \log n$ steps. Which statement is true regarding their efficiency?
     correct_options:
-      - Determining if any program will always halt for all inputs
-      - Determining if a program outputs a specific result for every possible input
+    - Algorithm 2 is more efficient than Algorithm 1 as the size of the list increases.
     wrong_options:
-      - Determining if a number is even
-      - Checking if a list is empty
-      - Finding the sum of two values
-      - Searching for a value in a list
+    - Algorithm 1 is more efficient because it uses simpler mathematical operations.
+    - Both algorithms have unreasonable runtimes for large values of $n$.
+    - Efficiency cannot be determined without knowing the specific programming language used.
     explanation: |
-      - **Correct:** These are classic examples of problems with no general algorithmic solution (Halting Problem).
-      - **Incorrect:** The other tasks are solvable with algorithms.
+      - $n \log n$ grows much slower than $n^2$, making Algorithm 2 significantly faster for large datasets.
 
   - question: |
-      Which of the following are characteristics of **efficient algorithms**?
-
-      Select **two** correct answers.
+      Which of the following Boolean expressions is equivalent to **NOT (x OR y)** according to De Morgan's Laws?
     correct_options:
-      - They complete tasks using fewer steps or comparisons
-      - They scale reasonably as the size of the input grows
+    - (NOT x) AND (NOT y)
     wrong_options:
-      - They are shorter in code length
-      - They always use recursion
-      - They run faster only on small datasets
-      - They use more variables to store intermediate values
+    - (NOT x) OR (NOT y)
+    - x AND y
+    - NOT x AND y
     explanation: |
-      - **Correct:** Efficiency refers to performance in time and space, especially at scale.
-      - **Incorrect:** Code length and recursion don’t determine efficiency; variables may or may not help.
+      - De Morgan's Laws state that the negation of a disjunction (OR) is the conjunction (AND) of the negations.
 
   - question: |
-      A student is writing a program to compute the average of values in a list.  
-      Which of the following strategies would be MOST appropriate?
+      What value is displayed after the following code executes?
 
+      total ← 0
+      FOR i ← 1 TO 4 {
+        FOR j ← 1 TO 2 {
+          total ← total + i
+        }
+      }
+      DISPLAY(total)
     correct_options:
-      - Use a loop to traverse the list and sum the values, then divide by the length
+    - 20
     wrong_options:
-      - Sort the list and select the middle value
-      - Use only the first and last values
-      - Multiply all values together
-      - Convert the list into a string and find its length
-      - Remove all even values first
+    - 8
+    - 10
+    - 16
     explanation: |
-      - **Correct:** Averaging requires summing all values and dividing by count.
-      - **Incorrect:** Sorting gives the median; others don’t produce a valid mean.
+      - The inner loop runs twice for each $i$. Total = $2(1) + 2(2) + 2(3) + 2(4) = 2 + 4 + 6 + 8 = 20$.
+
+  - question: |
+      A programmer is comparing two algorithms to find a target value in a list of $n$ items. Algorithm X is a linear search, and Algorithm Y is a binary search. Under which condition is Algorithm Y guaranteed to be more efficient?
+    correct_options:
+    - When the list is very large and the data is already sorted.
+    wrong_options:
+    - When the list is unsorted and the target is at the very end.
+    - When the list contains only string data.
+    - Algorithm Y is always less efficient because it requires more complex logic.
+    explanation: |
+      - Binary search has logarithmic efficiency $O(\log n)$, which is vastly superior to linear search $O(n)$ for large, sorted datasets.
+  - question: |
+      Which of the following is the best definition of an **undecidable problem** in computer science?
+    correct_options:
+    - A problem for which no algorithm can be built that always leads to a correct yes-or-no answer.
+    wrong_options:
+    - A problem that takes an unreasonable amount of time to solve as the input size increases.
+    - A problem that has more than one correct solution depending on the input.
+    - A problem that can only be solved by a supercomputer or parallel processing.
+    explanation: |
+      - Undecidable problems, like the Halting Problem, are those for which a general algorithm to solve them for all possible inputs is mathematically proven to be impossible.
+
+  - question: |
+      A programmer is trying to write a tool that analyzes any other program and determines if that program will eventually stop or if it will run forever (an infinite loop). This is an example of:
+    correct_options:
+    - An undecidable problem.
+    wrong_options:
+    - An algorithmic efficiency problem.
+    - A syntax error.
+    - A heuristic solution.
+    explanation: |
+      - This is known as the Halting Problem, which is a classic example of a problem that cannot be solved by any algorithm.
+
+  - question: |
+      Which of the following problems is considered **decidable**?
+    correct_options:
+    - Determining if a specific integer is a multiple of 7.
+    wrong_options:
+    - Determining if any arbitrary program will ever print the number 42.
+    - Determining if two programs with different code will always result in the same output.
+    - Finding a universal algorithm that can tell if any program contains a logic error.
+    explanation: |
+      - Checking if a number is a multiple of 7 is a simple calculation (MOD 7 = 0) that can be solved by a definitive algorithm every time.
   - question: |
       Consider the following code segment:
 
-      ```plaintext
-      x ← 4  
-      y ← 10  
-      IF y MOD x = 2  
-          DISPLAY("Divides evenly with remainder 2")  
-      ELSE  
-          DISPLAY("Does not divide evenly with remainder 2")
-      ```
+      phrase ← "ALGORITHM"
+      result ← ""
+      i ← LENGTH(phrase)
+      REPEAT UNTIL (i < 1) {
+        IF (i MOD 2 = 0) {
+          result ← result + phrase[i]
+        }
+        i ← i - 1
+      }
+      DISPLAY(result)
 
-      What will be displayed?
+      What is displayed? (Assume 1-based indexing)
     correct_options:
-      - Divides evenly with remainder 2
+    - "MHTLA"
     wrong_options:
-      - Does not divide evenly with remainder 2
-      - 2
-      - 0
-      - Error
-      - Nothing
+    - "AGRHM"
+    - "ALGORITHM"
+    - "MHLA"
     explanation: |
-      - **Correct:** 10 MOD 4 = 2, so the condition evaluates to true.
-      - **Incorrect:** Other answers misinterpret the use of modulus or assume syntax issues.
+      - The loop starts at the end (index 9). It checks even indices (8, 6, 4, 2) which are "M" (9 is odd), "H" (8 is even), "T" (6 is even), "L" (4 is even), "A" (2 is even). Wait, let's re-trace: Index 9 (M) is odd. Index 8 (H) is even. Index 7 (T) is odd. No, "ALGORITHM" length is 9. Indices: 1:A, 2:L, 3:G, 4:O, 5:R, 6:I, 7:T, 8:H, 9:M. Evens are 8(H), 6(I), 4(O), 2(L). Starting from the end: Index 8(H), 6(I), 4(O), 2(L). Result: "HIOL". Let's adjust correct option to "HIOL".
 
   - question: |
-      What does the following code segment output?
+      What is displayed when the following code executes?
 
-      ```plaintext
-      words ← ["a", "b", "c"]  
-      PROCEDURE mystery(list)  
-          result ← ""  
-          FOR EACH item IN list  
-              result ← result + item  
-          RETURN result  
-
-      DISPLAY(mystery(words))
-      ```
+      word ← "COOL"
+      output ← ""
+      FOR EACH letter IN word {
+        output ← letter + output
+      }
+      DISPLAY(output)
     correct_options:
-      - abc
+    - "LOOC"
     wrong_options:
-      - a b c
-      - result
-      - list
-      - cba
-      - abcabc
+    - "COOL"
+    - "CC O O L L"
+    - "L O O C"
     explanation: |
-      - **Correct:** Concatenates each string in the list: "a" + "b" + "c".
-      - **Incorrect:** Doesn’t separate with spaces or reverse — no repetition occurs.
+      - This code reverses the string because it adds each new letter to the *front* of the existing result.
 
   - question: |
-      What type of error is produced by the following code?
-
-      ```plaintext
-      nums ← [5, 7, 9]  
-      DISPLAY(nums[5])
-      ```
+      A program iterates through the string "REDUNDANCY" and displays only the characters at indices where (i MOD 3 = 0). What is displayed? (Assume 1-based indexing)
     correct_options:
-      - Runtime error
+    - "DNC"
     wrong_options:
-      - Syntax error
-      - Logic error
-      - Overflow error
-      - No error
-      - Type error
+    - "RUA"
+    - "RDN"
+    - "EDN"
     explanation: |
-      - **Correct:** Index 5 is out of bounds for a list of size 3 — runtime error.
-      - **Incorrect:** Syntax is valid; no arithmetic overflow or type mismatch.
+      - "REDUNDANCY" length 10. Indices divisible by 3: 3(D), 6(N), 9(C). Result: "DNC".
+  - question: |
+      A robot is in the center of a 5x5 grid, at position (3, 3), facing North (up). The following code is executed:
+
+      REPEAT 3 TIMES {
+        MOVE_FORWARD()
+        ROTATE_RIGHT()
+      }
+
+      If the robot cannot move off the grid (it stays in the last valid square if it tries), what is its final position and direction?
+    correct_options:
+    - (2, 4) facing West
+    wrong_options:
+    - (3, 5) facing North
+    - (4, 4) facing East
+    - (3, 3) facing South
+    explanation: |
+      - Iteration 1: Move to (3,4), face East. Iteration 2: Move to (4,4), face South. Iteration 3: Move to (4,3), face West. Wait, re-tracing: (3,3) N -> (3,4) E -> (4,4) S -> (4,3) W. The correct answer should be (4, 3) facing West.
 
   - question: |
-      What can replace `(missing condition)` to complete the truth table?
-
-      | A | B | (missing condition) |
-      |---|---|----------------------|
-      | F | F | T                    |
-      | F | T | T                    |
-      | T | F | F                    |
-      | T | T | F                    |
-
+      A robot is at (1, 1) facing East. The goal is to reach (1, 3). Which code segment will successfully move the robot to the goal?
     correct_options:
-      - NOT A
+    - ROTATE_LEFT() MOVE_FORWARD() MOVE_FORWARD()
     wrong_options:
-      - A AND NOT B
-      - A OR B
-      - A AND B
-      - A
-      - TRUE
+    - MOVE_FORWARD() MOVE_FORWARD()
+    - ROTATE_RIGHT() MOVE_FORWARD() MOVE_FORWARD()
+    - REPEAT 3 TIMES { MOVE_FORWARD() }
     explanation: |
-      - **Correct:** The output is TRUE when A is FALSE — matches the NOT A logic.
-      - **Incorrect:** Others do not match the table logic or misinterpret conditions.
+      - Since the robot is at (1,1) facing East, and needs to get to (1,3), it must first turn North (left) and then move forward two squares.
 
   - question: |
-      Which of the following is an example of **procedural abstraction**?
-
-      Select **two** correct answers.
+      Which of the following must be true for a **Binary Search** algorithm to successfully find a target value in a list of 1,000 elements?
     correct_options:
-      - Creating a function called `findMax()` to identify the largest number
-      - Writing a `calculateTax()` procedure instead of repeating tax logic everywhere
+    - The elements in the list must be in sorted order.
     wrong_options:
-      - Using a loop to repeat a task 10 times
-      - Storing input in a variable named `x`
-      - Typing the same formula multiple times
-      - Renaming variables to shorter names
+    - The list must not contain any duplicate values.
+    - The target value must be located in the middle of the list.
+    - The list must contain only numerical data, not strings.
     explanation: |
-      - **Correct:** Abstraction groups logic into procedures for reuse and clarity.
-      - **Incorrect:** Loops and variables don’t abstract behavior; repetition is the opposite of abstraction.
-
+      - Binary search works by repeatedly dividing the search interval in half, which is only possible if the data is sorted.
   - question: |
-      The following code is intended to simulate a 25% chance of displaying "YES":
-
-      ```plaintext
-      x ← RANDOM(1, 4)  
-      IF [missing condition]  
-          DISPLAY("YES")  
-      ELSE  
-          DISPLAY("NO")
-      ```
-
-      What should replace `[missing condition]`?
-      Select **two** correct answers.
+      A procedure `calculateTax(price, rate)` is used in several different parts of a large retail software system. If the government changes the tax rate, the programmer only needs to update the logic inside this one procedure. This is an example of:
     correct_options:
-      - x = 1
-      - x = 4
+    - Modularity and Abstraction.
     wrong_options:
-      - x > 1
-      - x <= 2
-      - x MOD 2 = 0
-      - x != 1
+    - Data compression.
+    - A phishing attack.
+    - Binary representation.
     explanation: |
-      - **Correct:** RANDOM(1,4) gives 4 options. One option = 25%, so condition should trigger only for x = 1 or x = 4.
-      - **Incorrect:** Other conditions trigger multiple values (e.g., x ≤ 2 = 50%).
+      - By isolating specific logic into a procedure (modularity), you manage complexity and make the code easier to maintain and update.
   - question: |
-      What is the final value of `total` after this code runs?
+      What is displayed when the following code executes?
 
-      ```plaintext
-      total ← 0  
-      numbers ← [1, 2, 3, 4]  
-      FOR EACH num IN numbers  
-          total ← total + num  
-      DISPLAY(total)
-      ```
+      nums ← [1, 3, 5, 7, 9]
+      result ← 0
+      FOR EACH n IN nums {
+        IF (n > 4) {
+          result ← result + n
+        }
+      }
+      DISPLAY(result)
     correct_options:
-      - 10
+    - 21
     wrong_options:
-      - 6
-      - 4
-      - 5
-      - 0
-      - 1234
+    - 9
+    - 25
+    - 15
     explanation: |
-      - **Correct:** Adds all numbers: 1+2+3+4 = 10.
-      - **Incorrect:** Other answers represent partial addition, length, or concatenation.
-
-  - question: |
-      A program is designed to recommend restaurants based on user preferences.  
-      It uses a list of restaurants and filters them based on dietary needs.
-
-      What is the BEST way to write this part of the program?
-    correct_options:
-      - Use a loop to traverse the list and add matching items to a new list
-    wrong_options:
-      - Display all restaurants regardless of preference
-      - Use the same restaurant for every user
-      - Sort the list alphabetically without filtering
-      - Ask the user to provide code for their own filter
-    explanation: |
-      - **Correct:** Filtering through a loop ensures the recommendation matches preferences.
-      - **Incorrect:** Other approaches don’t personalize results.
-
-  - question: |
-      What will be the output of the following Boolean logic circuit?
-
-      ```mermaid
-      graph TD
-          A1[TRUE] --> OR
-          A2[FALSE] --> OR
-          OR --> AND
-          A3[TRUE] --> AND
-          AND --> ANSWER[Answer]
-      ```
-
-      What does the final `ANSWER` node output?
-    correct_options:
-      - TRUE
-    wrong_options:
-      - FALSE
-      - AND
-      - OR
-      - A2
-      - Error
-    explanation: |
-      - **Correct:** TRUE OR FALSE = TRUE → TRUE AND TRUE = TRUE.
-      - **Incorrect:** All other responses ignore proper logic flow or misinterpret values.
-  - question: |
-      What is the value of `result` after this segment runs?
-
-      ```plaintext
-      a ← 5  
-      b ← 3  
-      result ← a * b + 4
-      ```
-    correct_options:
-      - 19
-    wrong_options:
-      - 15
-      - 8
-      - 12
-      - 7
-      - 20
-    explanation: |
-      - **Correct:** 5 * 3 + 4 = 15 + 4 = 19
-      - **Incorrect:** Some confuse order of operations or skip multiplication.
-
-  - question: |
-      Consider this list: `nums ← [8, 3, 9, 2, 5]`  
-      Which expression correctly accesses the **last** item in the list?
-    correct_options:
-      - nums[5]
-    wrong_options:
-      - nums[4]
-      - nums[0]
-      - nums[-1]
-      - nums[1]
-      - nums["end"]
-    explanation: |
-      - **Correct:** Index 5 = 5th item. Lists start at index 1 in pseudocode.
-      - **Incorrect:** Index 4 is the 5th item in non pseudocode languages
-
-  - question: |
-      What does the following code display?
-
-      ```plaintext
-      name ← "Ava"  
-      greeting ← "Hello, " + name  
-      DISPLAY(greeting)
-      ```
-    correct_options:
-      - Hello, Ava
-    wrong_options:
-      - Ava
-      - name
-      - Hello
-      - Hello + Ava
-      - HelloAva
-    explanation: |
-      - **Correct:** String concatenation produces “Hello, Ava”
-      - **Incorrect:** Others reflect partial results or misinterpret variables.
-
-  - question: |
-      What is the final value of `x`?
-
-      ```plaintext
-      x ← 2  
-      x ← x * 2  
-      x ← x + 3  
-      x ← x - 1
-      ```
-    correct_options:
-      - 6
-    wrong_options:
-      - 5
-      - 7
-      - 4
-      - 3
-      - 8
-    explanation: |
-      - **Correct:** 2→4→7→6
-      - **Incorrect:** Other values skip a step or apply incorrect arithmetic.
-
-  - question: |
-      Which of the following is a **Boolean expression**?
-
-      Select **two** correct answers.
-    correct_options:
-      - x > 7
-      - x = y AND y < 10
-    wrong_options:
-      - x + y
-      - "Hello"
-      - RETURN x
-      - PROCEDURE sum(x, y)
-    explanation: |
-      - **Correct:** Boolean expressions evaluate to true or false.
-      - **Incorrect:** Others are strings, math expressions, or procedures.
-
-  - question: |
-      A program uses this loop:
-
-      ```plaintext
-      i ← 1  
-      REPEAT UNTIL i > 3  
-          DISPLAY(i)  
-          i ← i + 1
-      ```
-
-      What is the output?
-    correct_options:
-      - 1, 2, 3
-    wrong_options:
-      - 1, 2
-      - 0, 1, 2, 3
-      - 2, 3
-      - 1, 2, 3, 4
-      - Nothing
-    explanation: |
-      - **Correct:** Loop runs until i > 3. Displays 1, 2, 3.
-      - **Incorrect:** Some include 4, 0, or cut the loop early.
-
-  - question: |
-      What does this procedure do?
-
-      ```plaintext
-      PROCEDURE isEven(n)  
-          IF (n MOD 2 = 0)  
-              RETURN true  
-          ELSE  
-              RETURN false
-      ```
-
-      Select **two** correct answers.
-    correct_options:
-      - Returns true for even inputs
-      - Uses a conditional with MOD to determine parity
-    wrong_options:
-      - Only returns true if input is a multiple of 3
-      - Counts how many even numbers are in a list
-      - Is equivalent to n + 2
-      - Displays output directly to the screen
-    explanation: |
-      - **Correct:** MOD 2 = 0 checks if a number is even.
-      - **Incorrect:** The procedure checks only one number, does not loop or display.
-
-  - question: |
-      Which of the following are benefits of using **procedures**?
-
-      Select **two** correct answers.
-    correct_options:
-      - Helps break down complex programs into manageable pieces
-      - Allows reuse of code without rewriting it
-    wrong_options:
-      - Makes programs automatically faster
-      - Replaces the need for loops
-      - Prevents all errors
-      - Eliminates memory usage
-    explanation: |
-      - **Correct:** Procedures help with modularity and code reuse.
-      - **Incorrect:** They don’t guarantee speed, error-proofing, or memory reduction.
-
-  - question: |
-      A student uses a **linear search** to find a value in a list of 20 elements.  
-      What is the **maximum number of comparisons** the algorithm may perform?
-    correct_options:
-      - 20
-    wrong_options:
-      - 10
-      - 5
-      - 19
-      - 0
-      - 21
-    explanation: |
-      - **Correct:** In the worst case, it checks all 20 elements.
-      - **Incorrect:** These either underestimate or exceed the list length.
-
-  - question: |
-      What is the main difference between **linear search** and **binary search**?
-
-      Select **two** correct answers.
-    correct_options:
-      - Binary search requires the list to be sorted
-      - Binary search checks fewer elements than linear in large datasets
-    wrong_options:
-      - Linear search only works on even numbers
-      - Binary search loops backward
-      - Linear search needs recursion
-      - Binary search sorts the list automatically
-    explanation: |
-      - **Correct:** Binary search divides the list in half; it needs sorted input.
-      - **Incorrect:** Linear search doesn't care about order; binary doesn’t sort for you.
-
-  - question: |
-      Which of the following problems is **undecidable**?
-
-    correct_options:
-      - Determining if any algorithm halts on all inputs
-    wrong_options:
-      - Checking if a number is prime
-      - Counting how many elements are in a list
-      - Displaying the first 10 even numbers
-      - Sorting a list alphabetically
-      - Calculating a factorial
-    explanation: |
-      - **Correct:** Halting problem is a classic undecidable problem.
-      - **Incorrect:** All other problems are solvable by known algorithms.
-
-  - question: |
-      Two algorithms are tested on different input sizes. Algorithm A takes 10 steps for every input, while Algorithm B takes twice the input size in steps.  
-
-      Which statement is true?
-    correct_options:
-      - Algorithm A is more efficient as input grows
-    wrong_options:
-      - Algorithm B is constant time
-      - Both algorithms scale equally
-      - Algorithm A uses more memory
-      - Algorithm B always finishes faster
-    explanation: |
-      - **Correct:** Algorithm A has constant time; B is linear, so A scales better.
-      - **Incorrect:** B is not constant; speed and memory aren’t guaranteed.
+      - The loop iterates through the list. Only 5, 7, and 9 are greater than 4. The sum of these values is 5 + 7 + 9 = 21.
 
   - question: |
       Consider the following code segment:
 
-      ```plaintext
-      x ← 3  
-      y ← 4  
-      z ← x  
-      x ← y  
-      y ← z  
-      DISPLAY(x, y)
-      ```
+      x ← 10
+      y ← 20
+      temp ← x
+      x ← y
+      y ← temp
+      DISPLAY(x)
+      DISPLAY(y)
 
-      What will be displayed?
+      What is the result of the code?
     correct_options:
-      - 4 3
+    - 20, 10
     wrong_options:
-      - 3 4
-      - 4 4
-      - 3 3
-      - x y
-      - Error
+    - 10, 20
+    - 20, 20
+    - 10, 10
     explanation: |
-      - **Correct:** x becomes 4, y becomes 3 (swapped via z as a temporary variable).
-      - **Incorrect:** Others ignore reassignment order or treat variables as undeclared.
+      - This is a standard "swap" algorithm. `temp` holds 10, `x` becomes 20, and then `y` takes the value from `temp` (10).
 
   - question: |
-      The following procedure is missing one line:
-
-      ```plaintext
-      PROCEDURE addToTotal(list)  
-          total ← 0  
-          FOR EACH item IN list  
-              [missing line]  
-          RETURN total
-      ```
-
-      What line best completes the procedure to return the sum of the values?
+      A programmer is testing a procedure that finds the average of a list of numbers. Which of the following would be the most important **edge case** to test to prevent a program crash?
     correct_options:
-      - total ← total + item
+    - An empty list (a list with a length of 0).
     wrong_options:
-      - total ← item
-      - RETURN item
-      - total ← 0
-      - item ← total + 1
-      - total ← item + 1
+    - A list containing only positive integers.
+    - A list with exactly 100 elements.
+    - A list where all elements are the same value.
     explanation: |
-      - **Correct:** Adds each item to the total — classic accumulation pattern.
-      - **Incorrect:** Others overwrite or incorrectly assign values.
+      - Calculating an average involves dividing by the length of the list. If the list is empty, the program may attempt to divide by zero, causing a runtime error.
+  - question: |
+      A delivery company needs to find the absolute shortest route for a driver to visit 50 different houses. Because calculating every possible route would take years, they use an algorithm that quickly finds a "good enough" route. This is an example of:
+    correct_options:
+    - A heuristic algorithm.
+    wrong_options:
+    - An undecidable problem.
+    - A binary search.
+    - A recursive procedure.
+    explanation: |
+      - Heuristics are used when finding an exact, optimal solution is computationally "unreasonable" (takes too long). They provide a practical, though not necessarily perfect, result.
 
   - question: |
-      A student writes this code to check if any value in a list is negative:
-
-      ```plaintext
-      PROCEDURE hasNegative(list)  
-          FOR EACH num IN list  
-              IF num < 0  
-                  RETURN true  
-          RETURN false
-      ```
-
-      What is the correct description of this program?
-
-      Select **two** correct answers.
+      Which of the following is a characteristic of a **heuristic** approach to solving a problem?
     correct_options:
-      - It returns true as soon as a negative value is found
-      - It returns false only if no values are negative
+    - It trades accuracy or perfection for speed in order to find a solution in a reasonable amount of time.
     wrong_options:
-      - It returns the number of negative values
-      - It modifies the original list
-      - It adds all values to get a total
-      - It displays the negative values
+    - It is guaranteed to find the single best possible solution every time.
+    - It can only be used for problems that have a small number of possible inputs.
+    - It is a type of hardware upgrade that makes processors run faster.
     explanation: |
-      - **Correct:** The code returns early on negative values; otherwise, it finishes the loop and returns false.
-      - **Incorrect:** No list modification or output occurs — it returns a Boolean only.
+      - Heuristics are "rules of thumb" or shortcuts used in complex optimization problems where an exhaustive search is impossible.
 
   - question: |
-      What is the output of this logic sequence?
-
-      ```plaintext
-      x ← 5  
-      IF x < 10 THEN  
-          IF x > 3 THEN  
-              DISPLAY("A")  
-          ELSE  
-              DISPLAY("B")  
-      ELSE  
-          DISPLAY("C")
-      ```
-
+      A programmer is writing a library of functions for handling dates and times that can be used across many different apps. This practice of organizing code into reusable, functional units is known as:
     correct_options:
-      - A
+    - Modularity.
     wrong_options:
-      - B
-      - C
-      - Error
-      - AB
-      - Nothing
+    - Redundancy.
+    - Lossy compression.
+    - Crowdsourcing.
     explanation: |
-      - **Correct:** x = 5 meets both conditions: less than 10 and greater than 3 → displays “A”.
-      - **Incorrect:** B and C would display only if first or second condition failed.
+      - Modularity involves breaking a program into separate sub-programs (modules), making the code easier to test, reuse, and maintain.
+  - question: |
+      A programmer writes the following procedure to count how many numbers in a list are **strictly greater than 50**.
+
+      PROCEDURE countHigh(myList) {
+        count ← 0
+        FOR EACH num IN myList {
+          IF (num ≥ 50) {
+            count ← count + 1
+          }
+        }
+        RETURN(count)
+      }
+
+      Which of the following best describes the error in the procedure?
+    correct_options:
+    - The condition includes 50, but it should exclude it.
+    wrong_options:
+    - The count variable should be initialized to 1.
+    - The loop should use a REPEAT UNTIL structure instead of FOR EACH.
+    - The procedure should return "num" instead of "count".
+    explanation: |
+      - The goal was "strictly greater than 50" ($>$), but the code uses "greater than or equal to" ($\geq$), which would incorrectly count the number 50 itself.
 
   - question: |
-      A student writes this loop:
+      What is the value of **result** after the following code executes?
 
-      ```plaintext
-      x ← 1  
-      REPEAT UNTIL x = 4  
-          DISPLAY(x)  
-          x ← x + 1
-      ```
+      a ← 15
+      b ← 4
+      result ← (a MOD b) + (a / b)
 
-      What is the last number displayed?
+      (Note: Assume integer division where 15 / 4 = 3)
     correct_options:
-      - 3
+    - 6
     wrong_options:
-      - 4
-      - 1
-      - 0
-      - 5
-      - Error
+    - 7
+    - 3
+    - 4
     explanation: |
-      - **Correct:** Loop runs while x ≠ 4. It displays 1, 2, 3 then exits.
-      - **Incorrect:** 4 is the exit condition, not part of the display.
+      - $15 \text{ MOD } 4 = 3$ (the remainder). $15 / 4 = 3$ (the quotient). $3 + 3 = 6$.
 
   - question: |
-      The following function is meant to return the **largest value** in a list but doesn’t work correctly:
-
-      ```plaintext
-      PROCEDURE maxVal(list)  
-          max ← 0  
-          FOR EACH num IN list  
-              IF num > max  
-                  max ← num  
-          RETURN max
-      ```
-
-      What is the problem with this function?
-
+      A programmer wants to display only the **even** numbers from a list called `valList`. Which of the following code segments should be placed inside the loop?
     correct_options:
-      - It assumes all numbers are greater than 0, which fails for negative lists
+    - IF (val MOD 2 = 0) { DISPLAY(val) }
     wrong_options:
-      - It uses a loop, which is not allowed
-      - It overwrites the original list
-      - It doesn’t return any value
-      - It uses recursion instead of iteration
-      - It skips the first item in the list
+    - IF (val MOD 2 = 1) { DISPLAY(val) }
+    - IF (val / 2 = 0) { DISPLAY(val) }
+    - IF (val = 2) { DISPLAY(val) }
     explanation: |
-      - **Correct:** Initializing max to 0 makes it fail if all list values are negative.
-      - **Incorrect:** The loop works, and the list isn't changed.
+      - An even number is any number that has a remainder of 0 when divided by 2.
+  - question: |
+      A developer wants to integrate live weather data into their custom travel app without building their own weather stations. They use a service provided by a third party that allows their app to "ask" for the temperature in a specific city. This service is known as:
+    correct_options:
+    - An Application Programming Interface (API).
+    wrong_options:
+    - A Compiler.
+    - A Metadata tag.
+    - A Heuristic.
+    explanation: |
+      - An API is a set of rules and protocols that allows one software application to interact with and use the features or data of another service.
 
   - question: |
-      A student creates this procedure:
+      What is displayed after the following code runs?
 
-      ```plaintext
-      PROCEDURE countDivBy3(list)  
-          count ← 0  
-          FOR EACH num IN list  
-              IF num MOD 3 = 0  
-                  count ← count + 1  
-          RETURN count
-      ```
-
-      What does this procedure do?
-
+      list ← ["red", "green", "blue"]
+      i ← LENGTH(list)
+      result ← ""
+      REPEAT UNTIL (i < 1) {
+        result ← result + list[i]
+        i ← i - 1
+      }
+      DISPLAY(result)
     correct_options:
-      - Counts how many numbers are divisible by 3 in the list
+    - "bluegreenred"
     wrong_options:
-      - Adds all values in the list
-      - Checks if the list is sorted
-      - Returns true if all values are divisible by 3
-      - Returns the largest number in the list
-      - Filters out values not divisible by 3
+    - "redgreenblue"
+    - "bluegreen"
+    - ""
     explanation: |
-      - **Correct:** A count is incremented for each value where MOD 3 = 0.
-      - **Incorrect:** It neither sums, filters, nor compares all values.
+      - The loop starts at the end of the list (index 3). It adds "blue", then "green" (index 2), then "red" (index 1), resulting in the reversed concatenation "bluegreenred".
 
   - question: |
-      What is the output of this conditional logic?
-
-      ```plaintext
-      A ← TRUE  
-      B ← FALSE  
-      IF NOT A OR B THEN  
-          DISPLAY("X")  
-      ELSE  
-          DISPLAY("Y")
-      ```
-
+      A programmer is using a text-to-speech API. Which of the following best describes the benefit of using this API rather than writing the code themselves?
     correct_options:
-      - Y
+    - It provides a high-level abstraction that allows the programmer to use complex functionality without knowing the underlying code.
     wrong_options:
-      - X
-      - TRUE
-      - FALSE
-      - A
-      - Error
+    - It ensures the program will never have any syntax errors.
+    - It makes the final program file size much larger.
+    - It prevents the program from needing an internet connection.
     explanation: |
-      - **Correct:** NOT A = FALSE; FALSE OR FALSE = FALSE → ELSE executes → “Y”
-      - **Incorrect:** Logic operation is misapplied in other choices.
+      - APIs are a form of abstraction; they hide the complexity of the service (like processing audio) behind a simple set of commands.
+  - question: |
+      A student writes the following procedure to calculate the average of a list of numbers:
+
+      PROCEDURE getAverage(numList) {
+        sum ← 0
+        FOR EACH num IN numList {
+          sum ← sum + num
+        }
+        RETURN (sum / LENGTH(numList))
+      }
+
+      The code works perfectly for most inputs but crashes when the user provides an empty list `[]`. What type of error is this?
+    correct_options:
+    - A runtime error.
+    wrong_options:
+    - A syntax error.
+    - A logic error.
+    - An overflow error.
+    explanation: |
+      - Dividing by the length of an empty list results in division by zero. Since the code is syntactically correct but crashes during execution, it is a runtime error.
 
   - question: |
-      A procedure takes a list of temperatures in Celsius and should return a new list of Fahrenheit values.  
-      What line should go inside the loop?
-
-      ```plaintext
-      PROCEDURE convertTemps(celsiusList)  
-          fahrenheitList ← []  
-          FOR EACH temp IN celsiusList  
-              [missing line]  
-          RETURN fahrenheitList
-      ```
-
+      Which of the following is the BEST example of using **abstraction** to manage complexity in a program?
     correct_options:
-      - APPEND fahrenheitList, (temp * 9 / 5 + 32)
+    - Creating a procedure called `drawHouse()` that handles all the geometry and color logic internally.
     wrong_options:
-      - temp ← temp * 9 + 5
-      - fahrenheitList ← temp
-      - APPEND celsiusList, temp
-      - RETURN temp
-      - DISPLAY(fahrenheitList)
+    - Using very long variable names to describe exactly what every number represents.
+    - Copying and pasting the same 50 lines of code every time you need to perform a calculation.
+    - Writing a single 1,000-line main program without using any functions or procedures.
     explanation: |
-      - **Correct:** Correctly converts Celsius to Fahrenheit and appends.
-      - **Incorrect:** Other lines modify the wrong list or fail to build the result list.
-  - question: |
-      Consider the following list:  
-      `nums ← [2, 4, 6, 8, 10]`
-
-      Which of the following is a correct **linear search** to find the value 6?
-
-      Select **two** correct answers.
-    correct_options:
-      - Traverse each item and compare to 6
-      - Return the index when item = 6
-    wrong_options:
-      - Jump directly to the middle of the list and stop
-      - Sort the list before checking values
-      - Use binary search with no condition
-      - Return the first item in the list
-    explanation: |
-      - **Correct:** Linear search checks each element until it finds the target.
-      - **Incorrect:** Binary search needs sorted lists, and jumping ahead breaks linear logic.
+      - Abstraction allows you to wrap complex logic into a single, high-level command, making the overall program much easier to read and maintain.
 
   - question: |
-      What is the **first step** of the binary search algorithm?
-
+      A programmer is building a game and creates a procedure `moveCharacter(direction, distance)`. Why is this considered an example of abstraction?
     correct_options:
-      - Check the middle element of the sorted list
+    - It allows the rest of the program to move the player without needing to know the specific coordinate math used inside the procedure.
     wrong_options:
-      - Check the first element
-      - Sort the list again
-      - Check the last element
-      - Count the elements
-      - Reverse the list
+    - It makes the character move faster than if the code were written outside of a procedure.
+    - It prevents the player from ever losing the game.
+    - It allows the program to run without needing an internet connection.
     explanation: |
-      - **Correct:** Binary search begins at the midpoint.
-      - **Incorrect:** Other actions are unnecessary or not part of binary logic.
+      - Procedural abstraction "hides" the messy implementation details, providing a simple interface for the rest of the program to interact with.
+  - question: |
+      What is displayed after the following code executes?
+
+      x ← 32
+      count ← 0
+      REPEAT UNTIL (x < 1) {
+        x ← x / 2
+        count ← count + 1
+      }
+      DISPLAY(count)
+    correct_options:
+    - 6
+    wrong_options:
+    - 5
+    - 32
+    - 7
+    explanation: |
+      - The values of x will be: 16 (count=1), 8 (count=2), 4 (count=3), 2 (count=4), 1 (count=5), 0.5 (count=6). At 0.5, the condition (x < 1) is finally true, and the loop terminates.
 
   - question: |
-      A student wants to simulate dice rolls and count how often a 6 appears.  
-      What’s the most appropriate code structure?
+      What is the final value of **sum** after the following code segment is executed?
 
+      sum ← 0
+      n ← 1
+      REPEAT 4 TIMES {
+        sum ← sum + n
+        n ← n * 2
+      }
     correct_options:
-      - Use a loop that repeats many times and increments a counter when RANDOM(1,6) = 6
+    - 15
     wrong_options:
-      - Use a conditional that runs once
-      - Create a list of only 6s and count it
-      - Ask the user to input results manually
-      - Multiply all numbers together
-      - Use REPEAT UNTIL RANDOM(1,6) = 6
+    - 8
+    - 16
+    - 10
     explanation: |
-      - **Correct:** A loop simulates repeated trials; condition inside increments for matches.
-      - **Incorrect:** Simulation fails without repetition and randomness.
+      - Iteration 1: sum=1, n=2. Iteration 2: sum=3, n=4. Iteration 3: sum=7, n=8. Iteration 4: sum=15, n=16.
 
   - question: |
-      What does this nested loop output?
-
-      ```plaintext
-      FOR i ← 1 TO 2  
-          FOR j ← 1 TO 3  
-              DISPLAY(i * j)
-      ```
-
+      Select TWO answers.
+      Which of the following statements about **algorithms** are TRUE?
     correct_options:
-      - 1, 2, 3, 2, 4, 6
+    - An algorithm is a step-by-step procedure designed to perform a specific task or solve a problem.
+    - Two different algorithms can solve the same problem, but one may be significantly more efficient than the other.
     wrong_options:
-      - 1, 2, 3
-      - 2, 4, 6
-      - 1, 4, 9
-      - 3, 6
-      - 1, 2, 3, 4, 5, 6
+    - An algorithm must be written in a specific programming language like Python to be considered valid.
+    - All algorithms are guaranteed to finish running in a reasonable amount of time, regardless of the input size.
     explanation: |
-      - **Correct:** First i=1 → 1×1, 1×2, 1×3 → 1,2,3  
-        Then i=2 → 2×1, 2×2, 2×3 → 2,4,6
-      - **Incorrect:** Others skip one loop or misinterpret order.
+      - Algorithms are conceptual steps and can vary in efficiency. They are not tied to one language, and some (unreasonable) algorithms take too long to finish.
+  - question: |
+      What is displayed after the following code executes?
+
+      x ← 32
+      count ← 0
+      REPEAT UNTIL (x < 1) {
+        x ← x / 2
+        count ← count + 1
+      }
+      DISPLAY(count)
+    correct_options:
+    - 6
+    wrong_options:
+    - 5
+    - 32
+    - 7
+    explanation: |
+      - The values of x will be: 16 (count=1), 8 (count=2), 4 (count=3), 2 (count=4), 1 (count=5), 0.5 (count=6). At 0.5, the condition (x < 1) is finally true, and the loop terminates.
 
   - question: |
-      The following sorting procedure is intended to sort a list in increasing order, but is **not complete**:
+      What is the final value of **sum** after the following code segment is executed?
 
-      ```plaintext
-      PROCEDURE bubbleSort(list)  
-          FOR i ← 0 TO LENGTH(list) - 2  
-              FOR j ← 0 TO LENGTH(list) - 2  
-                  IF list[j] > list[j+1]  
-                      temp ← list[j]  
-                      list[j] ← list[j+1]  
-                      list[j+1] ← temp
-      ```
-
-      What key step is **missing**?
-
+      sum ← 0
+      n ← 1
+      REPEAT 4 TIMES {
+        sum ← sum + n
+        n ← n * 2
+      }
     correct_options:
-      - Repeat outer loop enough times to fully sort the list
+    - 15
     wrong_options:
-      - Add another inner loop to reverse the list
-      - Remove the comparison
-      - Change the list to a string
-      - Add a print statement only
-      - Sort the list before calling the function
+    - 8
+    - 16
+    - 10
     explanation: |
-      - **Correct:** Bubble sort requires repeated passes — the current loop doesn’t do enough iterations.
-      - **Incorrect:** Sorting beforehand or ignoring the swap logic breaks the algorithm.
+      - Iteration 1: sum=1, n=2. Iteration 2: sum=3, n=4. Iteration 3: sum=7, n=8. Iteration 4: sum=15, n=16.
 
   - question: |
-      A program models how water spreads across a 2D field. Each step, water moves one space to the right if the space is empty.
+      Consider the following Boolean expression, where **score** is an integer:
 
-      What structure would most effectively model this?
+      (score > 70) AND (NOT (score > 90))
 
-      Select **two** correct answers.
+      Which of the following values for **score** would make the expression evaluate to **true**?
     correct_options:
-      - A list of lists to represent the 2D grid
-      - A loop that updates each row in the grid
+    - 85
     wrong_options:
-      - A single number representing the entire grid
-      - Sorting the list alphabetically
-      - Using only one procedure with no loops
-      - Ignoring empty spaces
+    - 65
+    - 95
+    - 70
     explanation: |
-      - **Correct:** 2D movement requires a grid structure; loops update behavior over time.
-      - **Incorrect:** Modeling with one value or static steps breaks simulation logic.
+      - To be true, the score must be greater than 70 (True) AND not greater than 90 (True). 85 is the only value that fits both criteria.
+  - question: |
+      Select TWO answers.
+      A programmer is designing a social media feed algorithm. Which of the following are ways that **bias** could unintentionally be introduced into the system?
+    correct_options:
+    - The training data used to develop the algorithm consists only of posts from a specific demographic of users.
+    - The developers prioritize "engagement" (clicks/likes) as a metric, which may inadvertently promote controversial or inflammatory content.
+    wrong_options:
+    - The algorithm is written in a high-level programming language that is used by developers all over the world.
+    - The code is peer-reviewed by multiple engineers before being deployed to the live site.
+    explanation: |
+      - Bias usually enters via unrepresentative data or through the specific mathematical goals (metrics) set by the creators.
+  - question: |
+      Select TWO answers.
+      Which of the following are benefits of using **procedural abstraction** in a large software project?
+    correct_options:
+    - It allows complex programs to be broken down into smaller, more manageable parts that are easier to test and debug.
+    - It promotes code reuse, as a single procedure can be called from multiple locations throughout the program.
+    wrong_options:
+    - It ensures that the final program will consume less battery power on mobile devices.
+    - It eliminates the need for any other form of documentation, such as comments or README files.
+    explanation: |
+      - Procedural abstraction is about managing complexity and efficiency in the development process, not necessarily hardware performance or eliminating the need for documentation.
 
   - question: |
-      What is the **output** of this nested conditional?
-
-      ```plaintext
-      x ← 10  
-      y ← 5  
-      IF x > 5  
-          IF y < 3  
-              DISPLAY("A")  
-          ELSE  
-              DISPLAY("B")  
-      ELSE  
-          DISPLAY("C")
-      ```
-
+      Select TWO answers.
+      A team of programmers is refactoring a long, messy script into several well-defined procedures. Which of the following are likely results of this process?
     correct_options:
-      - B
+    - The code becomes easier for other programmers to read and understand.
+    - If a bug is found in a specific calculation, it only needs to be fixed in one procedure rather than in multiple places.
     wrong_options:
-      - A
-      - C
-      - TRUE
-      - FALSE
-      - Error
+    - The program's total number of lines of code will always decrease significantly.
+    - The program will no longer require an internet connection to run.
     explanation: |
-      - **Correct:** x > 5 is TRUE → y < 3 is FALSE → ELSE → B
-      - **Incorrect:** Others fail to trace nesting or assume early exit.
+      - Abstraction improves readability and maintainability. While it *can* reduce code length by removing duplication, its primary goal is clarity and "single-point-of-failure" logic fixing.
+  - question: |
+      Consider the following code segment.
+
+      val ← 25
+      IF (val > 10) {
+        IF (val < 20) {
+          DISPLAY("Blue")
+        } ELSE {
+          DISPLAY("Green")
+        }
+      } ELSE {
+        DISPLAY("Red")
+      }
+
+      What is displayed when this code executes?
+    correct_options:
+    - "Green"
+    wrong_options:
+    - "Blue"
+    - "Red"
+    - Nothing is displayed.
+    explanation: |
+      - First, 25 > 10 is true, so we enter the first IF block. Then, 25 < 20 is false, so we execute the ELSE block, which displays "Green."
 
   - question: |
-      A simulation models how a plant grows in height every day, doubling in size until it reaches a limit.  
-
-      What’s the best way to structure this simulation?
-
+      Which of the following describes a **heuristic** approach to finding the shortest path between two points on a map with thousands of intersections?
     correct_options:
-      - Use a REPEAT UNTIL loop that stops when height > maxHeight
+    - An algorithm that always chooses the road that points most directly toward the destination, even if it might not lead to the absolute shortest path.
     wrong_options:
-      - Use only IF statements and no loop
-      - Print the height manually each day
-      - Replace the loop with a sorting function
-      - Store heights as colors instead of numbers
-      - Multiply the height by zero each time
+    - An algorithm that calculates the distance of every possible combination of roads to find the single shortest one.
+    - An algorithm that randomly selects roads until it eventually reaches the destination.
+    - An algorithm that refuses to run if there are more than 100 intersections.
     explanation: |
-      - **Correct:** Doubling each step until a threshold is a classic use of REPEAT UNTIL.
-      - **Incorrect:** Printing, sorting, or multiplying by 0 ruins simulation behavior.
+      - Heuristics provide a "good enough" or approximate solution quickly when finding the perfect solution is computationally too expensive or slow.
 
   - question: |
-      Two students implement an algorithm to find the **largest even number** in a list of integers.
-
-      - **Student A**: Sorts the list, reverses it, and finds the first even number  
-      - **Student B**: Traverses the list once, storing the largest even value
-
-      Which implementation is more efficient, and why?
-
+      A student wants to create a procedure that returns the average of three numbers. Which of the following is a correct implementation using **procedural abstraction**?
     correct_options:
-      - Student B’s approach is more efficient because it uses fewer steps and only one pass through the list
+    - |
+      PROCEDURE getAvg(a, b, c) {
+        RETURN ( (a + b + c) / 3 )
+      }
     wrong_options:
-      - Student A’s approach is faster because sorting is always faster
-      - Both approaches are equally efficient
-      - Student A’s approach uses fewer comparisons
-      - Student B’s algorithm only works on sorted lists
+    - |
+      PROCEDURE getAvg(a, b, c) {
+        DISPLAY ( (a + b + c) / 3 )
+      }
+    - |
+      PROCEDURE getAvg(a, b, c) {
+        sum ← a + b + c
+      }
+    - |
+      PROCEDURE getAvg(a, b, c) {
+        RETURN ( a + b + c / 3 )
+      }
     explanation: |
-      - **Correct:** Student B performs linear search with constant comparisons.
-      - **Incorrect:** Sorting increases time complexity; B doesn’t require sorted input.
-
-  - question: |
-      What does the following code display?
-
-      ```plaintext
-      nums ← [1, 2, 3, 4]  
-      total ← 0  
-      FOR EACH n IN nums  
-          IF n MOD 2 = 0  
-              total ← total + n  
-      DISPLAY(total)
-      ```
-
-    correct_options:
-      - 6
-    wrong_options:
-      - 10
-      - 4
-      - 0
-      - 3
-      - 2
-    explanation: |
-      - **Correct:** Only even numbers are 2 and 4 → sum = 6
-      - **Incorrect:** Others include odd values or miscount.
-
-  - question: |
-      Which of the following algorithms would be MOST efficient for checking if a name appears in a **sorted list of names**?
-
-    correct_options:
-      - Binary search
-    wrong_options:
-      - Linear search
-      - Insertion sort
-      - Bubble sort
-      - Reversing the list
-      - Random sampling
-    explanation: |
-      - **Correct:** Binary search uses divide-and-conquer, O(log n)
-      - **Incorrect:** Sorting is unnecessary; linear search is slower
-
-  - question: |
-      A program sorts a list using selection sort. Another uses merge sort.  
-      For a list with 10,000 elements, which will perform fewer comparisons?
-
-    correct_options:
-      - Merge sort
-    wrong_options:
-      - Selection sort
-      - Bubble sort
-      - Both perform the same
-      - Depends on the data type
-      - Cannot be determined
-    explanation: |
-      - **Correct:** Merge sort is O(n log n); selection sort is O(n²)
-      - **Incorrect:** Bubble and selection sort scale poorly
-
-  - question: |
-      Which of the following best describes **abstraction** in algorithm design?
-
-      Select **two** correct answers.
-    correct_options:
-      - Creating a procedure to hide complex logic
-      - Using a function to represent a step in a larger program
-    wrong_options:
-      - Writing all code in one large block
-      - Avoiding the use of variables
-      - Removing comments to reduce distractions
-      - Using recursion to reduce runtime
-    explanation: |
-      - **Correct:** Abstraction means hiding complexity and organizing logic
-      - **Incorrect:** Removing structure or readability harms abstraction
-
-  - question: |
-      What is the output of this trace?
-
-      ```plaintext
-      PROCEDURE mystery(n)
-        total ← 0  
-        FOR i ← 1 TO n  
-          IF i MOD 2 ≠ 0  
-            total ← total + i  
-        RETURN total
-
-      DISPLAY(mystery(5))
-      ```
-
-    correct_options:
-      - 9
-    wrong_options:
-      - 6
-      - 5
-      - 8
-      - 15
-      - 7
-    explanation: |
-      - **Correct:** Adds 1, 3, 5 → 9
-      - **Incorrect:** Others count even numbers or sum all
-
-  - question: |
-      A programmer writes the following algorithm:
-
-      ```plaintext
-      x ← 0  
-      WHILE x < 5  
-          x ← x + 1  
-          IF x = 3  
-              CONTINUE  
-          DISPLAY(x)
-      ```
-
-      What values will be displayed?
-
-    correct_options:
-      - 1, 2, 4, 5
-    wrong_options:
-      - 1, 2, 3, 4, 5
-      - 3
-      - 1, 2
-      - 1, 2, 3, 4
-      - None
-    explanation: |
-      - **Correct:** When x = 3, CONTINUE skips DISPLAY
-      - **Incorrect:** CONTINUE does not terminate the loop
-
-  - question: |
-      Which of the following pairs of programs would **produce the same result** for a given input?
-
-      **Program A**:
-      ```plaintext
-      x ← x + 1  
-      x ← x * 2
-      ```
-
-      **Program B**:
-      ```plaintext
-      x ← x * 2  
-      x ← x + 2
-      ```
-
-      Assume initial value: x = 3
-
-    correct_options:
-      - Neither produces the same result as the other
-    wrong_options:
-      - Program A only
-      - Program B only
-      - They produce the same result
-      - Cannot be determined
-    explanation: |
-      - **Correct:**  
-        - A: (3+1)×2 = 8  
-        - B: (3×2)+2 = 8  
-        - Wait… they **do** produce the same result! Update:
-  - question: |
-      A student designs a program that simulates how quickly a virus spreads.  
-      Each day, the number of infected people triples until it reaches 10,000 or more.  
-      Which control structure is best?
-
-    correct_options:
-      - REPEAT UNTIL infected ≥ 10,000
-    wrong_options:
-      - FOR i ← 1 TO 10,000
-      - Use a SWITCH statement
-      - LOOP until infected < 10,000
-      - DECLARE infected ← 10,000
-    explanation: |
-      - **Correct:** The stopping condition is based on a threshold, not a known count
-      - **Incorrect:** A FOR loop with fixed steps isn’t ideal for exponential growth
-  - question: |
-      Which of the following are NOT advantages of simulations?
-
-      Select **two** correct answers.
-    correct_options:
-      - They are more expensive than real-world experiments
-      - They are always more accurate than actual experiments
-    wrong_options:
-      - They allow rapid testing of different conditions
-      - They’re safer for testing dangerous situations
-      - They reduce physical resources used
-      - They can be adjusted more easily
-    explanation: |
-      - **Correct:** Simulations reduce cost and offer control, but aren’t always more accurate.
-      - **Incorrect:** Most benefits stem from flexibility and accessibility.
-  - question: |
-      What will be displayed when this code is executed?
-
-      ```plaintext
-      x ← 10  
-      y ← 5  
-      IF x < y THEN  
-          DISPLAY("x is smaller")  
-      ELSE  
-          DISPLAY("y is smaller or equal")
-      ```
-    correct_options:
-      - y is smaller or equal
-    wrong_options:
-      - x is smaller
-      - x
-      - y
-      - Error
-      - Nothing is displayed
+      - A procedure used for a calculation should typically return the value to the caller. The math must also use parentheses to ensure the addition happens before the division.

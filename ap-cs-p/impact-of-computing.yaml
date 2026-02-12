@@ -1,569 +1,344 @@
-questions:
+- questions:
   - question: |
-      A programmer is designing an algorithm used to assess loan applications.  
-      Which of the following would help reduce bias in the algorithm?
-
+      In public-key cryptography, if Bob wants to send an encrypted message to Alice that **only Alice** can read, which key should he use to encrypt the message?
     correct_options:
-      - Have people with diverse experiences review the algorithm and test data
+    - Alice's public key
     wrong_options:
-      - Use only historical loan approval data to train the system
-      - Apply a single fixed rule for all applicants
-      - Minimize human involvement to avoid emotion
-      - Use the fastest machine learning model available
+    - Bob's private key
+    - Bob's public key
+    - Alice's private key
     explanation: |
-      - **Correct:** Collaboration and diverse testing uncover bias in logic and data.
-      - **Incorrect:** Relying on past data or eliminating human review may reinforce existing bias.
+      - You encrypt with the recipient's public key so that only the recipient's corresponding private key can decrypt it.
 
   - question: |
-      What is the main benefit of using **citizen science** to support butterfly population research?
-
-      Select **two** correct answers.
+      Alice wants to send a digital signature to Bob so that he can verify the message definitely came from her. Which key should she use to "sign" (encrypt) the signature?
     correct_options:
-      - Citizens can gather large amounts of data across wide geographic areas
-      - Social media can recruit participants from diverse locations
+    - Alice's private key
     wrong_options:
-      - The public is better at identifying insects than experts
-      - Volunteers can make conclusions without expert analysis
-      - Scientific data is less important than anecdotal reports
+    - Bob's public key
+    - Alice's public key
+    - Bob's private key
     explanation: |
-      - **Correct:** Citizen science expands scale and reach.
-      - **Incorrect:** Public contributions support, but don’t replace, expert insight.
+      - A digital signature is created using the sender's private key; anyone with the sender's public key can then verify the signature.
 
   - question: |
-      A credit card company sends you an email with its logo, asking you to call the number on the back of your card to confirm a charge.  
-      Which of the following makes this example **least likely** to be phishing?
-
+      Which of the following best describes the "Public" part of Public-key cryptography?
     correct_options:
-      - It asks you to call a trusted phone number you already have
+    - The public key is shared openly and is used to encrypt messages, while the private key is kept secret for decryption.
     wrong_options:
-      - It uses a company logo
-      - It mentions your credit card
-      - It uses strong emotional language
-      - It says “URGENT” in the subject line
+    - The public key is used by the government to monitor encrypted traffic.
+    - The public key is a shared password that both the sender and receiver use.
+    - Public-key cryptography means the messages themselves are posted in a public forum.
     explanation: |
-      - **Correct:** Encouraging use of a known, official contact method avoids redirection to fake links.
-      - **Incorrect:** Logos and familiar info can be faked.
+      - Public-key (asymmetric) encryption relies on a pair of keys where the public one is shared and the private one is protected.
+  - question: |
+      Which of the following would be the MOST effective strategy for a local government to address the **digital divide** in a rural community?
+    correct_options:
+    - Investing in infrastructure to provide high-speed broadband access to remote areas.
+    wrong_options:
+    - Increasing the cost of cellular data plans to fund fiber-optic research.
+    - Moving all government services to a mobile-only app platform.
+    - Upgrading the Wi-Fi speeds in wealthy urban business districts.
+    explanation: |
+      - The digital divide is often caused by a lack of physical infrastructure and access; providing broadband directly addresses this gap.
 
   - question: |
-      In 2013, hackers used a malicious link to infect a vendor’s system and gain access to millions of customer credit cards through Target’s payment processing.
-
-      What type of attack was this?
-
+      A school district notices that students from lower-income families perform worse on digital assignments. Which of the following is an example of the **digital divide** in this scenario?
     correct_options:
-      - Phishing
+    - Some students lack reliable high-speed internet or dedicated devices at home.
     wrong_options:
-      - SQL injection
-      - Brute force
-      - Keylogging
-      - Packet interception
+    - The students prefer reading physical books over digital tablets.
+    - The school's firewall blocks access to popular gaming websites.
+    - The teachers have not received proper training on the new learning management system.
     explanation: |
-      - **Correct:** Social engineering and email bait were used to install malware.
-      - **Incorrect:** The attack wasn’t based on direct data entry or login guessing.
+      - The digital divide refers to the gap between those who have access to modern information and communications technology and those who do not.
 
   - question: |
-      A company trains an algorithm to review resumes but later finds that it ranks male applicants higher due to biased training data.
-
-      What is the **most likely cause** of this issue?
-
+      Which of the following is LEAST likely to be a contributing factor to the global digital divide?
     correct_options:
-      - The training data reflected historical hiring bias
+    - The variety of programming languages used to create websites.
     wrong_options:
-      - The algorithm was not tested on enough resumes
-      - The algorithm used too many features
-      - Resume order affected ranking
-      - The output was not encrypted
+    - The high cost of personal computing devices and smartphones.
+    - Lack of electricity and stable power grids in developing nations.
+    - Disparities in digital literacy and technical education.
     explanation: |
-      - **Correct:** Bias in historical hiring patterns gets baked into training sets.
-      - **Incorrect:** Volume, encryption, or features don’t directly explain bias.
+      - While programming languages vary, they do not restrict a person's ability to access the internet as much as physical infrastructure and cost do.
   - question: |
-      Which of the following would NOT be considered a **reasonable number of steps** for an algorithm?
-
+      A non-profit organization wants to map every public park in the country. They create an app that allows volunteers to take a photo of a park and upload its coordinates. This is an example of:
     correct_options:
-      - 3ⁿ
+    - Crowdsourcing.
     wrong_options:
-      - n
-      - 4n + 8n²
-      - 100n⁴
-      - log₂(n)
+    - Citizen surveillance.
+    - Data mining.
+    - Parallel processing.
     explanation: |
-      - **Correct:** 3ⁿ grows exponentially and becomes unreasonable quickly.
-      - **Incorrect:** Polynomial and logarithmic growth are reasonable.
-  - question: |
-      Which of the following are **benefits of easy access to information**?
-
-      Select **two** correct answers.
-    correct_options:
-      - Researchers can access data to validate or refine findings
-      - Students can better understand complex topics
-    wrong_options:
-      - All publicly available data is guaranteed to be accurate
-      - Easy access ensures privacy is preserved
-      - It guarantees unbiased information
-    explanation: |
-      - **Correct:** Access helps support education and research.
-      - **Incorrect:** Access ≠ accuracy, privacy, or objectivity.
-  - question: |
-      A health app gives fitness advice. The app’s recommendations change depending on age, gender, and prior input history.  
-      Over time, users are funneled toward only certain options.
-
-      What **ethical concern** might arise?
-
-    correct_options:
-      - Algorithmic filtering may reduce diversity of choices
-    wrong_options:
-      - The app is too efficient
-      - The app is using dynamic memory allocation
-      - Health advice must never change
-      - The app loads slowly on older devices
-    explanation: |
-      - **Correct:** Algorithms can unintentionally limit exposure to alternative paths (filter bubble).
-      - **Incorrect:** Speed and memory aren't ethical concerns in this context.
-  - question: |
-      A student copies a photo from a website and uses it in a published blog post without giving credit.
-
-      What issue does this raise?
-
-    correct_options:
-      - Copyright infringement
-    wrong_options:
-      - Data compression
-      - Open-source violation
-      - Phishing
-      - Malware
-      - Public domain use
-    explanation: |
-      - **Correct:** Reusing copyrighted content without permission or attribution is a legal issue.
-      - **Incorrect:** This isn't about security or software access.
-  - question: |
-      Which of the following are benefits of **open-source software**?
-
-      Select **three** correct answers.
-    correct_options:
-      - Developers can modify and improve the code
-      - It is freely available for anyone to use
-      - It promotes community-driven innovation
-    wrong_options:
-      - It ensures the software is always secure
-      - It can only be used for nonprofit projects
-      - It prevents all forms of hacking
-    explanation: |
-      - **Correct:** Open-source promotes accessibility, customization, and community contributions.
-      - **Incorrect:** Open-source does not guarantee security or restrict use.
+      - Crowdsourcing is the practice of obtaining information or input into a task by enlisting the services of a large number of people, typically via the internet.
 
   - question: |
-      A rural community lacks stable broadband internet, making it difficult for students to complete assignments or access lessons during remote learning.
-
-      What issue does this illustrate?
-
+      Which of the following is a potential risk of using **crowdsourcing** to gather data for a scientific study?
     correct_options:
-      - The digital divide
+    - The data may be biased or inaccurate because contributors are not necessarily experts.
     wrong_options:
-      - Hardware compatibility
-      - File format errors
-      - Network redundancy
-      - IPv6 transition issues
+    - It is impossible to gather large amounts of data using this method.
+    - Crowdsourcing requires the organization to pay every contributor a full-time salary.
+    - The data gathered through crowdsourcing cannot be stored in a digital format.
     explanation: |
-      - **Correct:** Digital divide describes unequal access to technology and the internet.
-      - **Incorrect:** Technical specs and formats aren’t the root of this access gap.
-  - question: |
-      Which of the following are **consequences of unequal access to computing resources**?
-
-      Select **two** correct answers.
-    correct_options:
-      - Some students have fewer opportunities to practice computer science skills
-      - Communities with limited access may struggle to participate in digital economies
-    wrong_options:
-      - Computers will overheat more often in rural areas
-      - Those with access always become computer experts
-      - Devices with smaller screens are more biased
-      - Broadband is guaranteed by law
-    explanation: |
-      - **Correct:** Inequity in access results in skill gaps and economic disadvantages.
-      - **Incorrect:** Technical assumptions or overgeneralizations are misleading.
+      - While crowdsourcing is efficient, the lack of controlled conditions and professional oversight can lead to "noisy" or incorrect data.
 
   - question: |
-      Which of the following licenses allows others to freely use, share, and modify a work as long as credit is given?
+      A company uses a crowdsourcing platform to name a new product. They receive thousands of suggestions and use a sentiment analysis algorithm to find the most popular ones. Which of the following is an advantage of this approach?
     correct_options:
-      - Creative Commons (Attribution)
+    - It allows the company to engage with a large, diverse audience and gain a wide range of creative ideas.
     wrong_options:
-      - Copyright (All Rights Reserved)
-      - Software EULA
-      - Private repository license
-      - Trade secret protections
-      - None of the above
+    - It guarantees that the final name will be legally available for trademark.
+    - It is a much slower process than hiring a single marketing consultant.
+    - It prevents any negative feedback from reaching the company.
     explanation: |
-      - **Correct:** Creative Commons licenses encourage sharing with proper attribution.
-      - **Incorrect:** Other licenses restrict use or are not freely shareable.
+      - Crowdsourcing leverages "the wisdom of the crowd," providing a breadth of perspective that a small team might miss.
+  - question: |
+      An employee receives an email that appears to be from their bank, stating there is a "security breach" and providing a link to "verify their identity" by entering their account number and password. This is an example of:
+    correct_options:
+    - A phishing attack.
+    wrong_options:
+    - A distributed denial-of-service (DDoS) attack.
+    - A syntax error in the email server.
+    - Public-key encryption.
+    explanation: |
+      - Phishing is a technique used to trick users into providing sensitive information by masquerading as a trustworthy entity in electronic communication.
 
   - question: |
-      A school uses **open-source platforms** for student projects.  
-      Which of the following are potential advantages?
-
-      Select **two** correct answers.
+      Which of the following is the LEAST effective way to protect yourself against malware?
     correct_options:
-      - Students can explore how the software works behind the scenes
-      - The school avoids costly software licenses
+    - Using a public, unsecured Wi-Fi network to download software updates.
     wrong_options:
-      - Students are less likely to encounter bugs
-      - Software never needs updating
-      - Only computer science students can use it
-      - Open-source means the data is public
+    - Keeping your operating system and antivirus software up to date.
+    - Using a firewall to monitor and control incoming and outgoing network traffic.
+    - Avoiding clicking on suspicious links or downloading attachments from unknown senders.
     explanation: |
-      - **Correct:** Open-source software supports transparency and cost savings.
-      - **Incorrect:** Bugs and updates still apply; access isn’t restricted to experts.
+      - Unsecured public Wi-Fi can allow attackers to intercept your data or inject malware; it does not provide security.
 
   - question: |
-      A popular online resource offers free, editable learning materials and allows users to improve or remix them.
-
-      What term best describes this practice?
+      A social media algorithm is found to consistently recommend lower-paying job advertisements to female users compared to male users with the same qualifications. This is an example of:
     correct_options:
-      - Open access
+    - Algorithmic bias.
     wrong_options:
-      - Malware sharing
-      - Encryption
-      - Exclusive copyright
-      - Brute force learning
-      - Blacklisting
+    - A runtime error.
+    - Crowdsourcing.
+    - Redundancy.
     explanation: |
-      - **Correct:** Open access allows anyone to use and improve materials freely.
-      - **Incorrect:** Other terms relate to security or limitations.
+      - Algorithmic bias occurs when a computer system reflects the implicit values of the humans who involved in creating it, or when the training data is unrepresentative.
+
   - question: |
-      Which of the following statements are true about **open data**?
-
-      Select **two** correct answers.
+      Which of the following statements about bias in computing is TRUE?
     correct_options:
-      - It allows researchers to validate findings by examining raw datasets
-      - It promotes transparency in government or scientific studies
+    - Bias can be embedded in an algorithm by the humans who design it or through the data used to train it.
     wrong_options:
-      - It guarantees that data is correct
-      - It prevents the spread of misinformation
-      - It limits collaboration due to data volume
-      - It can only be accessed by professionals
+    - Computers are purely mathematical, so it is impossible for an algorithm to be biased.
+    - Bias only occurs in "Impact" units of computer science and does not affect actual code.
+    - Algorithmic bias only occurs when a programmer intentionally writes "if" statements to exclude certain groups.
     explanation: |
-      - **Correct:** Open data supports transparency and reproducibility.
-      - **Incorrect:** Open data may contain errors or require interpretation.
+      - Bias is often unintentional and stems from historical data or the limited perspective of the development team.
   - question: |
-      A police department uses a predictive policing algorithm to identify areas with a high likelihood of crime. Over time, the same neighborhoods are repeatedly flagged and patrolled, even though the number of reported incidents there is declining.
-
-      What is the **most likely ethical concern**?
+      Which of the following best describes the primary purpose of the **HTTPS** protocol?
     correct_options:
-      - The algorithm reinforces bias present in its training data
+    - To ensure that data sent between a web browser and a server is encrypted and secure from eavesdropping.
     wrong_options:
-      - The algorithm is not fast enough to process live data
-      - The algorithm was open-source, which made it less secure
-      - The police failed to use location-based services
-      - The algorithm increases internet traffic in those areas
+    - To increase the speed at which high-resolution images load on a webpage.
+    - To provide a backup of the website in case the main server goes offline.
+    - To prevent a user from visiting websites that contain adult content.
     explanation: |
-      - **Correct:** Predictive systems can create feedback loops if based on biased data.
-      - **Incorrect:** Performance and security are not the issue here.
+      - HTTPS adds a layer of security (SSL/TLS) to the standard HTTP protocol to protect sensitive data like passwords and credit card numbers.
+
   - question: |
-      A company uses AI to review job applications. Applicants with non-traditional education paths or gaps in employment are often ranked lower, even if qualified.
-
-      What are the main **social impacts** of this algorithm?
-
-      Select **two** correct answers.
+      When a browser displays a "padlock" icon in the address bar, it indicates that the website is using HTTPS. Which of the following is a result of this?
     correct_options:
-      - It may unintentionally exclude qualified candidates
-      - It may reduce workforce diversity
+    - An unauthorized party capturing the network traffic would only see "scrambled" (encrypted) data.
     wrong_options:
-      - It increases algorithm efficiency
-      - It helps hire only candidates from top universities
-      - It guarantees better hiring decisions
-      - It avoids human bias entirely
+    - The website is guaranteed to be 100% free of all malware and viruses.
+    - The website is legally prohibited from collecting any data about the user.
+    - The user's internet service provider (ISP) will not be able to see which domain name the user is visiting.
     explanation: |
-      - **Correct:** Automated filters can overlook qualified individuals and reinforce existing biases.
-      - **Incorrect:** AI does not eliminate bias — it can amplify it if unchecked.
+      - Encryption hides the *content* of the communication, though some metadata (like the destination domain) may still be visible to the network provider.
   - question: |
-      A school district uses a proprietary algorithm to place students in classes. Some students are consistently placed in remedial sections without explanation. The district refuses to share how placements are made.
-
-      What ethical issue does this raise?
-
+      To prevent unauthorized users from using a program to guess thousands of passwords per minute, a security team implements a policy that locks an account for 30 minutes after five failed login attempts. This is an example of:
     correct_options:
-      - Lack of transparency and accountability in algorithmic decision-making
+    - Rate limiting.
     wrong_options:
-      - Students are spending too much time online
-      - The algorithm is not open-source
-      - The algorithm runs too slowly
-      - The software is copyrighted
+    - Public-key encryption.
+    - Crowdsourcing.
+    - Lossless compression.
     explanation: |
-      - **Correct:** Decisions that impact students should be explainable and reviewable.
-      - **Incorrect:** Speed, source code, or copyright are unrelated.
+      - Rate limiting restricts the number of times an action can be performed within a certain timeframe, effectively neutralizing brute-force guessing attacks.
+
   - question: |
-      An online platform shows different product prices to users based on location and device. Users in wealthier neighborhoods see higher prices than others.
-
-      What is the **primary ethical concern**?
+      A facial recognition system is trained using a dataset that primarily contains images of people from one specific geographic region. When used globally, the system is much less accurate for people from other regions. This is an example of:
     correct_options:
-      - Dynamic pricing may lead to unfair discrimination
+    - Bias in the training data.
     wrong_options:
-      - The site is violating data encryption policies
-      - The product selection is too broad
-      - The algorithm is not mobile-optimized
-      - Too many users are visiting the site at once
+    - A syntax error in the recognition algorithm.
+    - A lack of parallel processing power.
+    - The digital divide.
     explanation: |
-      - **Correct:** Pricing based on demographic profiling can be ethically problematic.
-      - **Incorrect:** The issue is fairness, not performance or functionality.
+      - If the data used to "teach" an algorithm is not diverse or representative, the algorithm will naturally inherit those gaps and perform poorly on underrepresented groups.
+
   - question: |
-      A content platform shows users only stories that match their prior reading history, eventually filtering out differing viewpoints.
-
-      What **negative consequence** could this cause?
+      Which of the following is the LEAST likely to result in algorithmic bias?
     correct_options:
-      - Users may become trapped in an echo chamber
+    - Using a high-level programming language like Python instead of a low-level language.
     wrong_options:
-      - The platform loses ad revenue
-      - Users get access to fewer articles overall
-      - The app requires higher bandwidth
-      - The platform becomes less secure
+    - Relying on historical data that includes past human prejudices.
+    - Designers making assumptions about user behavior based only on their own experiences.
+    - Using a training dataset that excludes certain demographic groups.
     explanation: |
-      - **Correct:** Algorithmic filtering can reduce exposure to diverse ideas.
-      - **Incorrect:** Technical or financial issues are not the concern here.
+      - The choice of programming language is a technical implementation detail and does not inherently introduce social or data-driven bias.
   - question: |
-      A logistics company replaces many warehouse workers with automated robots.  
-      What are potential **societal consequences** of this decision?
-
-      Select **two** correct answers.
+      A developer releases their code under a **Creative Commons** or **Open Source** license. What does this typically allow other users to do?
     correct_options:
-      - Job displacement for workers without advanced technical training
-      - Increased productivity at the cost of reduced employment opportunities
+    - View, modify, and redistribute the source code, often with certain conditions.
     wrong_options:
-      - Robots become sentient and take over the company
-      - The company becomes open-source
-      - Robots require healthcare benefits
-      - Job postings increase immediately
+    - Claim they were the original and sole creator of the code.
+    - Use the code to hack into the original developer's private computer.
+    - Sell the software and keep 100% of the profits without giving any credit.
     explanation: |
-      - **Correct:** Automation improves efficiency but may increase inequality and unemployment.
-      - **Incorrect:** Sci-fi tropes or unrelated details aren't realistic impacts.
+      - Open-source licenses are designed to promote collaboration and transparency by allowing others to build upon existing work legally.
+
   - question: |
-      A startup uses facial recognition to unlock phones. However, users with darker skin tones report higher failure rates.
-
-      What is the **likely cause**, and what should be done?
-
-      Select **two** correct answers.
+      A music streaming app uses a machine learning algorithm to suggest new songs. Which of the following is the most likely way the algorithm "learns" a user's taste?
     correct_options:
-      - The training data lacked sufficient diversity
-      - The system should be audited for demographic bias
+    - By analyzing patterns in the user's past listening habits and comparing them to other similar users.
     wrong_options:
-      - The cameras need better resolution
-      - The software must run on faster processors
-      - The phones should block darker backgrounds
-      - The user must reset the system after each use
+    - By randomly selecting songs from the most popular global charts.
+    - By having a human employee manually listen to and rate every song for that specific user.
+    - By asking the user to solve a complex math problem before each song plays.
     explanation: |
-      - **Correct:** Biased training data creates discriminatory systems; review and retraining are essential.
-      - **Incorrect:** Hardware or usage factors are not the root of the issue.
+      - Machine learning systems improve their performance by finding patterns in large datasets (in this case, user behavior data).
+
   - question: |
-      A website uses **asymmetric encryption** to protect login credentials.  
-      Which statement describes how asymmetric encryption works?
+      Which of the following is a potential ethical concern regarding the use of machine learning in hiring processes?
     correct_options:
-      - The public key encrypts the data, and the private key decrypts it
+    - The algorithm might learn and replicate human biases present in the historical hiring data used to train it.
     wrong_options:
-      - Both sender and receiver use the same key to encrypt and decrypt
-      - A password is hashed, not encrypted
-      - The encryption only works if the Wi-Fi is private
-      - It is less secure than symmetric encryption
+    - The algorithm will work much faster than a human recruiter.
+    - The algorithm will require a computer to run.
+    - The algorithm can be updated to include more recent data.
     explanation: |
-      - **Correct:** Asymmetric encryption uses a public-private key pair.
-      - **Incorrect:** Symmetric uses one key; hashing is different; Wi-Fi privacy isn’t encryption.
+      - If historical data shows that a certain group was unfairly favored in the past, a machine learning model may "learn" that preference as a rule, perpetuating discrimination.
   - question: |
-      Which of the following are **examples of authentication methods**?
-
-      Select **three** correct answers.
+      A popular free mobile app's privacy policy states that it collects "anonymized" location data to "enhance user experience." Which of the following is a potential privacy risk associated with this?
     correct_options:
-      - Fingerprint recognition
-      - Password entry
-      - Two-factor authentication
+    - It may be possible to re-identify specific individuals by combining the location data with other publicly available datasets.
     wrong_options:
-      - Using cookies to remember a user
-      - DNS lookups
-      - Encrypting a message with AES
+    - Anonymized data is mathematically impossible to track back to a human.
+    - The data is only stored on the user's phone and is never sent to the company's servers.
+    - Collecting location data will cause the phone's battery to stop working entirely.
     explanation: |
-      - **Correct:** Authentication confirms identity — biometric, password, multi-step.
-      - **Incorrect:** Cookies and DNS don’t verify user identity; encryption ≠ authentication.
+      - "De-anonymization" is a known risk where seemingly anonymous patterns (like home and work locations) can be cross-referenced to identify a specific person.
+
   - question: |
-      A hacker sets up a fake website that looks like a bank’s login page to trick users.  
-      This is an example of:
-
+      Which of the following practices would MOST likely help a user maintain their digital privacy?
     correct_options:
-      - Phishing
+    - Regularly reviewing and limiting the "permissions" granted to apps on their devices.
     wrong_options:
-      - Spoofing
-      - DDoS
-      - Malware injection
-      - Logic error
-      - Data scraping
+    - Using the same easy-to-remember password for all social media and banking accounts.
+    - Posting their home address and phone number in their public social media bio.
+    - Disabling all encryption settings on their home Wi-Fi router.
     explanation: |
-      - **Correct:** Phishing deceives users into submitting sensitive data.
-      - **Incorrect:** Spoofing impersonates IPs/domains; others are different threats.
+      - App permissions control what data (camera, contacts, location) an app can access; limiting these is a key step in data privacy.
+
   - question: |
-      A university student gains unauthorized access to the gradebook and changes their own score from a B to an A. They claim they didn't "steal" anything and that it's a victimless crime.
-
-      What **ethical and legal violations** are present?
-
-      Select **two** correct answers.
+      A company decides to sell "aggregated" data about its users' shopping habits to a third-party marketing firm. What does "aggregated data" typically mean?
     correct_options:
-      - Unauthorized access to a secure system
-      - Integrity of academic records was compromised
+    - Individual data points are grouped together so that personal identities are hidden but overall trends are visible.
     wrong_options:
-      - Freedom of information was upheld
-      - It's allowed as long as no money is stolen
-      - The system design flaw makes it ethical
-      - The student used their own login credentials, so it’s not illegal
+    - Every user's full name and social security number are included in the dataset.
+    - The data has been encrypted so that even the marketing firm cannot read it.
+    - The data is deleted from the original company's servers immediately after it is sold.
     explanation: |
-      - **Correct:** Tampering with records is both unethical and illegal.
-      - **Incorrect:** Intent or access method doesn’t justify the action.
+      - Aggregation focuses on the "big picture" (e.g., "70% of users bought shoes") rather than specific individual actions.
   - question: |
-      An online shopping platform experiences a security breach in which encrypted credit card numbers are stolen. The company waits two months to notify customers.
-
-      What **ethical principle** has most clearly been violated?
-
+      Select TWO answers.
+      Which of the following are effective strategies for individuals to protect themselves against **phishing** attacks?
     correct_options:
-      - Users' right to informed consent and timely disclosure of risks
+    - Carefully inspecting the sender's email address and looking for subtle misspellings in links before clicking.
+    - Enabling multi-factor authentication (MFA) on all sensitive accounts like banking and email.
     wrong_options:
-      - Users' right to freely browse the site
-      - The company’s right to keep internal problems secret
-      - Data compression practices
-      - IP address availability
-      - Freedom of speech
+    - Responding to the suspicious email to ask the sender if they are a legitimate representative.
+    - Disabling the "spam" filter on your email account so you can manually review every incoming message.
     explanation: |
-      - **Correct:** Users have the right to know when their private data is at risk.
-      - **Incorrect:** Other rights are unrelated to breach disclosure.
+      - Vigilance and MFA are the strongest defenses. Responding to phishers only confirms your email is active, and disabling filters increases risk.
   - question: |
-      After a new student portal is launched, IT notices that hundreds of login attempts are made per second from foreign IP addresses. These attempts use common usernames and passwords.
+      The "Smart Traffic Grid" (STG) is a computing innovation designed to reduce urban congestion. It uses a network of sensors embedded in roads, cameras at intersections, and GPS data from connected vehicles. A centralized AI analyzes this data in real-time to adjust traffic light timings, suggest alternative routes to drivers via mobile apps, and prioritize emergency vehicles. While it improves efficiency, critics point to the constant tracking of vehicle movements as a potential privacy concern.
 
-      What type of threat is occurring, and what’s the best **first response**?
-
+      Based on the passage, which of the following is an example of **crowdsourcing** within the STG?
     correct_options:
-      - Brute force attack; block the suspicious IP addresses
+    - Using GPS data from thousands of individual drivers' vehicles to identify traffic jams.
     wrong_options:
-      - DDoS attack; remove encryption temporarily
-      - Social engineering; require longer passwords
-      - Man-in-the-middle; turn off HTTPS
-      - Logic bomb; reboot the system
+    - Adjusting the timing of traffic lights based on pre-set schedules.
+    - Hiring a team of experts to monitor cameras 24/7.
+    - Installing expensive sensors in every square foot of the city's asphalt.
     explanation: |
-      - **Correct:** Brute force attempts are systematic; IP blocking slows attackers.
-      - **Incorrect:** These are not symptoms of DDoS or social engineering.
+      - Crowdsourcing involves collecting data or input from a large, diverse group of people (in this case, drivers' GPS data).
+
   - question: |
-      A ride-sharing company collects users’ location data in real time to improve driver matching and response time. Users were not informed clearly about this data collection.
+      The "Smart Traffic Grid" (STG) is a computing innovation designed to reduce urban congestion. It uses a network of sensors embedded in roads, cameras at intersections, and GPS data from connected vehicles. A centralized AI analyzes this data in real-time to adjust traffic light timings, suggest alternative routes to drivers via mobile apps, and prioritize emergency vehicles. While it improves efficiency, critics point to the constant tracking of vehicle movements as a potential privacy concern.
 
-      What trade-off is being made, and what ethical concern does it raise?
-
-      Select **two** correct answers.
+      Which of the following is a potential **privacy concern** mentioned or implied in the STG description?
     correct_options:
-      - "Trade-off: More precise service vs. user privacy"
-      - |
-        Concern: Data was collected without meaningful user consent
+    - The ability for the system to track and store the historical movement of specific individuals throughout the city.
     wrong_options:
-      - There is no ethical issue if no one complains
-      - Location data isn't considered private
-      - Collecting data is always legal for business use
-      - User data was publicly shared, so no breach occurred
+    - The possibility that traffic lights will stop working if the power goes out.
+    - The cost of the sensors being passed on to taxpayers.
+    - The system favoring emergency vehicles over civilian cars.
     explanation: |
-      - **Correct:** Consent and transparency are key to ethical data collection.
-      - **Incorrect:** Ethical guidelines apply regardless of complaints or legality.
+      - Constant tracking of location data is a significant privacy risk as it creates a detailed map of a person's life.
+
   - question: |
-      A school district is hit by a phishing attack where teachers unknowingly provide their passwords. Attackers send fake emails to parents requesting personal data.
+      The "Smart Traffic Grid" (STG) is a computing innovation designed to reduce urban congestion. It uses a network of sensors embedded in roads, cameras at intersections, and GPS data from connected vehicles. A centralized AI analyzes this data in real-time to adjust traffic light timings, suggest alternative routes to drivers via mobile apps, and prioritize emergency vehicles. While it improves efficiency, critics point to the constant tracking of vehicle movements as a potential privacy concern.
 
-      What are the **best follow-up actions**?
-
-      Select **three** correct answers.
+      The STG uses an AI to analyze data and adjust lights. Which of the following is a way that **algorithmic bias** could manifest in this system?
     correct_options:
-      - Require affected users to change their passwords
-      - Notify parents and affected stakeholders
-      - Educate staff on how to recognize phishing attacks
+    - The AI consistently provides faster green-light patterns for wealthier neighborhoods while neglecting lower-income areas.
     wrong_options:
-      - Disable all teacher email accounts indefinitely
-      - Keep the incident confidential to avoid panic
-      - Stop using email altogether
+    - The AI runs on a server located in a different city.
+    - The AI uses a high-speed fiber optic connection.
+    - The AI is updated once a month by the city's IT department.
     explanation: |
-      - **Correct:** Transparency, password resets, and training help prevent recurrence.
-      - **Incorrect:** Panic responses or secrecy make future attacks more likely.
+      - Bias occurs when the algorithm's outcomes unfairly disadvantage one group over another, often based on socio-economic or geographic factors.
   - question: |
-      A popular messaging app stores user messages in encrypted form but keeps the encryption key on the same server as the data.
+      The "MedConnect Portal" is a cloud-based innovation that allows patients to share their genetic data, wearable fitness tracker logs, and medical history with specialized AI diagnostic tools. The goal is to provide highly personalized treatment plans and predict potential health risks years in advance. The portal uses public-key encryption to protect data but requires users to opt-in to sharing their "anonymized" data with pharmaceutical researchers.
 
-      What vulnerability does this create?
-
+      The MedConnect Portal uses **public-key encryption**. If a patient wants to upload their records securely so only the hospital's server can read them, what should happen?
     correct_options:
-      - If the server is compromised, both data and keys can be stolen
+    - The patient's app encrypts the data using the hospital's public key.
     wrong_options:
-      - The messages are too large to encrypt
-      - Encryption is only useful for images and files
-      - It violates TCP/IP standards
-      - The app is not connected to the internet
+    - The hospital sends its private key to the patient's phone.
+    - The patient encrypts the data with their own private key.
+    - The hospital and patient share a single password over an unencrypted email.
     explanation: |
-      - **Correct:** Storing keys and data together eliminates the benefit of encryption.
-      - **Incorrect:** The issue isn’t size, format, or connection method.
+      - To ensure only the recipient can read the data, it must be encrypted with the recipient's public key.
+
   - question: |
-      A fitness tracking app collects users’ GPS locations, heart rates, and activity data.  
-      Its terms of service mention data collection in vague language and do not mention third-party data sharing.
+      The "EcoGrid" is a decentralized energy-sharing platform. Homeowners with solar panels can sell their excess electricity directly to their neighbors using a digital ledger. Smart meters track energy production and consumption in real-time. This reduces reliance on large power plants and lowers costs. However, the system's reliance on a continuous internet connection makes it vulnerable to cyberattacks that could disrupt local power.
 
-      What privacy principle is most clearly violated?
-
+      Which of the following describes the **fault tolerance** of the EcoGrid compared to a traditional centralized power plant?
     correct_options:
-      - Transparency and informed consent
+    - If one house's solar panels fail, the rest of the neighborhood can still share energy among themselves.
     wrong_options:
-      - Data encryption
-      - Speed of data access
-      - Multi-factor authentication
-      - Software compatibility
-      - User interface design
+    - The EcoGrid is impossible to hack because it is decentralized.
+    - The EcoGrid produces more electricity than a nuclear power plant.
+    - If the internet goes down, the EcoGrid can still communicate using binary code.
     explanation: |
-      - **Correct:** Terms of service should clearly disclose how personal data is collected and shared.
-      - **Incorrect:** Encryption, authentication, and UI are separate issues from consent.
+      - Decentralization often provides fault tolerance; the failure of one "node" (house) doesn't bring down the entire local system.
+
   - question: |
-      Which of the following are **requirements under GDPR** (General Data Protection Regulation) in the European Union?
+      The "EcoGrid" is a decentralized energy-sharing platform. Homeowners with solar panels can sell their excess electricity directly to their neighbors using a digital ledger. Smart meters track energy production and consumption in real-time. This reduces reliance on large power plants and lowers costs. However, the system's reliance on a continuous internet connection makes it vulnerable to cyberattacks that could disrupt local power.
 
-      Select **three** correct answers.
+      The EcoGrid uses a "digital ledger" to track transactions. This is an example of:
     correct_options:
-      - Users must be able to access and delete their personal data
-      - Companies must disclose data breaches in a timely manner
-      - Users must give explicit consent before data is collected
+    - Maintaining data integrity and transparency in a distributed system.
     wrong_options:
-      - All data must be stored in the user's country
-      - Companies must provide internet to users
-      - Encryption must be optional
+    - Lossy compression of electricity.
+    - A phishing attack on the power company.
+    - Reducing the digital divide by giving everyone free solar panels.
     explanation: |
-      - **Correct:** GDPR enforces data access, breach notification, and explicit opt-in consent.
-      - **Incorrect:** It doesn't dictate where data is stored geographically or provide internet.
-  - question: |
-      A social media platform updates its terms of service to allow use of uploaded content in advertising. Users are not notified directly.
-
-      What is the primary ethical issue?
-
-    correct_options:
-      - Users were not meaningfully informed of changes that affect their rights
-    wrong_options:
-      - The platform lost money
-      - The platform offered better ad recommendations
-      - The platform is legally required to delete all photos after 90 days
-      - Users can no longer log in
-    explanation: |
-      - **Correct:** Material changes to data use require user awareness and understanding.
-      - **Incorrect:** Financial and login issues are unrelated.
-  - question: |
-      Which of the following would be a violation of **Children’s Online Privacy Protection Act (COPPA)** in the U.S.?
-
-    correct_options:
-      - Collecting personal data from users under 13 without parental consent
-    wrong_options:
-      - Limiting content availability to children
-      - Hosting a kid-safe search engine
-      - Displaying child-friendly ads
-      - Asking for age verification
-      - Offering free games for students
-    explanation: |
-      - **Correct:** COPPA requires parental permission for data collection from children under 13.
-      - **Incorrect:** Age-gated services and child-oriented design do not violate COPPA.
-  - question: |
-      A mobile app tracks a user’s location even when it’s not open. The app’s settings do not clearly allow the user to disable tracking.
-
-      What **privacy principle** is most likely being violated?
-
-    correct_options:
-      - User control over data collection
-    wrong_options:
-      - Data redundancy
-      - Proper syntax usage
-      - Device resolution
-      - Bandwidth usage
-      - Open-source licensing
-    explanation: |
-      - **Correct:** Ethical and legal guidelines expect users to control how and when data is collected.
-      - **Incorrect:** Technical factors like syntax and bandwidth aren’t relevant to privacy control.
+      - A ledger ensures that all parties agree on who sent what, which is crucial for decentralized trust and data integrity.

@@ -1,656 +1,272 @@
-questions:
+- questions:
   - question: |
-      Which of the following are true about how binary is used to represent digital data?
-
-      Select **two** correct answers.
+      A photographer is uploading high-resolution images to a website but needs to reduce the file size significantly while accepting that some fine detail will be permanently lost. Which of the following is the most appropriate technique?
     correct_options:
-      - A bit is the smallest unit of data and stores either a 0 or a 1
-      - Different sequences of bits can represent numbers, characters, or colors
+    - Applying JPEG compression to the images.
     wrong_options:
-      - Binary numbers always start with 1
-      - Each bit stores multiple characters at once
-      - Binary can only represent numbers, not text or images
-      - Computers use decimal internally and convert to binary for display
+    - Compressing the images into a ZIP archive.
+    - Converting the images to a lossless PNG format.
+    - Storing the images as raw BMP files.
     explanation: |
-      - **Correct:** Bits are the basic building blocks, and their groupings allow abstraction of different data types.
-      - **Incorrect:** The other options reflect misunderstandings of binary representation and abstraction.
+      - JPEG is a lossy compression format, meaning it reduces file size by permanently discarding some data, which is acceptable for web display where perfect detail isn't required.
 
   - question: |
-      Fill in the blank:  
-      A ___________ compression algorithm reduces file size while allowing for perfect reconstruction of the original data.
+      An audio engineer wants to archive a recording in a way that allows the original, bit-for-bit data to be restored exactly when the file is opened. Which compression method should be used?
     correct_options:
-      - lossless
+    - Lossless compression.
     wrong_options:
-      - lossy
-      - random
-      - exponential
-      - reversible
-      - clipped
+    - Lossy compression.
+    - MP3 encoding at a high bitrate.
+    - Reducing the sampling rate of the audio.
     explanation: |
-      - **Correct:** Lossless algorithms preserve all data for full reconstruction.
-      - **Incorrect:** Lossy discards information; others are unrelated terms or incorrect descriptors.
+      - Lossless compression allows the original data to be perfectly reconstructed from the compressed file.
 
   - question: |
-      Match each data concept with the best example:  
-
-      - A. Metadata  
-      - B. Lossy Compression  
-      - C. Abstraction  
-      - D. Binary  
-
-      1. A lower-quality JPEG image  
-      2. A photo’s resolution and timestamp  
-      3. Representing a letter as 01000001  
-      4. Using a variable name like “temperature” to store numeric values
-
-      Choose the correct match.
-
+      Which of the following scenarios describes a situation where **lossy compression** would be PREFERRED over **lossless compression**?
     correct_options:
-      - A-2, B-1, C-4, D-3
+    - Streaming a video over a mobile network with limited bandwidth.
     wrong_options:
-      - A-3, B-2, C-1, D-4
-      - A-4, B-3, C-2, D-1
-      - A-1, B-4, C-3, D-2
+    - Saving a text document containing legal contracts.
+    - Archiving a database of medical records for long-term storage.
+    - Distributing a software executable file to users.
     explanation: |
-      - **Correct:** 
-        - *Metadata* describes data (like timestamps)
-        - *Lossy* reduces size at cost of quality
-        - *Abstraction* simplifies complexity (naming)
-        - *Binary* is the lowest-level representation
-      - **Incorrect:** Other pairs confuse levels of representation or function.
+      - In video streaming, the speed of delivery and reduction in bandwidth are more important than perfect pixel-for-pixel accuracy.
 
   - question: |
-      A program reads in a CSV file with thousands of rows, but many cells are empty or spelled inconsistently (e.g., “CA”, “Calif”, “California”).
-
-      What is the BEST approach before analyzing the data?
+      Which of the following would be considered **image data** rather than **metadata**?
     correct_options:
-      - Clean the data by standardizing inconsistent formats and removing or replacing missing values
+    - The specific color value assigned to the pixel in the top-left corner.
     wrong_options:
-      - Immediately compute the average of each column
-      - Delete all rows with any missing values, regardless of size
-      - Use a lossless compression algorithm to reduce the file size
-      - Visualize the data before looking at patterns
-      - Combine this data with another random dataset
+    - The brand and model of the camera used.
+    - The width and height of the image in pixels.
+    - The date and time the photograph was captured.
     explanation: |
-      - **Correct:** Cleaning prepares data for reliable analysis.
-      - **Incorrect:** Jumping ahead or altering data structure too soon leads to misleading results.
+      - Pixel values are the building blocks of the image content itself, whereas dimensions, timestamps, and camera info are data *about* the image.
 
   - question: |
-      Reorder the steps for using a program to extract insight from a dataset:
-
-      - a. Gather the data  
-      - b. Clean and organize the data  
-      - c. Use a program to process or filter the data  
-      - d. Visualize or summarize the results
-
-      What is the best order?
+      A user is viewing the "Properties" of a digital document and sees the file size, the author's name, and the "last modified" date. These pieces of information are examples of:
     correct_options:
-      - a → b → c → d
+    - Metadata.
     wrong_options:
-      - b → a → d → c
-      - d → c → b → a
-      - a → c → b → d
-      - c → b → a → d
+    - Primary data.
+    - Lossy data.
+    - Binary data.
     explanation: |
-      - **Correct:** Insight requires a progression from raw data to cleaned, processed, then interpreted results.
-      - **Incorrect:** Other orders skip foundational steps or try to interpret messy data.
+      - Metadata is data that describes other data, such as authorship or modification history.
 
   - question: |
-      Which of the following statements about large datasets are TRUE?
-
-      Select **two** correct answers.
+      A music streaming service stores the artist's name, the album title, and the track duration alongside the actual audio recording. Which of the following is true about this information?
     correct_options:
-      - Large datasets may require parallel or distributed computing to process efficiently
-      - Bias in data collection can affect the accuracy of analysis
+    - It is metadata that helps in searching and organizing the music library.
     wrong_options:
-      - Large datasets always guarantee accurate conclusions
-      - Cleaning large datasets is unnecessary due to their size
-      - Data from one source is usually enough for accurate decision making
-      - The size of a dataset determines if it can be stored as binary
+    - It is the audio data that produces the sound when played.
+    - It is the compression algorithm used to reduce the file size.
+    - It is a form of encryption used to prevent illegal copying.
     explanation: |
-      - **Correct:** Scale affects performance and interpretation, especially if bias or computing constraints are involved.
-      - **Incorrect:** Data quality and context still matter regardless of size.
+      - Identifying information like artist and album title describes the content (the audio) and is therefore metadata.
+  - question: |
+      A fitness app tracks the number of steps taken, heart rate, and sleep duration for thousands of users. Which of the following questions can NOT be answered using only this data?
+    correct_options:
+    - Does getting more sleep cause a user to feel more energetic during the day?
+    wrong_options:
+    - Is there a correlation between daily step counts and average heart rate?
+    - What is the average amount of sleep for users who take more than 10,000 steps?
+    - What percentage of users sleep for less than 6 hours per night?
+    explanation: |
+      - While the data can show correlations, it cannot determine "cause" or subjective feelings like "feeling energetic" without additional qualitative input.
 
   - question: |
-      A student writes a program to convert a decimal number to binary.
-
-      Which of the following expressions would correctly convert the decimal value `13` into binary?
+      An e-commerce website records the time spent on a page, the items added to the cart, and the final purchase amount. Which of the following is an example of a question that cannot be answered with this dataset?
     correct_options:
-      - 1101
+    - Why did a customer decide not to purchase the items in their cart?
     wrong_options:
-      - 1010
-      - 1001
-      - 1110
-      - 10011
-      - 13
+    - What is the average time spent on the site for customers who make a purchase?
+    - Which items are most frequently added to carts but never purchased?
+    - Is there a relationship between time spent on a page and the total purchase amount?
     explanation: |
-      - **Correct:** 13 in base 10 is 1101 in base 2.
-      - **Incorrect:** Others are incorrect binary equivalents or restate the input.
+      - The data tracks actions and timestamps but does not provide insight into the customer's internal reasoning or motivations.
 
   - question: |
-      Which of the following is the BEST example of using metadata?
-
-      Select **two** correct answers.
+      A city collects data on the number of cars passing through various intersections and the time of day. Which of the following can NOT be determined using only this data?
     correct_options:
-      - Checking the GPS coordinates saved with a photo
-      - Sorting emails based on the date received
+    - The reason why traffic is heavier on Friday afternoons compared to Monday mornings.
     wrong_options:
-      - Compressing an image file
-      - Changing the background color of a webpage
-      - Storing user password input in a variable
-      - Drawing a chart in a program
+    - Which intersection has the highest volume of traffic at 8:00 AM?
+    - The average number of cars that pass through the city center per hour.
+    - At what time of day does traffic volume peak across all monitored intersections?
     explanation: |
-      - **Correct:** Metadata describes other data, like timestamps or location.
-      - **Incorrect:** The others involve content data or program functionality, not metadata use.
+      - Quantitative traffic counts can identify patterns and peaks, but they cannot explain the underlying societal or personal reasons for those patterns.
   - question: |
-      Which of the following are examples of **data abstraction**?
-
-      Select **two** correct answers.
+      A new social media platform assigns a unique ID to every post. The developers anticipate reaching a maximum of 500,000 posts. What is the minimum number of bits needed to represent all possible post IDs?
     correct_options:
-      - Representing each student in a school database as a record with fields like name, grade, and GPA
-      - Displaying temperature readings using a thermometer icon on a weather app
+    - 19 bits
     wrong_options:
-      - Compressing a video file to reduce size
-      - Writing binary code manually to represent a number
-      - Calculating an average from a list of numbers
-      - Translating a sentence into Spanish
+    - 18 bits
+    - 20 bits
+    - 9 bits
     explanation: |
-      - **Correct:** Abstraction simplifies complex data — grouping related fields or visualizing numeric data.
-      - **Incorrect:** Compression and translation are processing; calculating is analysis, not abstraction.
+      - $2^{18}$ is 262,144, which is not enough. $2^{19}$ is 524,288, which is the smallest power of 2 that can accommodate 500,000 unique values.
 
   - question: |
-      A sensor stores temperature data using **lossy compression**.  
-      Which of the following is the **main trade-off** of using lossy compression in this context?
+      An office building uses a digital system to track its 200 employees using unique binary IDs. If the company expands to 600 employees, how many *additional* bits are required for the ID system if they were previously using the minimum number of bits?
     correct_options:
-      - Some details in the data will be permanently lost, possibly reducing accuracy
+    - 2 additional bits
     wrong_options:
-      - The data cannot be stored in binary format
-      - The compression process is reversible without any loss
-      - The file becomes unreadable by most programs
-      - The temperature data becomes encrypted
-      - The original data can be perfectly restored
+    - 1 additional bit
+    - 3 additional bits
+    - 10 additional bits
     explanation: |
-      - **Correct:** Lossy compression reduces file size by removing some information.
-      - **Incorrect:** It's irreversible, but still readable; binary and encryption are unrelated here.
+      - 200 employees require 8 bits ($2^8 = 256$). 600 employees require 10 bits ($2^{10} = 1024$). Therefore, 2 additional bits are needed.
 
   - question: |
-      A file uses the binary value `11111111` for a pixel’s red channel.  
-      If this value is increased by 1, what will happen?
+      A color palette for a simple drawing app uses 6 bits to represent each color. How many unique colors can be represented in this app?
     correct_options:
-      - An overflow error will occur
+    - 64
     wrong_options:
-      - The pixel will turn black
-      - The value will reset to zero automatically
-      - The image will become sharper
-      - The blue channel will change instead
-      - A syntax error will be displayed
+    - 6
+    - 32
+    - 128
     explanation: |
-      - **Correct:** `11111111` in binary is 255. Adding 1 exceeds 8-bit capacity, triggering overflow.
-      - **Incorrect:** Pixel color doesn’t reset; blue and syntax are irrelevant here.
+      - The number of unique values that can be represented by $n$ bits is $2^n$. $2^6 = 64$.
+  - question: |
+      An 8-bit unsigned binary system is used to represent integers. What is the maximum decimal value that can be represented?
+    correct_options:
+    - 255
+    wrong_options:
+    - 256
+    - 127
+    - 128
+    explanation: |
+      - With 8 bits, there are $2^8$ (256) possible values. Since we start counting at 0, the range is 0 to 255.
 
   - question: |
-      A dataset is used to train an algorithm that matches photos with pet breeds.  
-      However, 85% of the photos feature golden retrievers. What problem might this cause?
+      A developer decides to upgrade a system from using 4 bits to 6 bits to represent IDs. How many **more** unique values can be represented after this change?
     correct_options:
-      - The algorithm may become biased and incorrectly classify other breeds
+    - 48
     wrong_options:
-      - The algorithm will only work on binary files
-      - The dataset will need to be encrypted
-      - The photos must be compressed using lossless methods
-      - The algorithm will run faster due to repeated data
-      - The model will return exact breeds with 100% accuracy
+    - 2
+    - 16
+    - 64
     explanation: |
-      - **Correct:** Overrepresentation leads to biased results and poor generalization.
-      - **Incorrect:** Bias is about distribution, not speed or file type.
+      - 4 bits can represent $2^4 = 16$ values. 6 bits can represent $2^6 = 64$ values. $64 - 16 = 48$ additional values.
 
   - question: |
-      A student is designing a survey to study screen time habits.  
-      Which of the following **should be collected as metadata**?
-
-      Select **two** correct answers.
+      What is the decimal equivalent of the binary number **10101000**?
     correct_options:
-      - The date each response was submitted
-      - The location from which each response was sent
+    - 168
     wrong_options:
-      - The number of hours a person uses their phone
-      - The types of apps used by the respondent
-      - Whether the user has notifications enabled
-      - The user's phone brand
+    - 170
+    - 160
+    - 154
     explanation: |
-      - **Correct:** Metadata gives context — time and location — not content.
-      - **Incorrect:** Screen time and app data are primary data, not metadata.
+      - Calculated as $128 + 32 + 8 = 168$. (The 1s are in the 128, 32, and 8 places).
+  - question: |
+      What is the decimal equivalent of the binary number **11100011**?
+    correct_options:
+    - 227
+    wrong_options:
+    - 195
+    - 224
+    - 231
+    explanation: |
+      - Calculated as $128 + 64 + 32 + 2 + 1 = 227$. (The bits are set in the 128, 64, 32, 2, and 1 positions).
 
   - question: |
-      A researcher is cleaning data collected from fitness trackers.  
-      Which of the following actions would be MOST helpful in cleaning the data?
-
-      Select **two** correct answers.
+      Which of the following binary numbers is equal to the decimal value **75**?
     correct_options:
-      - Converting time entries to a consistent format (e.g., HH:MM:SS)
-      - Replacing inconsistent labels like “run,” “Run,” and “Running” with a single standard value
+    - 1001011
     wrong_options:
-      - Deleting all rows with any empty value
-      - Randomly shuffling the dataset
-      - Adding artificial values to fill in blanks
-      - Filtering out all entries below the average
+    - 1001111
+    - 1011011
+    - 111011
     explanation: |
-      - **Correct:** Cleaning standardizes data formats and values for consistency.
-      - **Incorrect:** Deleting or altering without context reduces data integrity.
+      - $64 + 8 + 2 + 1 = 75$. In binary, this is 0 (128) 1 (64) 0 (32) 0 (16) 1 (8) 0 (4) 1 (2) 1 (1).
 
   - question: |
-      Which of the following correctly ranks the data storage sizes from smallest to largest?
+      A system uses 8 bits to represent integers. If a calculation results in the decimal value **260**, what will happen in this system?
     correct_options:
-      - Bit, byte, kilobyte, megabyte, gigabyte
+    - An overflow error will occur because the value exceeds the maximum limit of 255.
     wrong_options:
-      - Byte, bit, kilobyte, megabyte, gigabyte
-      - Bit, kilobyte, byte, megabyte, gigabyte
-      - Gigabyte, megabyte, kilobyte, byte, bit
-      - Kilobyte, bit, byte, megabyte, gigabyte
-      - Megabyte, byte, kilobyte, bit, gigabyte
+    - The system will automatically add a 9th bit to accommodate the value.
+    - The value will be rounded down to 255.
+    - The system will switch to using hexadecimal to store the number.
     explanation: |
-      - **Correct:** 1 byte = 8 bits → then 1 KB = ~1000 bytes → MB → GB.
-      - **Incorrect:** Misordering any unit misrepresents data capacity.
+      - Overflow occurs when a value is too large to be represented by the fixed number of bits available in a system.
+  - question: |
+      A student is working with a dataset of patient records. Each record contains the patient's ID, age, height, and weight. Which of the following is a piece of **metadata** for this dataset?
+    correct_options:
+    - The date the dataset was last updated.
+    wrong_options:
+    - The height of the third patient in the list.
+    - The average age of all patients.
+    - The ID number of a specific patient.
+    explanation: |
+      - Metadata is data *about* the data. While the specific patient info is the data itself, the "last updated" date describes the dataset as a whole.
 
   - question: |
-      A student has a list of heights in inches: [64, 65, 63, 67, 64, 1000].
-
-      They want to find the **average height** of a population.  
-      What is the best first step?
+      Which of the following describes a situation where **cleaning** data is necessary before it can be analyzed by a program?
     correct_options:
-      - Identify and remove outliers before calculating the average
+    - A dataset of survey responses contains some entries with misspelled city names and others with empty fields.
     wrong_options:
-      - Only include the tallest values
-      - Convert all heights to binary
-      - Sort the list alphabetically
-      - Replace every value with the median
-      - Compress the list using a lossy algorithm
+    - A dataset is stored in a ZIP file to save space on a hard drive.
+    - A dataset is too large to fit on a single computer's RAM.
+    - A dataset contains only numerical values that are all positive.
     explanation: |
-      - **Correct:** Outliers (like 1000 inches) skew averages and must be handled before analysis.
-      - **Incorrect:** Sorting alphabetically, compression, and partial analysis are inappropriate.
-  - question: |
-      A PNG image file has a resolution of 1000x1000 pixels.  
-      Each pixel stores 3 color values: red, green, and blue, each requiring 8 bits.
-
-      What is the total number of bits required to store this image **uncompressed**?
-    correct_options:
-      - 24,000,000 bits
-    wrong_options:
-      - 3,000,000 bits
-      - 8,000,000 bits
-      - 1,000,000 bits
-      - 72,000,000 bits
-      - 24,000,000 bytes
-    explanation: |
-      - **Correct:**  
-        - 1000×1000 = 1,000,000 pixels  
-        - 3 channels × 8 bits = 24 bits/pixel  
-        - Total = 1,000,000 × 24 = 24,000,000 bits  
-      - **Incorrect:** Common mistakes include calculating bytes instead of bits, or only including 1 color channel.
+      - Data cleaning (or "scrubbing") involves fixing or removing incomplete, incorrect, or inconsistently formatted data within a dataset.
 
   - question: |
-      A photographer shares a JPEG version of a photo instead of a RAW image file.
-
-      What trade-offs are being made by using JPEG?
-
-      Select **two** correct answers.
+      A researcher is using a public dataset from the census. They want to compare the average income of two different cities. Which of the following is a potential challenge they might face?
     correct_options:
-      - The JPEG file is smaller because lossy compression removes some details
-      - The JPEG image may have reduced quality compared to the original
+    - The data from one city was collected using different survey questions than the other city, making them difficult to compare directly.
     wrong_options:
-      - The JPEG file can store more metadata than a RAW file
-      - The JPEG file loads slower because of higher resolution
-      - JPEG is uncompressed and preserves all pixel values
-      - JPEG formats cannot be opened by common programs
+    - The data is stored in a digital format that can be read by a computer.
+    - The dataset contains more than 100 entries.
+    - The researcher used a high-level programming language to perform the calculation.
     explanation: |
-      - **Correct:** JPEG uses lossy compression — smaller file, less detail.
-      - **Incorrect:** RAW stores more metadata and detail; JPEG is compressed and widely used.
+      - Inconsistent data collection methods can introduce bias or make comparative analysis inaccurate.
+  - question: |
+      Select TWO answers.
+      Which of the following are primary benefits of using **cloud computing** for a small business?
+    correct_options:
+    - It allows employees to access files and collaborative tools from any location with an Internet connection.
+    - It enables the business to scale its computing resources (like storage and processing power) up or down based on current needs.
+    wrong_options:
+    - It guarantees that data will never be lost or corrupted, even if the cloud provider's servers fail.
+    - It eliminates the need for any local networking hardware like routers or Wi-Fi access points.
+    explanation: |
+      - Cloud computing provides accessibility and scalability. While reliable, no system is "100% guaranteed" against all failure, and local hardware is still needed to connect to the Internet.
 
   - question: |
-      A student checks the properties of two image files.
-
-      - File A: 1920×1080, JPEG, 1.2MB  
-      - File B: 1920×1080, PNG, 3.6MB
-
-      Why is File B larger despite having the same resolution?
+      Select TWO answers.
+      A company is moving its internal database to a cloud service. Which of the following are potential **security risks** or concerns they should consider?
     correct_options:
-      - PNG uses lossless compression, which retains all pixel data
+    - The possibility of unauthorized access if a cloud provider's infrastructure is breached.
+    - Increased reliance on the availability of a stable Internet connection to access critical business data.
     wrong_options:
-      - PNG files are larger because they use binary instead of decimal
-      - JPEG is not a real image format
-      - PNG uses lower resolution than JPEG
-      - File A is corrupted and missing data
-      - JPEG stores images as text while PNG uses graphics
+    - Cloud servers are physically located in space, making them susceptible to cosmic radiation.
+    - Moving to the cloud will cause all local computers to become incompatible with the software.
     explanation: |
-      - **Correct:** PNG retains all original data — no loss — so the file is larger.
-      - **Incorrect:** Both formats use binary; JPEG is valid; resolution is the same.
+      - Security breaches at the provider level and the "single point of failure" (the Internet connection) are the main risks associated with cloud migration.
+  - question: |
+      Select TWO answers.
+      A university researcher is analyzing a dataset of thousands of student library records, including book titles, checkout dates, and student majors. Which TWO of the following questions can likely be answered by analyzing this dataset?
+    correct_options:
+    - Which academic majors have the highest number of book checkouts per semester?
+    - Are there specific times of the year when the library experiences the most traffic for book checkouts?
+    wrong_options:
+    - How many students prefer reading physical books over using digital e-readers?
+    - Which students feel that the library staff is helpful and knowledgeable?
+    explanation: |
+      - The dataset contains quantitative data (majors, dates, titles) that can show trends and counts, but it cannot measure subjective feelings (helpfulness) or preferences not recorded in the logs (e-readers).
 
   - question: |
-      Which of the following are typically stored as **metadata** in a digital image file?
-
-      Select **three** correct answers.
+      Select TWO answers.
+      A city's public works department tracks every maintenance request for "potholes," including the GPS coordinates, the date the report was filed, and the time it took to complete the repair. Which TWO of the following can be determined from this data?
     correct_options:
-      - The GPS location where the photo was taken
-      - The date and time the photo was captured
-      - The camera model used to take the photo
+    - Which geographic regions of the city have the highest frequency of reported potholes?
+    - What is the average "turnaround time" for a pothole repair from the initial report to completion?
     wrong_options:
-      - The number of red pixels in the image
-      - The image’s file size in megabytes
-      - The number of times the photo has been edited
+    - What is the primary cause of pothole formation in the city center?
+    - Are residents satisfied with the quality of the new asphalt being used?
     explanation: |
-      - **Correct:** Metadata describes the context — time, location, device — not the image content.
-      - **Incorrect:** Pixel color and file size are content or storage characteristics, not embedded metadata.
-
-  - question: |
-      Which of the following BEST explains how the color blue is represented in an image editor?
-
-      Select **two** correct answers.
-    correct_options:
-      - As a combination of red, green, and blue light intensities stored in binary
-      - As a numeric RGB code such as (0, 0, 255)
-    wrong_options:
-      - As the text string “blue”
-      - As a hexadecimal number like #FF0000
-      - As the frequency of visible light in MHz
-      - As a randomly chosen binary number each time
-    explanation: |
-      - **Correct:** Images store colors using RGB values; blue is (0,0,255) in RGB.
-      - **Incorrect:** Text labels or random values are not used; #FF0000 is red.
-  - question: |
-      Which of the following transformations are **lossy**?
-
-      Select **two** correct answers.
-    correct_options:
-      - Compressing an image into lower resolution
-      - Converting an image into grayscale
-    wrong_options:
-      - Copying a file to another folder
-      - Encrypting data
-      - Backing up a file to the cloud
-      - Sampling an analog signal with no compression
-    explanation: |
-      - **Correct:** Resolution loss and grayscale conversion reduce detail.
-      - **Incorrect:** Others retain all data or involve no change to representation.
-  - question: |
-      A dataset includes photos of birds with the following metadata fields:
-
-      - Species  
-      - GPS coordinates  
-      - Timestamp  
-      - Camera angle  
-      - File size  
-
-      Which metadata fields would be most useful for studying **bird migration patterns**?
-
-      Select **two** correct answers.
-    correct_options:
-      - GPS coordinates
-      - Timestamp
-    wrong_options:
-      - Camera angle
-      - File size
-      - Species
-      - Image resolution
-    explanation: |
-      - **Correct:** Migration involves time and location — timestamps and GPS are essential.
-      - **Incorrect:** Species is useful for identification but not for tracking motion; angle and file size are irrelevant.
-
-  - question: |
-      An error occurs when a student tries to store the number 1024 using only 10 bits.
-
-      What type of error is this, and why?
-    correct_options:
-      - Overflow error, because 1024 exceeds the maximum value for 10 bits
-    wrong_options:
-      - Roundoff error, due to converting from decimal to binary
-      - Syntax error, due to incorrect code structure
-      - Compression error, because the file is too large
-      - Logic error, because the value was not rounded
-    explanation: |
-      - **Correct:** 10 bits can store values up to 1023; 1024 causes overflow.
-      - **Incorrect:** Roundoff applies to floating-point, not integers; other errors are unrelated.
-
-  - question: |
-      Which of the following conversions is accurate?
-
-        Binary: 01011010  
-        Base 10: ?
-
-    correct_options:
-      - 90
-    wrong_options:
-      - 58
-      - 75
-      - 86
-      - 110
-      - 102
-    explanation: |
-      - **Correct:**  
-        - 01011010 = (64 + 16 + 8 + 2) = 90  
-      - **Incorrect:** The other values are incorrect binary conversions.
-  - question: |
-      Match each data concept to the correct description:
-
-      - A. Binary Representation  
-      - B. Overflow Error  
-      - C. Lossy Compression  
-      - D. Metadata  
-
-      1. An image loses quality when saved as a JPEG  
-      2. A number exceeds the limit of bits allocated to store it  
-      3. A photo is tagged with the time and location it was taken  
-      4. Data stored as a sequence of 1s and 0s
-
-    correct_options:
-      - A-4, B-2, C-1, D-3
-    wrong_options:
-      - A-1, B-4, C-3, D-2
-      - A-3, B-1, C-2, D-4
-      - A-2, B-3, C-4, D-1
-    explanation: |
-      - **Correct:**  
-        - Binary → 1s and 0s  
-        - Overflow → exceeding capacity  
-        - Lossy → quality loss  
-        - Metadata → describes other data  
-      - **Incorrect:** Mismatches confuse structure, context, and format.
-
-  - question: |
-      A user scans a printed photo and saves it as a PNG file.  
-      Which of the following describes how this photo is stored digitally?
-
-      Select **two** correct answers.
-    correct_options:
-      - Each pixel is stored as a combination of red, green, and blue values in binary
-      - The file includes metadata such as resolution and date saved
-    wrong_options:
-      - The photo is stored as a text file containing color names
-      - Each pixel is saved as a decimal percentage of brightness
-      - The image is stored in base-10 to reduce size
-      - PNG uses lossy compression by default
-    explanation: |
-      - **Correct:** Images are stored using binary RGB values and can contain metadata.
-      - **Incorrect:** Color names and decimal brightness aren't stored; PNG is lossless.
-
-  - question: |
-      Reorder the steps below in the correct sequence for working with a large dataset:
-
-      - a. Clean the data to remove inconsistencies  
-      - b. Collect the raw data  
-      - c. Visualize patterns in the data  
-      - d. Use a program to filter or aggregate values
-
-    correct_options:
-      - b → a → d → c
-    wrong_options:
-      - a → b → c → d
-      - c → a → d → b
-      - b → d → c → a
-      - d → b → a → c
-    explanation: |
-      - **Correct:** Raw data → Clean → Filter → Visualize is the logical pipeline.
-      - **Incorrect:** Skipping or rearranging steps may lead to errors or misinterpretation.
-
-  - question: |
-      A database includes the following fields for an online article:
-
-      - Title  
-      - Author  
-      - Word count  
-      - Date published  
-      - Reading time  
-      - Tags (e.g., “Science,” “Politics”)  
-
-      Which of the following would be considered **metadata**?
-
-      Select **two** correct answers.
-    correct_options:
-      - Date published
-      - Word count
-    wrong_options:
-      - Title
-      - Tags
-      - The article’s body text
-      - Reading comprehension score
-    explanation: |
-      - **Correct:** Metadata includes file info like date, size, and word count.
-      - **Incorrect:** Content and analysis (title, tags, scores) are part of primary or derived data.
-
-  - question: |
-      A user tries to convert the decimal number 511 into binary using 8 bits.
-
-      What happens?
-    correct_options:
-      - An overflow error occurs because 8 bits can only represent values up to 255
-    wrong_options:
-      - A roundoff error occurs due to limited decimal precision
-      - The binary result will be padded with extra bits automatically
-      - The value is stored in reverse binary
-      - No error occurs; 8 bits can represent any decimal number
-    explanation: |
-      - **Correct:** 8 bits = max of 255 (11111111); 511 needs at least 9 bits.
-      - **Incorrect:** Binary isn’t reversed, and roundoff errors apply to floating-point.
-
-  - question: |
-      Which of the following actions are examples of **data cleaning**?
-
-      Select **three** correct answers.
-    correct_options:
-      - Fixing inconsistent capitalization (e.g., “Male” vs. “male”)
-      - Removing duplicate rows from a spreadsheet
-      - Filling in missing values using median or average
-    wrong_options:
-      - Sorting rows alphabetically
-      - Compressing the file using ZIP
-      - Encrypting the dataset for secure storage
-    explanation: |
-      - **Correct:** Cleaning addresses inconsistency, duplicates, and missing data.
-      - **Incorrect:** Sorting, compression, and encryption are unrelated to quality and format correction.
-
-  - question: |
-      What is the decimal equivalent of the binary number `00110100`?
-    correct_options:
-      - 52
-    wrong_options:
-      - 34
-      - 43
-      - 58
-      - 64
-      - 101
-    explanation: |
-      - **Correct:**  
-        - `00110100` = 32 + 16 + 4 = **52**  
-      - **Incorrect:** All others result from incorrect addition or position.
-
-  - question: |
-      Which of the following would MOST likely result from biased data collection?
-
-    correct_options:
-      - An algorithm that favors results for one group over another
-    wrong_options:
-      - An image that loads slower on some devices
-      - An encrypted message failing to decode
-      - A graph with too many colors
-      - A file failing to open because it’s corrupted
-    explanation: |
-      - **Correct:** Biased inputs produce unfair or skewed algorithmic decisions.
-      - **Incorrect:** Other answers are unrelated to dataset composition.
-
-  - question: |
-      A file stores image data along with additional attributes.  
-      Which of the following are examples of **image metadata**?
-
-      Select **three** correct answers.
-    correct_options:
-      - Image resolution
-      - GPS coordinates of where the photo was taken
-      - Date and time the photo was created
-    wrong_options:
-      - The color of the top-left pixel
-      - The number of red pixels
-      - The file’s current directory on the desktop
-    explanation: |
-      - **Correct:** Metadata gives context, not content. Resolution, time, and location describe the file.
-      - **Incorrect:** Color values and file path are not embedded metadata in most formats.
-
-  - question: |
-      Which of the following best describes a **lossless compression** algorithm?
-
-    correct_options:
-      - It reduces file size while allowing for the exact original data to be restored
-    wrong_options:
-      - It permanently deletes unnecessary data to save space
-      - It encrypts the file using a secret key
-      - It converts binary data to text to compress it
-      - It changes image resolution to lower quality
-    explanation: |
-      - **Correct:** Lossless keeps all data and allows perfect restoration.
-      - **Incorrect:** Deletion and quality reduction apply to lossy methods; encryption and conversion are unrelated.
-  - question: |
-      A smartphone logs metadata for every photo. The metadata includes:
-
-      - Location  
-      - Timestamp  
-      - Number of photos at the location  
-      - Filename
-
-      Which of the following can be determined from the metadata?
-
-      Select **two** correct answers.
-    correct_options:
-      - Where the photo was taken
-      - When the photo was taken
-    wrong_options:
-      - Name of the person who took the photo
-      - Resolution of the image
-      - The device’s battery level at the time
-    explanation: |
-      - **Correct:** Timestamp and location reveal patterns.
-      - **Incorrect:** Metadata listed doesn’t include personal identity or technical stats.
-  - question: |
-      What trade-offs are involved when converting **analog audio** into **digital sound files**?
-
-      Select **three** correct answers.
-    correct_options:
-      - Sound must be sampled into discrete intervals
-      - Higher sample rates produce better quality but require more storage
-      - Lossy compression may reduce fidelity to save space
-    wrong_options:
-      - Audio files cannot be stored digitally
-      - Sampling increases signal range
-      - Digital sound cannot be edited
-    explanation: |
-      - **Correct:** Sampling introduces limitations; compression trades quality for size.
-      - **Incorrect:** Digital audio is editable and widely used.
-  - question: |
-      What is MOST likely to be an **unintended effect** of using facial recognition in a public space?
-    correct_options:
-      - People may feel their privacy is being violated without their knowledge
-    wrong_options:
-      - Facial recognition always increases safety
-      - People are more likely to smile at the camera
-      - The system always improves performance
-      - It will reduce the need for electricity
-      - The accuracy is guaranteed
-    explanation: |
-      - **Correct:** Use of sensitive data without consent can lead to ethical concerns.
-      - **Incorrect:** Accuracy and performance are not guaranteed and may vary.
+      - GPS and dates allow for location and time-efficiency analysis. Identifying the "cause" or "satisfaction" would require geological data or user surveys, which aren't in this specific dataset.
