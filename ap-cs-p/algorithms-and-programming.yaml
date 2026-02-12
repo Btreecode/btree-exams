@@ -25,7 +25,7 @@ questions:
 
 - question: |
     The following procedure is intended to return the **product** of all numbers in a list, but it currently always returns 0.
-
+    ```
     PROCEDURE getProduct(numList) {
       result ← 0
       FOR EACH num IN numList {
@@ -33,6 +33,7 @@ questions:
       }
       RETURN (result)
     }
+    ```
 
     Which change will make the procedure work as intended?
   correct_options:
@@ -46,7 +47,7 @@ questions:
 
 - question: |
     The following procedure is intended to find the **maximum** value in a list of positive integers.
-
+    ```
     PROCEDURE findMax(numList) {
       max ← 0
       FOR EACH num IN numList {
@@ -56,6 +57,7 @@ questions:
       }
       RETURN (max)
     }
+    ```
 
     Which change will make the procedure work as intended?
   correct_options:
@@ -68,7 +70,7 @@ questions:
     - To find the maximum, the condition should check if the current number is *greater* than the current max.
 - question: |
     Consider the following code segment:
-
+    ```
     list ← [10, 5, 20, 15, 30, 25]
     result ← 0
     i ← 1
@@ -79,6 +81,7 @@ questions:
       i ← i + 2
     }
     DISPLAY(result)
+    ```
 
     What is displayed when this code runs? (Assume 1-based indexing)
   correct_options:
@@ -92,7 +95,7 @@ questions:
 
 - question: |
     A student wrote the following procedure to find the largest number in a list. The procedure does NOT work correctly for all inputs.
-
+    ```
     PROCEDURE findMax(myList) {
       max ← 0
       index ← 1
@@ -105,6 +108,7 @@ questions:
       }
       RETURN (max)
     }
+    ```
 
     If findMax([3, 8, 2, 10]) is called, what will be returned?
   correct_options:
@@ -118,7 +122,7 @@ questions:
 
 - question: |
     A programmer wants to count how many times the word "Apple" appears in a list of fruits. They use the following code:
-
+    ```
     count ← 0
     FOR EACH item IN fruitList {
       IF (item = "Apple") {
@@ -127,7 +131,7 @@ questions:
       }
     }
     DISPLAY(count)
-
+    ```
     What is the issue with this code?
   correct_options:
   - The RETURN statement inside the loop will cause the program to stop after the first "Apple" is found.
@@ -172,7 +176,7 @@ questions:
 
 - question: |
     What value is displayed after the following code executes?
-
+    ```
     total ← 0
     FOR i ← 1 TO 4 {
       FOR j ← 1 TO 2 {
@@ -180,6 +184,7 @@ questions:
       }
     }
     DISPLAY(total)
+    ```
   correct_options:
   - 20
   wrong_options:
@@ -233,7 +238,7 @@ questions:
     - Checking if a number is a multiple of 7 is a simple calculation (MOD 7 = 0) that can be solved by a definitive algorithm every time.
 - question: |
     Consider the following code segment:
-
+    ```
     phrase ← "ALGORITHM"
     result ← ""
     i ← LENGTH(phrase)
@@ -244,6 +249,7 @@ questions:
       i ← i - 1
     }
     DISPLAY(result)
+    ```
 
     What is displayed? (Assume 1-based indexing)
   correct_options:
@@ -257,13 +263,14 @@ questions:
 
 - question: |
     What is displayed when the following code executes?
-
+    ```
     word ← "COOL"
     output ← ""
     FOR EACH letter IN word {
       output ← letter + output
     }
     DISPLAY(output)
+    ```
   correct_options:
   - "LOOC"
   wrong_options:
@@ -285,11 +292,12 @@ questions:
     - "REDUNDANCY" length 10. Indices divisible by 3: 3(D), 6(N), 9(C). Result: "DNC".
 - question: |
     A robot is in the center of a 5x5 grid, at position (3, 3), facing North (up). The following code is executed:
-
+    ```
     REPEAT 3 TIMES {
       MOVE_FORWARD()
       ROTATE_RIGHT()
     }
+    ```
 
     If the robot cannot move off the grid (it stays in the last valid square if it tries), what is its final position and direction?
   correct_options:
@@ -335,6 +343,7 @@ questions:
 - question: |
     What is displayed when the following code executes?
 
+    ```
     nums ← [1, 3, 5, 7, 9]
     result ← 0
     FOR EACH n IN nums {
@@ -343,6 +352,7 @@ questions:
       }
     }
     DISPLAY(result)
+    ```
   correct_options:
   - 21
   wrong_options:
@@ -354,7 +364,7 @@ questions:
 
 - question: |
     Consider the following code segment:
-
+    ```
     x ← 10
     y ← 20
     temp ← x
@@ -362,6 +372,7 @@ questions:
     y ← temp
     DISPLAY(x)
     DISPLAY(y)
+    ```
 
     What is the result of the code?
   correct_options:
@@ -418,6 +429,7 @@ questions:
 - question: |
     A programmer writes the following procedure to count how many numbers in a list are **strictly greater than 50**.
 
+    ```
     PROCEDURE countHigh(myList) {
       count ← 0
       FOR EACH num IN myList {
@@ -427,6 +439,7 @@ questions:
       }
       RETURN(count)
     }
+    ```
 
     Which of the following best describes the error in the procedure?
   correct_options:
@@ -440,10 +453,11 @@ questions:
 
 - question: |
     What is the value of **result** after the following code executes?
-
+    ```
     a ← 15
     b ← 4
     result ← (a MOD b) + (a / b)
+    ```
 
     (Note: Assume integer division where 15 / 4 = 3)
   correct_options:
@@ -453,7 +467,7 @@ questions:
   - 3
   - 4
   explanation: |
-    - $15 \text{ MOD } 4 = 3$ (the remainder). $15 / 4 = 3$ (the quotient). $3 + 3 = 6$.
+    - 15 MOD 4 = 3 (the remainder). 15 / 4 = 3 (the quotient). 3 + 3 = 6.
 
 - question: |
     A programmer wants to display only the **even** numbers from a list called `valList`. Which of the following code segments should be placed inside the loop?
@@ -478,7 +492,7 @@ questions:
 
 - question: |
     What is displayed after the following code runs?
-
+    ```
     list ← ["red", "green", "blue"]
     i ← LENGTH(list)
     result ← ""
@@ -487,6 +501,7 @@ questions:
       i ← i - 1
     }
     DISPLAY(result)
+    ```
   correct_options:
   - "bluegreenred"
   wrong_options:
@@ -508,7 +523,7 @@ questions:
     - APIs are a form of abstraction; they hide the complexity of the service (like processing audio) behind a simple set of commands.
 - question: |
     A student writes the following procedure to calculate the average of a list of numbers:
-
+    ```
     PROCEDURE getAverage(numList) {
       sum ← 0
       FOR EACH num IN numList {
@@ -516,6 +531,7 @@ questions:
       }
       RETURN (sum / LENGTH(numList))
     }
+    ```
 
     The code works perfectly for most inputs but crashes when the user provides an empty list `[]`. What type of error is this?
   correct_options:
@@ -550,7 +566,7 @@ questions:
     - Procedural abstraction "hides" the messy implementation details, providing a simple interface for the rest of the program to interact with.
 - question: |
     What is displayed after the following code executes?
-
+    ```
     x ← 32
     count ← 0
     REPEAT UNTIL (x < 1) {
@@ -558,6 +574,7 @@ questions:
       count ← count + 1
     }
     DISPLAY(count)
+    ```
   correct_options:
   - 6
   wrong_options:
@@ -569,13 +586,14 @@ questions:
 
 - question: |
     What is the final value of **sum** after the following code segment is executed?
-
+    ```
     sum ← 0
     n ← 1
     REPEAT 4 TIMES {
       sum ← sum + n
       n ← n * 2
     }
+    ```
   correct_options:
   - 15
   wrong_options:
@@ -598,7 +616,7 @@ questions:
     - Algorithms are conceptual steps and can vary in efficiency. They are not tied to one language, and some (unreasonable) algorithms take too long to finish.
 - question: |
     What is displayed after the following code executes?
-
+    ```
     x ← 32
     count ← 0
     REPEAT UNTIL (x < 1) {
@@ -606,6 +624,7 @@ questions:
       count ← count + 1
     }
     DISPLAY(count)
+    ```
   correct_options:
   - 6
   wrong_options:
@@ -617,13 +636,14 @@ questions:
 
 - question: |
     What is the final value of **sum** after the following code segment is executed?
-
+    ```
     sum ← 0
     n ← 1
     REPEAT 4 TIMES {
       sum ← sum + n
       n ← n * 2
     }
+    ```
   correct_options:
   - 15
   wrong_options:
@@ -683,7 +703,7 @@ questions:
     - Abstraction improves readability and maintainability. While it *can* reduce code length by removing duplication, its primary goal is clarity and "single-point-of-failure" logic fixing.
 - question: |
     Consider the following code segment.
-
+    ```
     val ← 25
     IF (val > 10) {
       IF (val < 20) {
@@ -694,6 +714,7 @@ questions:
     } ELSE {
       DISPLAY("Red")
     }
+    ```
 
     What is displayed when this code executes?
   correct_options:
@@ -720,21 +741,29 @@ questions:
     A student wants to create a procedure that returns the average of three numbers. Which of the following is a correct implementation using **procedural abstraction**?
   correct_options:
   - |
+    ```
     PROCEDURE getAvg(a, b, c) {
       RETURN ( (a + b + c) / 3 )
     }
+    ```
   wrong_options:
   - |
+    ```
     PROCEDURE getAvg(a, b, c) {
       DISPLAY ( (a + b + c) / 3 )
     }
+    ```
   - |
+    ```
     PROCEDURE getAvg(a, b, c) {
       sum ← a + b + c
     }
+    ```
   - |
+    ```
     PROCEDURE getAvg(a, b, c) {
       RETURN ( a + b + c / 3 )
     }
+    ```
   explanation: |
     - A procedure used for a calculation should typically return the value to the caller. The math must also use parentheses to ensure the addition happens before the division.
