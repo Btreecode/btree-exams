@@ -1,242 +1,240 @@
-- questions:
-  - question: |
-      Which of the following is true regarding the role of the **Internet Protocol (IP)**?
-    correct_options:
-    - It is responsible for providing a unique address to each device on a network so packets can be routed.
-    wrong_options:
-    - It ensures that packets are received in the correct order without any loss.
-    - It is the primary protocol used to translate domain names like "example.com" into numbers.
-    - It encrypts data so that it cannot be read by unauthorized parties during transmission.
-    explanation: |
-      - IP (Internet Protocol) focuses on addressing and routing; it does not guarantee delivery or order (that is TCP's job).
+questions:
+- question: |
+    Which of the following is true regarding the role of the **Internet Protocol (IP)**?
+  correct_options:
+  - It is responsible for providing a unique address to each device on a network so packets can be routed.
+  wrong_options:
+  - It ensures that packets are received in the correct order without any loss.
+  - It is the primary protocol used to translate domain names like "example.com" into numbers.
+  - It encrypts data so that it cannot be read by unauthorized parties during transmission.
+  explanation: |
+    - IP (Internet Protocol) focuses on addressing and routing; it does not guarantee delivery or order (that is TCP's job).
 
-  - question: |
-      A user is downloading a large file. The file is broken into many small packets that travel through different paths across the Internet. Which protocol is responsible for reassembling these packets into the original file and requesting the retransmission of any missing packets?
-    correct_options:
-    - TCP (Transmission Control Protocol)
-    wrong_options:
-    - IP (Internet Protocol)
-    - DNS (Domain Name System)
-    - HTTP (Hypertext Travel Protocol)
-    explanation: |
-      - TCP handles the reliability, sequencing, and error-checking of data transmission.
+- question: |
+    A user is downloading a large file. The file is broken into many small packets that travel through different paths across the Internet. Which protocol is responsible for reassembling these packets into the original file and requesting the retransmission of any missing packets?
+  correct_options:
+  - TCP (Transmission Control Protocol)
+  wrong_options:
+  - IP (Internet Protocol)
+  - DNS (Domain Name System)
+  - HTTP (Hypertext Travel Protocol)
+  explanation: |
+    - TCP handles the reliability, sequencing, and error-checking of data transmission.
+- question: |
+    Which protocol is primarily used by a browser to request and receive the HTML, images, and other resources that make up a web page?
+  correct_options:
+  - HTTP (Hypertext Transfer Protocol)
+  wrong_options:
+  - TCP (Transmission Control Protocol)
+  - UDP (User Datagram Protocol)
+  - DNS (Domain Name System)
+  explanation: |
+    - HTTP is the protocol used specifically for web traffic between a client (browser) and a server.
+- question: |
+    An environmental scientist uses a computer simulation to study the effects of rising ocean temperatures on coral reefs. Which of the following is a limitation of using a simulation for this purpose?
+  correct_options:
+  - The simulation's accuracy is limited by the assumptions and data used to create the model.
+  wrong_options:
+  - The simulation can only be run once because it consumes too much energy.
+  - The simulation cannot be used to test "what-if" scenarios with different variables.
+  - Using a simulation is more dangerous than conducting the same experiment in the actual ocean.
+  explanation: |
+    - Simulations are models of reality; if the underlying mathematical model or initial data is flawed, the results will not match real-world outcomes.
+- question: |
+    A car manufacturer uses a computer simulation to test the safety of a new vehicle design in high-speed crashes. What is the primary advantage of this approach compared to physical crash testing?
+  correct_options:
+  - It is safer and less expensive to run thousands of virtual tests than to destroy thousands of physical cars.
+  wrong_options:
+  - The simulation will provide 100% perfect predictions of how the real car will behave.
+  - The simulation does not require any knowledge of physics or mathematics to set up.
+  - Physical testing is no longer legal in most countries due to environmental concerns.
+  explanation: |
+    - Simulations allow for rapid, cost-effective, and safe iteration during the design phase before moving to expensive physical prototypes.
 
-  - question: |
-      Which protocol is primarily used by a browser to request and receive the HTML, images, and other resources that make up a web page?
-    correct_options:
-    - HTTP (Hypertext Transfer Protocol)
-    wrong_options:
-    - TCP (Transmission Control Protocol)
-    - UDP (User Datagram Protocol)
-    - DNS (Domain Name System)
-    explanation: |
-      - HTTP is the protocol used specifically for web traffic between a client (browser) and a server.
-  - question: |
-      An environmental scientist uses a computer simulation to study the effects of rising ocean temperatures on coral reefs. Which of the following is a limitation of using a simulation for this purpose?
-    correct_options:
-    - The simulation's accuracy is limited by the assumptions and data used to create the model.
-    wrong_options:
-    - The simulation can only be run once because it consumes too much energy.
-    - The simulation cannot be used to test "what-if" scenarios with different variables.
-    - Using a simulation is more dangerous than conducting the same experiment in the actual ocean.
-    explanation: |
-      - Simulations are models of reality; if the underlying mathematical model or initial data is flawed, the results will not match real-world outcomes.
+- question: |
+    Which of the following statements about computer simulations is TRUE?
+  correct_options:
+  - They are often used when real-world experiments are too slow, too expensive, or too dangerous.
+  wrong_options:
+  - They are always faster than the real-world processes they are modeling.
+  - They never contain bias because they are based on computer code.
+  - They are only used for scientific research and not for business or entertainment.
+  explanation: |
+    - The primary utility of a simulation is its ability to safely and cheaply model scenarios that would be impractical to test in reality.
+- question: |
+    A sequential computer program takes 80 minutes to process a dataset. A computer scientist develops a parallel version of the program that can run on 4 processors. When tested, the parallel version takes 25 minutes. Which of the following best explains why the program did not achieve a 4x speedup (20 minutes)?
+  correct_options:
+  - Certain parts of the program are sequential and cannot be split among multiple processors.
+  wrong_options:
+  - The processors were not all running at the same clock speed.
+  - Parallel programs are mathematically incapable of running faster than sequential ones.
+  - The dataset was too small for the processors to handle efficiently.
+  explanation: |
+    - Amdahl's Law states that the speedup of a program is limited by the portion of the program that must remain sequential.
 
-  - question: |
-      A car manufacturer uses a computer simulation to test the safety of a new vehicle design in high-speed crashes. What is the primary advantage of this approach compared to physical crash testing?
-    correct_options:
-    - It is safer and less expensive to run thousands of virtual tests than to destroy thousands of physical cars.
-    wrong_options:
-    - The simulation will provide 100% perfect predictions of how the real car will behave.
-    - The simulation does not require any knowledge of physics or mathematics to set up.
-    - Physical testing is no longer legal in most countries due to environmental concerns.
-    explanation: |
-      - Simulations allow for rapid, cost-effective, and safe iteration during the design phase before moving to expensive physical prototypes.
+- question: |
+    A programmer is deciding whether to use a parallel solution for a data-processing task. In which of the following scenarios is a parallel solution LEAST likely to provide a significant improvement in execution time?
+  correct_options:
+  - The task involves a series of steps where each step depends on the output of the previous one.
+  wrong_options:
+  - The task requires performing the same calculation on millions of independent data points.
+  - The task can be divided into several smaller, independent sub-tasks.
+  - The programmer has access to a multi-core processor or a distributed network of computers.
+  explanation: |
+    - If tasks are interdependent (sequential), they cannot be run simultaneously, rendering parallelism ineffective.
 
-  - question: |
-      Which of the following statements about computer simulations is TRUE?
-    correct_options:
-    - They are often used when real-world experiments are too slow, too expensive, or too dangerous.
-    wrong_options:
-    - They are always faster than the real-world processes they are modeling.
-    - They never contain bias because they are based on computer code.
-    - They are only used for scientific research and not for business or entertainment.
-    explanation: |
-      - The primary utility of a simulation is its ability to safely and cheaply model scenarios that would be impractical to test in reality.
-  - question: |
-      A sequential computer program takes 80 minutes to process a dataset. A computer scientist develops a parallel version of the program that can run on 4 processors. When tested, the parallel version takes 25 minutes. Which of the following best explains why the program did not achieve a 4x speedup (20 minutes)?
-    correct_options:
-    - Certain parts of the program are sequential and cannot be split among multiple processors.
-    wrong_options:
-    - The processors were not all running at the same clock speed.
-    - Parallel programs are mathematically incapable of running faster than sequential ones.
-    - The dataset was too small for the processors to handle efficiently.
-    explanation: |
-      - Amdahl's Law states that the speedup of a program is limited by the portion of the program that must remain sequential.
+- question: |
+    Which of the following is a potential "overhead" cost associated with running a program in parallel?
+  correct_options:
+  - The time spent communicating and coordinating data between different processors.
+  wrong_options:
+  - The cost of upgrading the computer's monitor to display the results.
+  - The requirement that all parallel programs be written in a low-level language like Assembly.
+  - A decrease in the total amount of energy consumed by the hardware.
+  explanation: |
+    - Parallelism requires extra work to split the data, send it to processors, and then recombine the results, which can take time.
+- question: |
+    When a user wants to visit a website, they type a human-readable address like `www.example.edu`. Which of the following best describes the role of the **Domain Name System (DNS)** in this process?
+  correct_options:
+  - It acts like a phone book, translating the domain name into the numeric IP address needed to locate the server.
+  wrong_options:
+  - It encrypts the connection between the user's computer and the website.
+  - It determines the fastest physical path for packets to travel across the network.
+  - It caches the website's images so the page loads faster on future visits.
+  explanation: |
+    - DNS is a distributed database that maps domain names to IP addresses, allowing humans to use names instead of hard-to-remember numbers.
 
-  - question: |
-      A programmer is deciding whether to use a parallel solution for a data-processing task. In which of the following scenarios is a parallel solution LEAST likely to provide a significant improvement in execution time?
-    correct_options:
-    - The task involves a series of steps where each step depends on the output of the previous one.
-    wrong_options:
-    - The task requires performing the same calculation on millions of independent data points.
-    - The task can be divided into several smaller, independent sub-tasks.
-    - The programmer has access to a multi-core processor or a distributed network of computers.
-    explanation: |
-      - If tasks are interdependent (sequential), they cannot be run simultaneously, rendering parallelism ineffective.
+- question: |
+    If the DNS servers were to go offline globally, what would be the most likely result for an average internet user?
+  correct_options:
+  - Users would be unable to access websites using their names (e.g., google.com) but could still access them if they knew the specific IP address.
+  wrong_options:
+  - All physical internet cables would stop transmitting data.
+  - Web browsers would automatically switch to using local files only.
+  - The internet would remain fully functional because browsers do not actually need IP addresses.
+  explanation: |
+    - Without DNS, the "translation" service is gone. The underlying network (IP) still works, but the mapping from names to addresses is unavailable.
+- question: |
+    A network is designed such that there are at least three different paths between any two routers. If one router fails, data can still be sent through an alternative route. This design feature is known as:
+  correct_options:
+  - Redundancy.
+  wrong_options:
+  - Compression.
+  - Decidability.
+  - Sequential processing.
+  explanation: |
+    - Redundancy is the inclusion of extra components (like additional paths) so that a system can continue to function even if individual parts fail, leading to fault tolerance.
 
-  - question: |
-      Which of the following is a potential "overhead" cost associated with running a program in parallel?
-    correct_options:
-    - The time spent communicating and coordinating data between different processors.
-    wrong_options:
-    - The cost of upgrading the computer's monitor to display the results.
-    - The requirement that all parallel programs be written in a low-level language like Assembly.
-    - A decrease in the total amount of energy consumed by the hardware.
-    explanation: |
-      - Parallelism requires extra work to split the data, send it to processors, and then recombine the results, which can take time.
-  - question: |
-      When a user wants to visit a website, they type a human-readable address like `www.example.edu`. Which of the following best describes the role of the **Domain Name System (DNS)** in this process?
-    correct_options:
-    - It acts like a phone book, translating the domain name into the numeric IP address needed to locate the server.
-    wrong_options:
-    - It encrypts the connection between the user's computer and the website.
-    - It determines the fastest physical path for packets to travel across the network.
-    - It caches the website's images so the page loads faster on future visits.
-    explanation: |
-      - DNS is a distributed database that maps domain names to IP addresses, allowing humans to use names instead of hard-to-remember numbers.
+- question: |
+    Which of the following is a primary reason the Internet is considered "fault-tolerant"?
+  correct_options:
+  - It is a decentralized network with many redundant connections between routers.
+  wrong_options:
+  - It uses a single, high-speed backbone cable that connects every computer in the world.
+  - All data packets are required to follow the exact same path from source to destination.
+  - It uses a centralized control system that can fix any broken connection instantly.
+  explanation: |
+    - Because the Internet is a "network of networks" with multiple paths, it can route around damage or traffic jams, making it highly resilient.
 
-  - question: |
-      If the DNS servers were to go offline globally, what would be the most likely result for an average internet user?
-    correct_options:
-    - Users would be unable to access websites using their names (e.g., google.com) but could still access them if they knew the specific IP address.
-    wrong_options:
-    - All physical internet cables would stop transmitting data.
-    - Web browsers would automatically switch to using local files only.
-    - The internet would remain fully functional because browsers do not actually need IP addresses.
-    explanation: |
-      - Without DNS, the "translation" service is gone. The underlying network (IP) still works, but the mapping from names to addresses is unavailable.
-  - question: |
-      A network is designed such that there are at least three different paths between any two routers. If one router fails, data can still be sent through an alternative route. This design feature is known as:
-    correct_options:
-    - Redundancy.
-    wrong_options:
-    - Compression.
-    - Decidability.
-    - Sequential processing.
-    explanation: |
-      - Redundancy is the inclusion of extra components (like additional paths) so that a system can continue to function even if individual parts fail, leading to fault tolerance.
+- question: |
+    In a network diagram, what does it mean if the **reliability** of the system increases after adding a new connection between two existing routers?
+  correct_options:
+  - The system has become more fault-tolerant because there are now more paths for data to travel.
+  wrong_options:
+  - The speed of light inside the cables has increased.
+  - The network no longer requires IP addresses to function.
+  - Every packet is now guaranteed to arrive in less than one millisecond.
+  explanation: |
+    - Adding connections increases redundancy. If one path is blocked, the extra path ensures the network remains operational.
+- question: |
+    Two computers in different cities are communicating over the Internet. A router along the path between them becomes congested with high traffic. How does the Internet handle this situation?
+  correct_options:
+  - Routers can dynamically reroute packets through different paths based on current network conditions.
+  wrong_options:
+  - The sender must manually choose a new path for every packet.
+  - The Internet shuts down that specific connection until the congestion is cleared by a human technician.
+  - All packets are held in a single queue until the congested router is ready to process them.
+  explanation: |
+    - The Internet's routing protocols are dynamic; they constantly evaluate the "best" path and can route packets around congestion or failures.
 
-  - question: |
-      Which of the following is a primary reason the Internet is considered "fault-tolerant"?
-    correct_options:
-    - It is a decentralized network with many redundant connections between routers.
-    wrong_options:
-    - It uses a single, high-speed backbone cable that connects every computer in the world.
-    - All data packets are required to follow the exact same path from source to destination.
-    - It uses a centralized control system that can fix any broken connection instantly.
-    explanation: |
-      - Because the Internet is a "network of networks" with multiple paths, it can route around damage or traffic jams, making it highly resilient.
+- question: |
+    Which statement correctly describes how packets travel from a source to a destination on the Internet?
+  correct_options:
+  - Different packets from the same message may take different routes and arrive out of order.
+  wrong_options:
+  - All packets in a single message are guaranteed to follow the exact same physical route.
+  - Packets are physically moved by a central server that controls all traffic worldwide.
+  - Packets are only allowed to travel through routers owned by the same company as the sender.
+  explanation: |
+    - Because the Internet is decentralized and uses packet switching, each packet is routed independently, which improves efficiency and resilience.
+- question: |
+    Which of the following statements about the **Internet** is FALSE?
+  correct_options:
+  - The Internet is owned and controlled by a single international organization that sets all rules.
+  wrong_options:
+  - The Internet is a "network of networks" built on open protocols.
+  - Data on the Internet is sent in small chunks called packets.
+  - Protocols like TCP/IP allow different types of hardware to communicate with each other.
+  explanation: |
+    - No single entity owns the Internet. It is a decentralized collection of networks that cooperate using shared protocols (standards).
+- question: |
+    Select TWO answers.
+    Which of the following are primary benefits of using **cloud computing** for a small business?
+  correct_options:
+  - It allows employees to access files and collaborative tools from any location with an Internet connection.
+  - It enables the business to scale its computing resources (like storage and processing power) up or down based on current needs.
+  wrong_options:
+  - It guarantees that data will never be lost or corrupted, even if the cloud provider's servers fail.
+  - It eliminates the need for any local networking hardware like routers or Wi-Fi access points.
+  explanation: |
+    - Cloud computing provides accessibility and scalability. While reliable, no system is "100% guaranteed" against all failure, and local hardware is still needed to connect to the Internet.
 
-  - question: |
-      In a network diagram, what does it mean if the **reliability** of the system increases after adding a new connection between two existing routers?
-    correct_options:
-    - The system has become more fault-tolerant because there are now more paths for data to travel.
-    wrong_options:
-    - The speed of light inside the cables has increased.
-    - The network no longer requires IP addresses to function.
-    - Every packet is now guaranteed to arrive in less than one millisecond.
-    explanation: |
-      - Adding connections increases redundancy. If one path is blocked, the extra path ensures the network remains operational.
-  - question: |
-      Two computers in different cities are communicating over the Internet. A router along the path between them becomes congested with high traffic. How does the Internet handle this situation?
-    correct_options:
-    - Routers can dynamically reroute packets through different paths based on current network conditions.
-    wrong_options:
-    - The sender must manually choose a new path for every packet.
-    - The Internet shuts down that specific connection until the congestion is cleared by a human technician.
-    - All packets are held in a single queue until the congested router is ready to process them.
-    explanation: |
-      - The Internet's routing protocols are dynamic; they constantly evaluate the "best" path and can route packets around congestion or failures.
+- question: |
+    Select TWO answers.
+    A company is moving its internal database to a cloud service. Which of the following are potential **security risks** or concerns they should consider?
+  correct_options:
+  - The possibility of unauthorized access if a cloud provider's infrastructure is breached.
+  - Increased reliance on the availability of a stable Internet connection to access critical business data.
+  wrong_options:
+  - Cloud servers are physically located in space, making them susceptible to cosmic radiation.
+  - Moving to the cloud will cause all local computers to become incompatible with the software.
+  explanation: |
+    - Security breaches at the provider level and the "single point of failure" (the Internet connection) are the main risks associated with cloud migration.
+- question: |
+    The "MedConnect Portal" is a cloud-based innovation that allows patients to share their genetic data, wearable fitness tracker logs, and medical history with specialized AI diagnostic tools. The goal is to provide highly personalized treatment plans and predict potential health risks years in advance. The portal uses public-key encryption to protect data but requires users to opt-in to sharing their "anonymized" data with pharmaceutical researchers.
 
-  - question: |
-      Which statement correctly describes how packets travel from a source to a destination on the Internet?
-    correct_options:
-    - Different packets from the same message may take different routes and arrive out of order.
-    wrong_options:
-    - All packets in a single message are guaranteed to follow the exact same physical route.
-    - Packets are physically moved by a central server that controls all traffic worldwide.
-    - Packets are only allowed to travel through routers owned by the same company as the sender.
-    explanation: |
-      - Because the Internet is decentralized and uses packet switching, each packet is routed independently, which improves efficiency and resilience.
-  - question: |
-      Which of the following statements about the **Internet** is FALSE?
-    correct_options:
-    - The Internet is owned and controlled by a single international organization that sets all rules.
-    wrong_options:
-    - The Internet is a "network of networks" built on open protocols.
-    - Data on the Internet is sent in small chunks called packets.
-    - Protocols like TCP/IP allow different types of hardware to communicate with each other.
-    explanation: |
-      - No single entity owns the Internet. It is a decentralized collection of networks that cooperate using shared protocols (standards).
-  - question: |
-      Select TWO answers.
-      Which of the following are primary benefits of using **cloud computing** for a small business?
-    correct_options:
-    - It allows employees to access files and collaborative tools from any location with an Internet connection.
-    - It enables the business to scale its computing resources (like storage and processing power) up or down based on current needs.
-    wrong_options:
-    - It guarantees that data will never be lost or corrupted, even if the cloud provider's servers fail.
-    - It eliminates the need for any local networking hardware like routers or Wi-Fi access points.
-    explanation: |
-      - Cloud computing provides accessibility and scalability. While reliable, no system is "100% guaranteed" against all failure, and local hardware is still needed to connect to the Internet.
+    The MedConnect Portal uses **public-key encryption**. If a patient wants to upload their records securely so only the hospital's server can read them, what should happen?
+  correct_options:
+  - The patient's app encrypts the data using the hospital's public key.
+  wrong_options:
+  - The hospital sends its private key to the patient's phone.
+  - The patient encrypts the data with their own private key.
+  - The hospital and patient share a single password over an unencrypted email.
+  explanation: |
+    - To ensure only the recipient can read the data, it must be encrypted with the recipient's public key.
 
-  - question: |
-      Select TWO answers.
-      A company is moving its internal database to a cloud service. Which of the following are potential **security risks** or concerns they should consider?
-    correct_options:
-    - The possibility of unauthorized access if a cloud provider's infrastructure is breached.
-    - Increased reliance on the availability of a stable Internet connection to access critical business data.
-    wrong_options:
-    - Cloud servers are physically located in space, making them susceptible to cosmic radiation.
-    - Moving to the cloud will cause all local computers to become incompatible with the software.
-    explanation: |
-      - Security breaches at the provider level and the "single point of failure" (the Internet connection) are the main risks associated with cloud migration.
-  - question: |
-      The "MedConnect Portal" is a cloud-based innovation that allows patients to share their genetic data, wearable fitness tracker logs, and medical history with specialized AI diagnostic tools. The goal is to provide highly personalized treatment plans and predict potential health risks years in advance. The portal uses public-key encryption to protect data but requires users to opt-in to sharing their "anonymized" data with pharmaceutical researchers.
+- question: |
+    The "EcoGrid" is a decentralized energy-sharing platform. Homeowners with solar panels can sell their excess electricity directly to their neighbors using a digital ledger. Smart meters track energy production and consumption in real-time. This reduces reliance on large power plants and lowers costs. However, the system's reliance on a continuous internet connection makes it vulnerable to cyberattacks that could disrupt local power.
 
-      The MedConnect Portal uses **public-key encryption**. If a patient wants to upload their records securely so only the hospital's server can read them, what should happen?
-    correct_options:
-    - The patient's app encrypts the data using the hospital's public key.
-    wrong_options:
-    - The hospital sends its private key to the patient's phone.
-    - The patient encrypts the data with their own private key.
-    - The hospital and patient share a single password over an unencrypted email.
-    explanation: |
-      - To ensure only the recipient can read the data, it must be encrypted with the recipient's public key.
+    Which of the following describes the **fault tolerance** of the EcoGrid compared to a traditional centralized power plant?
+  correct_options:
+  - If one house's solar panels fail, the rest of the neighborhood can still share energy among themselves.
+  wrong_options:
+  - The EcoGrid is impossible to hack because it is decentralized.
+  - The EcoGrid produces more electricity than a nuclear power plant.
+  - If the internet goes down, the EcoGrid can still communicate using binary code.
+  explanation: |
+    - Decentralization often provides fault tolerance; the failure of one "node" (house) doesn't bring down the entire local system.
 
-  - question: |
-      The "EcoGrid" is a decentralized energy-sharing platform. Homeowners with solar panels can sell their excess electricity directly to their neighbors using a digital ledger. Smart meters track energy production and consumption in real-time. This reduces reliance on large power plants and lowers costs. However, the system's reliance on a continuous internet connection makes it vulnerable to cyberattacks that could disrupt local power.
+- question: |
+    The "EcoGrid" is a decentralized energy-sharing platform. Homeowners with solar panels can sell their excess electricity directly to their neighbors using a digital ledger. Smart meters track energy production and consumption in real-time. This reduces reliance on large power plants and lowers costs. However, the system's reliance on a continuous internet connection makes it vulnerable to cyberattacks that could disrupt local power.
 
-      Which of the following describes the **fault tolerance** of the EcoGrid compared to a traditional centralized power plant?
-    correct_options:
-    - If one house's solar panels fail, the rest of the neighborhood can still share energy among themselves.
-    wrong_options:
-    - The EcoGrid is impossible to hack because it is decentralized.
-    - The EcoGrid produces more electricity than a nuclear power plant.
-    - If the internet goes down, the EcoGrid can still communicate using binary code.
-    explanation: |
-      - Decentralization often provides fault tolerance; the failure of one "node" (house) doesn't bring down the entire local system.
-
-  - question: |
-      The "EcoGrid" is a decentralized energy-sharing platform. Homeowners with solar panels can sell their excess electricity directly to their neighbors using a digital ledger. Smart meters track energy production and consumption in real-time. This reduces reliance on large power plants and lowers costs. However, the system's reliance on a continuous internet connection makes it vulnerable to cyberattacks that could disrupt local power.
-
-      The EcoGrid uses a "digital ledger" to track transactions. This is an example of:
-    correct_options:
-    - Maintaining data integrity and transparency in a distributed system.
-    wrong_options:
-    - Lossy compression of electricity.
-    - A phishing attack on the power company.
-    - Reducing the digital divide by giving everyone free solar panels.
-    explanation: |
-      - A ledger ensures that all parties agree on who sent what, which is crucial for decentralized trust and data integrity.
+    The EcoGrid uses a "digital ledger" to track transactions. This is an example of:
+  correct_options:
+  - Maintaining data integrity and transparency in a distributed system.
+  wrong_options:
+  - Lossy compression of electricity.
+  - A phishing attack on the power company.
+  - Reducing the digital divide by giving everyone free solar panels.
+  explanation: |
+    - A ledger ensures that all parties agree on who sent what, which is crucial for decentralized trust and data integrity.

@@ -1,75 +1,75 @@
-- questions:
-  - question: |
-      A programmer is testing a new algorithm but finds it produces the wrong output for negative numbers. Which of the following is the most effective debugging strategy?
-    correct_options:
-    - Use print statements to display the value of variables at different stages of the algorithm.
-    wrong_options:
-    - Delete the entire code and rewrite it from memory.
-    - Only test the program with positive numbers to ensure it works correctly for those.
-    - Rename all the variables to make the code look more professional.
-    explanation: |
-      - "Trace" or "Print" debugging allows a programmer to see where logic fails by checking intermediate values during execution.
+questions:
+- question: |
+    A programmer is testing a new algorithm but finds it produces the wrong output for negative numbers. Which of the following is the most effective debugging strategy?
+  correct_options:
+  - Use print statements to display the value of variables at different stages of the algorithm.
+  wrong_options:
+  - Delete the entire code and rewrite it from memory.
+  - Only test the program with positive numbers to ensure it works correctly for those.
+  - Rename all the variables to make the code look more professional.
+  explanation: |
+    - "Trace" or "Print" debugging allows a programmer to see where logic fails by checking intermediate values during execution.
 
-  - question: |
-      Which of the following is a benefit of using a collaborative version control system, such as Git, for a group project?
-    correct_options:
-    - It allows multiple people to work on the same code simultaneously and merge their changes later.
-    wrong_options:
-    - It automatically identifies and fixes all syntax errors in the code.
-    - It prevents anyone from seeing the code history to maintain security.
-    - It translates the code into multiple programming languages automatically.
-    explanation: |
-      - Version control systems are designed for collaboration, allowing for branching, merging, and tracking the history of changes made by different team members.
-  - question: |
-      A programmer is working on a complex procedure and notices it does not produce the expected output. Which of the following debugging strategies would be MOST effective for identifying the logic error?
-    correct_options:
-    - Inserting temporary "display" statements to check the values of variables at different points in the program.
-    wrong_options:
-    - Deleting the entire procedure and rewriting it from memory.
-    - Removing all comments from the code to make it run faster.
-    - Changing the variable names to be shorter and more cryptic.
-    explanation: |
-      - Tracing variable values during execution is a fundamental way to see exactly where the logic diverges from the intended behavior.
+- question: |
+    Which of the following is a benefit of using a collaborative version control system, such as Git, for a group project?
+  correct_options:
+  - It allows multiple people to work on the same code simultaneously and merge their changes later.
+  wrong_options:
+  - It automatically identifies and fixes all syntax errors in the code.
+  - It prevents anyone from seeing the code history to maintain security.
+  - It translates the code into multiple programming languages automatically.
+  explanation: |
+    - Version control systems are designed for collaboration, allowing for branching, merging, and tracking the history of changes made by different team members.
+- question: |
+    A programmer is working on a complex procedure and notices it does not produce the expected output. Which of the following debugging strategies would be MOST effective for identifying the logic error?
+  correct_options:
+  - Inserting temporary "display" statements to check the values of variables at different points in the program.
+  wrong_options:
+  - Deleting the entire procedure and rewriting it from memory.
+  - Removing all comments from the code to make it run faster.
+  - Changing the variable names to be shorter and more cryptic.
+  explanation: |
+    - Tracing variable values during execution is a fundamental way to see exactly where the logic diverges from the intended behavior.
 
-  - question: |
-      A student is collaborating with a classmate on a program. They decide to use "Pair Programming." Which of the following describes a typical benefit of this approach?
-    correct_options:
-    - It leads to fewer errors because one person writes the code while the other reviews it in real-time.
-    wrong_options:
-    - It allows the program to run twice as fast because two people are working on it.
-    - It eliminates the need for any documentation or comments in the code.
-    - It ensures that the program will be compatible with all operating systems.
-    explanation: |
-      - Pair programming involves a "driver" and a "navigator," which helps catch bugs early and improves the overall design of the code.
+- question: |
+    A student is collaborating with a classmate on a program. They decide to use "Pair Programming." Which of the following describes a typical benefit of this approach?
+  correct_options:
+  - It leads to fewer errors because one person writes the code while the other reviews it in real-time.
+  wrong_options:
+  - It allows the program to run twice as fast because two people are working on it.
+  - It eliminates the need for any documentation or comments in the code.
+  - It ensures that the program will be compatible with all operating systems.
+  explanation: |
+    - Pair programming involves a "driver" and a "navigator," which helps catch bugs early and improves the overall design of the code.
 
-  - question: |
-      A programmer encounters a "Runtime Error" while their program is running. What does this usually mean?
-    correct_options:
-    - The program's instructions were valid, but an impossible operation occurred during execution (like dividing by zero).
-    wrong_options:
-    - The programmer forgot a semicolon or a closing parenthesis in the source code.
-    - The computer's monitor is not compatible with the software.
-    - The program was written in a language the computer does not understand.
-    explanation: |
-      - Runtime errors happen *while* the program is running, often due to unexpected data or logic that leads to an illegal operation.
-  - question: |
-      A group of developers is using a **Version Control System** (such as Git) for their project. Which of the following is a primary advantage of this system?
-    correct_options:
-    - It allows multiple people to work on the same files simultaneously and provides a history of all changes made.
-    wrong_options:
-    - It automatically translates Python code into JavaScript for web compatibility.
-    - It prevents any bugs from being introduced into the main branch of the code.
-    - It eliminates the need for programmers to write comments or documentation.
-    explanation: |
-      - Version control manages "merging" changes from different people and allows teams to "roll back" to previous versions if a new update breaks the program.
+- question: |
+    A programmer encounters a "Runtime Error" while their program is running. What does this usually mean?
+  correct_options:
+  - The program's instructions were valid, but an impossible operation occurred during execution (like dividing by zero).
+  wrong_options:
+  - The programmer forgot a semicolon or a closing parenthesis in the source code.
+  - The computer's monitor is not compatible with the software.
+  - The program was written in a language the computer does not understand.
+  explanation: |
+    - Runtime errors happen *while* the program is running, often due to unexpected data or logic that leads to an illegal operation.
+- question: |
+    A group of developers is using a **Version Control System** (such as Git) for their project. Which of the following is a primary advantage of this system?
+  correct_options:
+  - It allows multiple people to work on the same files simultaneously and provides a history of all changes made.
+  wrong_options:
+  - It automatically translates Python code into JavaScript for web compatibility.
+  - It prevents any bugs from being introduced into the main branch of the code.
+  - It eliminates the need for programmers to write comments or documentation.
+  explanation: |
+    - Version control manages "merging" changes from different people and allows teams to "roll back" to previous versions if a new update breaks the program.
 
-  - question: |
-      In the context of software development, what is the purpose of a **README** file or documentation?
-    correct_options:
-    - To provide instructions on how to set up, use, and contribute to the project.
-    wrong_options:
-    - To store the binary data for the program's executable file.
-    - To act as a firewall that prevents unauthorized access to the source code.
-    - To replace the need for writing actual code by describing the program's intent.
-    explanation: |
-      - Documentation is essential for collaboration, ensuring that other developers (and the original creator) understand how the code is intended to function.
+- question: |
+    In the context of software development, what is the purpose of a **README** file or documentation?
+  correct_options:
+  - To provide instructions on how to set up, use, and contribute to the project.
+  wrong_options:
+  - To store the binary data for the program's executable file.
+  - To act as a firewall that prevents unauthorized access to the source code.
+  - To replace the need for writing actual code by describing the program's intent.
+  explanation: |
+    - Documentation is essential for collaboration, ensuring that other developers (and the original creator) understand how the code is intended to function.
