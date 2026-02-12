@@ -767,3 +767,68 @@ questions:
     ```
   explanation: |
     - A procedure used for a calculation should typically return the value to the caller. The math must also use parentheses to ensure the addition happens before the division.
+- question: |
+    Consider the following code segment.
+    ```
+    val ← 25
+    IF (val > 10) {
+      IF (val < 20) {
+        DISPLAY("Blue")
+      } ELSE {
+        DISPLAY("Green")
+      }
+    } ELSE {
+      DISPLAY("Red")
+    }
+    ```
+
+    What is displayed when this code executes?
+  correct_options:
+  - "Green"
+  wrong_options:
+  - "Blue"
+  - "Red"
+  - Nothing is displayed.
+  explanation: |
+    - First, 25 > 10 is true, so we enter the first IF block. Then, 25 < 20 is false, so we execute the ELSE block, which displays "Green."
+
+- question: |
+    Which of the following describes a **heuristic** approach to finding the shortest path between two points on a map with thousands of intersections?
+  correct_options:
+  - An algorithm that always chooses the road that points most directly toward the destination, even if it might not lead to the absolute shortest path.
+  wrong_options:
+  - An algorithm that calculates the distance of every possible combination of roads to find the single shortest one.
+  - An algorithm that randomly selects roads until it eventually reaches the destination.
+  - An algorithm that refuses to run if there are more than 100 intersections.
+  explanation: |
+    - Heuristics provide a "good enough" or approximate solution quickly when finding the perfect solution is computationally too expensive or slow.
+- question: |
+    A student wants to create a procedure that returns the average of three numbers. Which of the following is a correct implementation using **procedural abstraction**?
+  correct_options:
+  - |
+    ```
+    PROCEDURE getAvg(a, b, c) {
+      RETURN ( (a + b + c) / 3 )
+    }
+    ```
+  wrong_options:
+  - |
+    ```
+    PROCEDURE getAvg(a, b, c) {
+      DISPLAY ( (a + b + c) / 3 )
+    }
+    ```
+  - |
+    ```
+    PROCEDURE getAvg(a, b, c) {
+      sum ← a + b + c
+    }
+    ```
+  - |
+    ```
+    PROCEDURE getAvg(a, b, c) {
+      RETURN ( a + b + c / 3 )
+    }
+    ```
+  explanation: |
+    - A procedure used for a calculation should typically return the value to the caller. The math must also use parentheses to ensure the addition happens before the division.

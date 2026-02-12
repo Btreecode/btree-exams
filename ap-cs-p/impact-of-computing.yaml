@@ -342,3 +342,41 @@ questions:
   - Reducing the digital divide by giving everyone free solar panels.
   explanation: |
     - A ledger ensures that all parties agree on who sent what, which is crucial for decentralized trust and data integrity.
+- question: |
+    "SafeCity" is a mobile app that allows users to report potholes or broken streetlights by taking a photo. The app automatically attaches the user's GPS coordinates to the report. The city uses this data to prioritize repairs. Some users are concerned that the city is building a database of where citizens are located at specific times.
+
+    Which of the following is a potential **unintended consequence** of the SafeCity app?
+  correct_options:
+  - The city may inadvertently collect data on the travel patterns of its citizens, which could be used for surveillance.
+  wrong_options:
+  - The potholes will be fixed faster than they were before the app existed.
+  - Citizens will feel more empowered to improve their neighborhoods.
+  - The app will require an internet connection to upload the photo.
+  explanation: |
+    - Unintended consequences are outcomes that were not the primary goal of the innovation—in this case, the creation of a surveillance-capable dataset from a maintenance tool.
+
+- question: |
+    "SafeCity" is a mobile app that allows users to report potholes or broken streetlights by taking a photo. The app automatically attaches the user's GPS coordinates to the report. The city uses this data to prioritize repairs. Some users are concerned that the city is building a database of where citizens are located at specific times.
+
+    Which of the following features would BEST address the users' privacy concerns while still allowing the app to function?
+  correct_options:
+  - Allowing users to submit reports anonymously and deleting the GPS data once the repair is assigned to a crew.
+  wrong_options:
+  - Requiring users to provide their full name and social security number to verify the report.
+  - Making the GPS coordinates of every report publicly available on a live map for everyone to see.
+  - Encrypting the data so that only the Mayor of the city has the password to read it.
+  explanation: |
+    - Anonymization and data minimization (deleting data when no longer needed) are standard practices for protecting user privacy.
+
+- question: |
+    "SafeCity" is a mobile app that allows users to report potholes or broken streetlights by taking a photo. The app automatically attaches the user's GPS coordinates to the report. The city uses this data to prioritize repairs. Some users are concerned that the city is building a database of where citizens are located at specific times.
+
+    The app's developers notice that significantly more reports are coming from high-income neighborhoods than from low-income areas, even though road conditions are similar. This is an example of:
+  correct_options:
+  - The digital divide affecting the data collection process.
+  wrong_options:
+  - A syntax error in the GPS tracking code.
+  - A successful implementation of a crowdsourcing model.
+  - Symmetric encryption protecting the users in low-income areas.
+  explanation: |
+    - If residents in certain areas lack the devices, data plans, or digital literacy to use the app, the resulting data will be skewed, leading to unequal city services.
