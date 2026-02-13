@@ -797,10 +797,10 @@ questions:
         ```
     explanation: |
       - A procedure used for a calculation should typically return the value to the caller. The math must also use parentheses to ensure the addition happens before the division.
-  - question: /
-      Consiter the following code segment.
+  - question: |
+      Consider the following code segment.
       ```
-      val <- 25
+      val ← 25
       IF (val > 10) {
         IF (val < 20) {
           DISPLAY("Blue")
@@ -900,14 +900,13 @@ questions:
   - question: |
       A programmer wants a procedure that returns true when `n` is divisible by both 2 and 3. Which condition should be used?
     correct_options:
-      - Two of the above are correct.
+      - "(n MOD 2 = 0) AND (n MOD 3 = 0)"
     wrong_options:
-      - `(n MOD 2 = 0) AND (n MOD 3 = 0)`
-      - `(n MOD 2 = 0) OR (n MOD 3 = 0)`
-      - `(n MOD 6 = 0)`
-      - `(n / 2 = 0) AND (n / 3 = 0)`
+      - "(n MOD 2 = 0) OR (n MOD 3 = 0)"
+      - "(n MOD 6 = 1)"
+      - "(n / 2 = 0) AND (n / 3 = 0)"
     explanation: |
-      - Divisible by both values requires both remainder checks to be 0, combined with AND. `(n mod 6 = 0)` is also correct because it's mathematically equivalent.
+      - Divisible by both values requires both remainder checks to be 0 and combined with AND.
 
   - question: |
       Two algorithms solve the same task. Algorithm A always finds the exact best answer but may take hours. Algorithm B usually finds a near-best answer in seconds. Which statement best describes Algorithm B?
