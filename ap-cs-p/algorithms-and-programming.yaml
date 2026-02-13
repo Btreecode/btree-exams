@@ -24,7 +24,7 @@ questions:
       - To check if a number is odd, you check if the remainder when divided by 2 is 1, not 0.
 
   - question: |
-      The following procedure is intended to return the **product** of all numbers in a list, but it currently always returns 0.
+      The following procedure is intended to return the **product** of all numbers in a list, but it currently has a logic error.
       ```
       PROCEDURE getProduct(numList) {
         result ← 0
@@ -40,7 +40,7 @@ questions:
       - Change result ← 0 to result ← 1
     wrong_options:
       - Change result * num to result + num
-      - Change FOR EACH to REPEAT UNTIL
+      - Change FOR EACH to REPEAT UNTIL with an index variable.
       - Change RETURN (result) to DISPLAY (result)
     explanation: |
       - Multiplying any number by 0 results in 0. The identity for multiplication should be 1.
@@ -83,15 +83,16 @@ questions:
       DISPLAY(result)
       ```
 
-      What is displayed when this code runs? (Assume 1-based indexing)
+      What is displayed when this code runs?
     correct_options:
-      - 2
+      - 0
     wrong_options:
       - 1
+      - 2
       - 3
-      - 4
+      - None of the above
     explanation: |
-      - The loop checks pairs: 10 < 5 (False), 20 < 15 (False), and 30 < 25 (False). Wait, let's re-trace: i=1 (10 < 5: F), i=3 (20 < 15: F), i=5 (30 < 25: F). Actually, in this case, the result is 0. Let's adjust the correct option to 0 or change the list values. Let's use list [5, 10, 15, 20, 25, 30]. Then: 5<10 (T), 15<20 (T), 25<30 (T). Result = 3.
+      - The loop checks pairs (1,2), (3,4), and (5,6): 10 < 5 (false), 20 < 15 (false), 30 < 25 (false). No pair satisfies the condition, so result remains 0.
 
   - question: |
       A student wrote the following procedure to find the largest number in a list. The procedure does NOT work correctly for all inputs.
@@ -117,8 +118,36 @@ questions:
       - 8
       - 10
       - 0
+      - None of the above
     explanation: |
       - Because the RETURN statement is inside the IF block, the procedure exits as soon as it finds the first value larger than 0.
+  - question: |
+      A student wrote the following procedure to find the largest number in a list. The procedure does NOT work correctly for all inputs.
+      ```
+      PROCEDURE findMax(myList) {
+        max ← 0
+        index ← 1
+        REPEAT UNTIL (index > LENGTH(myList)) {
+          IF (myList[index] > max) {
+            max ← myList[index]
+          }
+          index ← index + 1
+        }
+        RETURN (max)
+      }
+      ```
+
+      In what case would this procedure fail to return the correct maximum value?
+
+    correct_options:
+      - If the list contains only negative numbers
+    wrong_options:
+      - If the list contains at least one positive number
+      - If the list contains at least one negative number
+      - If the list contains only positive numbers
+      - In the list contains only zeros
+    explanation: |
+      - Since max is initialized to 0, if all numbers in the list are negative, none will be greater than max, and the procedure will incorrectly return 0 instead of the actual maximum (which would be the least negative number).
 
   - question: |
       A programmer wants to count how many times the word "Apple" appears in a list of fruits. They use the following code:
@@ -141,6 +170,7 @@ questions:
       - The condition in the IF statement should use the MOD operator.
     explanation: |
       - Placing a return statement inside a loop that is meant to count items will prematurely end the loop and the procedure.
+
   - question: |
       Which of the following is a primary benefit of using **procedural abstraction** in a large software project?
     correct_options:
@@ -150,7 +180,7 @@ questions:
       - It prevents other programmers from being able to read the source code.
       - It reduces the amount of memory (RAM) the program requires.
     explanation: |
-      - Abstraction focuses on "what" a procedure does, hiding the "how" (implementation details) to reduce complexity for the user.
+      - Abstraction focuses on "what" a procedure does, hiding the "how" (implementation details) to reduce complexity for the programmer.
 
   - question: |
       Consider two algorithms for sorting a list of $n$ names. Algorithm 1 takes $n^2$ steps, and Algorithm 2 takes $n \log n$ steps. Which statement is true regarding their efficiency?
@@ -253,13 +283,13 @@ questions:
 
       What is displayed? (Assume 1-based indexing)
     correct_options:
-      - "MHTLA"
+      - "HIOL"
     wrong_options:
-      - "AGRHM"
+      - "MTRGA"
       - "ALGORITHM"
-      - "MHLA"
+      - "AGIH"
     explanation: |
-      - The loop starts at the end (index 9). It checks even indices (8, 6, 4, 2) which are "M" (9 is odd), "H" (8 is even), "T" (6 is even), "L" (4 is even), "A" (2 is even). Wait, let's re-trace: Index 9 (M) is odd. Index 8 (H) is even. Index 7 (T) is odd. No, "ALGORITHM" length is 9. Indices: 1:A, 2:L, 3:G, 4:O, 5:R, 6:I, 7:T, 8:H, 9:M. Evens are 8(H), 6(I), 4(O), 2(L). Starting from the end: Index 8(H), 6(I), 4(O), 2(L). Result: "HIOL". Let's adjust correct option to "HIOL".
+      - The procedure visits indices 9 down to 1 and appends only even indices: 8(H), 6(I), 4(O), 2(L). The displayed value is "HIOL".
 
   - question: |
       What is displayed when the following code executes?
@@ -301,13 +331,13 @@ questions:
 
       If the robot cannot move off the grid (it stays in the last valid square if it tries), what is its final position and direction?
     correct_options:
-      - (2, 4) facing West
+      - (4, 3) facing West
     wrong_options:
       - (3, 5) facing North
       - (4, 4) facing East
       - (3, 3) facing South
     explanation: |
-      - Iteration 1: Move to (3,4), face East. Iteration 2: Move to (4,4), face South. Iteration 3: Move to (4,3), face West. Wait, re-tracing: (3,3) N -> (3,4) E -> (4,4) S -> (4,3) W. The correct answer should be (4, 3) facing West.
+      - Start at (3,3) facing North. After three cycles: (3,4) facing East, then (4,4) facing South, then (4,3) facing West.
 
   - question: |
       A robot is at (1, 1) facing East. The goal is to reach (1, 3). Which code segment will successfully move the robot to the goal?
@@ -767,10 +797,10 @@ questions:
         ```
     explanation: |
       - A procedure used for a calculation should typically return the value to the caller. The math must also use parentheses to ensure the addition happens before the division.
-  - question: |
-      Consider the following code segment.
+  - question: /
+      Consiter the following code segment.
       ```
-      val ← 25
+      val <- 25
       IF (val > 10) {
         IF (val < 20) {
           DISPLAY("Blue")
@@ -781,7 +811,6 @@ questions:
         DISPLAY("Red")
       }
       ```
-
       What is displayed when this code executes?
     correct_options:
       - "Green"
@@ -793,42 +822,163 @@ questions:
       - First, 25 > 10 is true, so we enter the first IF block. Then, 25 < 20 is false, so we execute the ELSE block, which displays "Green."
 
   - question: |
-      Which of the following describes a **heuristic** approach to finding the shortest path between two points on a map with thousands of intersections?
+      The list `temps` contains daily temperatures. Which algorithm correctly counts how many temperatures are greater than 90?
     correct_options:
-      - An algorithm that always chooses the road that points most directly toward the destination, even if it might not lead to the absolute shortest path.
+      - |
+        ```
+        count ← 0
+        FOR EACH t IN temps {
+          IF (t > 90) {
+            count ← count + 1
+          }
+        }
+        ```
     wrong_options:
-      - An algorithm that calculates the distance of every possible combination of roads to find the single shortest one.
-      - An algorithm that randomly selects roads until it eventually reaches the destination.
-      - An algorithm that refuses to run if there are more than 100 intersections.
+      - |
+        ```
+        count ← 1
+        FOR EACH t IN temps {
+          IF (t > 90) {
+            count ← count + 1
+          }
+        }
+        ```
+      - |
+        ```
+        count ← 0
+        FOR EACH t IN temps {
+          IF (t > 90) {
+            count ← t
+          }
+        }
+        ```
+      - |
+        ```
+        count ← 0
+        FOR EACH t IN temps {
+          IF (t < 90) {
+            count ← count + 1
+          }
+        }
+        ```
     explanation: |
-      - Heuristics provide a "good enough" or approximate solution quickly when finding the perfect solution is computationally too expensive or slow.
+      - The correct algorithm initializes count to 0, checks the intended condition `t > 90`, and increments by 1 for each matching value.
+
   - question: |
-      A student wants to create a procedure that returns the average of three numbers. Which of the following is a correct implementation using **procedural abstraction**?
+      A sorted list has 1,024 elements. A binary search is used to find a target value. In the worst case, about how many elements are examined?
+    correct_options:
+      - 10
+    wrong_options:
+      - 32
+      - 128
+      - 512
+    explanation: |
+      - Binary search halves the search space each step. Since $2^{10}=1024$, the worst case is about 10 checks.
+
+  - question: |
+      Consider the code segment:
+      ```
+      values ← [4, 7, 1, 9]
+      i ← 1
+      total ← 0
+      REPEAT UNTIL (i > LENGTH(values)) {
+        total ← total + values[i]
+        i ← i + 1
+      }
+      DISPLAY(total)
+      ```
+      What is displayed?
+    correct_options:
+      - 21
+    wrong_options:
+      - 20
+      - 17
+      - 9
+    explanation: |
+      - The loop sums all four list elements: $4+7+1+9=21$.
+
+  - question: |
+      A programmer wants a procedure that returns true when `n` is divisible by both 2 and 3. Which condition should be used?
+    correct_options:
+      - Two of the above are correct.
+    wrong_options:
+      - `(n MOD 2 = 0) AND (n MOD 3 = 0)`
+      - `(n MOD 2 = 0) OR (n MOD 3 = 0)`
+      - `(n MOD 6 = 0)`
+      - `(n / 2 = 0) AND (n / 3 = 0)`
+    explanation: |
+      - Divisible by both values requires both remainder checks to be 0, combined with AND. `(n mod 6 = 0)` is also correct because it's mathematically equivalent.
+
+  - question: |
+      Two algorithms solve the same task. Algorithm A always finds the exact best answer but may take hours. Algorithm B usually finds a near-best answer in seconds. Which statement best describes Algorithm B?
+    correct_options:
+      - It is a heuristic that trades optimality for speed.
+    wrong_options:
+      - It is undecidable because it does not always produce an exact optimum.
+      - It is invalid because all algorithms must produce optimal answers.
+      - It is equivalent to binary search.
+    explanation: |
+      - Heuristic approaches are used when exact solutions are too costly; they prioritize practical runtime over guaranteed optimality.
+
+  - question: |
+      Consider the following procedure:
+      ```
+      PROCEDURE mystery(n) {
+        count ← 0
+        REPEAT UNTIL (n = 0) {
+          n ← n - 1
+          count ← count + 1
+        }
+        RETURN(count)
+      }
+      ```
+      What value does `mystery(5)` return?
+    correct_options:
+      - 5
+    wrong_options:
+      - 4
+      - 0
+      - 10
+    explanation: |
+      - The loop runs once per decrement from 5 down to 0, so count is incremented 5 times.
+
+  - question: |
+      A programmer needs to determine whether a value appears in an unsorted list. Which algorithmic approach is appropriate?
+    correct_options:
+      - Linear search through the list from start to end.
+    wrong_options:
+      - Perform the binary search.
+      - Checking only the middle element.
+      - Using random guessing until the value is found.
+      - Two of the above are correct.
+    explanation: |
+      - Binary search requires sorted data; for unsorted data, linear search is the correct general method.
+
+  - question: |
+      Which code segment correctly swaps the values of variables `a` and `b`?
     correct_options:
       - |
         ```
-        PROCEDURE getAvg(a, b, c) {
-          RETURN ( (a + b + c) / 3 )
-        }
+        temp ← a
+        a ← b
+        b ← temp
         ```
     wrong_options:
       - |
         ```
-        PROCEDURE getAvg(a, b, c) {
-          DISPLAY ( (a + b + c) / 3 )
-        }
+        a ← b
+        b ← a
         ```
       - |
         ```
-        PROCEDURE getAvg(a, b, c) {
-          sum ← a + b + c
-        }
+        a ← temp
+        b ← a
+        temp ← b
         ```
       - |
         ```
-        PROCEDURE getAvg(a, b, c) {
-          RETURN ( a + b + c / 3 )
-        }
+        a ← a
+        b ← b
         ```
     explanation: |
-      - A procedure used for a calculation should typically return the value to the caller. The math must also use parentheses to ensure the addition happens before the division.
+      - A temporary variable preserves one value during assignment so neither original value is lost.

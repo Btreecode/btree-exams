@@ -1,272 +1,328 @@
 questions:
-- question: |
-    A photographer is uploading high-resolution images to a website but needs to reduce the file size significantly while accepting that some fine detail will be permanently lost. Which of the following is the most appropriate technique?
-  correct_options:
-  - Applying JPEG compression to the images.
-  wrong_options:
-  - Compressing the images into a ZIP archive.
-  - Converting the images to a lossless PNG format.
-  - Storing the images as raw BMP files.
-  explanation: |
-    - JPEG is a lossy compression format, meaning it reduces file size by permanently discarding some data, which is acceptable for web display where perfect detail isn't required.
+  - question: |
+      A photographer is uploading high-resolution images to a website but needs to reduce the file size significantly while accepting that some fine detail will be permanently lost. Which of the following is the most appropriate technique?
+    correct_options:
+      - Applying JPEG compression to the images.
+    wrong_options:
+      - Compressing the images into a ZIP archive.
+      - Converting the images to a lossless PNG format.
+      - Storing the images as raw BMP files.
+    explanation: |
+      - JPEG is a lossy compression format, meaning it reduces file size by permanently discarding some data, which is acceptable for web display where perfect detail isn't required.
 
-- question: |
-    An audio engineer wants to archive a recording in a way that allows the original, bit-for-bit data to be restored exactly when the file is opened. Which compression method should be used?
-  correct_options:
-  - Lossless compression.
-  wrong_options:
-  - Lossy compression.
-  - MP3 encoding at a high bitrate.
-  - Reducing the sampling rate of the audio.
-  explanation: |
-    - Lossless compression allows the original data to be perfectly reconstructed from the compressed file.
+  - question: |
+      An audio engineer wants to archive a recording in a way that allows the original, bit-for-bit data to be restored exactly when the file is opened. Which compression method should be used?
+    correct_options:
+      - Lossless compression.
+    wrong_options:
+      - Lossy compression.
+      - MP3 encoding at a high bitrate.
+      - Reducing the sampling rate of the audio.
+    explanation: |
+      - Lossless compression allows the original data to be perfectly reconstructed from the compressed file.
 
-- question: |
-    Which of the following scenarios describes a situation where **lossy compression** would be PREFERRED over **lossless compression**?
-  correct_options:
-  - Streaming a video over a mobile network with limited bandwidth.
-  wrong_options:
-  - Saving a text document containing legal contracts.
-  - Archiving a database of medical records for long-term storage.
-  - Distributing a software executable file to users.
-  explanation: |
-    - In video streaming, the speed of delivery and reduction in bandwidth are more important than perfect pixel-for-pixel accuracy.
+  - question: |
+      Which of the following scenarios describes a situation where **lossy compression** would be PREFERRED over **lossless compression**?
+    correct_options:
+      - Streaming a video over a mobile network with limited bandwidth.
+    wrong_options:
+      - Saving a text document containing legal contracts.
+      - Archiving a database of medical records for long-term storage.
+      - Distributing a software executable file to users.
+    explanation: |
+      - In video streaming, the speed of delivery and reduction in bandwidth are more important than perfect pixel-for-pixel accuracy.
 
-- question: |
-    Which of the following would be considered **image data** rather than **metadata**?
-  correct_options:
-  - The specific color value assigned to the pixel in the top-left corner.
-  wrong_options:
-  - The brand and model of the camera used.
-  - The width and height of the image in pixels.
-  - The date and time the photograph was captured.
-  explanation: |
-    - Pixel values are the building blocks of the image content itself, whereas dimensions, timestamps, and camera info are data *about* the image.
+  - question: |
+      Which of the following would be considered **image data** rather than **metadata**?
+    correct_options:
+      - The specific color value assigned to the pixel in the top-left corner.
+    wrong_options:
+      - The brand and model of the camera used.
+      - The width and height of the image in pixels.
+      - The date and time the photograph was captured.
+    explanation: |
+      - Pixel values are the building blocks of the image content itself, whereas dimensions, timestamps, and camera info are data *about* the image.
 
-- question: |
-    A user is viewing the "Properties" of a digital document and sees the file size, the author's name, and the "last modified" date. These pieces of information are examples of:
-  correct_options:
-  - Metadata.
-  wrong_options:
-  - Primary data.
-  - Lossy data.
-  - Binary data.
-  explanation: |
-    - Metadata is data that describes other data, such as authorship or modification history.
+  - question: |
+      A user is viewing the "Properties" of a digital document and sees the file size, the author's name, and the "last modified" date. These pieces of information are examples of:
+    correct_options:
+      - Metadata.
+    wrong_options:
+      - Primary data.
+      - Lossy data.
+      - Binary data.
+    explanation: |
+      - Metadata is data that describes other data, such as authorship or modification history.
 
-- question: |
-    A music streaming service stores the artist's name, the album title, and the track duration alongside the actual audio recording. Which of the following is true about this information?
-  correct_options:
-  - It is metadata that helps in searching and organizing the music library.
-  wrong_options:
-  - It is the audio data that produces the sound when played.
-  - It is the compression algorithm used to reduce the file size.
-  - It is a form of encryption used to prevent illegal copying.
-  explanation: |
-    - Identifying information like artist and album title describes the content (the audio) and is therefore metadata.
-- question: |
-    A fitness app tracks the number of steps taken, heart rate, and sleep duration for thousands of users. Which of the following questions can NOT be answered using only this data?
-  correct_options:
-  - Does getting more sleep cause a user to feel more energetic during the day?
-  wrong_options:
-  - Is there a correlation between daily step counts and average heart rate?
-  - What is the average amount of sleep for users who take more than 10,000 steps?
-  - What percentage of users sleep for less than 6 hours per night?
-  explanation: |
-    - While the data can show correlations, it cannot determine "cause" or subjective feelings like "feeling energetic" without additional qualitative input.
+  - question: |
+      A music streaming service stores the artist's name, the album title, and the track duration alongside the actual audio recording. Which of the following is true about this information?
+    correct_options:
+      - It is metadata that helps in searching and organizing the music library.
+    wrong_options:
+      - It is the audio data that produces the sound when played.
+      - It is the compression algorithm used to reduce the file size.
+      - It is a form of encryption used to prevent illegal copying.
+    explanation: |
+      - Identifying information like artist and album title describes the content (the audio) and is therefore metadata.
+  - question: |
+      A fitness app tracks the number of steps taken, heart rate, and sleep duration for thousands of users. Which of the following questions can NOT be answered using only this data?
+    correct_options:
+      - Does getting more sleep cause a user to feel more energetic during the day?
+    wrong_options:
+      - Is there a correlation between daily step counts and average heart rate?
+      - What is the average amount of sleep for users who take more than 10,000 steps?
+      - What percentage of users sleep for less than 6 hours per night?
+    explanation: |
+      - While the data can show correlations, it cannot determine "cause" or subjective feelings like "feeling energetic" without additional qualitative input.
 
-- question: |
-    An e-commerce website records the time spent on a page, the items added to the cart, and the final purchase amount. Which of the following is an example of a question that cannot be answered with this dataset?
-  correct_options:
-  - Why did a customer decide not to purchase the items in their cart?
-  wrong_options:
-  - What is the average time spent on the site for customers who make a purchase?
-  - Which items are most frequently added to carts but never purchased?
-  - Is there a relationship between time spent on a page and the total purchase amount?
-  explanation: |
-    - The data tracks actions and timestamps but does not provide insight into the customer's internal reasoning or motivations.
+  - question: |
+      An e-commerce website records the time spent on a page, the items added to the cart, and the final purchase amount. Which of the following is an example of a question that cannot be answered with this dataset?
+    correct_options:
+      - Why did a customer decide not to purchase the items in their cart?
+    wrong_options:
+      - What is the average time spent on the site for customers who make a purchase?
+      - Which items are most frequently added to carts but never purchased?
+      - Is there a relationship between time spent on a page and the total purchase amount?
+    explanation: |
+      - The data tracks actions and timestamps but does not provide insight into the customer's internal reasoning or motivations.
 
-- question: |
-    A city collects data on the number of cars passing through various intersections and the time of day. Which of the following can NOT be determined using only this data?
-  correct_options:
-  - The reason why traffic is heavier on Friday afternoons compared to Monday mornings.
-  wrong_options:
-  - Which intersection has the highest volume of traffic at 8:00 AM?
-  - The average number of cars that pass through the city center per hour.
-  - At what time of day does traffic volume peak across all monitored intersections?
-  explanation: |
-    - Quantitative traffic counts can identify patterns and peaks, but they cannot explain the underlying societal or personal reasons for those patterns.
-- question: |
-    A new social media platform assigns a unique ID to every post. The developers anticipate reaching a maximum of 500,000 posts. What is the minimum number of bits needed to represent all possible post IDs?
-  correct_options:
-  - 19 bits
-  wrong_options:
-  - 18 bits
-  - 20 bits
-  - 9 bits
-  explanation: |
-    - $2^{18}$ is 262,144, which is not enough. $2^{19}$ is 524,288, which is the smallest power of 2 that can accommodate 500,000 unique values.
+  - question: |
+      A city collects data on the number of cars passing through various intersections and the time of day. Which of the following can NOT be determined using only this data?
+    correct_options:
+      - The reason why traffic is heavier on Friday afternoons compared to Monday mornings.
+    wrong_options:
+      - Which intersection has the highest volume of traffic at 8:00 AM?
+      - The average number of cars that pass through the city center per hour.
+      - At what time of day does traffic volume peak across all monitored intersections?
+    explanation: |
+      - Quantitative traffic counts can identify patterns and peaks, but they cannot explain the underlying societal or personal reasons for those patterns.
+  - question: |
+      A new social media platform assigns a unique ID to every post. The developers anticipate reaching a maximum of 500,000 posts. What is the minimum number of bits needed to represent all possible post IDs?
+    correct_options:
+      - 19 bits
+    wrong_options:
+      - 18 bits
+      - 20 bits
+      - 9 bits
+    explanation: |
+      - $2^{18}$ is 262,144, which is not enough. $2^{19}$ is 524,288, which is the smallest power of 2 that can accommodate 500,000 unique values.
 
-- question: |
-    An office building uses a digital system to track its 200 employees using unique binary IDs. If the company expands to 600 employees, how many *additional* bits are required for the ID system if they were previously using the minimum number of bits?
-  correct_options:
-  - 2 additional bits
-  wrong_options:
-  - 1 additional bit
-  - 3 additional bits
-  - 10 additional bits
-  explanation: |
-    - 200 employees require 8 bits ($2^8 = 256$). 600 employees require 10 bits ($2^{10} = 1024$). Therefore, 2 additional bits are needed.
+  - question: |
+      An office building uses a digital system to track its 200 employees using unique binary IDs. If the company expands to 600 employees, how many *additional* bits are required for the ID system if they were previously using the minimum number of bits?
+    correct_options:
+      - 2 additional bits
+    wrong_options:
+      - 1 additional bit
+      - 3 additional bits
+      - 10 additional bits
+    explanation: |
+      - 200 employees require 8 bits ($2^8 = 256$). 600 employees require 10 bits ($2^{10} = 1024$). Therefore, 2 additional bits are needed.
 
-- question: |
-    A color palette for a simple drawing app uses 6 bits to represent each color. How many unique colors can be represented in this app?
-  correct_options:
-  - 64
-  wrong_options:
-  - 6
-  - 32
-  - 128
-  explanation: |
-    - The number of unique values that can be represented by $n$ bits is $2^n$. $2^6 = 64$.
-- question: |
-    An 8-bit unsigned binary system is used to represent integers. What is the maximum decimal value that can be represented?
-  correct_options:
-  - 255
-  wrong_options:
-  - 256
-  - 127
-  - 128
-  explanation: |
-    - With 8 bits, there are $2^8$ (256) possible values. Since we start counting at 0, the range is 0 to 255.
+  - question: |
+      A color palette for a simple drawing app uses 6 bits to represent each color. How many unique colors can be represented in this app?
+    correct_options:
+      - 64
+    wrong_options:
+      - 6
+      - 32
+      - 128
+    explanation: |
+      - The number of unique values that can be represented by $n$ bits is $2^n$. $2^6 = 64$.
+  - question: |
+      An 8-bit unsigned binary system is used to represent integers. What is the maximum decimal value that can be represented?
+    correct_options:
+      - 255
+    wrong_options:
+      - 256
+      - 127
+      - 128
+    explanation: |
+      - With 8 bits, there are $2^8$ (256) possible values. Since we start counting at 0, the range is 0 to 255.
 
-- question: |
-    A developer decides to upgrade a system from using 4 bits to 6 bits to represent IDs. How many **more** unique values can be represented after this change?
-  correct_options:
-  - 48
-  wrong_options:
-  - 2
-  - 16
-  - 64
-  explanation: |
-    - 4 bits can represent $2^4 = 16$ values. 6 bits can represent $2^6 = 64$ values. $64 - 16 = 48$ additional values.
+  - question: |
+      A developer decides to upgrade a system from using 4 bits to 6 bits to represent IDs. How many **more** unique values can be represented after this change?
+    correct_options:
+      - 48
+    wrong_options:
+      - 2
+      - 16
+      - 64
+    explanation: |
+      - 4 bits can represent $2^4 = 16$ values. 6 bits can represent $2^6 = 64$ values. $64 - 16 = 48$ additional values.
 
-- question: |
-    What is the decimal equivalent of the binary number **10101000**?
-  correct_options:
-  - 168
-  wrong_options:
-  - 170
-  - 160
-  - 154
-  explanation: |
-    - Calculated as $128 + 32 + 8 = 168$. (The 1s are in the 128, 32, and 8 places).
-- question: |
-    What is the decimal equivalent of the binary number **11100011**?
-  correct_options:
-  - 227
-  wrong_options:
-  - 195
-  - 224
-  - 231
-  explanation: |
-    - Calculated as $128 + 64 + 32 + 2 + 1 = 227$. (The bits are set in the 128, 64, 32, 2, and 1 positions).
+  - question: |
+      What is the decimal equivalent of the binary number **10101000**?
+    correct_options:
+      - 168
+    wrong_options:
+      - 170
+      - 160
+      - 154
+    explanation: |
+      - Calculated as $128 + 32 + 8 = 168$. (The 1s are in the 128, 32, and 8 places).
+  - question: |
+      What is the decimal equivalent of the binary number **11100011**?
+    correct_options:
+      - 227
+    wrong_options:
+      - 195
+      - 224
+      - 231
+    explanation: |
+      - Calculated as $128 + 64 + 32 + 2 + 1 = 227$. (The bits are set in the 128, 64, 32, 2, and 1 positions).
 
-- question: |
-    Which of the following binary numbers is equal to the decimal value **75**?
-  correct_options:
-  - 1001011
-  wrong_options:
-  - 1001111
-  - 1011011
-  - 111011
-  explanation: |
-    - $64 + 8 + 2 + 1 = 75$. In binary, this is 0 (128) 1 (64) 0 (32) 0 (16) 1 (8) 0 (4) 1 (2) 1 (1).
+  - question: |
+      Which of the following binary numbers is equal to the decimal value **75**?
+    correct_options:
+      - 1001011
+    wrong_options:
+      - 1001111
+      - 1011011
+      - 111011
+    explanation: |
+      - $64 + 8 + 2 + 1 = 75$. In binary, this is 0 (128) 1 (64) 0 (32) 0 (16) 1 (8) 0 (4) 1 (2) 1 (1).
 
-- question: |
-    A system uses 8 bits to represent integers. If a calculation results in the decimal value **260**, what will happen in this system?
-  correct_options:
-  - An overflow error will occur because the value exceeds the maximum limit of 255.
-  wrong_options:
-  - The system will automatically add a 9th bit to accommodate the value.
-  - The value will be rounded down to 255.
-  - The system will switch to using hexadecimal to store the number.
-  explanation: |
-    - Overflow occurs when a value is too large to be represented by the fixed number of bits available in a system.
-- question: |
-    A student is working with a dataset of patient records. Each record contains the patient's ID, age, height, and weight. Which of the following is a piece of **metadata** for this dataset?
-  correct_options:
-  - The date the dataset was last updated.
-  wrong_options:
-  - The height of the third patient in the list.
-  - The average age of all patients.
-  - The ID number of a specific patient.
-  explanation: |
-    - Metadata is data *about* the data. While the specific patient info is the data itself, the "last updated" date describes the dataset as a whole.
+  - question: |
+      A system uses 8 bits to represent integers. If a calculation results in the decimal value **260**, what will happen in this system?
+    correct_options:
+      - An overflow error will occur because the value exceeds the maximum limit of 255.
+    wrong_options:
+      - The system will automatically add a 9th bit to accommodate the value.
+      - The value will be rounded down to 255.
+      - The system will switch to using hexadecimal to store the number.
+    explanation: |
+      - Overflow occurs when a value is too large to be represented by the fixed number of bits available in a system.
+  - question: |
+      A student is working with a dataset of patient records. Each record contains the patient's ID, age, height, and weight. Which of the following is a piece of **metadata** for this dataset?
+    correct_options:
+      - The date the dataset was last updated.
+    wrong_options:
+      - The height of the third patient in the list.
+      - The average age of all patients.
+      - The ID number of a specific patient.
+    explanation: |
+      - Metadata is data *about* the data. While the specific patient info is the data itself, the "last updated" date describes the dataset as a whole.
 
-- question: |
-    Which of the following describes a situation where **cleaning** data is necessary before it can be analyzed by a program?
-  correct_options:
-  - A dataset of survey responses contains some entries with misspelled city names and others with empty fields.
-  wrong_options:
-  - A dataset is stored in a ZIP file to save space on a hard drive.
-  - A dataset is too large to fit on a single computer's RAM.
-  - A dataset contains only numerical values that are all positive.
-  explanation: |
-    - Data cleaning (or "scrubbing") involves fixing or removing incomplete, incorrect, or inconsistently formatted data within a dataset.
+  - question: |
+      Which of the following describes a situation where **cleaning** data is necessary before it can be analyzed by a program?
+    correct_options:
+      - A dataset of survey responses contains some entries with misspelled city names and others with empty fields.
+    wrong_options:
+      - A dataset is stored in a ZIP file to save space on a hard drive.
+      - A dataset is too large to fit on a single computer's RAM.
+      - A dataset contains only numerical values that are all positive.
+    explanation: |
+      - Data cleaning (or "scrubbing") involves fixing or removing incomplete, incorrect, or inconsistently formatted data within a dataset.
 
-- question: |
-    A researcher is using a public dataset from the census. They want to compare the average income of two different cities. Which of the following is a potential challenge they might face?
-  correct_options:
-  - The data from one city was collected using different survey questions than the other city, making them difficult to compare directly.
-  wrong_options:
-  - The data is stored in a digital format that can be read by a computer.
-  - The dataset contains more than 100 entries.
-  - The researcher used a high-level programming language to perform the calculation.
-  explanation: |
-    - Inconsistent data collection methods can introduce bias or make comparative analysis inaccurate.
-- question: |
-    Select TWO answers.
-    Which of the following are primary benefits of using **cloud computing** for a small business?
-  correct_options:
-  - It allows employees to access files and collaborative tools from any location with an Internet connection.
-  - It enables the business to scale its computing resources (like storage and processing power) up or down based on current needs.
-  wrong_options:
-  - It guarantees that data will never be lost or corrupted, even if the cloud provider's servers fail.
-  - It eliminates the need for any local networking hardware like routers or Wi-Fi access points.
-  explanation: |
-    - Cloud computing provides accessibility and scalability. While reliable, no system is "100% guaranteed" against all failure, and local hardware is still needed to connect to the Internet.
+  - question: |
+      A researcher is using a public dataset from the census. They want to compare the average income of two different cities. Which of the following is a potential challenge they might face?
+    correct_options:
+      - The data from one city was collected using different survey questions than the other city, making them difficult to compare directly.
+    wrong_options:
+      - The data is stored in a digital format that can be read by a computer.
+      - The dataset contains more than 100 entries.
+      - The researcher used a high-level programming language to perform the calculation.
+    explanation: |
+      - Inconsistent data collection methods can introduce bias or make comparative analysis inaccurate.
+  - question: |
+      Select TWO answers.
+      Which of the following are primary benefits of using **cloud computing** for a small business?
+    correct_options:
+      - It allows employees to access files and collaborative tools from any location with an Internet connection.
+      - It enables the business to scale its computing resources (like storage and processing power) up or down based on current needs.
+    wrong_options:
+      - It guarantees that data will never be lost or corrupted, even if the cloud provider's servers fail.
+      - It eliminates the need for any local networking hardware like routers or Wi-Fi access points.
+    explanation: |
+      - Cloud computing provides accessibility and scalability. While reliable, no system is "100% guaranteed" against all failure, and local hardware is still needed to connect to the Internet.
 
-- question: |
-    Select TWO answers.
-    A company is moving its internal database to a cloud service. Which of the following are potential **security risks** or concerns they should consider?
-  correct_options:
-  - The possibility of unauthorized access if a cloud provider's infrastructure is breached.
-  - Increased reliance on the availability of a stable Internet connection to access critical business data.
-  wrong_options:
-  - Cloud servers are physically located in space, making them susceptible to cosmic radiation.
-  - Moving to the cloud will cause all local computers to become incompatible with the software.
-  explanation: |
-    - Security breaches at the provider level and the "single point of failure" (the Internet connection) are the main risks associated with cloud migration.
-- question: |
-    Select TWO answers.
-    A university researcher is analyzing a dataset of thousands of student library records, including book titles, checkout dates, and student majors. Which TWO of the following questions can likely be answered by analyzing this dataset?
-  correct_options:
-  - Which academic majors have the highest number of book checkouts per semester?
-  - Are there specific times of the year when the library experiences the most traffic for book checkouts?
-  wrong_options:
-  - How many students prefer reading physical books over using digital e-readers?
-  - Which students feel that the library staff is helpful and knowledgeable?
-  explanation: |
-    - The dataset contains quantitative data (majors, dates, titles) that can show trends and counts, but it cannot measure subjective feelings (helpfulness) or preferences not recorded in the logs (e-readers).
+  - question: |
+      Select TWO answers.
+      A company is moving its internal database to a cloud service. Which of the following are potential **security risks** or concerns they should consider?
+    correct_options:
+      - The possibility of unauthorized access if a cloud provider's infrastructure is breached.
+      - Increased reliance on the availability of a stable Internet connection to access critical business data.
+    wrong_options:
+      - Cloud servers are physically located in space, making them susceptible to cosmic radiation.
+      - Moving to the cloud will cause all local computers to become incompatible with the software.
+    explanation: |
+      - Security breaches at the provider level and the "single point of failure" (the Internet connection) are the main risks associated with cloud migration.
+  - question: |
+      Select TWO answers.
+      A university researcher is analyzing a dataset of thousands of student library records, including book titles, checkout dates, and student majors. Which TWO of the following questions can likely be answered by analyzing this dataset?
+    correct_options:
+      - Which academic majors have the highest number of book checkouts per semester?
+      - Are there specific times of the year when the library experiences the most traffic for book checkouts?
+    wrong_options:
+      - How many students prefer reading physical books over using digital e-readers?
+      - Which students feel that the library staff is helpful and knowledgeable?
+    explanation: |
+      - The dataset contains quantitative data (majors, dates, titles) that can show trends and counts, but it cannot measure subjective feelings (helpfulness) or preferences not recorded in the logs (e-readers).
 
-- question: |
-    Select TWO answers.
-    A city's public works department tracks every maintenance request for "potholes," including the GPS coordinates, the date the report was filed, and the time it took to complete the repair. Which TWO of the following can be determined from this data?
-  correct_options:
-  - Which geographic regions of the city have the highest frequency of reported potholes?
-  - What is the average "turnaround time" for a pothole repair from the initial report to completion?
-  wrong_options:
-  - What is the primary cause of pothole formation in the city center?
-  - Are residents satisfied with the quality of the new asphalt being used?
-  explanation: |
-    - GPS and dates allow for location and time-efficiency analysis. Identifying the "cause" or "satisfaction" would require geological data or user surveys, which aren't in this specific dataset.
+  - question: |
+      Select TWO answers.
+      A city's public works department tracks every maintenance request for "potholes," including the GPS coordinates, the date the report was filed, and the time it took to complete the repair. Which TWO of the following can be determined from this data?
+    correct_options:
+      - Which geographic regions of the city have the highest frequency of reported potholes?
+      - What is the average "turnaround time" for a pothole repair from the initial report to completion?
+    wrong_options:
+      - What is the primary cause of pothole formation in the city center?
+      - Are residents satisfied with the quality of the new asphalt being used?
+    explanation: |
+      - GPS and dates allow for location and time-efficiency analysis. Identifying the "cause" or "satisfaction" would require geological data or user surveys, which aren't in this specific dataset.
+
+  - question: |
+      A sensor records temperature once every minute and stores each reading as an integer from 0 to 255. How many bits are required for each reading?
+    correct_options:
+      - 8 bits
+    wrong_options:
+      - 6 bits
+      - 7 bits
+      - 9 bits
+    explanation: |
+      - $2^8 = 256$ possible values, which is enough to represent integers from 0 through 255.
+
+  - question: |
+      A school stores student IDs using 12 bits. What is the maximum number of unique IDs that can be represented?
+    correct_options:
+      - 4,096
+    wrong_options:
+      - 2,048
+      - 8,192
+      - 1,024
+    explanation: |
+      - With $n$ bits, the number of distinct values is $2^n$. Here, $2^{12}=4096$.
+
+  - question: |
+      Which statement best describes a limitation of drawing conclusions from a dataset that includes only users who chose to respond to an optional survey?
+    correct_options:
+      - The dataset may be biased because respondents may not represent the entire population.
+    wrong_options:
+      - The dataset cannot be stored digitally because survey data is subjective.
+      - Optional surveys always produce more accurate results than required surveys.
+      - Any analysis of survey data is automatically invalid.
+    explanation: |
+      - Self-selection can create sampling bias, reducing how well results generalize.
+
+  - question: |
+      A compressed photo file is much smaller than the original, but when zoomed in, some details look blurry. Which statement is most likely true?
+    correct_options:
+      - Lossy compression was used, sacrificing some detail to reduce file size.
+    wrong_options:
+      - Lossless compression was used, which always adds visual artifacts.
+      - No compression was used because smaller files must preserve all details.
+      - The photo was encrypted, which causes permanent blur.
+    explanation: |
+      - Lossy methods remove some information to achieve higher compression ratios.
+
+  - question: |
+      Select TWO answers.
+      A dataset contains `timestamp`, `user_id`, `click_count`, and `device_type`. Which TWO questions can be answered directly from this data?
+    correct_options:
+      - At what times of day are click counts highest?
+      - Do click counts differ by device type?
+    wrong_options:
+      - Why does each user click a specific number of times?
+      - Which users felt satisfied after clicking?
+    explanation: |
+      - The fields support pattern and comparison analysis, but they do not capture motivations or feelings.

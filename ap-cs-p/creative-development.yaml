@@ -73,3 +73,58 @@ questions:
   - To replace the need for writing actual code by describing the program's intent.
   explanation: |
     - Documentation is essential for collaboration, ensuring that other developers (and the original creator) understand how the code is intended to function.
+
+- question: |
+    A student is designing an app to help classmates track homework deadlines. Which action best demonstrates the **iterative development process**?
+  correct_options:
+  - Releasing a simple version, collecting user feedback, and updating features based on that feedback.
+  wrong_options:
+  - Waiting until every possible feature is complete before testing with any users.
+  - Avoiding user feedback to prevent changes to the original idea.
+  - Rewriting the entire app from scratch after each minor bug fix.
+  explanation: |
+    - Iterative development emphasizes building, testing, and refining in repeated cycles.
+
+- question: |
+    Which of the following is the clearest example of identifying a program's **purpose** and **intended user**?
+  correct_options:
+  - "This app helps middle school students practice fraction problems with immediate feedback."
+  wrong_options:
+  - "This app uses loops, lists, and conditionals."
+  - "This app has over 2,000 lines of code."
+  - "This app was written in a modern programming language."
+  explanation: |
+    - Purpose statements should describe what problem the program solves and for whom.
+
+- question: |
+    A team is planning features for a game prototype with limited time. Which strategy best supports creative development?
+  correct_options:
+  - Prioritize a minimum viable feature set, then add enhancements in later iterations.
+  wrong_options:
+  - Build all optional features first and postpone core gameplay.
+  - Avoid making design decisions until after final deployment.
+  - Remove all playtesting to save development time.
+  explanation: |
+    - Focusing on core functionality first enables faster feedback and better design decisions.
+
+- question: |
+    During development, students discover users are confused by menu labels. What is the most appropriate next step?
+  correct_options:
+  - Revise the interface labels and retest with users to see whether usability improves.
+  wrong_options:
+  - Keep the labels unchanged so the code does not need modifications.
+  - Add unrelated features instead of addressing the confusion.
+  - Increase the app's font size without changing the label wording.
+  explanation: |
+    - User-centered iteration means using observed problems to guide targeted improvements.
+
+- question: |
+    Which practice best supports productive collaboration on a shared creative coding project?
+  correct_options:
+  - Dividing responsibilities, reviewing each other's work, and integrating changes regularly.
+  wrong_options:
+  - Having one person write all code while others wait until the end.
+  - Avoiding communication so each person can work independently.
+  - Editing the same file at the same time without coordination.
+  explanation: |
+    - Clear roles, frequent communication, and regular integration reduce conflicts and improve project quality.

@@ -17,7 +17,7 @@ questions:
   wrong_options:
   - IP (Internet Protocol)
   - DNS (Domain Name System)
-  - HTTP (Hypertext Travel Protocol)
+    - HTTP (Hypertext Transfer Protocol)
   explanation: |
     - TCP handles the reliability, sequencing, and error-checking of data transmission.
 - question: |
@@ -238,3 +238,58 @@ questions:
   - Reducing the digital divide by giving everyone free solar panels.
   explanation: |
     - A ledger ensures that all parties agree on who sent what, which is crucial for decentralized trust and data integrity.
+
+- question: |
+    A video conferencing app is choosing between TCP and UDP for live voice data. Why is UDP often preferred for this use case?
+  correct_options:
+  - UDP reduces delay by sending packets without waiting for retransmission of missing packets.
+  wrong_options:
+  - UDP guarantees packet delivery and in-order arrival better than TCP.
+  - UDP encrypts traffic by default, while TCP cannot be encrypted.
+  - UDP can only be used on local networks, not the Internet.
+  explanation: |
+    - Real-time applications prioritize low latency over perfect reliability, so occasional packet loss is acceptable.
+
+- question: |
+    Which of the following best explains why packet switching improves Internet scalability?
+  correct_options:
+  - Messages are broken into packets that can share network paths efficiently with traffic from many users.
+  wrong_options:
+  - Each message reserves one dedicated physical circuit for its entire transmission.
+  - Routers store complete websites permanently before forwarding any data.
+  - Packet switching requires all packets to have identical sizes and routes.
+  explanation: |
+    - Packet switching allows dynamic sharing of bandwidth and routing paths, supporting many simultaneous communications.
+
+- question: |
+    A network engineer adds an extra route between two major routers. What is the primary expected benefit?
+  correct_options:
+  - Improved fault tolerance because traffic can reroute if one path fails.
+  wrong_options:
+  - Elimination of the need for IP addresses.
+  - Guaranteed zero packet loss on every transmission.
+  - Automatic encryption of all traffic on the network.
+  explanation: |
+    - Redundant paths increase resilience by preventing a single point of failure.
+
+- question: |
+    In cloud computing, what does "scalability" most directly refer to?
+  correct_options:
+  - The ability to quickly increase or decrease computing resources as demand changes.
+  wrong_options:
+  - The ability to permanently eliminate all security risks.
+  - The requirement to buy new physical servers for every usage increase.
+  - The process of converting all files into binary manually.
+  explanation: |
+    - Cloud services let organizations provision resources on demand, matching capacity to workload.
+
+- question: |
+    A company runs a simulation of wildfire spread under different wind speeds and humidity levels. Which statement is most accurate?
+  correct_options:
+  - The simulation can help compare scenarios, but its predictions depend on the model assumptions and input data quality.
+  wrong_options:
+  - Simulation results are always exact if the program runs without syntax errors.
+  - Simulations cannot be rerun once parameters are changed.
+  - Simulations remove the need for any real-world observations.
+  explanation: |
+    - Simulations are useful for exploring "what-if" scenarios, but they are still approximations of reality.
