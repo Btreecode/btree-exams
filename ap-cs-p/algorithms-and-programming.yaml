@@ -121,33 +121,6 @@ questions:
       - None of the above
     explanation: |
       - Because the RETURN statement is inside the IF block, the procedure exits as soon as it finds the first value larger than 0.
-  - question: |
-      A student wrote the following procedure to find the largest number in a list. The procedure does NOT work correctly for all inputs.
-      ```
-      PROCEDURE findMax(myList) {
-        max ← 0
-        index ← 1
-        REPEAT UNTIL (index > LENGTH(myList)) {
-          IF (myList[index] > max) {
-            max ← myList[index]
-          }
-          index ← index + 1
-        }
-        RETURN (max)
-      }
-      ```
-
-      In what case would this procedure fail to return the correct maximum value?
-
-    correct_options:
-      - If the list contains only negative numbers
-    wrong_options:
-      - If the list contains at least one positive number
-      - If the list contains at least one negative number
-      - If the list contains only positive numbers
-      - In the list contains only zeros
-    explanation: |
-      - Since max is initialized to 0, if all numbers in the list are negative, none will be greater than max, and the procedure will incorrectly return 0 instead of the actual maximum (which would be the least negative number).
 
   - question: |
       A programmer wants to count how many times the word "Apple" appears in a list of fruits. They use the following code:
@@ -981,3 +954,31 @@ questions:
         ```
     explanation: |
       - A temporary variable preserves one value during assignment so neither original value is lost.
+
+  - question: |
+      A student wrote the following procedure to find the largest number in a list. The procedure does NOT work correctly for all inputs.
+      ```
+      PROCEDURE findMax(myList) {
+        max ← 0
+        index ← 1
+        REPEAT UNTIL (index > LENGTH(myList)) {
+          IF (myList[index] > max) {
+            max ← myList[index]
+          }
+          index ← index + 1
+        }
+        RETURN (max)
+      }
+      ```
+
+      In what case would this procedure fail to return the correct maximum value?
+
+    correct_options:
+      - If the list contains only negative numbers
+    wrong_options:
+      - If the list contains at least one positive number
+      - If the list contains at least one negative number
+      - If the list contains only positive numbers
+      - In the list contains only zeros
+    explanation: |
+      - Since max is initialized to 0, if all numbers in the list are negative, none will be greater than max, and the procedure will incorrectly return 0 instead of the actual maximum (which would be the least negative number).
